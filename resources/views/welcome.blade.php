@@ -43,7 +43,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <img src="assets/img/dikbud.png" alt="">
-        <h1 class="sitename">Dinas Pendidikan dan Kebudayaan Kota</h1>
+        <h1 class="sitename">Dinas Pendidikan dan Kebudayaan Kota Malang</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
