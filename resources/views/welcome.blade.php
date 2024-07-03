@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dinas Pendidikan dan Kebudayaan Kota Malang</title>
+  <title>Home | DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
