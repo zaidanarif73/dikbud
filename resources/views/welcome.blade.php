@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - QuickStart Bootstrap Template</title>
+  <title>Dinas Pendidikan dan Kebudayaan Kota Malang</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -41,12 +41,16 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#hero" class="active">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#features">Features</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#pricing">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="index.html#hero" class="active">Beranda</a></li>
+          <li><a href="index.html#about">Layanan</a></li>
+          <li><a href="index.html#features">Profil</a></li>
+          <li><a href="index.html#services">Berita</a></li>
+          <li><a href="index.html#pricing">Inovasi</a></li>
+          <li><a href="">Galeri</a></li>
+          <li><a href="">Pembelajaran</a></li>
+          <li><a href="">Informasi Publik</a></li>
+          <li><a href="">Kontak</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -68,7 +72,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="index.html#about">Get Started</a>
+      <a class="btn-getstarted" href="index.html#about">Get Started</a> -->
 
     </div>
   </header>
