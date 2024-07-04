@@ -86,7 +86,7 @@
       </div>
       <div class="container text-center">
         <div class="d-flex flex-column justify-content-center align-items-center">
-          <h1 data-aos="fade-up">Selamat Datang Di DIKBUD</h1>
+          <h1 data-aos="fade-up">Selamat Datang Di Dinas Pendidikan dan Kebudayaan</h1>
           <h1> <span>Kota Malang</span></h1>
           <p data-aos="fade-up" data-aos-delay="100">Quickly start your project now and set the stage for success<br></p>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
