@@ -28,7 +28,6 @@
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
 .light-background {
     --background-color: #fcf8f8;
     --surface-color: #ffffff;
@@ -240,6 +239,7 @@ h6 {
     .navmenu a,
     .navmenu a:focus {
         color: var(--nav-color);
+
         padding: 18px 15px;
         font-size: 16px;
         font-family: var(--nav-font);
