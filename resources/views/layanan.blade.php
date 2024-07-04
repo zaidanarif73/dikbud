@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    HELLO WORD okok
+    
 </body>
 
 </html>
