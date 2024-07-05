@@ -44,12 +44,12 @@
           <li><a href="index.html#hero" class="active">Beranda</a></li>
           <li><a href="{{ route('home.layanan.index') }}">Layanan</a></li>
           <li><a href="{{ route('home.profil.index') }}">Profil</a></li>
-          <li><a href="index.html#services">Berita</a></li>
-          <li><a href="index.html#pricing">Inovasi</a></li>
-          <li><a href="">Galeri</a></li>
-          <li><a href="">Pembelajaran</a></li>
-          <li><a href="">Informasi Publik</a></li>
-          <li><a href="">Kontak</a></li>
+          <li><a href="{{ route('home.berita.index') }}">Berita</a></li>
+          <li><a href="{{ route('home.inovasi.index') }}">Inovasi</a></li>
+          <li><a href="{{ route('home.galeri.index') }}">Galeri</a></li>
+          <li><a href="{{ route('home.pembelajaran.index') }}">Pembelajaran</a></li>
+          <li><a href="{{ route('home.informasi.index') }}">Informasi Publik</a></li>
+          <li><a href="{{ route('home.kontak.index') }}">Kontak</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>

@@ -29,4 +29,29 @@ Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function
         Route::get("/", "ProfilController@index")->name("index");
     });
 
+    Route::group(["as"=>"berita.", "prefix"=>"berita"], function(){
+        Route::get("/", "BeritaController@index")->name("index");
+    });
+
+    Route::group(["as"=>"inovasi.", "prefix"=>"inovasi"], function(){
+        Route::get("/", "InovasiController@index")->name("index");
+    });
+
+    Route::group(["as"=>"galeri.", "prefix"=>"galeri"], function(){
+        Route::get("/", "GaleriController@index")->name("index");
+    });
+
+    Route::group(["as"=>"pembelajaran.", "prefix"=>"pembelajaran"], function(){
+        Route::get("/", "PembelajaranController@index")->name("index");
+    });
+
+    Route::group(["as"=>"informasi.", "prefix"=>"informasi"], function(){
+        Route::get("/", "InformasiController@index")->name("index");
+    });
+    
+    Route::group(["as"=>"kontak.", "prefix"=>"kontak"], function(){
+        Route::get("/", "KontakController@index")->name("index");
+    });
+    
+    
 });
