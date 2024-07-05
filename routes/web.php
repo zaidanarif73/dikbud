@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function(){
+    Route::get("/", "HomeController@index")->name('home.index');
+
+    Route::group(["as"=>"layanan.", "prefix"=>"layanan"], function(){
+        Route::get("/", "LayananController@index")->name("index");
+    });
+
+    Route::group(["as"=>"profil.", "prefix"=>"profil"], function(){
+        Route::get("/", "ProfilController@index")->name("index");
+    });
+
 });
