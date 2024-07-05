@@ -1,0 +1,1 @@
+<div class="p">ini halaman galeri</div>
