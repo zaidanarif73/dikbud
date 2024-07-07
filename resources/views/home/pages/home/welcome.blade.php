@@ -109,102 +109,87 @@
         <div class="row gy-3">
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item d-flex justify-content-center align-items-center">
-              <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
-              <div>
-                <h6 class="title"><a href="#" class="stretched-link">Legalisir</a></h6>
-              </div>
+              <div class="icon flex-shrink-0"><i class=""></i></div>
             </div>
+            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">Legalisir</a></h6>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item d-flex justify-content-center align-items-center">
-              <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-              <div>
-                <h6 class="title"><a href="#" class="stretched-link">Mutasi Siswa</a></h6>
-              </div>
+              <div class="icon flex-shrink-0"><i class=""></i></div>
             </div>
+            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">Mutasi Siswa</a></h6>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item d-flex justify-content-center align-items-center">
-              <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-              <div>
-                <h6 class="title"><a href="#" class="stretched-link">Surat Keterangan Ijazah Rusak atau Kesalahan Penulisan Ijazah</a></h6>
-              </div>
+              <div class="icon flex-shrink-0"><i class=""></i></div>
             </div>
+            <p>
+              <h6 class="text-center"><a href="#" class="stretched-link">Surat Keterangan Ijazah Rusak atau Kesalahan Penulisan Ijazah</a></h6>
+            </p>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item d-flex justify-content-center align-items-center">
-              <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
-              <div>
-                <h6 class="title"><a href="#" class="stretched-link" >Pelayanan Surat Pengganti Ijazah SD atau SMP</a></h6>
-              </div>
+              <div class="icon flex-shrink-0"><i class=""></i></div>
             </div>
+            <p>
+              <h6 class="text-center"><a href="#" class="stretched-link" >Pelayanan Surat Pengganti Ijazah SD atau SMP</a></h6>
+            </p>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item d-flex justify-content-center align-items-center">
-              <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-              <div>
-                <h6 class="title"><a href="#" class="stretched-link">Surat Rekomendasi</a></h6  >
-                  <h6 class="title"><a href="#" class="stretched-link">penelitian & magang</a></h6  >
-              </div>
+              <div class="icon flex-shrink-0"><i class=""></i></div>
             </div>
+            <p>
+              <h6 class="text-center"><a href="#" class="stretched-link">Surat Rekomendasi penelitian & magang</a></h6  >
+            </p>   
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item d-flex justify-content-center align-items-center">
-              <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-              <div>
-                <h6 class="title"><a href="#" class="stretched-link">Maklumat Layanan</a></h6>
-              </div>
+              <div class="icon flex-shrink-0"><i class=""></i></div>
             </div>
+            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">Maklumat Layanan</a></h6>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item d-flex justify-content-center align-items-center">
-              <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-              <div>
-                <h6 class="title"><a href="#" class="stretched-link">SK Standar Pelayanan</a></h6>
-              </div>
+              <div class="icon flex-shrink-0"><i class=""></i></div>
             </div>
+            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">SK Standar Pelayanan</a></h6>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item d-flex justify-content-center align-items-center">
-              <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-              <div>
-                <h6 class="title"><a href="#" class="stretched-link">Layanan Pengaduan</a></h6>
-              </div>
+              <div class="icon flex-shrink-0"><i class=""></i></div>
             </div>
+            <h6 class="tservice-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">Layanan Pengaduan</a></h6>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="00">
             <div class="service-item d-flex justify-content-center align-items-center">
-              <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-              <div>
-                <h6 class="title"><a href="#" class="stretched-link">PPDB</a></h6>
-              </div>
+              <div class="icon flex-shrink-0"><i class=""></i></div>
             </div>
+            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">PPDB</a></h6>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item d-flex justify-content-center align-items-center">
-              <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-              <div>
-                <h6 class="title"><a href="#" class="stretched-link">SOLIKIN | Sistem Online Kartu Induk Kesenian</a></h6>
-              </div>
+              <div class="icon flex-shrink-0"><i class=""></i></div>
             </div>
+            <p>
+              <h6 class="text-center"><a href="#" class="stretched-link">SOLIKIN | Sistem Online Kartu Induk Kesenian</a></h6>
+            </p>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item d-flex justify-content-center align-items-center">
-              <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-              <div>
-                <h6 class="title"><a href="#" class="stretched-link">Info Ombudsman</a></h6>
-              </div>
+              <div class="icon flex-shrink-0"><i class=""></i></div>
             </div>
+            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">Info Ombudsman</a></h6>
           </div>
 
         </div>
