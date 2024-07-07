@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+//DASHBOARD ADMIN
+Route::group(["namespace"=>"App\Http\Controllers\Dashboard", "as"=>"dashboard.", "prefix"=>"dashboard"], function(){
+    Route::get("/", "DashboardController@index")->name('dashboard.index');
 
+});
 
+//HOME
 Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function(){
     Route::get("/", "HomeController@index")->name('home.index');
 
