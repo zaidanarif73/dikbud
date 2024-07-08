@@ -1,1 +1,5 @@
-<div class="p">ini halaman pembelajaran</div>
+@extends('home.layouts.master')
+
+@section("content")
+    <p>isi content pembelajaran disini!</p>
+@endsection

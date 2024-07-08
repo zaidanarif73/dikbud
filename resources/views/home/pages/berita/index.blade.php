@@ -1,1 +1,5 @@
-<div class="p">ini halaman berita</div>
+@extends('home.layouts.master')
+
+@section("content")
+    <p>isi content berita disini!</p>
+@endsection
