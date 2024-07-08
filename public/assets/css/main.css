@@ -522,7 +522,7 @@ h6 {
 }
 
 .footer .footer-about .logo img {
-    max-height: 40px;
+    max-height: 90px;
     margin-right: 6px;
 }
 
@@ -1326,6 +1326,10 @@ section,
     padding: 0;
     margin-bottom: 0;
     font-size: 14px;
+}
+
+.footer .logo img {
+    width: 50x;
 }
 
 .contact .php-email-form {
