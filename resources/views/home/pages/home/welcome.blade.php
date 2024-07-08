@@ -124,7 +124,7 @@
       <h2>Berita</h2>
     </div>
     <div class="container">
-      <h3>berita utama</h3>
+      <h3>Berita Utama</h3>
 
       <div class="row gy-4 justify-content-between features-item">
 
@@ -144,10 +144,28 @@
             <a href="#" class="btn more-btn">Read More</a>
           </div>
         </div>
-
       </div>
-
     </section><!-- /Features Details Section -->
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section light-background">

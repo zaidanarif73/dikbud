@@ -8,10 +8,18 @@ use Illuminate\Http\Request;
 class ProfilController extends Controller
 {
     public function __construct(){
-        $this->view = "home.pages.profil.";
+        $this->view = "home.pages.";
     }
 
     public function index(){
-        return view($this->view."index");
+        return view($this->view."profil.index");
+    }
+
+    public function index_SO(){
+        return view($this->view."SO.index");
+    }
+
+    public function index_VM(){
+        return view($this->view."VM.index");
     }
 }

@@ -10,7 +10,12 @@
       <ul>
         <li><a href="{{ route('home.home.index') }}" class="active">Beranda</a></li>
         <li><a href="{{ route('home.home.index') }}#featured-services">Layanan</a></li>
-        <li><a href="{{ route('home.profil.index') }}">Profil</a></li>
+        <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="{{ route('home.profil.SO.index') }}">Struktur Organisasi</a></li>
+            <li><a href="{{ route('home.profil.VM.index') }}">Visi & Misi</a></li>
+          </ul>
+        </li>
         <li><a href="{{ route('home.berita.index') }}">Berita</a></li>
         <li><a href="{{ route('home.inovasi.index') }}">Inovasi</a></li>
         <li><a href="{{ route('home.galeri.index') }}">Galeri</a></li>
