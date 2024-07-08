@@ -187,6 +187,7 @@
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item d-flex justify-content-center align-items-center">
+
               <img src="assets/img/icon/ombudd.jpeg" alt="">
             </div>
             <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">Info Ombudsman</a></h6>
