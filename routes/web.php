@@ -19,6 +19,15 @@ Route::group(["namespace"=>"App\Http\Controllers\Dashboard", "as"=>"dashboard.",
 
 });
 
+//SESI
+use App\Http\Controllers\SessionController;
+
+Route::get('sesi', [SessionController::class, 'index']);
+Route::post('sesi/login', [SessionController::class, 'login']);
+Route::get('sesi/logout', [SessionController::class, 'logout']);
+Route::get('sesi/register', [SessionController::class, 'register']);
+Route::post('sesi/register', [SessionController::class, 'create']);
+
 //HOME
 Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function(){
     Route::get("/", "HomeController@index")->name('home.index');
