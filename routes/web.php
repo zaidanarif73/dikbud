@@ -55,5 +55,8 @@ Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function
         Route::get("/", "KontakController@index")->name("index");
     });
     
-    
+    Route::get('/banner', 'BannerController@index');
+    Route::post('/banner/move-left', 'BannerController@moveLeft');
+    Route::post('/banner/move-right', 'BannerController@moveRight');
+
 });
