@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('home.layouts.master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layanan | DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG</title>
-</head>
-
-<body>
-    <div class="p">ini laman layanan</div>
-</body>
-
-</html>
+@section("content")
+    <p>isi content layanan disini!</p>
+@endsection

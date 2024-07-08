@@ -1,5 +1,5 @@
 @extends('home.layouts.master')
 
 @section("content")
-<div class="p">ini laman profil</div>
+    <p>isi content profil disini!</p>
 @endsection

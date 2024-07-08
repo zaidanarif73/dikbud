@@ -10,7 +10,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{URL::to('/')}}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="{{URL::to('/')}}/dist/img/user6-128x128.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">{{ Auth::user()->name ?? null}}</a>
@@ -24,13 +24,13 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="{{route('dashboard.dashboard.index')}}" class="nav-link @if(request()->routeIs('dashboard.dashboard.index')) active @endif">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class='bx bx-tachometer col-3 bx-tada-hover' ></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="{{route('home.home.index')}}" class="nav-link">
-              <i class="nav-icon fa-brands fa-chrome"></i>
+              <i class='bx bxl-chrome col-3 bx-tada-hover' ></i>
               <p>Buka Landingpage </p>
             </a>
           </li>
@@ -39,100 +39,106 @@
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                {{-- <i class="nav-icon fas fa-user"></i> --}}
+                
+                <i class="bx bx-menu col-3 bx-tada-hover"></i>
                 <p>
                   Menu
-                  <span class="right badge badge-danger">New</span>
                 </p>
+           
+                {{-- <i class="nav-icon fa-menu "></i>
+                <p>
+                  Menu
+                </p> --}}
+                
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <col class="row">
+                <i class="bx bx-images col-3 bx-tada-hover"></i>
                 <p>
                   Banner
-                  <span class="right badge badge-danger">New</span>
                 </p>
+                </col>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <col class="row">
+                <i class="bx bx-dock-right col-3 bx-tada-hover"></i>
                 <p>
                   Page
-                  <span class="right badge badge-danger">New</span>
                 </p>
+                </col>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <col class="row">
+                <i class="bx bx-news col-3 bx-tada-hover"></i>
                 <p>
                   Berita
-                  <span class="right badge badge-danger">New</span>
                 </p>
+                </col>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <col class="row">
+                <i class="bx bx-camera col-3 bx-tada-hover"></i>
                 <p>
                   Galeri
-                  <span class="right badge badge-danger">New</span>
                 </p>
+                </col>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <i class="bx bx-wrench col-3 bx-tada-hover"></i>
                 <p>
                   Layanan
-                  <span class="right badge badge-danger">New</span>
                 </p>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <i class="bx bx-link col-3 bx-tada-hover"></i>
                 <p>
-                  Link
-                  <span class="right badge badge-danger">New</span>
+                  Tautan
                 </p>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <i class="bx bx-calendar col-3 bx-tada-hover"></i>
                 <p>
-                  Calendar
-                  <span class="right badge badge-danger">New</span>
+                  Kalender
                 </p>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <i class="bx bxs-contact col-3 bx-tada-hover"></i>
                 <p>
-                  Contact
-                  <span class="right badge badge-danger">New</span>
+                  Kontak
                 </p>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <i class="bx bx-download col-3 bx-tada-hover"></i>
                 <p>
-                  Download
-                  <span class="right badge badge-danger">New</span>
+                  Unduh
                 </p>
               </a>
             </li>
@@ -141,7 +147,7 @@
           <li class="nav-header">MENU ADMIN</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-gear"></i>
+              <i class="bx bxs-cog col-3 bx-tada-hover"></i>
               <p>
                 Pengaturan
                 <i class="fas fa-angle-right right"></i>
@@ -150,13 +156,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="pages/forms/general.html" class="nav-link">
-                  <i class="fa fa-circle nav-icon"></i>
+                  <i class="bx bxs-user-circle col-3 bx-tada-hover"></i>
                   <p>User Avtivity</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/forms/general.html" class="nav-link">
-                  <i class="fa fa-circle nav-icon"></i>
+                  <i class="bx bx-history col-3 bx-tada-hover"></i>
                   <p>Log System</p>
                 </a>
               </li>

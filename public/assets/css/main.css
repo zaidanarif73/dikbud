@@ -135,7 +135,7 @@ h6 {
     color: var(--default-color);
     /* background-color: var(--background-color); */
     background-color: #388da8;
-    padding: 20px 0;
+    padding: 9px 0;
     transition: all 0.5s;
     z-index: 997;
 }
@@ -145,7 +145,7 @@ h6 {
 }
 
 .header .logo img {
-    max-height: 75px;
+    max-height: 60px;
     margin-right: 8px;
 }
 
@@ -522,7 +522,7 @@ h6 {
 }
 
 .footer .footer-about .logo img {
-    max-height: 40px;
+    max-height: 90px;
     margin-right: 6px;
 }
 
@@ -649,10 +649,10 @@ h6 {
 }
 
 .footer .copyright {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-top: 1px solid
-        color-mix(in srgb, var(--default-color), transparent 90%);
+        color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
 .footer .copyright p {
@@ -852,7 +852,7 @@ section,
     width: 100%;
     min-height: 70vh;
     position: relative;
-    padding: 180px 0 40px 0;
+    padding: 100px 0 20px 0;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -883,7 +883,7 @@ section,
 
 .hero h1 {
     margin: 0;
-    font-size: 48px;
+    font-size: 47px;
     font-weight: 700;
     line-height: 56px;
 }
@@ -901,7 +901,7 @@ section,
 
 @media (min-width: 768px) {
     .hero .hero-img {
-        max-width: 600px;
+        max-width: 800px;
     }
 }
 
@@ -994,6 +994,12 @@ section,
     z-index: 2;
     position: relative;
 }
+
+/*--------------------------------------------------------------
+# Card Section
+--------------------------------------------------------------*/
+
+
 
 /*--------------------------------------------------------------
 # Clients Section
@@ -1326,6 +1332,10 @@ section,
     padding: 0;
     margin-bottom: 0;
     font-size: 14px;
+}
+
+.footer .logo img {
+    width: 50x;
 }
 
 .contact .php-email-form {

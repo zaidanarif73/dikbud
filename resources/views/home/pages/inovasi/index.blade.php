@@ -1,1 +1,5 @@
-<div class="p">ini adalah halaman inovasi</div>
+@extends('home.layouts.master')
+
+@section("content")
+    <p>isi content inovasi disini!</p>
+@endsection

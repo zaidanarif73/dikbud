@@ -1,1 +1,5 @@
-<div class="p">ini halaman galeri</div>
+@extends('home.layouts.master')
+
+@section("content")
+    <p>isi content galeri disini!</p>
+@endsection
