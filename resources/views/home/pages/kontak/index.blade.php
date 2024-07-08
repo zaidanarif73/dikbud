@@ -1,1 +1,5 @@
-<div class="p">ini halaman kontak</div>
+@extends('home.layouts.master')
+
+@section("content")
+    <p>isi content kontak disini!</p>
+@endsection
