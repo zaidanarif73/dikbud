@@ -24,13 +24,13 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="{{route('dashboard.dashboard.index')}}" class="nav-link @if(request()->routeIs('dashboard.dashboard.index')) active @endif">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class='bx bx-tachometer col-3 bx-tada-hover' ></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="{{route('home.home.index')}}" class="nav-link">
-              <i class="nav-icon fa-brands fa-chrome"></i>
+              <i class='bx bxl-chrome col-3 bx-tada-hover' ></i>
               <p>Buka Landingpage </p>
             </a>
           </li>
@@ -40,16 +40,15 @@
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 {{-- <i class="nav-icon fas fa-user"></i> --}}
-                <col class="row">
-                <box-icon class="col-3" name='menu' animation='tada-hover' color="white" size="xs"></box-icon>
+                
+                <i class="bx bx-menu col-3 bx-tada-hover"></i>
                 <p>
                   Menu
                 </p>
-                </col>
-                {{-- <box-icon name='menu' animation='tada-hover' color="white" size="xs"></box-icon>
+           
+                {{-- <i class="nav-icon fa-menu "></i>
                 <p>
                   Menu
-                  <span class="right badge badge-danger">New</span>
                 </p> --}}
                 
               </a>
@@ -58,7 +57,7 @@
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <col class="row">
-                <box-icon class="col-3" name='images' animation='tada-hover' color="white" size="xs"></box-icon>
+                <i class="bx bx-images col-3 bx-tada-hover"></i>
                 <p>
                   Banner
                 </p>
@@ -69,7 +68,7 @@
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <col class="row">
-                <box-icon class="col-3" name='dock-right' animation='tada-hover' color="white" size="xs"></box-icon>
+                <i class="bx bx-dock-right col-3 bx-tada-hover"></i>
                 <p>
                   Page
                 </p>
@@ -80,7 +79,7 @@
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <col class="row">
-                <box-icon class="col-3" name='news' animation='tada-hover' color="white" size="xs"></box-icon>
+                <i class="bx bx-news col-3 bx-tada-hover"></i>
                 <p>
                   Berita
                 </p>
@@ -91,7 +90,7 @@
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <col class="row">
-                <box-icon class="col-3" name='camera' type='solid' animation='tada-hover' color="white" size="xs"></box-icon>
+                <i class="bx bx-camera col-3 bx-tada-hover"></i>
                 <p>
                   Galeri
                 </p>
@@ -101,7 +100,7 @@
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <box-icon class="col-3" name='wrench' type='solid' animation='tada-hover' color="white" size="xs"></box-icon>
+                <i class="bx bx-wrench col-3 bx-tada-hover"></i>
                 <p>
                   Layanan
                 </p>
@@ -110,7 +109,7 @@
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <box-icon class="col-3" name='link' animation='tada-hover' color="white" size="xs"></box-icon>
+                <i class="bx bx-link col-3 bx-tada-hover"></i>
                 <p>
                   Tautan
                 </p>
@@ -119,7 +118,7 @@
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <box-icon class="col-3" name='calendar' type='solid' animation='tada-hover' color="white" size="xs"></box-icon>
+                <i class="bx bx-calendar col-3 bx-tada-hover"></i>
                 <p>
                   Kalender
                 </p>
@@ -128,7 +127,7 @@
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <box-icon class="col-3" name='contact' type='solid' animation='tada-hover' color="white" size="xs"></box-icon>
+                <i class="bx bxs-contact col-3 bx-tada-hover"></i>
                 <p>
                   Kontak
                 </p>
@@ -137,7 +136,7 @@
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <box-icon class="col-3" name='download' type='solid' animation='tada-hover' color="white" size="xs"></box-icon>
+                <i class="bx bx-download col-3 bx-tada-hover"></i>
                 <p>
                   Unduh
                 </p>
@@ -148,7 +147,7 @@
           <li class="nav-header">MENU ADMIN</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-gear"></i>
+              <i class="bx bxs-cog col-3 bx-tada-hover"></i>
               <p>
                 Pengaturan
                 <i class="fas fa-angle-right right"></i>
@@ -157,13 +156,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="pages/forms/general.html" class="nav-link">
-                  <i class="fa fa-circle nav-icon"></i>
+                  <i class="bx bxs-user-circle col-3 bx-tada-hover"></i>
                   <p>User Avtivity</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/forms/general.html" class="nav-link">
-                  <i class="fa fa-circle nav-icon"></i>
+                  <i class="bx bx-history col-3 bx-tada-hover"></i>
                   <p>Log System</p>
                 </a>
               </li>
