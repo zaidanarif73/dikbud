@@ -10,7 +10,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{URL::to('/')}}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="{{URL::to('/')}}/dist/img/user6-128x128.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">{{ Auth::user()->name ?? null}}</a>
@@ -39,100 +39,107 @@
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                {{-- <i class="nav-icon fas fa-user"></i> --}}
+                <col class="row">
+                <box-icon class="col-3" name='menu' animation='tada-hover' color="white" size="xs"></box-icon>
+                <p>
+                  Menu
+                </p>
+                </col>
+                {{-- <box-icon name='menu' animation='tada-hover' color="white" size="xs"></box-icon>
                 <p>
                   Menu
                   <span class="right badge badge-danger">New</span>
-                </p>
+                </p> --}}
+                
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <col class="row">
+                <box-icon class="col-3" name='images' animation='tada-hover' color="white" size="xs"></box-icon>
                 <p>
                   Banner
-                  <span class="right badge badge-danger">New</span>
                 </p>
+                </col>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <col class="row">
+                <box-icon class="col-3" name='dock-right' animation='tada-hover' color="white" size="xs"></box-icon>
                 <p>
                   Page
-                  <span class="right badge badge-danger">New</span>
                 </p>
+                </col>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <col class="row">
+                <box-icon class="col-3" name='news' animation='tada-hover' color="white" size="xs"></box-icon>
                 <p>
                   Berita
-                  <span class="right badge badge-danger">New</span>
                 </p>
+                </col>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <col class="row">
+                <box-icon class="col-3" name='camera' type='solid' animation='tada-hover' color="white" size="xs"></box-icon>
                 <p>
                   Galeri
-                  <span class="right badge badge-danger">New</span>
                 </p>
+                </col>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <box-icon class="col-3" name='wrench' type='solid' animation='tada-hover' color="white" size="xs"></box-icon>
                 <p>
                   Layanan
-                  <span class="right badge badge-danger">New</span>
                 </p>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <box-icon class="col-3" name='link' animation='tada-hover' color="white" size="xs"></box-icon>
                 <p>
-                  Link
-                  <span class="right badge badge-danger">New</span>
+                  Tautan
                 </p>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <box-icon class="col-3" name='calendar' type='solid' animation='tada-hover' color="white" size="xs"></box-icon>
                 <p>
-                  Calendar
-                  <span class="right badge badge-danger">New</span>
+                  Kalender
                 </p>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <box-icon class="col-3" name='contact' type='solid' animation='tada-hover' color="white" size="xs"></box-icon>
                 <p>
-                  Contact
-                  <span class="right badge badge-danger">New</span>
+                  Kontak
                 </p>
               </a>
             </li>
 
             <li class="nav-item">
               <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                <i class="nav-icon fas fa-user"></i>
+                <box-icon class="col-3" name='download' type='solid' animation='tada-hover' color="white" size="xs"></box-icon>
                 <p>
-                  Download
-                  <span class="right badge badge-danger">New</span>
+                  Unduh
                 </p>
               </a>
             </li>
