@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //MIDDLEWARE
-Route::group(["middleware"=>["auth","dashboard.access"], "namespace"=>"App\Http\Controllers\Dashboard", "as"=>"dashboard.", "prefix"=>"dashboard"], function(){
+Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Controllers\Dashboard", "as"=>"dashboard.", "prefix"=>"dashboard"], function(){
     Route::get("/", "DashboardController@index")->name('dashboard.index');
 });
 
