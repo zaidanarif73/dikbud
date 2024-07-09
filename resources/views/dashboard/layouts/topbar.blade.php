@@ -36,7 +36,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" role="button">
+        <a class="nav-link" href="{{ route('auth.logout') }}" role="button">
         <i class="fa fa-sign-out-alt"></i>
         </a>
       </li>

@@ -3,7 +3,7 @@
     @include('home.layouts.head')
 <body class="">
     <div class="wrapper">
-        {{-- @include('sweetalert::alert') --}}
+        @include('sweetalert::alert')
         @include('home.layouts.navbar')
         <div class="content-wrapper">
             <section class="content">
