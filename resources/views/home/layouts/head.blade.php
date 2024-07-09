@@ -24,5 +24,6 @@
   
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/login.css" rel="stylesheet">
     @yield("css")
   </head>

@@ -12,12 +12,27 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-//DASHBOARD ADMIN
-Route::group(["namespace"=>"App\Http\Controllers\Dashboard", "as"=>"dashboard.", "prefix"=>"dashboard"], function(){
+//MIDDLEWARE
+Route::group(["middleware"=>["auth","dashboard.access"], "namespace"=>"App\Http\Controllers\Dashboard", "as"=>"dashboard.", "prefix"=>"dashboard"], function(){
     Route::get("/", "DashboardController@index")->name('dashboard.index');
-
 });
+
+//AUTH
+Route::group(["namespace"=>"App\Http\Controllers\Auth", "as"=>"auth.", "prefix"=>"auth"], function(){
+    Route::group(["as"=>"login.", "prefix"=>"login"], function(){
+        Route::get("/", "LoginController@index")->name("index");
+        Route::post("/", "LoginController@post")->name("post");
+    });
+
+    Route::get("/logout","LogoutController@logout")->name('logout');
+});
+
+
+// //DASHBOARD ADMIN
+// Route::group(["namespace"=>"App\Http\Controllers\Dashboard", "as"=>"dashboard.", "prefix"=>"dashboard"], function(){
+//     Route::get("/", "DashboardController@index")->name('dashboard.index');
+
+// });
 
 //HOME
 Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function(){

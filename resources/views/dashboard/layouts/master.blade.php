@@ -3,7 +3,7 @@
     @include('dashboard.layouts.head')
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-        {{-- @include('sweetalert::alert') --}}
+        @include('sweetalert::alert')
         @include('dashboard.layouts.topbar')
         @include('dashboard.layouts.sidebar')
         <div class="content-wrapper">
