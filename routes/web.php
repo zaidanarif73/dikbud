@@ -74,6 +74,12 @@ Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function
     Route::group(["as"=>"kontak.", "prefix"=>"kontak"], function(){
         Route::get("/", "KontakController@index")->name("index");
     });
+
+    Route::group(["as"=>"profil.", "prefix"=>"profil"], function(){
+        Route::get("/", "ProfilController@index")->name("index");
+        Route::get("SO", "ProfilController@index_SO")->name("SO.index");
+        Route::get("VM", "ProfilController@index_VM")->name("VM.index");
+    });
     
     
 });
