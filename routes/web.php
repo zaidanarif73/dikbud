@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//PAGE NOT FOUND
+Route::fallback(function () {
+    return 'Halaman Tidak Ditemukan';
+});
+
 //MIDDLEWARE
 Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Controllers\Dashboard", "as"=>"dashboard.", "prefix"=>"dashboard"], function(){
     Route::get("/", "DashboardController@index")->name('dashboard.index');
