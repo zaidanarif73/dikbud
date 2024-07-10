@@ -22,4 +22,6 @@
 <script src="assets/js/login/popper.min.js"></script>
 <script src="assets/js/login/bootstrap.min.js"></script>
 <script src="assets/js/login/main.js"></script>
+
+{{-- datatable script --}}
 @yield("script")
