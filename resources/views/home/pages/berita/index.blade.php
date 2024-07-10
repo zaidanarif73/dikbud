@@ -1,119 +1,78 @@
 @extends('home.layouts.master')
-
+    @section("css")
+        <link  href="assets/css/berita/style.css" rel="stylesheet">
+    @endsection
 @section("content")
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berita Terbaru</title>
-    <style>
-        body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    .container {
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 0;
-    }
-
-    header h1 {
-        margin: 0;
-    }
-
-    nav {
-        display: flex;
-        align-items: center;
-    }
-
-    nav input[type="text"] {
-        padding: 5px;
-        margin-right: 10px;
-    }
-
-    nav button {
-        padding: 5px 10px;
-        margin-left: 5px;
-    }
-
-    main {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .highlight, .other-news {
-        width: 48%;
-    }
-
-    .highlight .news-item, .other-news .news-item {
-        background: #f9f9f9;
-        padding: 20px;
-        margin-bottom: 10px;
-        border: 1px solid #ddd;
-    }
-
-    .highlight .news-item h2 {
-        margin-top: 0;
-    }
-
-    .highlight .news-item button {
-        background: #007bff;
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-    }
-    </style>
-</head>
-<body>
     <div class="container">
         <header>
             <h1>Berita Terbaru</h1>
             <nav>
                 <input type="text" placeholder="Search...">
                 <button>Search</button>
-                <button>Cart</button>
             </nav>
         </header>
-        <main>
-            <section class="highlight">
+        <div class="row">
+            <section class="highlight col-6">
                 <div class="news-item">
-                    <h2>HIGHLIGHT</h2>
-                    <p>Perkiraan Cuaca Esok</p>
-                    <button>Baca</button>
+                    <img alt src="assets/img/berita/Berita1.jpg">
+                    <p>Jumat, 21 Juni 2024 09:25 WIB</p>
+                    <h2>Jadi Narsum Worhshop, Mas Kadin Ucapkan Terima Kasih pada PTK SMPN 12 Malang</h2>
+                    <p>Malang - Jajaran SMP Negeri 12 Malang yang kini dikepalai oleh M. Shodiq., M.Pd selenggarakan Worksh...</p>
+                    <button>Baca Selengkapnya</button>
                 </div>
                 <div class="news-item">
-                    <h2>HIGHLIGHT</h2>
-                    <p>Perkiraan Cuaca Besok</p>
-                    <button>Baca</button>
+                    <img src="assets/img/berita/Berita2.jpg" alt="">
+                    <p>Kamis, 20 Juni 2024 22:36 WIB</p>
+                    <h2>Mas Kadin : Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara dengan Lulusan Formal</h2>
+                    <p>Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan sekaligus Plh. Kepala Bidang Pembinaan PAUD P...</p>
+                    <button>Baca Selengkapnya</button>
                 </div>
                 <div class="news-item">
-                    <h2>HIGHLIGHT</h2>
-                    <p>Cuaca Pagi Ini</p>
-                    <button>Baca</button>
+                    <img src="assets/img/berita/Berita3.jpg" alt="">
+                    <p>Kamis, 20 Juni 2024 08:06 WIB</p>
+                    <h2>Ombudsman Republik Indonesia</h2>
+                    <p>Ombudsman adalah lembaga negara yang mempunyai kewenangan mengawasi penyelenggaraan pelayanan publik...</p>
+                    <button>Baca Selengkapnya</button>
                 </div>
             </section>
-            <aside class="other-news">
+            <aside class="other-news col-6">
                 <h2>Berita Lainnya</h2>
-                <div class="news-item">Berita 1</div>
-                <div class="news-item">Berita 2</div>
-                <div class="news-item">Berita 3</div>
-                <div class="news-item">Berita 4</div>
-                <div class="news-item">Berita 5</div>
+                <div class="news-item">
+                    <img src="assets/img/berita/Berita4.jpg" alt="">
+                    <p>Senin, 17 Juni 2024 18:42 WIB</p>
+                    <h2> Pj Walikota Malang Tinjau Penyembelihan Hewan Qurban Disdikbud </h2>
+                    <p>Malang - Pj Walikota Malang Dr. Ir. Wahyu Hidayat, MM didampingi Kepala Dinas Pendidikan dan Kebuday...</p>
+                    <button>Baca Selengkapnya</button>
+                </div>
+                <div class="news-item">
+                    <img src="assets/img/berita/Berita5.jpg" alt="">
+                    <p>Senin, 17 Juni 2024 18:35 WIB</p>
+                    <h2> Keluarga Besar Disdikbud Laksanakan Sholat Idhul Adha 1445 H di Masjid Tarbiyatul Hidayah </h2>
+                    <p>Malang - Senin, 17 Juni 2024&nbsp;atau bertepatan dengan 10 Dzulhijjah 1445 H, Keluarga Besar Dinas...</p>
+                    <button>Baca Selengkapnya</button>
+                </div>
+                <div class="news-item">
+                    <img src="assets/img/berita/Berita5.jpg" alt="">
+                    <p>Jumat, 7 Juni 2024 19:34 WIB</p>
+                    <h2> Mas Kadin dan Sekdin Kunjungi SP Memantau 3K PTK </h2>
+                    <p>Malang - Jum' at, 7 Juni 2024 Kepala Dinas&nbsp;Pendidikan dan Kebudayaan Kota Malang , Suwwrjana, S...</p>
+                    <button>Baca Selengkapnya</button>
+                </div>
+                <div class="news-item">
+                    <img src="assets/img/berita/Berita6.jpg" alt="">
+                    <p>Rabu, 19 Juni 2024 20:11 WIB</p>
+                    <p> Komitmen Bersama Bunda PAUD Kota Malang Mendukung Gerakan Transisi PAUD ke SD yang Menyenangkan </p>
+                    <p>Malang - Usai prosesi pengukuhan Kelompok Kerja (Pokja) Bunda PAUD Tahun 2024 oleh Bunda PAUD (Pendi...</p>
+                    <button>Baca Selengkapnya</button>
+                </div>
+                <div class="news-item">
+                    <img src="assets/img/berita/Berita7.jpg" alt="">
+                    <p>Senin, 17 Juni 2024 18:42 WIB</p>
+                    <h2> Pj Walikota Malang Tinjau Penyembelihan Hewan Qurban Disdikbud </h2>
+                    <p>Malang - Pj Walikota Malang Dr. Ir. Wahyu Hidayat, MM didampingi Kepala Dinas Pendidikan dan Kebuday...</p>
+                    <button>Baca Selengkapnya</button>
+                </div>
             </aside>
-        </main>
+        </div>  
     </div>
-</body>
-</html>
-
 @endsection
