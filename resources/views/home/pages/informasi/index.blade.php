@@ -56,5 +56,19 @@
                 </div>
             </div>
         </div>
+        <div class="card">
+            <div class="card-header text-white bg-secondary">Informasi Publik</div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col-4">No</th>
+                            <th scope="col-4">Nama File</th>
+                            <th scope="col-4">Aksi</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
        </section>
 @endsection
