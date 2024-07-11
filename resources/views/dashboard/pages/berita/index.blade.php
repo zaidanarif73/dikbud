@@ -1,10 +1,10 @@
 @extends('dashboard.layouts.master')
 @section("title","Dashboard")
 @section('breadcumb')
-    Menu
+    Berita
 @endsection
 @section("content")
 <div class="container">
-    <p>Ini Laman Menu</p>
+    <p>Ini Laman Berita</p>
 </div>
 @endsection

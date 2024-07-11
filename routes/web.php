@@ -28,6 +28,38 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
     Route::group(["as"=>"informasi.", "prefix"=>"informasi"], function(){
         Route::get("/", "InformasiController@index")->name("index");
     });
+
+    Route::group(["as"=>"banner.", "prefix"=>"banner"], function(){
+        Route::get("/", "BannerController@index")->name("index");
+    });
+
+    Route::group(["as"=>"page.", "prefix"=>"page"], function(){
+        Route::get("/", "PageController@index")->name("index");
+    });
+
+    Route::group(["as"=>"berita.", "prefix"=>"berita"], function(){
+        Route::get("/", "BeritaController@index")->name("index");
+    });
+
+    Route::group(["as"=>"galeri.", "prefix"=>"galeri"], function(){
+        Route::get("/", "GaleriController@index")->name("index");
+    });
+
+    Route::group(["as"=>"kalender.", "prefix"=>"kalender"], function(){
+        Route::get("/", "KalenderController@index")->name("index");
+    });
+
+    Route::group(["as"=>"kontak.", "prefix"=>"kontak"], function(){
+        Route::get("/", "KontakController@index")->name("index");
+    });
+
+    Route::group(["as"=>"layanan.", "prefix"=>"layanan"], function(){
+        Route::get("/", "LayananController@index")->name("index");
+    });
+
+    Route::group(["as"=>"tautan.", "prefix"=>"tautan"], function(){
+        Route::get("/", "TautanController@index")->name("index");
+    });
 });
 
 //AUTH

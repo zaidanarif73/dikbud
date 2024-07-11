@@ -4,13 +4,14 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class InformasiController extends Controller
+class BannerController extends Controller
 {
     public function __construct(){
-        $this->view = "dashboard.pages.informasi.";
+        $this->view = "dashboard.pages.banner.";
     }
 
-    public function index(){
+     public function index()
+    {
         return view($this->view."index");
     }
 }
