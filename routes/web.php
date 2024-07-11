@@ -60,6 +60,14 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
     Route::group(["as"=>"tautan.", "prefix"=>"tautan"], function(){
         Route::get("/", "TautanController@index")->name("index");
     });
+
+    Route::group(["as"=>"pengaturan.", "prefix"=>"pengaturan"], function(){
+        Route::get("/", "PengaturanController@index")->name("index");
+    });
+
+    Route::group(["as"=>"log.", "prefix"=>"log"], function(){
+        Route::get("/", "LogController@index")->name("index");
+    });
 });
 
 //AUTH
