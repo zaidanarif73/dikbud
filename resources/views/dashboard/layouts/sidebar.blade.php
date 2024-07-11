@@ -135,31 +135,24 @@
               </a>
             </li>
 
-          
-          <li class="nav-header">MENU ADMIN</li>
+            <li class="nav-item">
+              <a href="{{route('dashboard.pengaturan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+                <i class="bx bx-download col-3 bx-tada-hover"></i>
+                <p>
+                  Pengaturan
+                </p>
+              </a>
+            </li>
+
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="bx bxs-cog col-3 bx-tada-hover"></i>
-              <p>
-                Pengaturan
-                <i class="fas fa-angle-right right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
-                  <i class="bx bxs-user-circle col-3 bx-tada-hover"></i>
-                  <p>User Avtivity</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
-                  <i class="bx bx-history col-3 bx-tada-hover"></i>
-                  <p>Log System</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+              <a href="{{route('dashboard.log.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+                <i class="bx bx-download col-3 bx-tada-hover"></i>
+                <p>
+                  Log
+                </p>
+              </a>
+            </li>
+         
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
