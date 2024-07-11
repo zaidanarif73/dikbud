@@ -38,19 +38,11 @@
           <li class="nav-header">MENU ADMIN</li>
 
             <li class="nav-item">
-              <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                {{-- <i class="nav-icon fas fa-user"></i> --}}
-                
+              <a href="{{route('dashboard.menu.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <i class="bx bx-menu col-3 bx-tada-hover"></i>
                 <p>
                   Menu
                 </p>
-           
-                {{-- <i class="nav-icon fa-menu "></i>
-                <p>
-                  Menu
-                </p> --}}
-                
               </a>
             </li>
 
@@ -135,7 +127,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.informasi.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <i class="bx bx-download col-3 bx-tada-hover"></i>
                 <p>
                   Unduh

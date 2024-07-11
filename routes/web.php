@@ -20,6 +20,14 @@ Route::fallback(function () {
 //MIDDLEWARE
 Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Controllers\Dashboard", "as"=>"dashboard.", "prefix"=>"dashboard"], function(){
     Route::get("/", "DashboardController@index")->name('dashboard.index');
+
+    Route::group(["as"=>"menu.", "prefix"=>"menu"], function(){
+        Route::get("/", "MenuController@index")->name("index");
+    });
+
+    Route::group(["as"=>"informasi.", "prefix"=>"informasi"], function(){
+        Route::get("/", "InformasiController@index")->name("index");
+    });
 });
 
 //AUTH
