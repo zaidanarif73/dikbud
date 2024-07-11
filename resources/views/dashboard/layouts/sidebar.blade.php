@@ -38,24 +38,16 @@
           <li class="nav-header">MENU ADMIN</li>
 
             <li class="nav-item">
-              <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
-                {{-- <i class="nav-icon fas fa-user"></i> --}}
-                
+              <a href="{{route('dashboard.menu.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <i class="bx bx-menu col-3 bx-tada-hover"></i>
                 <p>
                   Menu
                 </p>
-           
-                {{-- <i class="nav-icon fa-menu "></i>
-                <p>
-                  Menu
-                </p> --}}
-                
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.banner.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <col class="row">
                 <i class="bx bx-images col-3 bx-tada-hover"></i>
                 <p>
@@ -66,7 +58,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.page.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <col class="row">
                 <i class="bx bx-dock-right col-3 bx-tada-hover"></i>
                 <p>
@@ -77,7 +69,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.berita.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <col class="row">
                 <i class="bx bx-news col-3 bx-tada-hover"></i>
                 <p>
@@ -88,7 +80,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.galeri.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <col class="row">
                 <i class="bx bx-camera col-3 bx-tada-hover"></i>
                 <p>
@@ -99,7 +91,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.layanan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <i class="bx bx-wrench col-3 bx-tada-hover"></i>
                 <p>
                   Layanan
@@ -108,7 +100,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.tautan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <i class="bx bx-link col-3 bx-tada-hover"></i>
                 <p>
                   Tautan
@@ -117,7 +109,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.kalender.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <i class="bx bx-calendar col-3 bx-tada-hover"></i>
                 <p>
                   Kalender
@@ -126,7 +118,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.kontak.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <i class="bx bxs-contact col-3 bx-tada-hover"></i>
                 <p>
                   Kontak
@@ -135,39 +127,32 @@
             </li>
 
             <li class="nav-item">
-              <a href="" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.informasi.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
                 <i class="bx bx-download col-3 bx-tada-hover"></i>
                 <p>
-                  Unduh
+                  Informasi
                 </p>
               </a>
             </li>
 
-          
-          <li class="nav-header">MENU ADMIN</li>
+            <li class="nav-item">
+              <a href="{{route('dashboard.pengaturan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+                <i class="bx bx-download col-3 bx-tada-hover"></i>
+                <p>
+                  Pengaturan
+                </p>
+              </a>
+            </li>
+
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="bx bxs-cog col-3 bx-tada-hover"></i>
-              <p>
-                Pengaturan
-                <i class="fas fa-angle-right right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
-                  <i class="bx bxs-user-circle col-3 bx-tada-hover"></i>
-                  <p>User Avtivity</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
-                  <i class="bx bx-history col-3 bx-tada-hover"></i>
-                  <p>Log System</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+              <a href="{{route('dashboard.log.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+                <i class="bx bx-download col-3 bx-tada-hover"></i>
+                <p>
+                  Log
+                </p>
+              </a>
+            </li>
+         
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

@@ -20,6 +20,54 @@ Route::fallback(function () {
 //MIDDLEWARE
 Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Controllers\Dashboard", "as"=>"dashboard.", "prefix"=>"dashboard"], function(){
     Route::get("/", "DashboardController@index")->name('dashboard.index');
+
+    Route::group(["as"=>"menu.", "prefix"=>"menu"], function(){
+        Route::get("/", "MenuController@index")->name("index");
+    });
+
+    Route::group(["as"=>"informasi.", "prefix"=>"informasi"], function(){
+        Route::get("/", "InformasiController@index")->name("index");
+    });
+
+    Route::group(["as"=>"banner.", "prefix"=>"banner"], function(){
+        Route::get("/", "BannerController@index")->name("index");
+    });
+
+    Route::group(["as"=>"page.", "prefix"=>"page"], function(){
+        Route::get("/", "PageController@index")->name("index");
+    });
+
+    Route::group(["as"=>"berita.", "prefix"=>"berita"], function(){
+        Route::get("/", "BeritaController@index")->name("index");
+    });
+
+    Route::group(["as"=>"galeri.", "prefix"=>"galeri"], function(){
+        Route::get("/", "GaleriController@index")->name("index");
+    });
+
+    Route::group(["as"=>"kalender.", "prefix"=>"kalender"], function(){
+        Route::get("/", "KalenderController@index")->name("index");
+    });
+
+    Route::group(["as"=>"kontak.", "prefix"=>"kontak"], function(){
+        Route::get("/", "KontakController@index")->name("index");
+    });
+
+    Route::group(["as"=>"layanan.", "prefix"=>"layanan"], function(){
+        Route::get("/", "LayananController@index")->name("index");
+    });
+
+    Route::group(["as"=>"tautan.", "prefix"=>"tautan"], function(){
+        Route::get("/", "TautanController@index")->name("index");
+    });
+
+    Route::group(["as"=>"pengaturan.", "prefix"=>"pengaturan"], function(){
+        Route::get("/", "PengaturanController@index")->name("index");
+    });
+
+    Route::group(["as"=>"log.", "prefix"=>"log"], function(){
+        Route::get("/", "LogController@index")->name("index");
+    });
 });
 
 //AUTH
