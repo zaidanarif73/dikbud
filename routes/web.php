@@ -130,5 +130,49 @@ Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function
     Route::group(["as"=>"VM.", "prefix"=>"VM"], function(){
         Route::get("/", "VMController@index")->name("index");
     });
+
+    Route::group(["as"=>"legalisir.", "prefix"=>"legalisir"], function(){
+        Route::get("/", "LegalisirController@index")->name("index");
+    });
     
+    Route::group(["as"=>"mutasi.", "prefix"=>"mutasi"], function(){
+        Route::get("/", "MutasiController@index")->name("index");
+    });
+
+    Route::group(["as"=>"ijazah_rusak.", "prefix"=>"ijazah_rusak"], function(){
+    Route::get("/", "IjazahrusakController@index")->name("index");
+    });
+
+    Route::group(["as"=>"pengganti_ijazah.", "prefix"=>"pengganti_ijazah"], function(){
+    Route::get("/", "PengantiijazahController@index")->name("index");
+    });
+
+    Route::group(["as"=>"rekomendasi_penelitian.", "prefix"=>"rekomendasi_penelitian"], function(){
+    Route::get("/", "RekomendasipenelitianController@index")->name("index");
+    });
+
+    Route::group(["as"=>"pengaduan.", "prefix"=>"pengaduan"], function(){
+        Route::get("/", "PengaduanController@index")->name("index");
+    });
+
+    Route::group(["as"=>"maklumat.", "prefix"=>"maklumat"], function(){
+        Route::get("/", "MaklumatController@index")->name("index");
+    });
+    
+    Route::group(["as"=>"SKSP.", "prefix"=>"SKSP"], function(){
+        Route::get("/", "SKSPController@index")->name("index");
+    });
+
+    Route::group(["as"=>"PPDB.", "prefix"=>"PPDB"], function(){
+    Route::get("/", "PPDBController@index")->name("index");
+    });
+
+    Route::group(["as"=>"solikin.", "prefix"=>"solikin"], function(){
+    Route::get("/", "SolikinController@index")->name("index");
+    });
+
+    Route::group(["as"=>"ombudsman.", "prefix"=>"ombudsman"], function(){
+    Route::get("/", "OmbudsmanController@index")->name("index");
+    });
+
 });
