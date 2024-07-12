@@ -68,6 +68,16 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
     Route::group(["as"=>"log.", "prefix"=>"log"], function(){
         Route::get("/", "LogController@index")->name("index");
     });
+
+    Route::group(["as" => "berita.","prefix" => "berita"], function () {
+		Route::get('/', 'BeritaController@index')->name("index");
+		Route::get('/create', 'BeritaController@create')->name("create");
+		Route::get('/{id}', 'BeritaController@show')->name("show");
+		Route::get('/{id}/edit', 'BeritaController@edit')->name("edit");
+		Route::post('/', 'BeritaController@store')->name("store");
+		Route::put('/{id}', 'BeritaController@update')->name("update");
+		Route::delete('/{id}', 'BeritaController@destroy')->name("destroy");
+	});
 });
 
 //AUTH
