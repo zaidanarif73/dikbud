@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('informasis', function (Blueprint $table) {
             $table->id();
+            $table->string("title")->nullable();
+            $table->string("type")->nullable();
+            $table->string("file_path")->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

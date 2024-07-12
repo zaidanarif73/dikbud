@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\InformasiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,8 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
 
     Route::group(["as"=>"informasi.", "prefix"=>"informasi"], function(){
         Route::get("/", "InformasiController@index")->name("index");
+        Route::get("/create", "InformasiController@create")->name("create");
+        Route::post("/","InformasiController@store")->name("store");
     });
 
     Route::group(["as"=>"banner.", "prefix"=>"banner"], function(){
