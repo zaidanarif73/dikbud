@@ -1,19 +1,9 @@
 @extends('dashboard.layouts.master')
 @section("title","Informasi")
 @section('css')
-        <!-- css yudo-->
-    <link href="{{URL::to('/')}}/assets/css/dashboard/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="{{URL::to('/')}}/assets/css/dashboard/assets/css/icons.css" rel="stylesheet" type="text/css">
-    <link href="{{URL::to('/')}}/assets/css/dashboard/assets/css/style.css" rel="stylesheet" type="text/css">
 
-    <!-- Select2 -->
-    <link rel="stylesheet" href="{{URL::to('/')}}/templates/dashboard/assets/plugins/bootstrap-select2/select2.min.css" />
-    <link rel="stylesheet" href="{{URL::to('/')}}/templates/dashboard/assets/plugins/bootstrap-select2/select2-bootstrap.min.css">
-    <!--end css yudo-->
 @endsection
-@section('breadcumb')
-    Informasi
-@endsection
+@section("breadcumb","Informasi")
 @section("content")
     <div class="row">
         <div class="col-xl-12">
@@ -42,9 +32,13 @@
                                             <td>{{ $row->title }}</td>
                                             <td>
                                                 <div class="d-flex mb-1">
-                                                    <a href="" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
-                                                    <a href="" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i> Edit</a>
-                                                    <a href="#" class="btn btn-danger btn-sm mr-1 btn-delete" data-id=""><i class="fa fa-trash"></i> Hapus</a>
+                                                    @if ($row->file_path != null)
+                                                        <a href="{{ asset('storage/'.$row->file_path) }}" target="_blank" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
+                                                    @elseif($row->file_link != null)
+                                                        <a href="{{ URL::to($row->file_link) }}" target="_blank" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
+                                                    @endif
+                                                        <a href="{{ route('dashboard.informasi.edit',$row->id) }}" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i> Edit</a>
+                                                    <a href="#" class="btn btn-danger btn-sm mr-1 btn-delete" data-id="{{$row->id}}"><i class="fa fa-trash"></i> Hapus</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -85,7 +79,7 @@
         $(document).on("click",".btn-delete",function(){
             let id = $(this).data("id");
             if(confirm("Apakah anda yakin ingin menghapus data ini ?")){
-                $("#frmDelete").attr("action", "".replace("_id_", id));
+                $("#frmDelete").attr("action", "{{ route('dashboard.informasi.destroy', '_id_') }}".replace("_id_", id));
                 $("#frmDelete").find('input[name="id"]').val(id);
                 $("#frmDelete").submit();
             }

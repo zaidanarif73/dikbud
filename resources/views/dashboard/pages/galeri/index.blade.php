@@ -1,15 +1,7 @@
 @extends('dashboard.layouts.master')
 @section("title","Galeri")
 @section('css')
-        <!-- css yudo-->
-    <link href="{{URL::to('/')}}/assets/css/dashboard/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="{{URL::to('/')}}/assets/css/dashboard/assets/css/icons.css" rel="stylesheet" type="text/css">
-    <link href="{{URL::to('/')}}/assets/css/dashboard/assets/css/style.css" rel="stylesheet" type="text/css">
 
-    <!-- Select2 -->
-    <link rel="stylesheet" href="{{URL::to('/')}}/templates/dashboard/assets/plugins/bootstrap-select2/select2.min.css" />
-    <link rel="stylesheet" href="{{URL::to('/')}}/templates/dashboard/assets/plugins/bootstrap-select2/select2-bootstrap.min.css">
-    <!--end css yudo-->
 @endsection
 @section('breadcumb')
     Galeri

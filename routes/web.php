@@ -30,6 +30,9 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
         Route::get("/", "InformasiController@index")->name("index");
         Route::get("/create", "InformasiController@create")->name("create");
         Route::post("/","InformasiController@store")->name("store");
+        Route::get('/{id}/edit', 'InformasiController@edit')->name("edit");
+        Route::put('/{id}', 'InformasiController@update')->name("update");
+        Route::delete('/{id}', 'InformasiController@destroy')->name("destroy");
     });
 
     Route::group(["as"=>"banner.", "prefix"=>"banner"], function(){

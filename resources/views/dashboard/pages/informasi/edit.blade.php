@@ -4,20 +4,21 @@
 
 @endsection
 @section("breadcumb","Informasi")
-@section("breadcumb_child","Create")
+@section("breadcumb_child","Edit")
 @section("content")
 <div class="row">
     <div class="col-xl-12">
         <div class="card m-b-30">
             <div class="card-body">
-                <form id="myForm" action="{{ route('dashboard.informasi.store') }}" method="post" autocomplete="off" onsubmit="confirm('Apakah anda yakin ingin mengirim data ini?')" enctype="multipart/form-data">
+                <form id="myForm" action="{{ route('dashboard.informasi.update',$result->id) }}" method="post" autocomplete="off" onsubmit="confirm('Apakah anda yakin ingin mengirim data ini?')" enctype="multipart/form-data">
                     @csrf
+                    @method("PUT")
                     <div class="row mb-3">
                         <div class="col-lg-12">
                             <div class="form-group row">
                                 <label class="col-md-2 col-form-label">Judul <span class="text-danger">*</span></label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" name="title" placeholder="Judul"  value="" required>
+                                    <input type="text" class="form-control" name="title" placeholder="Judul"  value="{{old('title',$result->title)}}" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -44,7 +45,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <a href="" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Kembali</a>
+                            <a href="{{route('dashboard.informasi.index')}}" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Kembali</a>
                             <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
                         </div>
                     </div>
@@ -54,7 +55,6 @@
     </div>
 </div>
 @endsection
-
 @section("script")
     {{-- radio handler with input file/link --}}
     <script>
@@ -63,7 +63,7 @@
                 const val = $(this).filter(":checked").val();
                 //alert(val);
                 if(val == 'link'){
-                    $("#file_path").html('<input class="form-control" id="link_input" type="text" name="file_link" placeholder="Link File"  value="" required>');
+                    $("#file_path").html('<input class="form-control" id="link_input" type="text" name="file_link" placeholder="Link File"  value="{{old("file_link",$result->file_link)}}" required>');
                 }else if(val == 'file'){
                     $("#file_path").html('<input class="form-control" id="file_input" type="file" name="file_path" required>');
                 }

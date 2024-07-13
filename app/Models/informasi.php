@@ -10,6 +10,8 @@ class Informasi extends Model
     use HasFactory;
     protected $fillable = [
         'title',
-        'file_path'
+        'file_path',
+        'file_link',
+        'type',
     ];
 }
