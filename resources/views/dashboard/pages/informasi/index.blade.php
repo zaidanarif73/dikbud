@@ -21,17 +21,31 @@
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered" style="width:100%">
                                     <thead>
-                                        <th style="width:5%">No</th>
-                                        <th style="width:50%">Nama File</th>
-                                        <th style="width:20%">Aksi</th>
+                                        <th style="width:5%" class="text-center">No</th>
+                                        <th style="width:50%;" class="text-center">Nama File</th>
+                                        <th style="width:10%" class="text-center">Tipe</th>
+                                        <th style="width:35%" class="text-center">Aksi</th>
                                     </thead>
                                     <tbody>
                                         @forelse ($table as $index => $row)
                                         <tr>
                                             <td>{{ $table->firstItem() + $index }}</td>
-                                            <td>{{ $row->title }}</td>
+                                            <td>{{ $row->title }}</td>               
+                                            @if($row->type == 'link')
+                                                <td>
+                                                    <div class="d-flex justify-content-center">
+                                                        <span class="badge bg-success">{{ $row->type }}</span>
+                                                    </div>
+                                                </td>
+                                            @elseif($row->type == 'file')
+                                                <td>
+                                                    <div class="d-flex justify-content-center">
+                                                        <span class="badge bg-warning text-dark">{{ $row->type }}</span>
+                                                    </div>
+                                                </td>
+                                            @endif
                                             <td>
-                                                <div class="d-flex mb-1">
+                                                <div class="mb-1 d-flex justify-content-center">
                                                     @if ($row->file_path != null)
                                                         <a href="{{ asset('storage/'.$row->file_path) }}" target="_blank" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
                                                     @elseif($row->file_link != null)
