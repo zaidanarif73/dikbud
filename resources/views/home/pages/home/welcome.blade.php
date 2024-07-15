@@ -32,14 +32,14 @@
             <div class="service-item d-flex justify-content-center align-items-center">
               <img src="assets/img/icon/legalisir.png" alt="">
             </div>
-            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">Legalisir</a></h6>
+            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.legalisir.index') }}" class="stretched-link">Legalisir</a></h6>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item d-flex justify-content-center align-items-center">
               <img src="assets/img/icon/mutasi.png" alt="">
             </div>
-            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">Mutasi Siswa</a></h6>
+            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.mutasi.index') }}" class="stretched-link">Mutasi Siswa</a></h6>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="300">
@@ -47,7 +47,7 @@
               <img src="assets/img/icon/suratijazah.png" alt="">
             </div>
             <p>
-              <h6 class="text-center"><a href="#" class="stretched-link">Surat Keterangan Ijazah Rusak atau Kesalahan Penulisan Ijazah</a></h6>
+              <h6 class="text-center"><a href="{{ route('home.ijazah_rusak.index') }}" class="stretched-link">Surat Keterangan Ijazah Rusak atau Kesalahan Penulisan Ijazah</a></h6>
             </p>
           </div>
 
@@ -56,7 +56,7 @@
               <img src="assets/img/icon/pengganti ijazah.png" alt="">
             </div>
             <p>
-              <h6 class="text-center"><a href="#" class="stretched-link" >Pelayanan Surat Pengganti Ijazah SD atau SMP</a></h6>
+              <h6 class="text-center"><a href="{{ route('home.pengganti_ijazah.index') }}" class="stretched-link" >Pelayanan Surat Pengganti Ijazah SD atau SMP</a></h6>
             </p>
           </div>
 
@@ -65,7 +65,7 @@
               <img src="assets/img/icon/rekom.png" alt="">
             </div>
             <p>
-              <h6 class="text-center"><a href="#" class="stretched-link">Surat Rekomendasi penelitian & magang</a></h6  >
+              <h6 class="text-center"><a href="{{ route('home.rekomendasi_penelitian.index') }}" class="stretched-link">Surat Rekomendasi penelitian & magang</a></h6  >
             </p>   
           </div>
 
@@ -73,28 +73,28 @@
             <div class="service-item d-flex justify-content-center align-items-center">
               <img src="assets/img/icon/maklumat.png" alt="">
             </div>
-            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">Maklumat Layanan</a></h6>
+            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.maklumat.index') }}" class="stretched-link">Maklumat Layanan</a></h6>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item d-flex justify-content-center align-items-center">
               <img src="assets/img/icon/standar.png" alt="">
             </div>
-            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">SK Standar Pelayanan</a></h6>
+            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.SKSP.index') }}" class="stretched-link">SK Standar Pelayanan</a></h6>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item d-flex justify-content-center align-items-center">
               <img src="assets/img/icon/pengaduan.png" alt="">
             </div>
-            <h6 class="tservice-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">Layanan Pengaduan</a></h6>
+            <h6 class="tservice-item d-flex justify-content-center align-items-center"><a href="{{ route('home.pengaduan.index') }}" class="stretched-link">Layanan Pengaduan</a></h6>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="00">
             <div class="service-item d-flex justify-content-center align-items-center">
               <img src="assets/img/icon/ppdb.png" alt="">
             </div>
-            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">PPDB</a></h6>
+            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.PPDB.index') }}" class="stretched-link">PPDB</a></h6>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
@@ -102,7 +102,7 @@
               <img src="assets/img/icon/solikin.jpeg" alt="">
             </div>
             <p>
-              <h6 class="text-center"><a href="#" class="stretched-link">SOLIKIN | Sistem Online Kartu Induk Kesenian</a></h6>
+              <h6 class="text-center"><a href="{{ route('home.solikin.index') }}" class="stretched-link">SOLIKIN | Sistem Online Kartu Induk Kesenian</a></h6>
             </p>
           </div>
 
@@ -111,7 +111,7 @@
 
               <img src="assets/img/icon/ombudd.jpeg" alt="">
             </div>
-            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">Info Ombudsman</a></h6>
+            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.ombudsman.index') }}" class="stretched-link">Info Ombudsman</a></h6>
           </div>
 
         </div>
