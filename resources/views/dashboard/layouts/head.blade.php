@@ -29,5 +29,15 @@
   <link rel="shortcut icon" href="{{URL::to('/')}}/assets/images/logo/favicon.png">
   
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- css yudo-->
+    <link href="{{URL::to('/')}}/assets/css/dashboard/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="{{URL::to('/')}}/assets/css/dashboard/assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="{{URL::to('/')}}/assets/css/dashboard/assets/css/style.css" rel="stylesheet" type="text/css">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{URL::to('/')}}/templates/dashboard/assets/plugins/bootstrap-select2/select2.min.css" />
+    <link rel="stylesheet" href="{{URL::to('/')}}/templates/dashboard/assets/plugins/bootstrap-select2/select2-bootstrap.min.css">
+  <!--end css yudo-->
   @yield("css")
 </head>

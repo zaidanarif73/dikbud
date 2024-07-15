@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\InformasiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,59 @@ Route::fallback(function () {
 //MIDDLEWARE
 Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Controllers\Dashboard", "as"=>"dashboard.", "prefix"=>"dashboard"], function(){
     Route::get("/", "DashboardController@index")->name('dashboard.index');
+
+    Route::group(["as"=>"menu.", "prefix"=>"menu"], function(){
+        Route::get("/", "MenuController@index")->name("index");
+    });
+
+    Route::group(["as"=>"informasi.", "prefix"=>"informasi"], function(){
+        Route::get("/", "InformasiController@index")->name("index");
+        Route::get("/create", "InformasiController@create")->name("create");
+        Route::post("/","InformasiController@store")->name("store");
+        Route::get('/{id}/edit', 'InformasiController@edit')->name("edit");
+        Route::put('/{id}', 'InformasiController@update')->name("update");
+        Route::delete('/{id}', 'InformasiController@destroy')->name("destroy");
+    });
+
+    Route::group(["as"=>"banner.", "prefix"=>"banner"], function(){
+        Route::get("/", "BannerController@index")->name("index");
+    });
+
+    Route::group(["as"=>"page.", "prefix"=>"page"], function(){
+        Route::get("/", "PageController@index")->name("index");
+    });
+
+    Route::group(["as"=>"berita.", "prefix"=>"berita"], function(){
+        Route::get("/", "BeritaController@index")->name("index");
+    });
+
+    Route::group(["as"=>"galeri.", "prefix"=>"galeri"], function(){
+        Route::get("/", "GaleriController@index")->name("index");
+    });
+
+    Route::group(["as"=>"kalender.", "prefix"=>"kalender"], function(){
+        Route::get("/", "KalenderController@index")->name("index");
+    });
+
+    Route::group(["as"=>"kontak.", "prefix"=>"kontak"], function(){
+        Route::get("/", "KontakController@index")->name("index");
+    });
+
+    Route::group(["as"=>"layanan.", "prefix"=>"layanan"], function(){
+        Route::get("/", "LayananController@index")->name("index");
+    });
+
+    Route::group(["as"=>"tautan.", "prefix"=>"tautan"], function(){
+        Route::get("/", "TautanController@index")->name("index");
+    });
+
+    Route::group(["as"=>"pengaturan.", "prefix"=>"pengaturan"], function(){
+        Route::get("/", "PengaturanController@index")->name("index");
+    });
+
+    Route::group(["as"=>"log.", "prefix"=>"log"], function(){
+        Route::get("/", "LogController@index")->name("index");
+    });
 });
 
 //AUTH
@@ -82,5 +136,49 @@ Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function
     Route::group(["as"=>"VM.", "prefix"=>"VM"], function(){
         Route::get("/", "VMController@index")->name("index");
     });
+
+    Route::group(["as"=>"legalisir.", "prefix"=>"legalisir"], function(){
+        Route::get("/", "LegalisirController@index")->name("index");
+    });
     
+    Route::group(["as"=>"mutasi.", "prefix"=>"mutasi"], function(){
+        Route::get("/", "MutasiController@index")->name("index");
+    });
+
+    Route::group(["as"=>"ijazah_rusak.", "prefix"=>"ijazah_rusak"], function(){
+    Route::get("/", "IjazahrusakController@index")->name("index");
+    });
+
+    Route::group(["as"=>"pengganti_ijazah.", "prefix"=>"pengganti_ijazah"], function(){
+    Route::get("/", "PengantiijazahController@index")->name("index");
+    });
+
+    Route::group(["as"=>"rekomendasi_penelitian.", "prefix"=>"rekomendasi_penelitian"], function(){
+    Route::get("/", "RekomendasipenelitianController@index")->name("index");
+    });
+
+    Route::group(["as"=>"pengaduan.", "prefix"=>"pengaduan"], function(){
+        Route::get("/", "PengaduanController@index")->name("index");
+    });
+
+    Route::group(["as"=>"maklumat.", "prefix"=>"maklumat"], function(){
+        Route::get("/", "MaklumatController@index")->name("index");
+    });
+    
+    Route::group(["as"=>"SKSP.", "prefix"=>"SKSP"], function(){
+        Route::get("/", "SKSPController@index")->name("index");
+    });
+
+    Route::group(["as"=>"PPDB.", "prefix"=>"PPDB"], function(){
+    Route::get("/", "PPDBController@index")->name("index");
+    });
+
+    Route::group(["as"=>"solikin.", "prefix"=>"solikin"], function(){
+    Route::get("/", "SolikinController@index")->name("index");
+    });
+
+    Route::group(["as"=>"ombudsman.", "prefix"=>"ombudsman"], function(){
+    Route::get("/", "OmbudsmanController@index")->name("index");
+    });
+
 });

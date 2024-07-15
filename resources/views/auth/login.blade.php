@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-7">
-                    <h3>Login to <strong>DIKBUUUUUUUUUUUUUUUUUUUUddd</strong></h3>
+                    <h3>Login to <strong>Kemendikbud</strong></h3>
                     <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
                             <form action="{{ route('auth.login.index') }}" method="POST" class="user">
                                 @csrf
@@ -39,5 +39,6 @@
         </div>
     </div>
 @include('home.layouts.script')
+
 </body>
 </html>

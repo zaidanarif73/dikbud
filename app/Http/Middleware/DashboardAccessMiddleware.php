@@ -23,7 +23,7 @@ class DashboardAccessMiddleware
             if($user){
                 Auth::logout();
             } 
-            return redirect()->route('home.home.index');   
+            return redirect()->route('auth.login.index');   
         } 
         return $next($request); 
     }

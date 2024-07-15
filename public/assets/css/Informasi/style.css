@@ -1,0 +1,35 @@
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn-group .dropdown-menu ul {
+    margin: 0;
+    padding: 10px 0;
+    background: var(--nav-dropdown-background-color);
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    left: 14px;
+    top: 130%;
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 4px;
+    z-index: 99;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+.btn-group .dropdown-menu ul li {
+    min-width: 200px;
+}
+
+.btn-group .dropdown-menu ul a {
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+    color: var(--nav-dropdown-color);
+}
+
+.btn-group .dropdown-menu ul a i {
+    font-size: 12px;
+}
