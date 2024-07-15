@@ -1,8 +1,9 @@
 @extends('dashboard.layouts.master')
-@section("title","Dashboard")
-@section('breadcumb')
-    Berita
+@section("title","Berita")
+@section('css')
+
 @endsection
+@section("breadcumb","Berita")
 @section("content")
 <div class="row">
     <div class="col-xl-12">
@@ -37,7 +38,7 @@
                                         <td>{{date('d-m-Y H:i:s',strtotime($row->created_at))}}</td>
                                         <td>
                                             <div class="d-flex mb-1">
-                                                <a href="{{route('dashboard.berita.show',$row->id)}}" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
+                                                {{-- <a href="{{route('dashboard.berita.show',$row->id)}}" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a> --}}
                                                 <a href="{{route('dashboard.berita.edit',$row->id)}}" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i> Edit</a>
                                                 <a href="#" class="btn btn-danger btn-sm mr-1 btn-delete" data-id="{{$row->id}}"><i class="fa fa-trash"></i> Hapus</a>
                                             </div>
@@ -88,5 +89,6 @@
         })
     })
 </script>
+
 @endsection
 

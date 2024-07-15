@@ -8,6 +8,7 @@ use App\Http\Requests\Berita\StoreRequest;
 use App\Http\Requests\Berita\UpdateRequest;
 use App\Helpers\UploadHelper;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class BeritaController extends Controller
 {
@@ -17,8 +18,10 @@ class BeritaController extends Controller
      * Display a listing of the resource.
      */
     public function __construct(){
+        $this->route = "dashboard.berita.";
         $this->view = "dashboard.pages.berita.";
         $this->berita = new Berita();
+        Paginator::useBootstrap();
     }
 
     public function index(Request $request)
@@ -58,54 +61,56 @@ class BeritaController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        $title = $request->input('title');
-        $image = $request->input('image');
+        // $title = $request->input('title');
+        // $image = $request->file('image');
         
-        try {
-            $create = $this->berita->create([
-                'title' => $title,
-                'image' => $image,
-            ]);
-
-            alert()->html('Berhasil', 'Data berhasil ditambahkan', 'success'); 
-            return redirect()->route($this->route . 'index');
-
-        } catch (\Throwable $e) {
-            Log::emergency($e->getMessage());
-
-            alert()->error('Gagal', $e->getMessage());
-
-            return redirect()->route($this->route . 'create')->withInput();
-        }
         // try {
-        //     $title = $request->title;
-        //     $image = $request->file("image");
-
-        //     // if($image){
-        //     //     $upload = UploadHelper::upload_file($image,'berita',['jpeg','jpg','png','gif']);
-
-        //     //     if($upload["IsError"] == TRUE){
-        //     //         throw new Error($upload["Message"]);
-        //     //     }
-
-        //     //     $image = $upload["Path"];
-        //     // }
-
         //     $create = $this->berita->create([
         //         'title' => $title,
         //         'image' => $image,
         //     ]);
 
-        //     alert()->html('Berhasil','Data berhasil ditambahkan','success'); 
-        //     return redirect()->route($this->route."index");
+        //     alert()->html('Berhasil', 'Data berhasil ditambahkan', 'success'); 
+        //     return redirect()->route($this->route . 'index');
 
         // } catch (\Throwable $e) {
         //     Log::emergency($e->getMessage());
 
-        //     alert()->error('Gagal',$e->getMessage());
+        //     alert()->error('Gagal', $e->getMessage());
 
-        //     return redirect()->route($this->route."create")->withInput();
+        //     return redirect()->route($this->route . 'create')->withInput();
         // }
+        try {
+            $title = $request->title;
+            $image = $request->file("image");
+
+            if($image){
+                $upload = UploadHelper::upload_file($image,'image',['jpeg','jpg','png','gif']);
+
+                if($upload["IsError"] == TRUE){
+                    throw new Error($upload["Message"]);
+                }
+
+                $image = $upload["Path"];
+                $create = $this->berita->create([
+                    'title' => $title,
+                    'image' => $image,
+                ]);
+
+           
+            }
+
+
+            alert()->html('Berhasil','Data berhasil ditambahkan','success'); 
+            return redirect()->route($this->route."index");
+
+        } catch (\Throwable $e) {
+            Log::emergency($e->getMessage());
+
+            alert()->error('Gagal',$e->getMessage());
+
+            return redirect()->route($this->route."create")->withInput();
+        }
     }
 
     /**
@@ -114,23 +119,23 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $result = $this->berita;
-        $result = $result->where('id',$id);
-        $result = $result->first();
+    // public function show($id)
+    // {
+    //     $result = $this->berita;
+    //     $result = $result->where('id',$id);
+    //     $result = $result->first();
 
-        if(!$result){
-            alert()->error('Gagal',"Data tidak ditemukan");
-            return redirect()->route($this->route."index");
-        }
+    //     if(!$result){
+    //         alert()->error('Gagal',"Data tidak ditemukan");
+    //         return redirect()->route($this->route."index");
+    //     }
 
-        $data = [
-            'result' => $result,
-        ];
+    //     $data = [
+    //         'result' => $result,
+    //     ];
 
-        return view($this->view."show",$data);
-    }
+    //     return view($this->view."show",$data);
+    // }
 
     /**
      * Show the form for editing the specified resource.

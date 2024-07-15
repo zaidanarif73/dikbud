@@ -33,5 +33,8 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{URL::to('/')}}/dist/js/pages/dashboard.js"></script>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+
+
 
 @yield("script")
