@@ -29,7 +29,34 @@
     <link rel="stylesheet" href="assets/css/home/kaiadmin.min.css" />
 @endsection
 @section("content")
-<div class="container">
+<div class="container mt-5">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <h1 data-aos="fade-up">Informasi Publik</h1>
+    </div>
+    <div class="row mt-5">
+        <div class="btn-group col-2">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Produk Hukum</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Laporan Kinerja Instansi Pemerinta (LKJIP)</a></li>
+                <li><a class="dropdown-item" href="#">Indikator Kinerja Individu (IKI)</a></li>
+                <li><a class="dropdown-item" href="#">Perjanjian Kinerja (PK)</a></li>
+                <li><a class="dropdown-item" href="#">Rencana Aksi</a></li>
+                <li><a class="dropdown-item" href="#">Kompilasi Jumlah Siswa</a></li>
+                <li><a class="dropdown-item" href="#">Lain-lainnya</a></li>
+            </ul>
+        </div>
+        <div class="btn-group col-2">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tahun</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">2019</a></li>
+                <li><a class="dropdown-item" href="#">2020</a></li>
+                <li><a class="dropdown-item" href="#">2021</a></li>
+                <li><a class="dropdown-item" href="#">2022</a></li>
+                <li><a class="dropdown-item" href="#">2023</a></li>
+                <li><a class="dropdown-item" href="#">2024</a></li>
+            </ul>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
