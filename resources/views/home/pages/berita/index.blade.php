@@ -34,6 +34,13 @@
                     <p>Ombudsman adalah lembaga negara yang mempunyai kewenangan mengawasi penyelenggaraan pelayanan publik...</p>
                     <button>Baca Selengkapnya</button>
                 </div>
+                    <div class="news-item">
+                    <img alt src="assets/img/berita/Berita8.jpg">
+                    <p>Kamis, 16 Mei 2024 09:56 WIB</p>
+                    <h2>Rapat Persiapan APEKSI</h2>
+                    <p>MALANG, (14/05/2024) Pukul 13.00 WIB pada rapat persiapan apeksi guru-guru berkumpul di Ruang Aula D...</p>
+                    <button>Baca Selengkapnya</button>
+                </div>
             </section>
             <aside class="other-news col-6">
                 <h2>Berita Lainnya</h2>
