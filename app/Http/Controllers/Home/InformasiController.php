@@ -14,9 +14,24 @@ class InformasiController extends Controller
         $this->informasi = new Informasi();
     }
 
-    public function index(){
+    public function index(Request $request){
 
         $table = $this->informasi;
+
+        $year = $request->year; //for year filter in modal
+        $produkHukum = $request->produkHukum;
+        if(!empty($year)){
+            $table = $table->where(function($query2) use($year){
+                $query2->where("title","like","%".$year."%");
+            });
+            
+        }
+        if(!empty($produkHukum)){
+            $table = $table->where(function($query2) use($produkHukum){
+                $query2->where("title","like","%".$produkHukum."%");
+            });
+            
+        }
         $table = $table->orderBy("created_at","DESC");      //sort descending by time created data
         $table = $table->paginate();   //limit paginate only 10 data appears per load
         $data = [
