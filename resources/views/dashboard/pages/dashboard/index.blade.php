@@ -1,6 +1,8 @@
 @extends('dashboard.layouts.master')
 @section("title","Dashboard")
-
+@section('css')
+    
+@endsection
 @section("content")
 <div class="row">
     <div class="col-lg-3 col-6">

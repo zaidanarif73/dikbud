@@ -1,244 +1,110 @@
 @extends('home.layouts.master')
 @section("css")
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
+    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
     <link rel="stylesheet" href="assets/css/informasi/style.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    --}}
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    
+    {{-- <script src="assets/js/home/plugin/webfont/webfont.min.js"></script> --}}
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        WebFont.load({
+            google: { families: ["Public Sans:300,400,500,600,700"] },
+            custom: {
+            families: [
+                "Font Awesome 5 Solid",
+                "Font Awesome 5 Regular",
+                "Font Awesome 5 Brands",
+                "simple-line-icons",
+            ],
+            urls: ["../assets/css/home/fonts.min.css"],
+            },
+            active: function () {
+            sessionStorage.fonts = true;
+            },
+        });
+    </script>
+    <link rel="stylesheet" href="assets/css/home/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/home/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/home/kaiadmin.min.css" />
 @endsection
 @section("content")
-<section>
-    <div class="container">
-        <div class="row mb-5">
-            <div class="btn-group col-2">
-                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Produk Hukum</button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
-            <div class="btn-group col-2">
-                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tahun</button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header"></div>
+                <div class="card-body"></div>
+                <div class="table-responsive">
+                    <table id="basic-datatables" class="display table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th class="text-center" style="width: 5%; background-color:#A0DEFF">No</th>
+                                <th class="text-center" style="width: 60%; background-color:#A0DEFF">Nama File</th>
+                                <th class="text-center" style="width: 35%; background-color:#A0DEFF">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($table as $index => $row)
+                            <tr>
+                                <td>{{ $table->firstItem() + $index }}</td>
+                                <td>{{ $row->title }}</td>
+                                <td>
+                                    <div class="form-button-action d-flex justify-content-center">
+                                        @if ($row->file_path != null)
+                                            <a href="{{ asset('storage/'.$row->file_path) }}" target="_blank">  
+                                                <button class="btn btn-primary">
+                                                    <span class="btn-label">
+                                                        <i class='bx bx-sm bxs-show'></i>
+                                                    </span>
+                                                    Lihat
+                                                </button>
+                                            </a>
+                                            <a href="{{ asset('storage/'.$row->file_path) }}" class="mx-5" download>
+                                                <button class="btn btn-danger">
+                                                    <span class="btn-label">
+                                                        <i class='bx bx-sm bxs-download'></i>
+                                                    </span>
+                                                    Download
+                                                </button>
+                                            </a>
+                                        @elseif($row->file_link != null)
+                                            <a href="{{ URL::to($row->file_link) }}" target="_blank">  
+                                                <button class="btn btn-primary">
+                                                    <span class="btn-label">
+                                                        <i class='bx bx-sm bxs-show'></i>
+                                                    </span>
+                                                    Lihat
+                                                </button>
+                                            </a>
+                                            <a href="{{ URL::to($row->file_link) }}" class="mx-5" download>
+                                                <button class="btn btn-danger">
+                                                    <span class="btn-label">
+                                                        <i class='bx bx-sm bxs-download'></i>
+                                                    </span>
+                                                    Download
+                                                </button>
+                                            </a>
+                                        @endif                      
+                                    </div>
+                                </td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td colspan="10" class="text-center">Data tidak ditemukan</td>
+                            </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-        
-
-        <table id="myTable" class="cell-border hover mt-5">
-            <thead>
-                <tr>
-                    <th class="dt-head-center">No</th>
-                    <th class="dt-head-center">Nama File</th>
-                    <th class="dt-head-center">Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="dt-body-center">1</td>
-                    <td>Row 1 Data 2</td>
-                    <td>
-                        <div class="row">
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-end'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.9999999999999991,0,0,0.9999999999999991,1.7053025658242404e-13,8.526512829121202e-14)"><path d="M508.745 246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818 239.784 3.249 246.035a16.896 16.896 0 0 0 0 19.923c4.569 6.257 113.557 153.206 252.748 153.206s248.174-146.95 252.748-153.201a16.875 16.875 0 0 0 0-19.922zM255.997 385.406c-102.529 0-191.33-97.533-217.617-129.418 26.253-31.913 114.868-129.395 217.617-129.395 102.524 0 191.319 97.516 217.617 129.418-26.253 31.912-114.868 129.395-217.617 129.395z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M255.997 154.725c-55.842 0-101.275 45.433-101.275 101.275s45.433 101.275 101.275 101.275S357.272 311.842 357.272 256s-45.433-101.275-101.275-101.275zm0 168.791c-37.23 0-67.516-30.287-67.516-67.516s30.287-67.516 67.516-67.516 67.516 30.287 67.516 67.516-30.286 67.516-67.516 67.516z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
-                                </i>
-                                </a>
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-start text-center bx bxs-download bx-sm' style='color:#2f00ff'  ></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="dt-body-center">2</td>
-                    <td>Row 2 Data 2</td>
-                    <td>
-                        <div class="row">
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-end'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.9999999999999991,0,0,0.9999999999999991,1.7053025658242404e-13,8.526512829121202e-14)"><path d="M508.745 246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818 239.784 3.249 246.035a16.896 16.896 0 0 0 0 19.923c4.569 6.257 113.557 153.206 252.748 153.206s248.174-146.95 252.748-153.201a16.875 16.875 0 0 0 0-19.922zM255.997 385.406c-102.529 0-191.33-97.533-217.617-129.418 26.253-31.913 114.868-129.395 217.617-129.395 102.524 0 191.319 97.516 217.617 129.418-26.253 31.912-114.868 129.395-217.617 129.395z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M255.997 154.725c-55.842 0-101.275 45.433-101.275 101.275s45.433 101.275 101.275 101.275S357.272 311.842 357.272 256s-45.433-101.275-101.275-101.275zm0 168.791c-37.23 0-67.516-30.287-67.516-67.516s30.287-67.516 67.516-67.516 67.516 30.287 67.516 67.516-30.286 67.516-67.516 67.516z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
-                                </i>
-                                </a>
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-start text-center bx bxs-download bx-sm' style='color:#2f00ff'  ></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="dt-body-center">3</td>
-                    <td>Row 1 Data 2</td>
-                    <td>
-                        <div class="row">
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-end'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.9999999999999991,0,0,0.9999999999999991,1.7053025658242404e-13,8.526512829121202e-14)"><path d="M508.745 246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818 239.784 3.249 246.035a16.896 16.896 0 0 0 0 19.923c4.569 6.257 113.557 153.206 252.748 153.206s248.174-146.95 252.748-153.201a16.875 16.875 0 0 0 0-19.922zM255.997 385.406c-102.529 0-191.33-97.533-217.617-129.418 26.253-31.913 114.868-129.395 217.617-129.395 102.524 0 191.319 97.516 217.617 129.418-26.253 31.912-114.868 129.395-217.617 129.395z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M255.997 154.725c-55.842 0-101.275 45.433-101.275 101.275s45.433 101.275 101.275 101.275S357.272 311.842 357.272 256s-45.433-101.275-101.275-101.275zm0 168.791c-37.23 0-67.516-30.287-67.516-67.516s30.287-67.516 67.516-67.516 67.516 30.287 67.516 67.516-30.286 67.516-67.516 67.516z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
-                                </i>
-                                </a>
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-start text-center bx bxs-download bx-sm' style='color:#2f00ff'  ></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="dt-body-center">4</td>
-                    <td>Row 2 Data 2</td>
-                    <td>
-                        <div class="row">
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-end'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.9999999999999991,0,0,0.9999999999999991,1.7053025658242404e-13,8.526512829121202e-14)"><path d="M508.745 246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818 239.784 3.249 246.035a16.896 16.896 0 0 0 0 19.923c4.569 6.257 113.557 153.206 252.748 153.206s248.174-146.95 252.748-153.201a16.875 16.875 0 0 0 0-19.922zM255.997 385.406c-102.529 0-191.33-97.533-217.617-129.418 26.253-31.913 114.868-129.395 217.617-129.395 102.524 0 191.319 97.516 217.617 129.418-26.253 31.912-114.868 129.395-217.617 129.395z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M255.997 154.725c-55.842 0-101.275 45.433-101.275 101.275s45.433 101.275 101.275 101.275S357.272 311.842 357.272 256s-45.433-101.275-101.275-101.275zm0 168.791c-37.23 0-67.516-30.287-67.516-67.516s30.287-67.516 67.516-67.516 67.516 30.287 67.516 67.516-30.286 67.516-67.516 67.516z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
-                                </i>
-                                </a>
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-start text-center bx bxs-download bx-sm' style='color:#2f00ff'  ></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="dt-body-center">5</td>
-                    <td>Row 1 Data 2</td>
-                    <td>
-                        <div class="row">
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-end'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.9999999999999991,0,0,0.9999999999999991,1.7053025658242404e-13,8.526512829121202e-14)"><path d="M508.745 246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818 239.784 3.249 246.035a16.896 16.896 0 0 0 0 19.923c4.569 6.257 113.557 153.206 252.748 153.206s248.174-146.95 252.748-153.201a16.875 16.875 0 0 0 0-19.922zM255.997 385.406c-102.529 0-191.33-97.533-217.617-129.418 26.253-31.913 114.868-129.395 217.617-129.395 102.524 0 191.319 97.516 217.617 129.418-26.253 31.912-114.868 129.395-217.617 129.395z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M255.997 154.725c-55.842 0-101.275 45.433-101.275 101.275s45.433 101.275 101.275 101.275S357.272 311.842 357.272 256s-45.433-101.275-101.275-101.275zm0 168.791c-37.23 0-67.516-30.287-67.516-67.516s30.287-67.516 67.516-67.516 67.516 30.287 67.516 67.516-30.286 67.516-67.516 67.516z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
-                                </i>
-                                </a>
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-start text-center bx bxs-download bx-sm' style='color:#2f00ff'  ></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="dt-body-center">5</td>
-                    <td>Row 2 Data 2</td>
-                    <td>
-                        <div class="row">
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-end'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.9999999999999991,0,0,0.9999999999999991,1.7053025658242404e-13,8.526512829121202e-14)"><path d="M508.745 246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818 239.784 3.249 246.035a16.896 16.896 0 0 0 0 19.923c4.569 6.257 113.557 153.206 252.748 153.206s248.174-146.95 252.748-153.201a16.875 16.875 0 0 0 0-19.922zM255.997 385.406c-102.529 0-191.33-97.533-217.617-129.418 26.253-31.913 114.868-129.395 217.617-129.395 102.524 0 191.319 97.516 217.617 129.418-26.253 31.912-114.868 129.395-217.617 129.395z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M255.997 154.725c-55.842 0-101.275 45.433-101.275 101.275s45.433 101.275 101.275 101.275S357.272 311.842 357.272 256s-45.433-101.275-101.275-101.275zm0 168.791c-37.23 0-67.516-30.287-67.516-67.516s30.287-67.516 67.516-67.516 67.516 30.287 67.516 67.516-30.286 67.516-67.516 67.516z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
-                                </i>
-                                </a>
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-start text-center bx bxs-download bx-sm' style='color:#2f00ff'  ></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="dt-body-center">6</td>
-                    <td>Row 2 Data 2</td>
-                    <td>
-                        <div class="row">
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-end'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.9999999999999991,0,0,0.9999999999999991,1.7053025658242404e-13,8.526512829121202e-14)"><path d="M508.745 246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818 239.784 3.249 246.035a16.896 16.896 0 0 0 0 19.923c4.569 6.257 113.557 153.206 252.748 153.206s248.174-146.95 252.748-153.201a16.875 16.875 0 0 0 0-19.922zM255.997 385.406c-102.529 0-191.33-97.533-217.617-129.418 26.253-31.913 114.868-129.395 217.617-129.395 102.524 0 191.319 97.516 217.617 129.418-26.253 31.912-114.868 129.395-217.617 129.395z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M255.997 154.725c-55.842 0-101.275 45.433-101.275 101.275s45.433 101.275 101.275 101.275S357.272 311.842 357.272 256s-45.433-101.275-101.275-101.275zm0 168.791c-37.23 0-67.516-30.287-67.516-67.516s30.287-67.516 67.516-67.516 67.516 30.287 67.516 67.516-30.286 67.516-67.516 67.516z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
-                                </i>
-                                </a>
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-start text-center bx bxs-download bx-sm' style='color:#2f00ff'  ></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="dt-body-center">7</td>
-                    <td>Row 1 Data 2</td>
-                    <td>
-                        <div class="row">
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-end'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.9999999999999991,0,0,0.9999999999999991,1.7053025658242404e-13,8.526512829121202e-14)"><path d="M508.745 246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818 239.784 3.249 246.035a16.896 16.896 0 0 0 0 19.923c4.569 6.257 113.557 153.206 252.748 153.206s248.174-146.95 252.748-153.201a16.875 16.875 0 0 0 0-19.922zM255.997 385.406c-102.529 0-191.33-97.533-217.617-129.418 26.253-31.913 114.868-129.395 217.617-129.395 102.524 0 191.319 97.516 217.617 129.418-26.253 31.912-114.868 129.395-217.617 129.395z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M255.997 154.725c-55.842 0-101.275 45.433-101.275 101.275s45.433 101.275 101.275 101.275S357.272 311.842 357.272 256s-45.433-101.275-101.275-101.275zm0 168.791c-37.23 0-67.516-30.287-67.516-67.516s30.287-67.516 67.516-67.516 67.516 30.287 67.516 67.516-30.286 67.516-67.516 67.516z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
-                                </i>
-                                </a>
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-start text-center bx bxs-download bx-sm' style='color:#2f00ff'  ></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="dt-body-center">8</td>
-                    <td>Row 2 Data 2</td>
-                    <td>
-                        <div class="row">
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-end'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.9999999999999991,0,0,0.9999999999999991,1.7053025658242404e-13,8.526512829121202e-14)"><path d="M508.745 246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818 239.784 3.249 246.035a16.896 16.896 0 0 0 0 19.923c4.569 6.257 113.557 153.206 252.748 153.206s248.174-146.95 252.748-153.201a16.875 16.875 0 0 0 0-19.922zM255.997 385.406c-102.529 0-191.33-97.533-217.617-129.418 26.253-31.913 114.868-129.395 217.617-129.395 102.524 0 191.319 97.516 217.617 129.418-26.253 31.912-114.868 129.395-217.617 129.395z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M255.997 154.725c-55.842 0-101.275 45.433-101.275 101.275s45.433 101.275 101.275 101.275S357.272 311.842 357.272 256s-45.433-101.275-101.275-101.275zm0 168.791c-37.23 0-67.516-30.287-67.516-67.516s30.287-67.516 67.516-67.516 67.516 30.287 67.516 67.516-30.286 67.516-67.516 67.516z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
-                                </i>
-                                </a>
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-start text-center bx bxs-download bx-sm' style='color:#2f00ff'  ></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="dt-body-center">9</td>
-                    <td>Row 2 Data 2</td>
-                    <td>
-                        <div class="row">
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-end'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.9999999999999991,0,0,0.9999999999999991,1.7053025658242404e-13,8.526512829121202e-14)"><path d="M508.745 246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818 239.784 3.249 246.035a16.896 16.896 0 0 0 0 19.923c4.569 6.257 113.557 153.206 252.748 153.206s248.174-146.95 252.748-153.201a16.875 16.875 0 0 0 0-19.922zM255.997 385.406c-102.529 0-191.33-97.533-217.617-129.418 26.253-31.913 114.868-129.395 217.617-129.395 102.524 0 191.319 97.516 217.617 129.418-26.253 31.912-114.868 129.395-217.617 129.395z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M255.997 154.725c-55.842 0-101.275 45.433-101.275 101.275s45.433 101.275 101.275 101.275S357.272 311.842 357.272 256s-45.433-101.275-101.275-101.275zm0 168.791c-37.23 0-67.516-30.287-67.516-67.516s30.287-67.516 67.516-67.516 67.516 30.287 67.516 67.516-30.286 67.516-67.516 67.516z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
-                                </i>
-                                </a>
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-start text-center bx bxs-download bx-sm' style='color:#2f00ff'  ></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="dt-body-center">10</td>
-                    <td>Row 1 Data 2</td>
-                    <td>
-                        <div class="row">
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-end'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.9999999999999991,0,0,0.9999999999999991,1.7053025658242404e-13,8.526512829121202e-14)"><path d="M508.745 246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818 239.784 3.249 246.035a16.896 16.896 0 0 0 0 19.923c4.569 6.257 113.557 153.206 252.748 153.206s248.174-146.95 252.748-153.201a16.875 16.875 0 0 0 0-19.922zM255.997 385.406c-102.529 0-191.33-97.533-217.617-129.418 26.253-31.913 114.868-129.395 217.617-129.395 102.524 0 191.319 97.516 217.617 129.418-26.253 31.912-114.868 129.395-217.617 129.395z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M255.997 154.725c-55.842 0-101.275 45.433-101.275 101.275s45.433 101.275 101.275 101.275S357.272 311.842 357.272 256s-45.433-101.275-101.275-101.275zm0 168.791c-37.23 0-67.516-30.287-67.516-67.516s30.287-67.516 67.516-67.516 67.516 30.287 67.516 67.516-30.286 67.516-67.516 67.516z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
-                                </i>
-                                </a>
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-start text-center bx bxs-download bx-sm' style='color:#2f00ff'  ></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="dt-body-center">11</td>
-                    <td>Row 2 Data 2</td>
-                    <td>
-                        <div class="row">
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-end'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.9999999999999991,0,0,0.9999999999999991,1.7053025658242404e-13,8.526512829121202e-14)"><path d="M508.745 246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818 239.784 3.249 246.035a16.896 16.896 0 0 0 0 19.923c4.569 6.257 113.557 153.206 252.748 153.206s248.174-146.95 252.748-153.201a16.875 16.875 0 0 0 0-19.922zM255.997 385.406c-102.529 0-191.33-97.533-217.617-129.418 26.253-31.913 114.868-129.395 217.617-129.395 102.524 0 191.319 97.516 217.617 129.418-26.253 31.912-114.868 129.395-217.617 129.395z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M255.997 154.725c-55.842 0-101.275 45.433-101.275 101.275s45.433 101.275 101.275 101.275S357.272 311.842 357.272 256s-45.433-101.275-101.275-101.275zm0 168.791c-37.23 0-67.516-30.287-67.516-67.516s30.287-67.516 67.516-67.516 67.516 30.287 67.516 67.516-30.286 67.516-67.516 67.516z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
-                                </i>
-                                </a>
-                            <a href="" class="nav-link col-6">
-                                <i class='d-flex justify-content-start text-center bx bxs-download bx-sm' style='color:#2f00ff'  ></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </div>
-</section>
+</div>
+
 @endsection
 @section("script")
-    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    {{-- <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
     <script>
         $(document).ready();
         
@@ -249,5 +115,22 @@
 
         } );
     </script>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script> --}}
+    <script src="assets/js/home/core/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/home/core/popper.min.js"></script>
+    <script src="assets/js/home/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="assets/js/home/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <!-- Datatables -->
+    <script src="assets/js/home/plugin/datatables/datatables.min.js"></script>
+    <!-- Kaiadmin JS -->
+    <script src="assets/js/home/kaiadmin.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#basic-datatables").DataTable({
+                pageLength: 10,
+            });
+        });
+    </script>
 @endsection
