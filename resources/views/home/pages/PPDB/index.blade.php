@@ -13,7 +13,7 @@
         <section class="highlight col-12">
             <div class="news-item">
                 <h1>Petunjuk PPDB</h1>
-                <img class="mt-5" alt src="assets/img/berita/Berita1.jpg">
+                <img class="mt-5" alt src="assets/img/PPDB/PPDB.jpg">
                 <p class="mt-5">Link Kegiatan PPDB SMP Se-Kota Malang</p>
                 <button type="button" class="btn btn-primary btn-sm">Link PPDB</button>
             </div>
