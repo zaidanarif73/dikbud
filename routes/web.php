@@ -72,9 +72,9 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
     Route::group(["as" => "berita.","prefix" => "berita"], function () {
 		Route::get('/', 'BeritaController@index')->name("index");
 		Route::get('/create', 'BeritaController@create')->name("create");
+        Route::post('/', 'BeritaController@store')->name("store");
 		Route::get('/{id}', 'BeritaController@show')->name("show");
 		Route::get('/{id}/edit', 'BeritaController@edit')->name("edit");
-		Route::post('/', 'BeritaController@store')->name("store");
 		Route::put('/{id}', 'BeritaController@update')->name("update");
 		Route::delete('/{id}', 'BeritaController@destroy')->name("destroy");
 	});

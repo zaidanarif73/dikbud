@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 
 class BeritaController extends Controller
 {
+    protected $berita;
+    protected $route = 'dashboard.pages.berita.';
     /**
      * Display a listing of the resource.
      */
@@ -56,35 +58,54 @@ class BeritaController extends Controller
      */
     public function store(StoreRequest $request)
     {
+        $title = $request->input('title');
+        $image = $request->input('image');
+        
         try {
-            $title = $request->title;
-            $image = $request->file("image");
-
-            // if($image){
-            //     $upload = UploadHelper::upload_file($image,'berita',['jpeg','jpg','png','gif']);
-
-            //     if($upload["IsError"] == TRUE){
-            //         throw new Error($upload["Message"]);
-            //     }
-
-            //     $image = $upload["Path"];
-            // }
-
             $create = $this->berita->create([
                 'title' => $title,
                 'image' => $image,
             ]);
 
-            alert()->html('Berhasil','Data berhasil ditambahkan','success'); 
-            return redirect()->route($this->route."index");
+            alert()->html('Berhasil', 'Data berhasil ditambahkan', 'success'); 
+            return redirect()->route($this->route . 'index');
 
         } catch (\Throwable $e) {
             Log::emergency($e->getMessage());
 
-            alert()->error('Gagal',$e->getMessage());
+            alert()->error('Gagal', $e->getMessage());
 
-            return redirect()->route($this->route."create")->withInput();
+            return redirect()->route($this->route . 'create')->withInput();
         }
+        // try {
+        //     $title = $request->title;
+        //     $image = $request->file("image");
+
+        //     // if($image){
+        //     //     $upload = UploadHelper::upload_file($image,'berita',['jpeg','jpg','png','gif']);
+
+        //     //     if($upload["IsError"] == TRUE){
+        //     //         throw new Error($upload["Message"]);
+        //     //     }
+
+        //     //     $image = $upload["Path"];
+        //     // }
+
+        //     $create = $this->berita->create([
+        //         'title' => $title,
+        //         'image' => $image,
+        //     ]);
+
+        //     alert()->html('Berhasil','Data berhasil ditambahkan','success'); 
+        //     return redirect()->route($this->route."index");
+
+        // } catch (\Throwable $e) {
+        //     Log::emergency($e->getMessage());
+
+        //     alert()->error('Gagal',$e->getMessage());
+
+        //     return redirect()->route($this->route."create")->withInput();
+        // }
     }
 
     /**
