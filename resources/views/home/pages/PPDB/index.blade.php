@@ -3,21 +3,21 @@
 @section("css")
     <link  href="assets/css/PPDB/style.css" rel="stylesheet">
 @section("content")
-
-<div class="container mt-5">
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <h1 data-aos="fade-up">PPDB</h1>
-    </div>
-
+<div class="so-bg">
+        <img src="assets/img/Biru-PPDB.png" alt="">
+</div>
+<div class="container mt-2">
     <div class="row">
-        <section class="highlight col-12">
-            <div class="news-item">
-                <h1>Petunjuk PPDB</h1>
-                <img class="mt-5" alt src="assets/img/PPDB/PPDB.jpg">
-                <p class="mt-5">Link Kegiatan PPDB SMP Se-Kota Malang</p>
-                <button type="button" class="btn btn-primary btn-sm">Link PPDB</button>
-            </div>
-        </section>
+        <div class="col-12">
+            <section class="highlight">
+                <div class="news-item">
+                    <h1>Petunjuk PPDB</h1>
+                    <img class="mt-5" alt src="assets/img/PPDB/PPDB.jpg">
+                    <p class="mt-5">Link Kegiatan PPDB SMP Se-Kota Malang</p>
+                    <button type="button" class="btn btn-primary btn-sm">Link PPDB</button>
+                </div>
+            </section>
+        </div>   
     </div>
 </div>
 
