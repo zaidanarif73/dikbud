@@ -1,82 +1,8 @@
 @extends('home.layouts.master')
-
+    @section("css")
+        <link  href="assets/css/galery/style.css" rel="stylesheet">
+    @endsection
 @section("content")
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dokumentasi Kegiatan</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f5f5f5;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px 0;
-        }
-
-        .gallery-item {
-            background: white;
-            border: 1px solid #ddd;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-        }
-
-        .gallery-item h2 {
-            font-size: 18px;
-            margin: 10px 0 5px;
-        }
-
-        .gallery-item p {
-            font-size: 14px;
-            color: #666;
-        }
-
-        .pagination {
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        .pagination button {
-            background: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
     <div class="container">
         <header>
             <h1>DOKUMENTASI KEGIATAN</h1>
@@ -84,38 +10,44 @@
         <main>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/200" alt="Image">
-                    <h2>JUDUL KEGIATAN</h2>
-                    <p>Deskripsi singkat kegiatan</p>
+                    <img src="assets/img/galeri/galeri1.jpg" alt="">
+                    <p>Senin, 4 Maret 2024 08:31 WIB</p>
+                    <h3>Sosialisasi Kepangkatan dengan Kelompok Kerja Kepala Sekolah(K3S) SD se Kota Malang</h3>
                 </div>
                 <div class="gallery-item">
-                    <h2>JUDUL KEGIATAN</h2>
-                    <p>Deskripsi singkat kegiatan</p>
+                    <img src="assets/img/galeri/galeri2.jpg" alt="">
+                    <p>Rabu, 21 Februari 2024 09:46 WIB</p>
+                    <h3>Talkshow Pencegahan Pernikahan Dini dan Kesehatan Reproduksi Remaja</h3>
                 </div>
                 <div class="gallery-item">
-                    <h2>JUDUL KEGIATAN</h2>
-                    <p>Deskripsi singkat kegiatan</p>
+                    <img src="assets/img/galeri/galeri3.jpg" alt="">
+                    <p>Senin, 4 Maret 2024 08:19 WIB</p>
+                    <h3>UPACARA PEMBUKAAN LOMBA FLS2N DAN O2SN TINGKAT KEC. KEDUNGKANDANG</h3>
+                </div>
+                <div class="gallery-item">                    
+                    <img src="assets/img/galeri/galeri4.jpg" alt="">
+                    <p>Senin, 12 Februari 2024 16:20 WIB</p>
+                    <h3>Bimbingan Teknis PMM Guru PAUD</>
+                </div>
+                <div class="gallery-item">                    
+                    <img src="assets/img/galeri/galeri5.jpg" alt="">                    
+                    <p>Sabtu, 18 Mei 2024 10:10 WIB</p>
+                    <h3>Mas Kadin Hadiri Khotmul Qur'an dan Imtihan SDIT Ahmad Yani</h3>
                 </div>
                 <div class="gallery-item">
-                    <h2>JUDUL KEGIATAN</h2>
-                    <p>Deskripsi singkat kegiatan</p>
+                    <img src="assets/img/galeri/galeri6.jpg" alt="">
+                    <p>Jumat, 17 Mei 2024 20:37 WIB</p>
+                    <h3>Sosialisasi dan Edukasi Keselamatan Pelaksanaan Study Tour Bagi Sekolah</h3>
                 </div>
                 <div class="gallery-item">
-                    <h2>JUDUL KEGIATAN</h2>
-                    <p>Deskripsi singkat kegiatan</p>
+                    <img src="assets/img/galeri/galeri7.jpg" alt="">                    
+                    <p>Jumat, 17 Mei 2024 08:52 WIB</p>
+                    <h3>Mas Kadin Amanatkan Warga Disdikbud Wajib Tahu dan Paham Aturan PPDB</h3>
                 </div>
                 <div class="gallery-item">
-                    <h2>JUDUL KEGIATAN</h2>
-                    <p>Deskripsi singkat kegiatan</p>
-                </div>
-                <div class="gallery-item">
-                    <h2>JUDUL KEGIATAN</h2>
-                    <p>Deskripsi singkat kegiatan</p>
-                </div>
-                <div class="gallery-item">
-                    <h2>JUDUL KEGIATAN</h2>
-                    <p>Deskripsi singkat kegiatan</p>
-                </div>
+                    <img src="assets/img/galeri/galeri8.jpg" alt="">
+                    <p>Senin, 13 Mei 2024 14:17 WIB</p>
+                    <h3>Pentingnya Platform Merdeka Mengajar Guna Optimalisasi Kinerja Guru Dalam Mengajar</h3>
             </div>
         </main>
         <div class="pagination">
@@ -126,6 +58,4 @@
             <button>&raquo;</button>
         </div>
     </div>
-</body>
-</html>
 @endsection
