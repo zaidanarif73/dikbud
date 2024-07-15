@@ -34,5 +34,7 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/profil/so.css" rel="stylesheet">
+    <link href="assets/css/profil/vm.css" rel="stylesheet">
     @yield("css")
   </head>
