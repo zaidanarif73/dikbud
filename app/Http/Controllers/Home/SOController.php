@@ -12,6 +12,6 @@ class SOController extends Controller
     }
 
     public function index(){
-        return view($this->view."index");
+        return view($this->view . "index");
     }
 }

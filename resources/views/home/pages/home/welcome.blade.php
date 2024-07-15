@@ -87,7 +87,7 @@
             <div class="service-item d-flex justify-content-center align-items-center">
               <img src="assets/img/icon/pengaduan.png" alt="">
             </div>
-            <h6 class="tservice-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">Layanan Pengaduan</a></h6>
+            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="#" class="stretched-link">Layanan Pengaduan</a></h6>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="00">
@@ -141,7 +141,7 @@
             <p>
             Malang - Jajaran SMP Negeri 12 Malang yang kini dikepalai oleh M. Shodiq., M.Pd selenggarakan Workshop (WS) bertajuk Peningkatan Kompetensi Guru Berbasis Literasi dan Numerasi. Kegiatan yang diselengg...
             </p>
-            <a href="#" class="btn more-btn">Read More</a>
+            <a href="#" class="btn more-btn">Baca Selengkapnya</a>
           </div>
         </div>
       </div>
