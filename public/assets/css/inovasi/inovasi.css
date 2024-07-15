@@ -1,0 +1,138 @@
+.banner {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.banner img {
+    width: 100%;
+    height: auto;
+}
+.container .text {
+    position: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.inov {
+    width: 100%;
+    min-height: 70vh;
+    position: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.inov .inov-bg img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.inov .inov-bg::before {
+    content: "";
+    background: color-mix(in srgb, var(--background-color), transparent 15%);
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    height: 70%;
+}
+
+.inov .container {
+    position: relative;
+    z-index: 3;
+}
+
+.inov h1 {
+    margin: 0;
+    font-size: 47px;
+    font-weight: 700;
+    line-height: 56px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 35px;
+}
+
+.inovasi {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+}
+
+.inovasi-item {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.inovasi-item img {
+    width: 100%;
+    height: auto;
+}
+
+.inovasi-item h2 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.inovasi-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+.pagination {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pagination button {
+    background: #f3f3f3;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.inov-structure {
+    text-align: center;
+    margin-top: 40px;
+}
+.inov-structure img {
+    width: 100%;
+    height: auto;
+}
