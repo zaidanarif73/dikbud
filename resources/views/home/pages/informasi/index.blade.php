@@ -7,7 +7,7 @@
     
     {{-- <script src="assets/js/home/plugin/webfont/webfont.min.js"></script> --}}
 
-    <script>
+    {{-- <script>
         WebFont.load({
             google: { families: ["Public Sans:300,400,500,600,700"] },
             custom: {
@@ -23,8 +23,8 @@
             sessionStorage.fonts = true;
             },
         });
-    </script>
-    <link rel="stylesheet" href="assets/css/home/bootstrap.min.css" />
+    </script> --}}
+
     <link rel="stylesheet" href="assets/css/home/plugins.min.css" />
     <link rel="stylesheet" href="assets/css/home/kaiadmin.min.css" />
 @endsection

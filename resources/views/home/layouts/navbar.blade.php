@@ -1,5 +1,5 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
-  <div class="container-fluid container-xl position-relative d-flex align-items-center">
+  <div class="container container-xl position-relative d-flex align-items-center">
 
     <a href="index.html" class="logo d-flex align-items-center me-auto">
       <img src="{{URL::to('/')}}/assets/img/favicon.png" alt="">
