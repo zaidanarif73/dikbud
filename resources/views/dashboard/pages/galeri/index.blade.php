@@ -3,9 +3,8 @@
 @section('css')
 
 @endsection
-@section('breadcumb')
-    Galeri
-@endsection
+@section('breadcumb','Galeri')
+
 @section("content")
     <div class="row">
         <div class="col-xl-12">
@@ -15,7 +14,7 @@
                         <div class="col-lg-12">
                             <a href="{{ route('dashboard.galeri.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
                             <a href="#" class="btn btn-success btn-filter"><i class="fa fa-filter"></i> Fiter</a>
-                            <a href="" class="btn btn-warning"><i class="fa fa-refresh"></i> Refresh</a>
+                            <a href="{{route('dashboard.galeri.index')}}" class="btn btn-warning"><i class="fa fa-refresh"></i> Refresh</a>
                         </div>
                     </div>
                     <div class="row">
@@ -40,9 +39,9 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex mb-1">
-                                                    <a href="" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
+                                                    <a href="{{route('dashboard.galeri.show',$row->id)}}" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
                                                     <a href="{{ route('dashboard.galeri.edit',$row->id) }}" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i> Edit</a>
-                                                    <a href="#" class="btn btn-danger btn-sm mr-1 btn-delete" data-id=""><i class="fa fa-trash"></i> Hapus</a>
+                                                    <a href="#" class="btn btn-danger btn-sm mr-1 btn-delete" data-id="{{$row->id}}"><i class="fa fa-trash"></i> Hapus</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -62,31 +61,34 @@
         </div>
     </div>
 
-@include("dashboard.pages.galeri.modal.index")
-<form id="frmDelete" method="POST">
-    @csrf
-    @method('DELETE')
-    <input type="hidden" name="id"/>
-</form>
-@endsection
+    @include("dashboard.pages.galeri.modal.index")
 
-@section("script")
-<script>
-    $(function(){
-        $(document).on("click",".btn-filter",function(e){
-            e.preventDefault();
-
-            $("#modalFilter").modal("show");
-        });
-
-        $(document).on("click",".btn-delete",function(){
-            let id = $(this).data("id");
-            if(confirm("Apakah anda yakin ingin menghapus data ini ?")){
-                $("#frmDelete").attr("action", "".replace("_id_", id));
-                $("#frmDelete").find('input[name="id"]').val(id);
-                $("#frmDelete").submit();
-            }
+    <form id="frmDelete" method="POST">
+        @csrf
+        @method('DELETE')
+        <input type="hidden" name="id"/>
+    </form>
+    
+    @endsection
+    
+    @section("script")
+    <script>
+        $(function(){
+            $(document).on("click",".btn-filter",function(e){
+                e.preventDefault();
+    
+                $("#modalFilter").modal("show");
+            });
+    
+            $(document).on("click",".btn-delete",function(){
+                let id = $(this).data("id");
+                if(confirm("Apakah anda yakin ingin menghapus data ini ?")){
+                    $("#frmDelete").attr("action", "{{ route('dashboard.galeri.destroy', '_id_') }}".replace("_id_", id));
+                    $("#frmDelete").find('input[name="id"]').val(id);
+                    $("#frmDelete").submit();
+                }
+            })
         })
-    })
-</script>
-@endsection
+    </script>
+    
+    @endsection

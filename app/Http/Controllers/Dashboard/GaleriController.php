@@ -12,9 +12,8 @@ use Illuminate\Pagination\Paginator;
 
 class GaleriController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    protected $galeri;
+    protected $route = 'dashboard.pages.galeri.';
     public function __construct(){
         $this->route = "dashboard.galeri.";
         $this->view = "dashboard.pages.galeri.";
@@ -79,35 +78,111 @@ class GaleriController extends Controller
         } 
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Galeri $galeri)
+    public function show($id)
     {
-        //
+        $result = $this->galeri;
+        $result = $result->where('id',$id);
+        $result = $result->first();
+
+        if(!$result){
+            alert()->error('Gagal',"Data tidak ditemukan");
+            return redirect()->route($this->route."index");
+        }
+
+        $data = [
+            'result' => $result,
+        ];
+
+        return view($this->view."show",$data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Galeri $galeri)
+    
+    public function edit($id)
     {
-        //
+        $result = $this->galeri;
+        $result = $result->where('id',$id);
+        $result = $result->first();
+
+        if(!$result){
+            alert()->error('Gagal',"Data tidak ditemukan");
+            return redirect()->route($this->route."index");
+        }
+
+        $data = [
+            'result' => $result,
+        ];
+
+        return view($this->view."edit",$data);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Galeri $galeri)
+    public function update(UpdateRequest $request, $id)
     {
-        //
+        try {
+            $result = $this->galeri;
+            $result = $result->where('id',$id);
+            $result = $result->first();
+
+            if(!$result){
+                throw new Error("Data tidak ditemukan");
+            }
+
+            $title = $request->title;
+            $description = $request->description;
+            $image = $request->file("image");
+
+            if($image){
+                $upload = UploadHelper::upload_file($image,'galeri',['jpeg','jpg','png','gif']);
+
+                if($upload["IsError"] == TRUE){
+                    throw new Error($upload["Message"]);
+                }
+
+                $image = $upload["Path"];
+            }
+            else{
+                $image = $result->image;
+            }
+
+            $result->update([
+                'title' => $title,
+                'description'=> $description,
+                'image' => $image,
+            ]);
+
+            alert()->html('Berhasil','Data berhasil diubah','success'); 
+            return redirect()->route($this->route."index");
+
+        } catch (\Throwable $e) {
+            Log::emergency($e->getMessage());
+
+            alert()->error('Gagal',$e->getMessage());
+            return redirect()->route($this->route."edit",$id)->withInput();
+        }
     }
 
     /**
      * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function destroy(Galeri $galeri)
+    public function destroy($id)
     {
-        //
+        try {
+            $result = $this->galeri;
+            $result = $result->where('id',$id);
+            $result = $result->first();
+
+            $result->delete();
+
+            alert()->html('Berhasil','Data berhasil dihapus','success'); 
+            return redirect()->route($this->route."index");
+
+        } catch (\Throwable $e) {
+            Log::emergency($e->getMessage());
+
+            alert()->error('Gagal',$e->getMessage());
+            return redirect()->route($this->route."index");
+        }
     }
 }

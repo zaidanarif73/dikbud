@@ -24,7 +24,8 @@
                                 <label class="col-md-2 col-form-label">Deskripsi <span class="text-danger">*</span></label>
                                 
                                 <div class="col-md-10">
-                                    <textarea class="form-control" aria-label="With textarea" name="description"></textarea>
+                                    <input type="text" class="form-control" name="description" placeholder="Deskripsi"  value="" required>
+                                    {{-- <textarea class="form-control" aria-label="With textarea" name="description"></textarea> --}}
                                 </div>
                             </div>
                             <div class="form-group row">

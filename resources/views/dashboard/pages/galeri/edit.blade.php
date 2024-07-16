@@ -25,13 +25,14 @@
                                 <label class="col-md-2 col-form-label">Deskripsi <span class="text-danger">*</span></label>
                                 
                                 <div class="col-md-10">
-                                    <textarea class="form-control" aria-label="With textarea" name="description"></textarea>
+                                    <input type="text" class="form-control" name="description" placeholder="Deskripsi"  value="{{old('description',$result->description)}}" required>
+                                    {{-- <textarea class="form-control" aria-label="With textarea" name="description" value="{{old('description',$result->description)}}"></textarea> --}}
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-2 col-form-label">Gambar <span class="text-danger">*</span></label>
                                 <div class="col-md-10" id="file_path">
-                                    <input class="form-control" id="file_input" type="file" name="image" required>
+                                    <input class="form-control" id="file_input" type="file" name="image">
                                 </div>
                             </div>
                         </div>
