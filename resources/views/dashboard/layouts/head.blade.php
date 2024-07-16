@@ -41,6 +41,7 @@
   <!--end css yudo-->
  
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.css">  
 
   @yield("css")
 </head>

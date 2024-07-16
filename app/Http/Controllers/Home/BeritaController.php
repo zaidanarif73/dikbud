@@ -12,25 +12,9 @@ class BeritaController extends Controller
         $this->view = "home.pages.berita.";
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        $search = $request->search;
-
-        $table = $this->berita;
-
-        if(!empty($search)){
-            $table = $table->where(function($query2) use($search){
-                $query2->where("title","like","%".$search."%");
-            });
-        }
-        $table = $table->orderBy("created_at","DESC");
-        $table = $table->paginate(10)->withQueryString();
-
-        $data = [
-            'table' => $table,
-        ];
-
-        return view($this->view."index",$data);
+        return view($this->view . "index");
     }
-
+    
 }

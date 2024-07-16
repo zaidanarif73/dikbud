@@ -1,7 +1,6 @@
 @extends('dashboard.layouts.master')
-@section("title","Dashboard")
+@section("title","Banner")
 @section('breadcumb')
-   Berita
 @endsection
 @section("content")
 <div class="container">
@@ -9,7 +8,7 @@
         <div class="col-xl-12">
             <div class="card m-b-30">
                 <div class="card-body">
-                    <form action="{{route('dashboard.berita.update',$result->id)}}" method="post" autocomplete="off" onsubmit="confirm('Apakah anda yakin ingin mengirim data ini?')" enctype="multipart/form-data">
+                    <form action="{{route('dashboard.banner.update',$result->id)}}" method="post" autocomplete="off" onsubmit="confirm('Apakah anda yakin ingin mengirim data ini?')" enctype="multipart/form-data">
                         @csrf
                         @method("PUT")
                         <div class="row mb-3">
@@ -24,7 +23,7 @@
                                     <label class="col-md-2 col-form-label" for="description">Deskripsi <span class="text-danger">*</span></label>
                                     <div class="col-md-10"   >       
                                         
-                                        <input id="description" type="hidden" name="description">
+                                        <input id="description" type="hidden" name="description" >
                                         <trix-editor input="description"></trix-editor>
                                     </div>
                                 </div>
@@ -39,7 +38,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <a href="{{route('dashboard.berita.index')}}" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Kembali</a>
+                                <a href="{{route('dashboard.banner.index')}}" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Kembali</a>
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
                             </div>
                         </div>

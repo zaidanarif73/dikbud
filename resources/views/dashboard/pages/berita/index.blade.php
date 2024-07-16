@@ -23,6 +23,7 @@
                                 <thead>
                                     <th>No</th>
                                     <th>Judul</th>
+                                    <th>Deskripsi</th>
                                     <th>Image</th>
                                     <th>Dibuat Pada</th>
                                     <th>Aksi</th>
@@ -32,13 +33,14 @@
                                     <tr>
                                         <td>{{$table->firstItem() + $index}}</td>
                                         <td>{{$row->title}}</td>
+                                        <td>{{$row->description}}</td>
                                         <td>
                                             <img src="{{ asset('storage/'.$row->image) }}" alt="" style="width: 80px;height:80px;">
                                         </td>
                                         <td>{{date('d-m-Y H:i:s',strtotime($row->created_at))}}</td>
                                         <td>
                                             <div class="d-flex mb-1">
-                                                {{-- <a href="{{route('dashboard.berita.show',$row->id)}}" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a> --}}
+                                                <a href="{{route('dashboard.berita.show',$row->id)}}" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
                                                 <a href="{{route('dashboard.berita.edit',$row->id)}}" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i> Edit</a>
                                                 <a href="#" class="btn btn-danger btn-sm mr-1 btn-delete" data-id="{{$row->id}}"><i class="fa fa-trash"></i> Hapus</a>
                                             </div>

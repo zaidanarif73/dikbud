@@ -13,6 +13,9 @@ class StoreRequest extends FormRequest
             'title' => [
                 'required',
             ],
+            'description'=> [
+                'required',
+                ],
             'image' => [
                 'required',
                 'image',
@@ -44,7 +47,7 @@ class StoreRequest extends FormRequest
         if (! $this->wantsJson()) {
             $errors = implode('<br>', $validator->errors()->all());
             alert()->html('Gagal',$errors,'error');
-            $this->redirect = route('dashboard.file-public.create');
+            $this->redirect = route('dashboard.berita.create');
         }
 
         parent::failedValidation($validator);

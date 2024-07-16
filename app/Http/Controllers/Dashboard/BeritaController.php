@@ -61,28 +61,44 @@ class BeritaController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        // $title = $request->input('title');
-        // $image = $request->file('image');
-        
+        // $request->validate([
+        //     'title' => 'required|string|max:255',
+        //     'description' => 'required|string',
+        //     'image' => 'required|image|mimes:jpeg,jpg,png,gif|max:2048',
+        // ]);
+
         // try {
-        //     $create = $this->berita->create([
-        //         'title' => $title,
-        //         'image' => $image,
-        //     ]);
+        //     $title = $request->input('title');
+        //     $description = $request->input('description');
+        //     $image = $request->file('image');
 
-        //     alert()->html('Berhasil', 'Data berhasil ditambahkan', 'success'); 
-        //     return redirect()->route($this->route . 'index');
+        //     if ($image) {
+        //         $upload = UploadHelper::upload_file($image, 'image', ['jpeg', 'jpg', 'png', 'gif']);
 
+        //         if ($upload["IsError"] == true) {
+        //             throw new \Exception($upload["Message"]);
+        //         }
+
+        //         $imagePath = $upload["Path"];
+        //         Berita::create([
+        //             'title' => $title,
+        //             'description' => $description,
+        //             'image' => $imagePath,
+        //         ]);
+        //     }
+
+        //     return redirect()->route('beritas.index')->with('success', 'Berita created successfully.');
         // } catch (\Throwable $e) {
         //     Log::emergency($e->getMessage());
 
-        //     alert()->error('Gagal', $e->getMessage());
-
-        //     return redirect()->route($this->route . 'create')->withInput();
+        //     return redirect()->route('beritas.create')->with('error', $e->getMessage())->withInput();
         // }
+       
         try {
             $title = $request->title;
+            $description = $request->description;
             $image = $request->file("image");
+            
 
             if($image){
                 $upload = UploadHelper::upload_file($image,'image',['jpeg','jpg','png','gif']);
@@ -94,13 +110,11 @@ class BeritaController extends Controller
                 $image = $upload["Path"];
                 $create = $this->berita->create([
                     'title' => $title,
+                    'description'=> $description,
                     'image' => $image,
                 ]);
-
-           
+         
             }
-
-
             alert()->html('Berhasil','Data berhasil ditambahkan','success'); 
             return redirect()->route($this->route."index");
 
@@ -113,36 +127,25 @@ class BeritaController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function show($id)
-    // {
-    //     $result = $this->berita;
-    //     $result = $result->where('id',$id);
-    //     $result = $result->first();
+    public function show($id)
+    {
+        $result = $this->berita;
+        $result = $result->where('id',$id);
+        $result = $result->first();
 
-    //     if(!$result){
-    //         alert()->error('Gagal',"Data tidak ditemukan");
-    //         return redirect()->route($this->route."index");
-    //     }
+        if(!$result){
+            alert()->error('Gagal',"Data tidak ditemukan");
+            return redirect()->route($this->route."index");
+        }
 
-    //     $data = [
-    //         'result' => $result,
-    //     ];
+        $data = [
+            'result' => $result,
+        ];
 
-    //     return view($this->view."show",$data);
-    // }
+        return view($this->view."show",$data);
+    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($id)
     {
         $result = $this->berita;
@@ -161,13 +164,6 @@ class BeritaController extends Controller
         return view($this->view."edit",$data);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(UpdateRequest $request, $id)
     {
         try {
@@ -180,6 +176,7 @@ class BeritaController extends Controller
             }
 
             $title = $request->title;
+            $description = $request->description;
             $image = $request->file("image");
 
             if($image){
@@ -197,6 +194,7 @@ class BeritaController extends Controller
 
             $result->update([
                 'title' => $title,
+                'description'=> $description,
                 'image' => $image,
             ]);
 

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Dashboard\InformasiController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,15 +39,21 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
 		Route::get('/', 'BeritaController@index')->name("index");
 		Route::get('/create', 'BeritaController@create')->name("create");
         Route::post('/', 'BeritaController@store')->name("store");
-		// Route::get('/{id}', 'BeritaController@show')->name("show");
+		Route::get('/{id}', 'BeritaController@show')->name("show");
 		Route::get('/{id}/edit', 'BeritaController@edit')->name("edit");
 		Route::put('/{id}', 'BeritaController@update')->name("update");
 		Route::delete('/{id}', 'BeritaController@destroy')->name("destroy");
 	});
 
-    Route::group(["as"=>"banner.", "prefix"=>"banner"], function(){
-        Route::get("/", "BannerController@index")->name("index");
-    });
+    Route::group(["as" => "banner.","prefix" => "banner"], function () {
+		Route::get('/', 'BannerController@index')->name("index");
+		Route::get('/create', 'BannerController@create')->name("create");
+        Route::post('/', 'BannerController@store')->name("store");
+		Route::get('/{id}', 'BannerController@show')->name("show");
+		Route::get('/{id}/edit', 'BannerController@edit')->name("edit");
+		Route::put('/{id}', 'BannerController@update')->name("update");
+		Route::delete('/{id}', 'BannerController@destroy')->name("destroy");
+	});
 
     Route::group(["as"=>"page.", "prefix"=>"page"], function(){
         Route::get("/", "PageController@index")->name("index");

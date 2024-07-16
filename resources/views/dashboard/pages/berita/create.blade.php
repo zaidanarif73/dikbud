@@ -22,14 +22,16 @@
                                     </div>
                                 </div>
                                 <div class="form-group row mb-5" >
-                                    <label class="col-md-2 col-form-label">Deskripsi <span class="text-danger">*</span></label>
-                                    <div class="col-md-10" >
-                                        <div id="editor"></div>
-                                        <div id="toolbar">
-                                            <!-- Toolbar buttons will be automatically generated based on toolbarOptions -->
-                                        </div>
-                                        <!-- Create editor container -->
-                                        
+                                    <label class="col-md-2 col-form-label" for="description">Deskripsi <span class="text-danger">*</span></label>
+                                    <div class="col-md-10"   >       
+
+
+                                        {{-- <div id="toolbar">
+                                            <input type="text" id="description"  name="description" >
+                                        </div> --}}
+
+                                        <input id="description" type="hidden" name="description" required>
+                                        <trix-editor input="description"></trix-editor>
                                     </div>
                                 </div>
                                 <div class="form-group row mt-5">
@@ -53,19 +55,19 @@
     </div>
 </div>
 @endsection
-@section ('script')
+{{-- @section ('script')
 <script>
     const toolbarOptions = [ 
-    [{ 'font': [] }],
-    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-    ['bold', 'italic'], 
-    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-    [{ 'indent': '-1'}, { 'indent': '+1' }],
-    ['link', 'image'],
-    ['blockquote', 'code-block']
+        [{ 'font': [] }],
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        ['bold', 'italic'], 
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+        [{ 'indent': '-1'}, { 'indent': '+1' }],
+        ['link', 'image'],
+        ['blockquote', 'code-block']
     ];
 
-    const quill = new Quill('#editor', {
+    const quill = new Quill('#description-editor', {
         modules: {
             toolbar: {
                 container: toolbarOptions
@@ -73,5 +75,11 @@
         },
         theme: 'snow' // You can also choose 'bubble'
     });
+    // Handle form submission
+    var form = document.querySelector('form');
+    form.onsubmit = function() {
+        var description = document.querySelector('input[name=description]');
+        description.value = quill.root.innerHTML;
+    };
 </script>
-@endsection
+@endsection --}}
