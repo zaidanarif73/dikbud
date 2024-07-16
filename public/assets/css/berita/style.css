@@ -62,6 +62,15 @@ nav button {
     float: right;
     width: 40%;
 }
+
+.other-news .news-item a button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
 .other-news .news-item button {
     background: #007bff;
     color: white;

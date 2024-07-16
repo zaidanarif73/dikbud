@@ -4,14 +4,17 @@
 
     @endsection
 @section("content")
-    {{-- <div class="container">
+    <div class="container">
         <header>
             <h1>DOKUMENTASI KEGIATAN</h1>
         </header>
         <main>
             <div class="gallery">
+                
                 <div class="gallery-item">
-                    <img src="assets/img/galeri/galeri1.jpg" alt="">
+                    <a class="" data-bs-toggle="modal" href="#exampleModalToggle" alt="">
+                        <img src="assets/img/galeri/galeri1.jpg" alt="">
+                    </a>
                     <p>Senin, 4 Maret 2024 08:31 WIB</p>
                     <h3>Sosialisasi Kepangkatan dengan Kelompok Kerja Kepala Sekolah(K3S) SD se Kota Malang</h3>
                 </div>
@@ -58,8 +61,8 @@
             <button>3</button>
             <button>&raquo;</button>
         </div>
-    </div> --}}
-    <div class="container">
+    </div>
+    <!-- <div class="container">
         <header>
             <h1>DOKUMENTASI KEGIATAN</h1>
         </header>
@@ -164,7 +167,34 @@
             </div>
             
         </div>
+    </div> -->
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel">Detail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1>Sosialisasi Kepangkatan dengan Kelompok Kerja Kepala Sekolah(K3S) SD se Kota Malang</h1>
+                    <img src="assets/img/galeri/galeri1.jpg" alt="">
+                    <br>
+                    <p>Senin, 4 Maret 2024 08:31 WIB</p>
+                    <h6>Bidang Ketenagaan Dinas Pendidikan dan Kebudayaan Kota Malang mengadakan Sosialisasi Kepangkatan dengan Kelompok Kerja Kepaka Sekolah(K3S) SD se Kota Malang. Sebelumnya, Bidang Ketenagaan sudah mengadakaan sosialisasi kepangkatan dengan guru melalui aplikasi Zoom. Dikarenakan pelaksanaan sosialisasi tersebut kurang maksimal dan efektif, maka diadakan sosialisasi secara tatap muka dengan K3S SD Se-Kota Malang ini. Kegiatan ini dilaksanakan pada tanggal 28 Februari 2024 yang bertempat di Ruang VIP Dinas Pendidikan dan Kebudayaan Kota Malang. Tujuan dari kegiatan tersebut adalah mengedukasi/memberikan pengarahan kepada K3S SD se Kota Malang terkait kepangkatan.</h6>
+                    <br>
+                    <img src="assets/img/galeri/galeri9.png" alt="">
+                    <br>
+                    <br>
+                    <h6>Acara ini dihadiri oleh 30 Bapak/Ibu K3S SD se-Kota Malang. Sosialisasi dimulai pukul 13.00 yang dibuka oleh Bapak Sugeng dan sambutan dari Bapak Tujuwarno selaku Kepala Bidang Ketenagaan. Dalam sambutan tersebut Pak Tujuwarno mengatakan â€œKepala sekolah adalah ujung tombak kenaikan pangkat anak buahnya(guru)â€. Maksud dari perkataan tersebut adalah dinaikkan/tidaknya pangkat seorang guru tergantung kepada kepala sekolah di sekolah tersebut.</h6>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Open second modal</button>
+                </div> -->
+            </div>
+        </div>
     </div>
+    </div>
+
     
 @endsection
 

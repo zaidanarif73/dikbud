@@ -18,7 +18,10 @@
                     <p>Jumat, 21 Juni 2024 09:25 WIB</p>
                     <h2>Jadi Narsum Worhshop, Mas Kadin Ucapkan Terima Kasih pada PTK SMPN 12 Malang</h2>
                     <p>Malang - Jajaran SMP Negeri 12 Malang yang kini dikepalai oleh M. Shodiq., M.Pd selenggarakan Worksh...</p>
-                    <button>Baca Selengkapnya</button>
+                    <!-- <button>Baca Selengkapnya</button> -->
+                    <a href="https://dikbud.malangkota.go.id/blog/jadi-narsum-worhshop-mas-kadin-ucapkan-terima-kasih-pada-ptk-smpn-12-malang-W8E5q1" class="link">
+                        <button class="button">Baca Selengkapnya</button>
+                    </a>
                 </div>
                 <div class="news-item">
                     <img src="assets/img/berita/Berita2.jpg" alt="">
