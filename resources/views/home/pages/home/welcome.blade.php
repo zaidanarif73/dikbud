@@ -124,7 +124,7 @@
       <h2>Berita</h2>
     </div>
     <div class="container">
-      <h3>Berita Utama</h3>
+      <h3 class="d-flex justify-content-start">Berita Utama</h3>
 
       <div class="row gy-4 justify-content-between features-item">
 
