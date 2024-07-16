@@ -5,13 +5,13 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class SOController extends Controller
-{   
+class OmbudsmanController extends Controller
+{
     public function __construct(){
-    $this->view = "home.pages.SO.";
+        $this->view = "home.pages.ombudsman.";
     }
 
     public function index(){
-        return view($this->view . "index");
+        return view($this->view."index"); 
     }
 }

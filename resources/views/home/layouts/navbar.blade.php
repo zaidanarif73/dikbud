@@ -8,9 +8,9 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="{{ route('home.home.index') }}" class="active">Beranda</a></li>
+        <li><a href="{{ route('home.home.index') }}">Beranda</a></li>
         <li><a href="{{ route('home.home.index') }}#featured-services">Layanan</a></li>
-        <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+        <li class="dropdown"><a href=""><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="{{ route('home.SO.index') }}">Struktur Organisasi</a></li>
             <li><a href="{{ route('home.VM.index') }}">Visi & Misi</a></li>
