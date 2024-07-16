@@ -49,6 +49,11 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
 
     Route::group(["as"=>"galeri.", "prefix"=>"galeri"], function(){
         Route::get("/", "GaleriController@index")->name("index");
+        Route::get("/create", "GaleriController@create")->name("create");
+        Route::post("/","GaleriController@store")->name("store");
+        Route::get('/{id}/edit', 'GaleriController@edit')->name("edit");
+        Route::put('/{id}', 'GaleriController@update')->name("update");
+        Route::delete('/{id}', 'GaleriController@destroy')->name("destroy");
     });
 
     Route::group(["as"=>"kalender.", "prefix"=>"kalender"], function(){
