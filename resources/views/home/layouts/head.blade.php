@@ -36,5 +36,12 @@
     <link href="{{URL::to('/')}}/assets/css/main.css" rel="stylesheet">
     <link href="{{URL::to('/')}}/assets/css/profil/so.css" rel="stylesheet">
     <link href="{{URL::to('/')}}/assets/css/profil/vm.css" rel="stylesheet">
+
+    {{-- KAIADMIN CSS --}}
+    <link rel="stylesheet" href="{{URL::to('/')}}/assets/css/home/plugins.min.css" />
+    <link rel="stylesheet" href="{{URL::to('/')}}/assets/css/home/kaiadmin.min.css" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="{{URL::to('/')}}/assets/css/home/demo.css" />
+
     @yield("css")
   </head>
