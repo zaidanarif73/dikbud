@@ -111,6 +111,7 @@ Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function
 
     Route::group(["as"=>"inovasi.", "prefix"=>"inovasi"], function(){
         Route::get("/", "InovasiController@index")->name("index");
+        Route::get("/show", "ShowController@index")->name("show");
     });
 
     Route::group(["as"=>"galeri.", "prefix"=>"galeri"], function(){
@@ -182,3 +183,4 @@ Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function
     });
 
 });
+

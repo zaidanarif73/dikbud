@@ -7,7 +7,7 @@
         @include('home.layouts.navbar')
         <div class="content-wrapper">
             <section class="content">
-                <div class="container-fluid" style="margin-top :-40px">
+                <div class="" style="margin-top :-40px">
                     <main class="main">
                         @yield("content")
                     </main>
