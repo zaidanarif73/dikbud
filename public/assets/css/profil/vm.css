@@ -17,7 +17,7 @@
     font-weight: bold;
 }
 
-.so {
+.vm {
     width: 100%;
     min-height: 70vh;
     position: center;
@@ -26,7 +26,7 @@
     overflow: hidden;
 }
 
-.so .so-bg img {
+.vm .vm-bg img {
     position: absolute;
     inset: 0;
     display: block;
@@ -36,21 +36,12 @@
     z-index: 1;
 }
 
-.so .so-bg::before {
-    content: "";
-    background: color-mix(in srgb, var(--background-color), transparent 15%);
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    height: 70%;
-}
-
-.so .container {
+.vm .container {
     position: relative;
     z-index: 3;
 }
 
-.so h1 {
+.vm h1 {
     margin: 0;
     font-size: 47px;
     font-weight: 700;
@@ -59,9 +50,9 @@
 
 .vision-structure {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 .vision-structure img {
-    width: 100%;
+    width: 80%;
     height: auto;
 }

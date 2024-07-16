@@ -36,15 +36,6 @@
     z-index: 1;
 }
 
-.so .so-bg::before {
-    content: "";
-    background: color-mix(in srgb, var(--background-color), transparent 15%);
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    height: 70%;
-}
-
 .so .container {
     position: relative;
     z-index: 3;

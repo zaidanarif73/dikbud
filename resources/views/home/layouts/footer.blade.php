@@ -21,8 +21,8 @@
       <div class="col-lg-2 col-md-3 footer-links">
         <h4>Alamat Kantor</h4>
         <p>Jl. Veteran No.19, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145</p>
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d688.1506512226823!2d112.61389434101307!3d-7.956754435114845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78827beffc2665%3A0x9dd38763e9a56b77!2sDinas%20Pendidikan%20dan%20Kebudayaan%20Kota%20Malang!5e0!3m2!1sen!2sid!4v1720151847698!5m2!1sen!2sid" frameborder="0" style="border:0; width: 150%; height: 100px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="col d-flex justify-content-center " data-aos="fade-up" data-aos-delay="600" >
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d688.1506512226823!2d112.61389434101307!3d-7.956754435114845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78827beffc2665%3A0x9dd38763e9a56b77!2sDinas%20Pendidikan%20dan%20Kebudayaan%20Kota%20Malang!5e0!3m2!1sen!2sid!4v1720151847698!5m2!1sen!2sid" frameborder="0" style="border:0; width: 100%; height: 90px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         {{-- <ul>
           <li><a href="#">Home</a></li>
@@ -34,7 +34,6 @@
       </div>
 
       <div class="col-lg-2 col-md-3 footer-links">
-        <h4>Our Services</h4>
         <h4>Pengunjung</h4>
         <p> jumlah pengunjung website</p>
       </div>
@@ -44,7 +43,7 @@
         <p class="mt-3"><strong>Phone:</strong> <span>(0341)-551333</span></p>
           <p><strong>Email:</strong> <span>dikbud@malangkota.go.id</span></p>
 
-        <div class="social-links d-flex mt-4">
+        <div class="social-links d-flex justify-content-center  mt-4">
           <a href="https://www.facebook.com/dikbudmalangkota/?locale=ms_MY"><i class="bi bi-facebook"></i></a>
           <a href="https://www.instagram.com/dikbudmalangkota?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="bi bi-instagram"></i></a>
         </div>
