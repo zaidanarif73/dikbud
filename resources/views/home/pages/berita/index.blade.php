@@ -18,7 +18,10 @@
                     <p>Jumat, 21 Juni 2024 09:25 WIB</p>
                     <h2>Jadi Narsum Worhshop, Mas Kadin Ucapkan Terima Kasih pada PTK SMPN 12 Malang</h2>
                     <p>Malang - Jajaran SMP Negeri 12 Malang yang kini dikepalai oleh M. Shodiq., M.Pd selenggarakan Worksh...</p>
-                    <button>Baca Selengkapnya</button>
+                    <!-- <button>Baca Selengkapnya</button> -->
+                    <a href="https://dikbud.malangkota.go.id/blog/jadi-narsum-worhshop-mas-kadin-ucapkan-terima-kasih-pada-ptk-smpn-12-malang-W8E5q1" class="link">
+                        <button class="button">Baca Selengkapnya</button>
+                    </a>
                 </div>
                 <div class="news-item">
                     <img src="assets/img/berita/Berita2.jpg" alt="">
@@ -32,6 +35,13 @@
                     <p>Kamis, 20 Juni 2024 08:06 WIB</p>
                     <h2>Ombudsman Republik Indonesia</h2>
                     <p>Ombudsman adalah lembaga negara yang mempunyai kewenangan mengawasi penyelenggaraan pelayanan publik...</p>
+                    <button>Baca Selengkapnya</button>
+                </div>
+                    <div class="news-item">
+                    <img alt src="assets/img/berita/Berita8.jpg">
+                    <p>Kamis, 16 Mei 2024 09:56 WIB</p>
+                    <h2>Rapat Persiapan APEKSI</h2>
+                    <p>MALANG, (14/05/2024) Pukul 13.00 WIB pada rapat persiapan apeksi guru-guru berkumpul di Ruang Aula D...</p>
                     <button>Baca Selengkapnya</button>
                 </div>
             </section>

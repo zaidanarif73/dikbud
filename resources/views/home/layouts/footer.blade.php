@@ -4,7 +4,7 @@
     <div class="row gy-4">
       <div class="col-lg-4 col-md-6 footer-about">
         <a href="index.html" class="logo d-flex align-items-center">
-          <img src="assets/img/favicon.png" alt="">
+          <img src="{{URL::to('/')}}/assets/img/favicon.png" alt="">
           {{-- <span class="sitename">QuickStart</span> --}}
         </a>
         <div class="footer-contact pt-3">

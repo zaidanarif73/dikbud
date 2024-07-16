@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.gallery-item {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+.modal-content h5 {
+    width: 1000px !important;
+}
+.modal-body img {
+    /* width: 300px !important; */
+    max-width: 100%;
+    height: auto;
+}
+
+.modal-header h5 {
+    text-align: center;
+}
+
+.modal-body h1 {
+    font-family: arial;
+}
+.modal-body p {
+    color: #666;
+}
+.modal-body h6 {
+    color: #000000;
+    text-align: justify;
+}
+
+.gallery-item h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.gallery-item p {
+    font-size: 10px;
+    color: #666;
+    text-align: left;
+    position: relative;
+}
+
+.pagination {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.pagination button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* css add template card
+/* .lead{
+    color:#aaa;
+}
+.wrapper{margin:10vh}
+.card{
+    border: none;
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    overflow:hidden;
+    border-radius:20px;
+    width: auto;
+    min-height:400px;
+    box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+    @media (max-width: 768px) {
+        min-height:350px;
+        .card-title{font-weight:800; font-size: medium;}
+        small{font-size: 10px;}
+    }
+    
+    @media (max-width: 420px) {
+        .card-title{font-weight:800; font-size: small;}
+        small{font-size: 10px;}
+        min-height:200px;
+    }
+    &.card-has-bg{
+        transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position: center center;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: inherit;
+        &:hover {
+            transform: scale(0.98);
+            box-shadow: 0 0 5px -2px rgba(0,0,0,0.3);
+            background-size:130%;
+            transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+            .card-img-overlay {
+                transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+                background: rgb(176,255,255);
+                background: linear-gradient(180deg, rgba(176,255,255,0.7344187675070029) 100%, rgba(18,204,255,1) 100%, rgba(70,182,255,1) 100%);
+            }
+        }
+    }
+}
+.card-title{font-weight:800}
+.card-meta{color:rgba(0,0,0,0.3);
+text-transform:uppercase;
+font-weight:500;
+letter-spacing:2px;}
+.card-body{ 
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    &:hover {
+        .card-body{
+            margin-top:30px;
+            transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+            background: rgb(176,255,255);
+            background: linear-gradient(0deg, rgba(176,255,255,0.30024509803921573) 12%, rgba(18,204,255,1) 100%, rgba(70,182,255,1) 100%);
+        }
+        cursor: pointer;
+        transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .card-img-overlay {
+        transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+        background: rgb(176,255,255);
+background: linear-gradient(0deg, rgba(176,255,255,0.30024509803921573) 12%, rgba(18,204,255,1) 100%, rgba(70,182,255,1) 100%);
+        background: transparent;
+    }
+}
+@media (max-width: 767px){
+    
+}  */
