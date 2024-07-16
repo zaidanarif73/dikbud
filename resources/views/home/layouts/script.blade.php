@@ -17,11 +17,5 @@
 <!-- Main JS File -->
 <script src="{{URL::to('/')}}/assets/js/main.js"></script>
 
-{{-- login script --}}
-<script src="assets/js/login/jquery-3.3.1.min.js"></script>
-<script src="assets/js/login/popper.min.js"></script>
-<script src="assets/js/login/bootstrap.min.js"></script>
-<script src="assets/js/login/main.js"></script>
-
 {{-- datatable script --}}
 @yield("script")
