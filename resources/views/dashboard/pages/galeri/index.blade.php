@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <div class="row mb-3">
                         <div class="col-lg-12">
-                            <a href="" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+                            <a href="{{ route('dashboard.galeri.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
                             <a href="#" class="btn btn-success btn-filter"><i class="fa fa-filter"></i> Fiter</a>
                             <a href="" class="btn btn-warning"><i class="fa fa-refresh"></i> Refresh</a>
                         </div>
@@ -30,29 +30,31 @@
                                         <th style="width:20%">Aksi</th>
                                     </thead>
                                     <tbody>
-                                        {{-- @forelse ($table as $index => $row) --}}
+                                        @forelse ($table as $index => $row)
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td>{{ $table->firstItem() + $index }}</td>
+                                            <td>{{ $row->title }}</td>
+                                            <td>{{ $row->description }}</td>
+                                            <td class="d-flex justify-content-center">
+                                                <img  src="{{ asset('storage/'.$row->image) }}" alt="" style="width: 100px;height:1auto;">
+                                            </td>
                                             <td>
                                                 <div class="d-flex mb-1">
                                                     <a href="" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
-                                                    <a href="" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i> Edit</a>
+                                                    <a href="{{ route('dashboard.galeri.edit',$row->id) }}" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i> Edit</a>
                                                     <a href="#" class="btn btn-danger btn-sm mr-1 btn-delete" data-id=""><i class="fa fa-trash"></i> Hapus</a>
                                                 </div>
                                             </td>
                                         </tr>
-                                        {{-- @empty --}}
+                                        @empty
                                         <tr>
                                             <td colspan="10" class="text-center">Data tidak ditemukan</td>
                                         </tr>
-                                        {{-- @endforelse --}}
+                                        @endforelse
                                     </tbody>
                                 </table>
                             </div>
-                            {{-- {!!$table->links()!!} --}}
+                            {!!$table->links()!!}
                         </div>
                     </div>
                 </div>

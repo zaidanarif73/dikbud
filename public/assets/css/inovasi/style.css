@@ -1,0 +1,93 @@
+.inov {
+    width: 100%;
+    min-height: 70vh;
+    position: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.inov-bg img{
+    inset: left;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.gallery-item {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+.gallery-item h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.gallery-item p {
+    font-size: 10px;
+    color: #666;
+    text-align: left;
+    position: relative;
+}
+
+.pagination {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pagination button {
+    background: #dedede;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.inovasi-structure {
+    text-align: center;
+    margin-top: 40px;
+}
+.inovasi-structure img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
