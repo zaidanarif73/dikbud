@@ -16,4 +16,5 @@ class BeritaController extends Controller
     {
         return view($this->view . "index");
     }
+    
 }
