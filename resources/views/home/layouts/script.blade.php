@@ -17,5 +17,22 @@
 <!-- Main JS File -->
 <script src="{{URL::to('/')}}/assets/js/main.js"></script>
 
+{{-- KAIADMIN JS --}}
+    <script src="{{URL::to('/')}}/assets/js/home/core/jquery-3.7.1.min.js"></script>
+    <script src="{{URL::to('/')}}/assets/js/home/core/popper.min.js"></script>
+    <script src="{{URL::to('/')}}/assets/js/home/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="{{URL::to('/')}}/assets/js/home/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <!-- Datatables -->
+    <script src="{{URL::to('/')}}/assets/js/home/plugin/datatables/datatables.min.js"></script>
+    <!-- Kaiadmin JS -->
+    <script src="{{URL::to('/')}}/assets/js/home/kaiadmin.min.js"></script>
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="{{URL::to('/')}}/assets/js/home/setting-demo.js"></script>
+    <script src="{{URL::to('/')}}/assets/js/home/demo.js"></script>
+    
+{{-- END KAIADMIN JS --}}
+
 {{-- datatable script --}}
 @yield("script")

@@ -1,32 +1,7 @@
 @extends('home.layouts.master')
 @section("css")
-    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
-    <link rel="stylesheet" href="assets/css/informasi/style.css" />
-    --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
     
-    {{-- <script src="assets/js/home/plugin/webfont/webfont.min.js"></script> --}}
-
-    {{-- <script>
-        WebFont.load({
-            google: { families: ["Public Sans:300,400,500,600,700"] },
-            custom: {
-            families: [
-                "Font Awesome 5 Solid",
-                "Font Awesome 5 Regular",
-                "Font Awesome 5 Brands",
-                "simple-line-icons",
-            ],
-            urls: ["../assets/css/home/fonts.min.css"],
-            },
-            active: function () {
-            sessionStorage.fonts = true;
-            },
-        });
-    </script> --}}
-
-    <link rel="stylesheet" href="assets/css/home/plugins.min.css" />
-    <link rel="stylesheet" href="assets/css/home/kaiadmin.min.css" />
 @endsection
 @section("content")
 <div class="container mt-5">
@@ -179,16 +154,7 @@
             });
         });
     </script>
-    <script src="assets/js/home/core/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/home/core/popper.min.js"></script>
-    <script src="assets/js/home/core/bootstrap.min.js"></script>
-
-    <!-- jQuery Scrollbar -->
-    <script src="assets/js/home/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-    <!-- Datatables -->
-    <script src="assets/js/home/plugin/datatables/datatables.min.js"></script>
-    <!-- Kaiadmin JS -->
-    <script src="assets/js/home/kaiadmin.min.js"></script>
+    
     <script>
         $(document).ready(function () {
             $("#basic-datatables").DataTable({

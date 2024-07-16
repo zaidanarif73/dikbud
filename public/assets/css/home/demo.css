@@ -43,7 +43,7 @@
     position: absolute;
     width: 45px;
     height: 45px;
-    background: #5867dd;
+    background: #388da8;
     top: 50%;
     left: -45px;
     transform: translateY(-50%);
@@ -68,7 +68,7 @@
     color: #ffffff;
     border-top-left-radius: 5px;
     border-bottom: 1px solid #ebedf2;
-    background: #5867dd; }
+    background: #388da8; }
   .custom-template .custom-content {
     padding: 20px 15px;
     max-height: calc(100vh - 90px);
