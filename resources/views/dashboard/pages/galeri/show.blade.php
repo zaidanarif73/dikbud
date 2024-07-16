@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.master')
-@section("title","Berita")
+@section("title","Galeri")
 @section('breadcumb')
-
+    
 @endsection
 @section("content")
 <div class="container">
@@ -9,7 +9,7 @@
     <div class="col-xl-12">
         <div class="card m-b-30">
             <div class="card-body">
-                <h5 class="card-title mb-3">Informasi Berita</h5>
+                <h5 class="card-title mb-3">Informasi Galeri</h5>
 
                 <div class="row mb-2">
                     <div class="col-md-3">
@@ -56,8 +56,8 @@
                 </div>
 
                 <div class="mt-5">
-                    <a href="{{route('dashboard.berita.index')}}" class="btn btn-warning btn-sm"><i class="fa fa-arrow-left"></i> Kembali</a>
-                    <a href="{{route('dashboard.berita.edit',$result->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
+                    <a href="{{route('dashboard.galeri.index')}}" class="btn btn-warning btn-sm"><i class="fa fa-arrow-left"></i> Kembali</a>
+                    <a href="{{route('dashboard.galeri.edit',$result->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
                     <a href="#" class="btn btn-danger btn-sm btn-delete"><i class="fa fa-trash"></i> Hapus</a>
                 </div>
 
@@ -78,7 +78,7 @@
 
         $(document).on("click",".btn-delete",function(){
             if(confirm("Apakah anda yakin ingin menghapus data ini ?")){
-                $("#frmDelete").attr("action", "{{ route('dashboard.berita.destroy', '_id_') }}".replace("_id_", '{{$result->id}}'));
+                $("#frmDelete").attr("action", "{{ route('dashboard.galeri.destroy', '_id_') }}".replace("_id_", '{{$result->id}}'));
                 $("#frmDelete").submit();
             }
         })

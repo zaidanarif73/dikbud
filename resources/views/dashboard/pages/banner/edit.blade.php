@@ -23,7 +23,7 @@
                                     <label class="col-md-2 col-form-label" for="description">Deskripsi <span class="text-danger">*</span></label>
                                     <div class="col-md-10"   >       
                                         
-                                        <input id="description" type="hidden" name="description" >
+                                        <input id="description" type="hidden" name="description" value="{{old('description',$result->description)}}" >
                                         <trix-editor input="description"></trix-editor>
                                     </div>
                                 </div>
