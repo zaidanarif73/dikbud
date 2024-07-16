@@ -83,11 +83,10 @@ header h1 {
 
 .inovasi-structure {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .inovasi-structure img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
-    aspect-ratio: 3/2;
     object-fit: contain;
 }

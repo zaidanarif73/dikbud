@@ -1,25 +1,9 @@
 @extends('home.layouts.master')
 
 @section("content")
-{{-- <section id="hero" class="hero section">
-<div class="hero-bg">
-    <img src="assets/img/cobabud.jpg" alt="">
-</div>
-<div class="container text-center">
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <h1>Selamat Datang</h1>
-      <h1 data-aos="fade-up">Di Dinas Pendidikan dan Kebudayaan</h1>
-      <h1> <span>Kota Malang</span></h1>
-    </div>
-</div> --}}
 <section id="so" class="so section">
   <div class="so-bg">
-    <img src="assets/img/cobabud.jpg" alt="">
-  </div>
-  <div class="container">
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <h1 data-aos="fade-up">Struktur Organisasi</h1>
-    </div>
+    <img src="{{URL::to('/')}}/assets/img/banner-so.png" alt="">
   </div>
 </section>
 
@@ -35,7 +19,7 @@
     </div>
 </div>
 <div class="organization-structure">
-  <img src="assets/img/News.jpg" alt="Organization Structure">
+  <img src="{{URL::to('/')}}/assets/img/News.jpg" alt="Organization Structure">
 </div>
 </div>
 </section>
