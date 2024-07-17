@@ -19,9 +19,8 @@
 
 .so {
     width: 100%;
-    min-height: 70vh;
+    min-height: 60vh;
     position: center;
-    display: flex;
     align-items: center;
     overflow: hidden;
 }
@@ -38,14 +37,6 @@
 
 .so .container {
     position: relative;
-    z-index: 3;
-}
-
-.so h1 {
-    margin: 0;
-    font-size: 47px;
-    font-weight: 700;
-    line-height: 56px;
 }
 
 /* card profile kepala dinas */
@@ -55,11 +46,9 @@
 .profile-card {
     text-align: center;
     border: 1px solid #ccc;
-    /* width:auto ; */
     background-color: #fff;
     justify-content: center;
     align-items: center;
-
     width: 30%;
     margin: 0 auto;
 
@@ -70,11 +59,7 @@
     height: auto;
     border-radius: 8px;
 }
-.profile-card h5 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-size: 1.2em;
-}
+
 .profile-card p {
     margin: 5px 0;
 }
