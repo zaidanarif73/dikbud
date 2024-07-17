@@ -130,21 +130,21 @@
     <!-- Features Details Section -->
    <section id="features-details" class="features-details section">
     <div class="container section-title" data-aos="fade-up">
-      <h2>Berita</h2>
+      <h2>Berita Utama</h2>
     </div>
     <div class="container">
-      <h3 class="d-flex justify-content-start">Berita Utama</h3>
+      <!-- <h3 class="d-flex justify-content-start">Berita Utama</h3> -->
 
       <div class="row gy-4 justify-content-between features-item">
 
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <img src="assets/img/News.jpg" class="img-fluid" alt="">
+          <img src="{{URL::to('/')}}/assets/img/News.jpg" class="img-fluid" alt="">
         </div>
 
         <div class="col-lg-5 d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
           <div class="content">
             <p>
-              Jumat, 21 Juni 2024
+              Jumat, 21 Juni 2024 09:25 WIB
             </p>
             <h4>Jadi Narsum Worhshop, Mas Kadin Ucapkan Terima Kasih pada PTK SMPN 12 Malang</h4>
             <p>
@@ -154,75 +154,115 @@
           </div>
         </div>
       </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mt-5">
+              <div class="card">
+                <div class="card-body">
+                  <img src="{{URL::to('/')}}/assets/img/berita/Berita2.jpg" class="img-fluid mt-3" alt="">
+                  <p class="card-text mt-3">Kamis, 20 Juni 2024 22:36 WIB</p>
+                  <h5 class="card-title">Mas Kadin : Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara dengan Lulusan Formal</h5>
+                  <p class="card-text mt-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan sekaligus Plh. Kepala Bidang Pembinaan PAUD P...</p>
+                </div>
+              </div>
+          </div>
+          <div class="col-lg-4 mt-5">
+              <div class="card">
+                <div class="card-body">
+                  <img src="{{URL::to('/')}}/assets/img/berita/Berita5.jpg" class="img-fluid mt-3" alt="">
+                  <p class="card-text mt-3">Senin, 17 Juni 2024 18:35 WIB</p>
+                  <h5 class="card-title">Keluarga Besar Disdikbud Laksanakan Sholat Idhul Adha 1445 H di Masjid Tarbiyatul Hidayah</h5>
+                  <p class="card-text mt-3">Malang - Senin, 17 Juni 2024 atau bertepatan dengan 10 Dzulhijjah 1445 H, Keluarga Besar Dinas...</p>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-4 mt-5">
+              <div class="card">
+                <div class="card-body">
+                  <img src="{{URL::to('/')}}/assets/img/berita/Berita4.jpg" class="img-fluid mt-3" alt="">  
+                  <p class="card-text mt-3">Senin, 17 Juni 2024 18:42 WIB</p>
+                  <h5 class="card-title">Pj Walikota Malang Tinjau Penyembelihan Hewan Qurban Disdikbud</h5>
+                  <p class="card-text mt-3">Malang - Pj Walikota Malang Dr. Ir. Wahyu Hidayat, MM didampingi Kepala Dinas Pendidikan dan Kebuday...</p>
+                </div>
+              </div>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary">Semua Berita</a>
+      </div>
     </section><!-- /Features Details Section -->
-    <div id='calendar'></div>
-      <!-- Add modal -->
 
-      <div class="modal fade edit-form" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header border-bottom-0">
-                      <h5 class="modal-title" id="modal-title">Add Event</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <form id="myForm">
-                      <div class="modal-body">
-                          <div class="alert alert-danger " role="alert" id="danger-alert" style="display: none;">
-                              End date should be greater than start date.
+    <div id="calendar">
+        <div class="modal fade edit-form" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header border-bottom-0">
+                        <h5 class="modal-title" id="modal-title">Add Event</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="myForm">
+                        <div class="modal-body">
+                            <div class="alert alert-danger " role="alert" id="danger-alert" style="display: none;">
+                                End date should be greater than start date.
+                              </div>
+                            <div class="form-group">
+                                <label for="event-title">Event name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="event-title" placeholder="Enter event name" required>
                             </div>
-                          <div class="form-group">
-                              <label for="event-title">Event name <span class="text-danger">*</span></label>
-                              <input type="text" class="form-control" id="event-title" placeholder="Enter event name" required>
-                          </div>
-                          <div class="form-group">
-                              <label for="start-date">Start date <span class="text-danger">*</span></label>
-                              <input type="date" class="form-control" id="start-date" placeholder="start-date" required>
-                          </div>
-                          <div class="form-group">
-                              <label for="end-date">End date - <small class="text-muted">Optional</small></label>
-                              <input type="date" class="form-control" id="end-date" placeholder="end-date">
-                          </div>
-                          <div class="form-group">
-                              <label for="event-color">Color</label>
-                              <input type="color" class="form-control" id="event-color" value="#3788d8">
+                            <div class="form-group">
+                                <label for="start-date">Start date <span class="text-danger">*</span></label>
+                                <input type="date" class="form-control" id="start-date" placeholder="start-date" required>
                             </div>
-                      </div>
-                      <div class="modal-footer border-top-0 d-flex justify-content-center">
-                          <button type="submit" class="btn btn-success" id="submit-button">Submit</button>
+                            <div class="form-group">
+                                <label for="end-date">End date - <small class="text-muted">Optional</small></label>
+                                <input type="date" class="form-control" id="end-date" placeholder="end-date">
+                            </div>
+                            <div class="form-group">
+                                <label for="event-color">Color</label>
+                                <input type="color" class="form-control" id="event-color" value="#3788d8">
+                              </div>
                         </div>
-                  </form>
-              </div>
-          </div>
-      </div>
+                        <div class="modal-footer border-top-0 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-success" id="submit-button">Submit</button>
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-      <!-- Delete Modal -->
-      <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="delete-modal-title" aria-hidden="true">
-          <div class="modal-dialog modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="delete-modal-title">Confirm Deletion</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body text-center" id="delete-modal-body">
-                Are you sure you want to delete the event?
-              </div>
-              <div class="modal-footer border-0">
-                  <button type="button" class="btn btn-secondary rounded-sm" data-dismiss="modal" id="cancel-button">Cancel</button>
-                <button type="button" class="btn btn-danger rounded-lg" id="delete-button">Delete</button>
+        <!-- Delete Modal -->
+        <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="delete-modal-title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="delete-modal-title">Confirm Deletion</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center" id="delete-modal-body">
+                  Are you sure you want to delete the event?
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary rounded-sm" data-dismiss="modal" id="cancel-button">Cancel</button>
+                  <button type="button" class="btn btn-danger rounded-lg" id="delete-button">Delete</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+  
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Link</h2>
+    </div>
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+        <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+        <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+        <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+        <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+        <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+      </ul>
+    </div>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section light-background">
