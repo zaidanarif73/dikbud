@@ -10,14 +10,19 @@
         </header>
         <main>
             <div class="gallery">
-                
+                @forelse ($table as $index => $row)
                 <div class="gallery-item">
-                    <a class="" data-bs-toggle="modal" href="#userShowModal" alt="">
-                        <img src="assets/img/galeri/galeri1.jpg" alt="">
+                    <a class="" data-bs-toggle="modal" href="#userShowModal" id="show-user" data-url="{{ route('home.galeri.show', $row->id) }}" alt="">
+                        <img src="{{ asset('storage/'.$row->image) }}" alt="">
                     </a>
-                    <p>Senin, 4 Maret 2024 08:31 WIB</p>
-                    <h3>Sosialisasi Kepangkatan dengan Kelompok Kerja Kepala Sekolah(K3S) SD se Kota Malang</h3>
+                    <p>{{ $row->description }}</p>
+                    <h3>{{ $row->title }}</h3>
+                    
+                    
                 </div>
+                @empty
+                <p>no data</p>
+                @endforelse
                 {{-- <div class="gallery-item">
                     <img src="assets/img/galeri/galeri2.jpg" alt="">
                     <p>Rabu, 21 Februari 2024 09:46 WIB</p>
@@ -168,8 +173,26 @@
             
         </div>
     </div> -->
-    {{-- @include('home.pages.modal.index') --}}
+    @include('home.pages.galeri.modal.index')
     </div>
 @endsection
+@section('script')
+<script>
+    $(document).ready(function () {
 
-  
+    /* When click show user */
+    $('body').on('click', '#show-user', function () {
+        var userURL = $(this).data('url');
+        // 
+        $.get(userURL, function (data) {
+            $data_image = data.image;
+            $('#userShowModal').modal('show');
+            $('#title').text(data.title);
+            $('#date').text('senin');
+            $('#image').attr("src", "{{ asset('storage/_id_') }}".replace("_id_", $data_image));
+            $('#description').text(data.description);
+        })
+    });
+});
+</script>
+@endsection

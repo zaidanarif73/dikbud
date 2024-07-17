@@ -8,8 +8,8 @@
             <div class="modal-body">
                 <h1 id="title"></h1>
                 <img alt="" src="" id="image"></img>
-                <p id="description"></p>
-                <h6>Acara ini dihadiri oleh 30 Bapak/Ibu K3S SD se-Kota Malang. Sosialisasi dimulai pukul 13.00 yang dibuka oleh Bapak Sugeng dan sambutan dari Bapak Tujuwarno selaku Kepala Bidang Ketenagaan. Dalam sambutan tersebut Pak Tujuwarno mengatakan â€œKepala sekolah adalah ujung tombak kenaikan pangkat anak buahnya(guru)â€. Maksud dari perkataan tersebut adalah dinaikkan/tidaknya pangkat seorang guru tergantung kepada kepala sekolah di sekolah tersebut.</h6>
+                <p id="date"></p>
+                <h6 id="description">Acara ini dihadiri oleh 30 Bapak/Ibu K3S SD se-Kota Malang. Sosialisasi dimulai pukul 13.00 yang dibuka oleh Bapak Sugeng dan sambutan dari Bapak Tujuwarno selaku Kepala Bidang Ketenagaan. Dalam sambutan tersebut Pak Tujuwarno mengatakan â€œKepala sekolah adalah ujung tombak kenaikan pangkat anak buahnya(guru)â€. Maksud dari perkataan tersebut adalah dinaikkan/tidaknya pangkat seorang guru tergantung kepada kepala sekolah di sekolah tersebut.</h6>
             </div>
             <!-- <div class="modal-footer">
                 <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Open second modal</button>
