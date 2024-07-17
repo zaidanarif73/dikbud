@@ -3,15 +3,15 @@
         <link  href="assets/css/inovasi/style.css" rel="stylesheet">
     @endsection
 @section("content")
-<div class="inov-bg">
-    <img src="assets/img/banner-inov.png" alt="">
-</div>
+    <div class="inov-bg">
+      <img src="{{URL::to('/')}}/assets/img/banner-inov.png" alt="">
+    </div>
 <div class="container mt-5">
     <main>
         <div class="gallery">
             <div class="gallery-item">
-                <img src="assets/img/galeri/galeri1.jpg" alt="">
-                <a href="{{ route('home.inovasi.show') }}" class="stretched-link"><h3>Sosialisasi Kepangkatan dengan Kelompok Kerja Kepala Sekolah(K3S) SD se Kota Malang</h3></a>
+                <img src="assets/img/inov.png" alt="">
+                <a href="{{ route('home.inovasi.show') }}" class="stretched-link"><h3>FINALIS TOP 10 TINGKAT KOTA</h3></a>
             </div>
             <div class="gallery-item">
                 <img src="assets/img/galeri/galeri2.jpg" alt="">
