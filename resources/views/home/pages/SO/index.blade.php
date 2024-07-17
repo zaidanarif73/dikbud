@@ -9,7 +9,7 @@
 
 <section>
   <div class="container">
-    <h5>KEPALA DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG</h5>
+    <h2>KEPALA DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG</h2>
     <div class="profile-card mt-5">
       <div class="text-center mt-3"> 
         <img src="assets/img/suwarjana.jpeg" alt="Suwarjana">

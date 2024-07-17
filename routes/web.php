@@ -140,10 +140,13 @@ Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function
 
     Route::group(["as"=>"galeri.", "prefix"=>"galeri"], function(){
         Route::get("/", "GaleriController@index")->name("index");
+        Route::get('/{id}', 'GaleriController@show')->name("show");
     });
 
     Route::group(["as"=>"pembelajaran.", "prefix"=>"pembelajaran"], function(){
         Route::get("/", "PembelajaranController@index")->name("index");
+        Route::get("/showsd", "ShowsdController@index")->name("showsd");
+        Route::get("/showsmp", "ShowsmpController@index")->name("showsmp");
     });
 
     Route::group(["as"=>"informasi.", "prefix"=>"informasi"], function(){

@@ -8,7 +8,7 @@
       <h1 data-aos="fade-up">FINALIS TOP 10 TINGKAT KOTA</h1>
     </div>
   <div class="inovasi-structure">
-    <img src="{{URL::to('/')}}/assets/img/News.jpg" alt="Inovasi Structure">
+    <img src="{{URL::to('/')}}/assets/img/inov.png" alt="Inovasi Structure">
   </div>
 </div>
 @endsection

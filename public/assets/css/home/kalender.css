@@ -5,7 +5,7 @@ body {
 }
 
 #calendar {
-    max-width: 800px;
+    max-width: 600px;
     margin: 40px auto;
     background: #fff;
     padding: 15px;
@@ -38,7 +38,6 @@ body {
 }
 
 
-
 .form-group {
     margin-bottom: 1rem;
 }
@@ -54,9 +53,6 @@ body {
     font-size: 15px;
 
  }
-
-
-
 
 .fc-scroller {
     overflow-y: hidden !important;
