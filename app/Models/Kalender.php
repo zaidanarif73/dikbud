@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Kalender extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'title',
+        'description',
+        'date_mulai',
+        'date_selesai',
+    ];
 }

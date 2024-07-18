@@ -262,6 +262,7 @@
         <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
         <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
       </ul>
+
     </div>
 
     <!-- Testimonials Section -->
@@ -507,29 +508,29 @@ const myEvents = JSON.parse(localStorage.getItem('events')) || [
 
 
   const calendar = new FullCalendar.Calendar(calendarEl, {
-    customButtons: {
-      customButton: {
-        text: 'Add Event',
-        click: function () {
-          myModal.show();
-          const modalTitle = document.getElementById('modal-title');
-          const submitButton = document.getElementById('submit-button');
-          modalTitle.innerHTML = 'Add Event'
-          submitButton.innerHTML = 'Add Event'
-          submitButton.classList.remove('btn-primary');
-          submitButton.classList.add('btn-success');
+    // customButtons: {
+    //   customButton: {
+    //     text: 'Add Event',
+    //     click: function () {
+    //       myModal.show();
+    //       const modalTitle = document.getElementById('modal-title');
+    //       const submitButton = document.getElementById('submit-button');
+    //       modalTitle.innerHTML = 'Add Event'
+    //       submitButton.innerHTML = 'Add Event'
+    //       submitButton.classList.remove('btn-primary');
+    //       submitButton.classList.add('btn-success');
 
           
 
-          close.addEventListener('click', () => {
-            myModal.hide()
-          })
+    //       close.addEventListener('click', () => {
+    //         myModal.hide()
+    //       })
 
           
 
-        }
-      }
-    },
+    //     }
+    //   }
+    // },
     header: {
       center: 'customButton', // add your custom button here
       right: 'today, prev,next '
@@ -543,15 +544,15 @@ const myEvents = JSON.parse(localStorage.getItem('events')) || [
     events: myEvents,
     eventRender: function(info) {
       info.el.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-        let existingMenu = document.querySelector('.context-menu');
-        existingMenu && existingMenu.remove();
-        let menu = document.createElement('div');
-        menu.className = 'context-menu';
-        menu.innerHTML = `<ul>
-        <li><i class="fas fa-edit"></i>Edit</li>
-        <li><i class="fas fa-trash-alt"></i>Delete</li>
-        </ul>`;
+        // e.preventDefault();
+        // let existingMenu = document.querySelector('.context-menu');
+        // existingMenu && existingMenu.remove();
+        // let menu = document.createElement('div');
+        // menu.className = 'context-menu';
+        // menu.innerHTML = `<ul>
+        // <li><i class="fas fa-edit"></i>Edit</li>
+        // <li><i class="fas fa-trash-alt"></i>Delete</li>
+        // </ul>`;
 
         const eventIndex = myEvents.findIndex(event => event.id === info.event.id);
         
