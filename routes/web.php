@@ -215,5 +215,13 @@ Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function
     Route::get("/", "OmbudsmanController@index")->name("index");
     });
 
+    Route::group(["as"=>"mpp.", "prefix"=>"mpp"], function(){
+    Route::get("/", "mppController@index")->name("index");
+    });
+
+    Route::group(["as"=>"formpip.", "prefix"=>"formpip"], function(){
+    Route::get("/", "formpipController@index")->name("index");
+    });
+
 });
 
