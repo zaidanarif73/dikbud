@@ -75,6 +75,12 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
 
     Route::group(["as"=>"kalender.", "prefix"=>"kalender"], function(){
         Route::get("/", "KalenderController@index")->name("index");
+        Route::get("/create", "KalenderController@create")->name("create");
+        Route::post("/","KalenderController@store")->name("store");
+        Route::get('/{id}', 'KalenderController@show')->name("show");
+        Route::get('/{id}/edit', 'KalenderController@edit')->name("edit");
+        Route::put('/{id}', 'KalenderController@update')->name("update");
+        Route::delete('/{id}', 'KalenderController@destroy')->name("destroy");
     });
 
     Route::group(["as"=>"kontak.", "prefix"=>"kontak"], function(){
@@ -140,10 +146,13 @@ Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function
 
     Route::group(["as"=>"galeri.", "prefix"=>"galeri"], function(){
         Route::get("/", "GaleriController@index")->name("index");
+        Route::get('/{id}', 'GaleriController@show')->name("show");
     });
 
     Route::group(["as"=>"pembelajaran.", "prefix"=>"pembelajaran"], function(){
         Route::get("/", "PembelajaranController@index")->name("index");
+        Route::get("/showsd", "ShowsdController@index")->name("showsd");
+        Route::get("/showsmp", "ShowsmpController@index")->name("showsmp");
     });
 
     Route::group(["as"=>"informasi.", "prefix"=>"informasi"], function(){

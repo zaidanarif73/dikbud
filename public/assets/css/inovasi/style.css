@@ -38,7 +38,7 @@ header h1 {
 
 .gallery-item {
     background: white;
-    border: 1px solid #ddd;
+    border: 1px solid #ffffff;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -52,7 +52,7 @@ header h1 {
 }
 
 .gallery-item h3 {
-    font-size: 18px;
+    font-size: 15px;
     margin: 10px 0 5px;
     color: #000000;
     font-weight: bold;
@@ -73,8 +73,8 @@ header h1 {
 }
 
 .pagination button {
-    background: #dedede;
-    color: rgb(0, 0, 0);
+    background: #ebebeb;
+    color: rgb(94, 94, 94);
     border: none;
     padding: 5px 10px;
     margin: 0 5px;
