@@ -75,6 +75,12 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
 
     Route::group(["as"=>"kalender.", "prefix"=>"kalender"], function(){
         Route::get("/", "KalenderController@index")->name("index");
+        Route::get("/create", "KalenderController@create")->name("create");
+        Route::post("/","KalenderController@store")->name("store");
+        Route::get('/{id}', 'KalenderController@show')->name("show");
+        Route::get('/{id}/edit', 'KalenderController@edit')->name("edit");
+        Route::put('/{id}', 'KalenderController@update')->name("update");
+        Route::delete('/{id}', 'KalenderController@destroy')->name("destroy");
     });
 
     Route::group(["as"=>"kontak.", "prefix"=>"kontak"], function(){
