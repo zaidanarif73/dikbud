@@ -1,0 +1,89 @@
+main {
+    padding: 20px;
+}
+
+/* Mengatur gaya untuk bagian video */
+.video-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    transition: transform 0.3s;
+}
+.video-section:hover {
+    transform: translateY(-10px);
+}
+
+/* Mengatur gaya untuk kontainer video */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.kisi-section {
+    background-color: azure;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+    transition: transform 0.3s;
+}
+
+.kisi-section:hover {
+    transform: translateY(-10px);
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    margin: auto;
+}
+.card h6 {
+    font-style: italic;
+    color: #666;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Mengatur gaya untuk judul */
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Mengatur gaya untuk paragraf */
+.card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Mengatur gaya untuk tombol */
+.card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #4caf50;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.card .btn:hover {
+    background-color: #45a049;
+}
