@@ -123,6 +123,24 @@
             <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.ombudsman.index') }}" class="stretched-link">Info Ombudsman</a></h6>
           </div>
 
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex justify-content-center align-items-center">
+              <img src="assets/img/icon/mpp1.jpg" alt="">
+            </div>
+            <p>
+              <h6 class="text-center"><a href="{{ route('home.mpp.index') }}" class="stretched-link">Layanan di MPP Merdeka Kota Malang</a></h6>
+            </p>
+          </div>
+
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex justify-content-center align-items-center">
+              <img src="assets/img/icon/form_PIP.png" alt="">
+            </div>
+            <p>
+              <h6 class="text-center"><a href="{{ route('home.formpip.index') }}" class="stretched-link">Form Permohonan Informasi Publik</a></h6>
+            </p>
+          </div>
+
         </div>
 
       </div>
@@ -253,16 +271,48 @@
     <div class="container section-title" data-aos="fade-up">
       <h2>Link</h2>
     </div>
-    <div class="card">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-        <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-        <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-        <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-        <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-        <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-      </ul>
+    <div class="container">
+      <div class="row">
+        <div class="d-flex justify-content-center col-4 mt-5">
+          <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center col-4 mt-5">
+          <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center col-4 mt-5">
+          <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+    
+    
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section light-background">
