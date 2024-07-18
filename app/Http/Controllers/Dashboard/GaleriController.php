@@ -54,7 +54,7 @@ class GaleriController extends Controller
             $image = $request->file('image');
             
             if($image){
-                $upload = UploadHelper::upload_file($image,'image_galeri',['jpg','img','png']);
+                $upload = UploadHelper::upload_file($image,'image_galeri',['jpg','img','png','svg']);
 
                 if($upload["IsError"] == TRUE){
                     throw new Error($upload["Message"]);
