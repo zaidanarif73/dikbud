@@ -14,12 +14,12 @@ class StoreRequest extends FormRequest
             'title' => [
                 'required',
             ],
-            // 'file_path' => [
-            //     'required',
-            // ],
-            // 'file_link' => [
-            //     'required',
-            // ],
+            'image' => [
+                'required',
+                'image',
+                'max:2048',
+                'mimes:jpeg,bmp,png,gif,svg,jpg',
+            ],
         ];
     }
 
@@ -27,8 +27,9 @@ class StoreRequest extends FormRequest
     {
         return [
             'title.required' => 'Judul harus diisi',
-            // 'file_path.required' => 'File harus diisi',
-            // 'file_link.required' => 'Link harus diisi',
+            'image.image' => 'Foto harus berupa gambar',
+            'image.mimes' => 'Foto harus berupa jpeg, bmp, png, gif, svg , jpg',
+            'image.max' => 'Foto tidak boleh lebih dari 2MB',
         ];
     }
 

@@ -30,6 +30,15 @@
 
                 <div class="row mb-2">
                     <div class="col-md-3">
+                        Tanggal
+                    </div>
+                    <div class="col-md-8">
+                        : {{ date('D, d-m-Y',strtotime($result->date)) }}
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-md-3">
                         Image
                     </div>
                     <div class="col-md-8">
@@ -37,23 +46,7 @@
                     </div>
                 </div>
 
-                <div class="row mb-2">
-                    <div class="col-md-3">
-                        Tanggal Dibuat
-                    </div>
-                    <div class="col-md-8">
-                        : {{ date('d-m-Y H:i:s',strtotime($result->created_at)) }}
-                    </div>
-                </div>
-
-                <div class="row mb-2">
-                    <div class="col-md-3">
-                        Tanggal Diperbarui
-                    </div>
-                    <div class="col-md-8">
-                        : {{ date('d-m-Y H:i:s',strtotime($result->updated_at)) }}
-                    </div>
-                </div>
+                
 
                 <div class="mt-5">
                     <a href="{{route('dashboard.galeri.index')}}" class="btn btn-warning btn-sm"><i class="fa fa-arrow-left"></i> Kembali</a>

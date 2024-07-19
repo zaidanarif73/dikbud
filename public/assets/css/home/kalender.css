@@ -7,13 +7,13 @@ body {
 #calendar {
     max-width: 600px;
     margin: 40px auto;
-    background: #fff;
+    background: #000000;
     padding: 15px;
 
 }
 
 .fc-event {
-    border: 1px solid #eee !important;
+    border: 1px solid #000000 !important;
 }
 
 .fc-content {
@@ -61,8 +61,8 @@ body {
 .context-menu {
     position: absolute;
     z-index: 1000;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #000000;
+    border: 1px solid #000000;
     border-radius: 4px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
     padding: 5px;
@@ -81,10 +81,9 @@ body {
 
 .context-menu ul>li {
     display: block;
-    ;
     padding: 5px 15px;
     list-style-type: none;
-    color: #333;
+    color: #000000;
     display: block;
     cursor: pointer;
     margin: 0 auto;
@@ -95,7 +94,7 @@ body {
 }
 
 .context-menu ul>li:hover {
-    color: #fff;
+    color: #000000;
     background-color: #007bff;
     border-radius: 2px;
 
