@@ -3,6 +3,10 @@
         <link  href="assets/css/berita/style.css" rel="stylesheet">
     @endsection
 @section("content")
+
+<div class="banner-bg">
+        <img src="{{URL::to('/')}}/assets/img/berita/bgberita.png" alt="">
+</div>
     <div class="container">
         <header>
             <h1>Berita Terbaru</h1>
