@@ -21,19 +21,6 @@
                                         <input type="text" class="form-control" name="title" placeholder="Judul"  value="{{old('title')}}" required>
                                     </div>
                                 </div>
-                                <div class="form-group row mb-5" >
-                                    <label class="col-md-2 col-form-label" for="description">Deskripsi <span class="text-danger">*</span></label>
-                                    <div class="col-md-10"   >       
-
-
-                                        {{-- <div id="toolbar">
-                                            <input type="text" id="description"  name="description" >
-                                        </div> --}}
-
-                                        <input id="description" type="hidden" name="description" required>
-                                        <trix-editor input="description"></trix-editor>
-                                    </div>
-                                </div>
                                 <div class="form-group row mt-5">
                                     <label class="col-md-2 col-form-label">Image <span class="text-danger">*</span></label>
                                     <div class="col-md-10">

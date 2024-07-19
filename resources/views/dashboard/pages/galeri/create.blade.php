@@ -29,9 +29,16 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-2 col-form-label">Gambar <span class="text-danger">*</span></label>
-                                <div class="col-md-10" id="file_path">
-                                    <input class="form-control" id="file_input" type="file" name="image" required>
+                                <label class="col-md-2 col-form-label">Tanggal<span class="text-danger">*</span></label>
+                                
+                                <div class="col-md-10">
+                                    <input type="date" class="form-control" name="date" placeholder="Tanggal" value="{{old('date',date('Y-m-d'))}}" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-2 col-form-label">Gambar<span class="text-danger">*</span></label>
+                                <div class="col-md-10">
+                                    <input class="form-control" type="file" name="image" accept="image/*" required>
                                 </div>
                             </div>
                         </div>

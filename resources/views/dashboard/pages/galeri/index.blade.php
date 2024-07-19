@@ -25,6 +25,7 @@
                                         <th style="width:5%">No</th>
                                         <th style="width:30%">Judul</th>
                                         <th style="width:30%">Deskripsi</th>
+                                        <th style="width:30%">Tanggal</th>
                                         <th style="width:15%">Gambar</th>
                                         <th style="width:20%">Aksi</th>
                                     </thead>
@@ -34,6 +35,7 @@
                                             <td>{{ $table->firstItem() + $index }}</td>
                                             <td>{{ $row->title }}</td>
                                             <td>{{ $row->description }}</td>
+                                            <td>{{date('D, d-m-Y',strtotime($row->date))}}</td>
                                             <td class="d-flex justify-content-center">
                                                 <img  src="{{ asset('storage/'.$row->image) }}" alt="" style="width: 100px;height:1auto;">
                                             </td>

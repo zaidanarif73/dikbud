@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Galeri;
+namespace App\Http\Requests\Tautan;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
 
-class StoreRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
     public function rules(): array
     {
@@ -14,12 +14,10 @@ class StoreRequest extends FormRequest
             'title' => [
                 'required',
             ],
-            'image' => [
+            'url'=> [
                 'required',
-                'image',
-                'max:2048',
-                'mimes:jpeg,bmp,png,gif,svg,jpg',
-            ],
+                ],
+           
         ];
     }
 
@@ -27,9 +25,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'title.required' => 'Judul harus diisi',
-            'image.image' => 'Foto harus berupa gambar',
-            'image.mimes' => 'Foto harus berupa jpeg, bmp, png, gif, svg , jpg',
-            'image.max' => 'Foto tidak boleh lebih dari 2MB',
+            
         ];
     }
 
@@ -43,7 +39,7 @@ class StoreRequest extends FormRequest
         if (! $this->wantsJson()) {
             $errors = implode('<br>', $validator->errors()->all());
             alert()->html('Gagal',$errors,'error');
-            $this->redirect = route('dashboard.galeri.create');
+            $this->redirect = route('dashboard.tautan.create');
         }
 
         parent::failedValidation($validator);
