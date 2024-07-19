@@ -36,19 +36,23 @@
       </div>
       <div class="container">
 
-        <div class="row gy-3">
+          <div class="row gy-3">
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/legalisir.png" alt="">
-            </div>
-            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.legalisir.index') }}" class="stretched-link">Legalisir</a></h6>
+              <div class="service-item d-flex justify-content-center align-items-center">
+                <img src="assets/img/icon/legalisir.png" alt="">
+              </div>
+                <p>
+                  <h6 class="text-center"><a href="{{ route('home.legalisir.index') }}" class="stretched-link">Legalisir</a></h6>
+                </p>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item d-flex justify-content-center align-items-center">
               <img src="assets/img/icon/mutasi.png" alt="">
             </div>
-            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.mutasi.index') }}" class="stretched-link">Mutasi Siswa</a></h6>
+            <p>
+              <h6 class="text-center"><a href="{{ route('home.mutasi.index') }}" class="stretched-link">Mutasi Siswa</a></h6>
+            </p>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="300">
@@ -65,7 +69,7 @@
               <img src="assets/img/icon/pengganti ijazah.png" alt="">
             </div>
             <p>
-              <h6 class="text-center"><a href="{{ route('home.pengganti_ijazah.index') }}" class="stretched-link" >Pelayanan Surat Pengganti Ijazah SD atau SMP</a></h6>
+              <h6 class="text-center"><a href="{{ route('home.pengganti_ijazah.index') }}" class="stretched-link">Pelayanan Surat Pengganti Ijazah SD atau SMP</a></h6>
             </p>
           </div>
 
@@ -82,28 +86,36 @@
             <div class="service-item d-flex justify-content-center align-items-center">
               <img src="assets/img/icon/maklumat.png" alt="">
             </div>
-            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.maklumat.index') }}" class="stretched-link">Maklumat Layanan</a></h6>
+            <p>
+              <h6 class="text-center"><a href="{{ route('home.maklumat.index') }}" class="stretched-link">Maklumat Layanan</a></h6>
+            </p>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item d-flex justify-content-center align-items-center">
               <img src="assets/img/icon/standar.png" alt="">
             </div>
-            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.SKSP.index') }}" class="stretched-link">SK Standar Pelayanan</a></h6>
+            <p>
+              <h6 class="text-center"><a href="{{ route('home.SKSP.index') }}" class="stretched-link">Struktur Organisasi Pelayanan Dan SK Standar Pelayanan</a></h6>
+            </p>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item d-flex justify-content-center align-items-center">
               <img src="assets/img/icon/pengaduan.png" alt="">
             </div>
-            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.pengaduan.index') }}" class="stretched-link">Layanan Pengaduan</a></h6>
+            <p>
+              <h6 class="text-center"><a href="{{ route('home.pengaduan.index') }}" class="stretched-link">Layanan Pengaduan</a></h6>
+            </p>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="00">
             <div class="service-item d-flex justify-content-center align-items-center">
               <img src="assets/img/icon/ppdb.png" alt="">
             </div>
-            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.PPDB.index') }}" class="stretched-link">PPDB</a></h6>
+            <p>
+              <h6 class="text-center"><a href="{{ route('home.PPDB.index') }}" class="stretched-link">PPDB</a></h6>
+            </p>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
@@ -117,10 +129,11 @@
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item d-flex justify-content-center align-items-center">
-
               <img src="assets/img/icon/ombudd.jpeg" alt="">
             </div>
-            <h6 class="service-item d-flex justify-content-center align-items-center"><a href="{{ route('home.ombudsman.index') }}" class="stretched-link">Info Ombudsman</a></h6>
+            <p>
+              <h6 class="text-center"><a href="{{ route('home.ombudsman.index') }}" class="stretched-link">Info Ombudsman</a></h6>
+            </p>
           </div>
 
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
@@ -208,7 +221,12 @@
         <a href="#" class="btn btn-primary">Semua Berita</a>
       </div>
     </section><!-- /Features Details Section -->
-
+    
+    <!-- Calender -->
+    <section id="cal" class="cal section">
+      <div class="cal-bg">
+        <img src="assets/img/bgcale.png" alt="">
+      </div>
     <div id="calendar">
         <div class="modal fade edit-form" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog" role="document">
@@ -246,6 +264,7 @@
                 </div>
             </div>
         </div>
+</end section>
 
         <!-- Delete Modal -->
         <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="delete-modal-title" aria-hidden="true">
