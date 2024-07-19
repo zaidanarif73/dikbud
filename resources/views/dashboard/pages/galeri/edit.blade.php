@@ -30,9 +30,17 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-md-2 col-form-label">Tanggal<span class="text-danger">*</span></label>
+                                
+                                <div class="col-md-10">
+                                    <input type="date" class="form-control" name="date" placeholder="Tanggal" value="{{old('date',$result->date)}}" required>
+                                </div>
+                            </div>
+                            <div class="form-group row mt-5">
                                 <label class="col-md-2 col-form-label">Gambar <span class="text-danger">*</span></label>
-                                <div class="col-md-10" id="file_path">
-                                    <input class="form-control" id="file_input" type="file" name="image">
+                                <div class="col-md-10">
+                                    <input class="form-control" type="file" name="image" accept="image/*">
+                                    <p class="text-info" style="margin-top: 0px;margin-bottom: 0px;padding-top: 0px;padding-bottom: 0px;"><small><i>Kosongkan jika tidak diubah</i></small></p>
                                 </div>
                             </div>
                         </div>
@@ -48,29 +56,4 @@
         </div>
     </div>
 </div>
-@endsection
-@section("script")
-    {{-- radio handler with input file/link --}}
-    <script>
-        $(function(){
-            $('input[name="type"]').on('change', function() {
-                const val = $(this).filter(":checked").val();
-                //alert(val);
-                if(val == 'link'){
-                    $("#file_path").html('<input class="form-control" id="link_input" type="text" name="file_link" placeholder="Link File"  value="{{old("file_link",$result->file_link)}}" required>');
-                }else if(val == 'file'){
-                    $("#file_path").html('<input class="form-control" id="file_input" type="file" name="file_path" required>');
-                }
-            });
-        });
-    </script>
-    {{-- breadcumb navigate --}}
-    <script>
-        $(function(){
-            $status = $("#breadcumb_child").val();
-            if($status != null){
-                $("#breadcumb").removeClass("active");
-            }
-        });
-    </script>
 @endsection

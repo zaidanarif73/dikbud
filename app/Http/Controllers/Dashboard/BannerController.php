@@ -55,7 +55,6 @@ class BannerController extends Controller
                
         try {
             $title = $request->title;
-            $description = $request->description;
             $image = $request->file("image");
             
 
@@ -69,7 +68,6 @@ class BannerController extends Controller
                 $image = $upload["Path"];
                 $create = $this->banner->create([
                     'title' => $title,
-                    'description'=> $description,
                     'image' => $image,
                 ]);
          
@@ -135,7 +133,6 @@ class BannerController extends Controller
             }
 
             $title = $request->title;
-            $description = $request->description;
             $image = $request->file("image");
 
             if($image){
@@ -153,7 +150,6 @@ class BannerController extends Controller
 
             $result->update([
                 'title' => $title,
-                'description'=> $description,
                 'image' => $image,
             ]);
 

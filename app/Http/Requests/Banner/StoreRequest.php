@@ -13,9 +13,7 @@ class StoreRequest extends FormRequest
             'title' => [
                 'required',
             ],
-            'description'=> [
-                'required',
-                ],
+          
             'image' => [
                 'required',
                 'image',
@@ -29,7 +27,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'title.required' => 'Judul harus diisi',
-            'description.required' => 'Deksripsi harus diisi',
+          
             'image.required' => 'File harus diisi',
             'image.image' => 'Foto harus berupa gambar',
             'image.mimes' => 'Foto harus berupa jpeg, bmp, png, gif, svg , jpg',

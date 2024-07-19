@@ -93,7 +93,14 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
 
     Route::group(["as"=>"tautan.", "prefix"=>"tautan"], function(){
         Route::get("/", "TautanController@index")->name("index");
+        Route::get("/create", "TautanController@create")->name("create");
+        Route::post("/","TautanController@store")->name("store");
+        Route::get('/{id}', 'TautanController@show')->name("show");
+        Route::get('/{id}/edit', 'TautanController@edit')->name("edit");
+        Route::put('/{id}', 'TautanController@update')->name("update");
+        Route::delete('/{id}', 'TautanController@destroy')->name("destroy");
     });
+
 
     Route::group(["as"=>"pengaturan.", "prefix"=>"pengaturan"], function(){
         Route::get("/", "PengaturanController@index")->name("index");
