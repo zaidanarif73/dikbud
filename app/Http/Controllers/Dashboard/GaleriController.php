@@ -136,6 +136,7 @@ class GaleriController extends Controller
             $image = $request->file("image");
             $date = $request->date;
 
+            
             if ($image) {
                 $upload = UploadHelper::upload_file($image, 'galeri', ['jpeg', 'jpg', 'png', 'gif']);
 
