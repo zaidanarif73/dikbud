@@ -15,7 +15,7 @@
                     <a class="" data-bs-toggle="modal" href="#userShowModal" id="show-user" data-url="{{ route('home.galeri.show', $row->id) }}" alt="">
                         <img src="{{ asset('storage/'.$row->image) }}" alt="">
                     </a>
-                    <p>{{ $row->description }}</p>
+                    <p>{{date('D, d-m-Y',strtotime($row->date))}}</p>
                     <h3>{{ $row->title }}</h3>
                     
                     
