@@ -18,12 +18,11 @@ class LoginController extends Controller
     } 
     
     public function index(){
-        return view($this->view."login");
 
         if(Auth::check()){
             return redirect()->route('dashboard.dashboard.index');
         }
-        return view($this->view."index");
+        return view($this->view."login");
     } 
     
     public function post(LoginRequest $request){
@@ -49,7 +48,8 @@ class LoginController extends Controller
                 } 
             
                 if(Auth::user()->hasRole([
-                    RoleEnum::SuperAdmin
+                    RoleEnum::SuperAdmin,
+                    RoleEnum::Moderator,
                 ])){
                     alert()->html('Berhasil','Login berhasil','success'); 
                     return redirect()->intended(route('dashboard.dashboard.index'));

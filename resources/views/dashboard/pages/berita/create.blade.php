@@ -29,9 +29,8 @@
                                         {{-- <div id="toolbar">
                                             <input type="text" id="description"  name="description" >
                                         </div> --}}
-
-                                        <input id="description" type="hidden" name="description" required>
-                                        <trix-editor input="description"></trix-editor>
+                                        @trix(\App\Models\Berita::class, 'content')
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group row mt-5">

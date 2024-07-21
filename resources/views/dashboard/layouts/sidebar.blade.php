@@ -10,10 +10,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{URL::to('/')}}/dist/img/user6-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="@if(!empty(Auth::user()->avatar)) {{asset('storage/'.Auth::user()->avatar)}} @else https://avatars.dicebear.com/api/initials/{{ Auth::user()->name  ?? null}}.svg?margin=10 @endif" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ Auth::user()->name ?? null}}</a>
+          <a href="{{ route('dashboard.profile.index') }}" class="d-block">{{ Auth::user()->name ?? null}}</a>
         </div>
       </div>
 
@@ -38,7 +38,7 @@
           <li class="nav-header">MENU ADMIN</li>
 
             <li class="nav-item">
-              <a href="{{route('dashboard.menu.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.menu.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.menu')) active @endif">
                 <i class="bx bx-menu col-3 bx-tada-hover"></i>
                 <p>
                   Menu
@@ -47,7 +47,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{route('dashboard.banner.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.banner.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.banner')) active @endif">
                 <col class="row">
                 <i class="bx bx-images col-3 bx-tada-hover"></i>
                 <p>
@@ -58,7 +58,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{route('dashboard.page.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.page.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.page')) active @endif">
                 <col class="row">
                 <i class="bx bx-dock-right col-3 bx-tada-hover"></i>
                 <p>
@@ -69,7 +69,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{route('dashboard.berita.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.berita.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.berita')) active @endif">
                 <col class="row">
                 <i class="bx bx-news col-3 bx-tada-hover"></i>
                 <p>
@@ -80,7 +80,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{route('dashboard.galeri.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.galeri.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.galeri')) active @endif">
                 <col class="row">
                 <i class="bx bx-camera col-3 bx-tada-hover"></i>
                 <p>
@@ -91,7 +91,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{route('dashboard.layanan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.layanan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.layanan')) active @endif">
                 <i class="bx bx-wrench col-3 bx-tada-hover"></i>
                 <p>
                   Layanan
@@ -100,7 +100,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{route('dashboard.tautan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.tautan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.tautan')) active @endif">
                 <i class="bx bx-link col-3 bx-tada-hover"></i>
                 <p>
                   Tautan
@@ -109,7 +109,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{route('dashboard.kalender.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.kalender.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.kalender')) active @endif">
                 <i class="bx bx-calendar col-3 bx-tada-hover"></i>
                 <p>
                   Kalender
@@ -118,7 +118,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{route('dashboard.kontak.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.kontak.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.kontak')) active @endif">
                 <i class="bx bxs-contact col-3 bx-tada-hover"></i>
                 <p>
                   Kontak
@@ -127,7 +127,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{route('dashboard.informasi.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.informasi.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.informasi')) active @endif">
                 <i class="bx bx-download col-3 bx-tada-hover"></i>
                 <p>
                   Informasi
@@ -135,8 +135,21 @@
               </a>
             </li>
 
+            @if(Auth::user()->hasRole([
+                \App\Enums\RoleEnum::SuperAdmin,
+            ]))
             <li class="nav-item">
-              <a href="{{route('dashboard.pengaturan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.users.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+                <i class='bx bx-user col-3 bx-tada-hover'></i>
+                <p>
+                  User
+                </p>
+              </a>
+            </li>
+            @endif
+            
+            <li class="nav-item">
+              <a href="{{route('dashboard.pengaturan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.pengaturan')) active @endif">
                 <i class="bx bx-download col-3 bx-tada-hover"></i>
                 <p>
                   Pengaturan
@@ -145,14 +158,14 @@
             </li>
 
           <li class="nav-item">
-              <a href="{{route('dashboard.log.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.user')) active @endif">
+              <a href="{{route('dashboard.log.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.log')) active @endif">
                 <i class="bx bx-download col-3 bx-tada-hover"></i>
                 <p>
                   Log
                 </p>
               </a>
-            </li>
-         
+          </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
