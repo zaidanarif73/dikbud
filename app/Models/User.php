@@ -8,11 +8,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Enums\UserEnum;
+use App\Enums\RoleEnum;
 
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -23,6 +26,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
+        'avatar',
+        'status',
+        'email_verified_at',
     ];
 
     /**
@@ -44,4 +51,39 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-}
+
+    public function status()
+    {
+        $return = null;
+        switch ($this->status) {
+            case UserEnum::STATUS_ACTIVE:
+                $return = (object) [
+                    'class' => 'success',
+                    'msg' => 'Aktif',
+                ];
+                break;
+
+            case UserEnum::STATUS_INACTIVE:
+                $return = (object) [
+                    'class' => 'warning',
+                    'msg' => 'Tidak Aktif',
+                ];
+                break;
+        }
+
+        return $return;
+    }
+
+    public function isSuperAdmin(): bool
+    {
+        return $this->hasRole(RoleEnum::SuperAdmin);
+    }
+    public function isModerator(): bool
+    {
+        return $this->hasRole(RoleEnum::Moderator);
+    }
+    public function isGuest(): bool
+    {
+        return $this->hasRole(RoleEnum::Guest);
+    }
+}   

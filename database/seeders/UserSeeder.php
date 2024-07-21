@@ -24,5 +24,15 @@ class UserSeeder extends Seeder
             'email_verified_at' => date('Y-m-d H:i:s'),
             ]);
         $userAdministrator->assignRole(RoleEnum::SuperAdmin);
+
+        $userAdministrator = User::firstOrCreate([
+            'email' => 'admin1@gmail.com'
+            ],[
+            'name' => 'Admin1',
+            'email' => 'admin1@gmail.com',
+            'password' => bcrypt('admin123'),
+            'email_verified_at' => date('Y-m-d H:i:s'),
+            ]);
+        $userAdministrator->assignRole(RoleEnum::Moderator);
     }
 }

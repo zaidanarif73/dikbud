@@ -22,6 +22,15 @@ class RoleSeeder extends Seeder
             'name' => 'SuperAdmin',
             'guard_name' => 'web'
         ]);
+
+        Role::firstOrCreate(
+        [
+            'name' => 'Moderator',
+        ],
+        [
+            'name' => 'Moderator',
+            'guard_name' => 'web'
+        ]);
     } 
 
 }
