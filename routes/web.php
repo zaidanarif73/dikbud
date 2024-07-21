@@ -119,8 +119,14 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
 
     Route::group(["as"=>"users.", "prefix"=>"users"], function(){
         Route::get("/", "UserController@index")->name("index")->middleware('role:SuperAdmin');
-        Route::get('/create', 'UserController@create')->name("create")->middleware('role:SuperAdmin');;
+        Route::get('/create', 'UserController@create')->name("create")->middleware('role:SuperAdmin');
         Route::post('/', 'UserController@store')->name("store")->middleware('role:SuperAdmin');
+        Route::get('/{id}', 'UserController@show')->name("show")->middleware('role:SuperAdmin');
+        Route::get('/{id}/edit', 'UserController@edit')->name("edit")->middleware('role:SuperAdmin');
+        Route::put('/{id}', 'UserController@update')->name("update")->middleware('role:SuperAdmin');
+        Route::delete('/{id}', 'UserController@destroy')->name("destroy")->middleware('role:SuperAdmin');
+        Route::patch('/{id}', 'UserController@restore')->name("restore")->middleware('role:SuperAdmin');
+        Route::get('/{id}/impersonate', 'UserController@impersonate')->name("impersonate")->middleware('role:SuperAdmin');
     });
     
 });

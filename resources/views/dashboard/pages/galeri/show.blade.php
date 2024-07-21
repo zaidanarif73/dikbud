@@ -1,8 +1,7 @@
 @extends('dashboard.layouts.master')
 @section("title","Galeri")
-@section('breadcumb')
-    
-@endsection
+@section("breadcumb","Galeri")
+@section("breadcumb_child","Show")
 @section("content")
 <div class="container">
 <div class="row">
@@ -77,5 +76,13 @@
         })
     })
 </script>
-</div>
+{{-- breadcumb navigate --}}
+<script>
+    $(function(){
+        $status = $("#breadcumb_child").val();
+        if($status != null){
+            $("#breadcumb").removeClass("active");
+        }
+    });
+</script>
 @endsection

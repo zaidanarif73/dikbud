@@ -9,12 +9,30 @@ use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 
 class LogoutController extends Controller
-{
+{   
     public function logout(){
-        if(FacadesAuth::check()){
-            Auth::logout();
-            alert()->html('Berhasil','Logout Berhasil','success');
+
+        $manager = app('impersonate');
+
+        if($manager->isImpersonating()){
+            Auth::user()->leaveImpersonation();
+            return redirect()->route('dashboard.dashboard.index');
         }
-            return redirect()->route('auth.login.index');
-        } 
+        else{
+            if(!Auth::check()){
+                return redirect()->route("auth.login.index");
+            }
+            
+            Auth::logout();
+            return redirect()->route("auth.login.index");
+        }
+    }
+
+    // public function logout(){
+    //     if(FacadesAuth::check()){
+    //         Auth::logout();
+    //         alert()->html('Berhasil','Logout Berhasil','success');
+    //     }
+    //         return redirect()->route('auth.login.index');
+    // } 
 }

@@ -49,9 +49,20 @@
                                         <td>{{date('d-m-Y H:i:s',strtotime($row->created_at))}}</td>
                                         <td>
                                             <div class="d-flex mb-1">
-                                                <a href="" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
-                                                <a href="" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i> Edit</a>
-                                                
+                                                <a href="{{route('dashboard.users.show',$row->id)}}" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
+                                                <a href="{{route('dashboard.users.edit',$row->id)}}" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i> Edit</a>
+                                                @if(Auth::user()->id != $row->id)
+                                                    @if(!$row->trashed())
+                                                    <a href="#" class="btn btn-danger btn-sm mr-1 btn-delete" data-id="{{$row->id}}"><i class="fa fa-trash"></i> Hapus</a>
+                                                        @if(Auth::user()->isSuperAdmin())
+                                                            <a href="{{route('dashboard.users.impersonate',$row->id)}}" class="btn btn-warning mr-1"><i class="fa fa-sign-in"></i> Impersonate</a>
+                                                        @endif
+                                                    @else
+                                                        @if(Auth::user()->isSuperAdmin())
+                                                            <a href="#" class="btn btn-warning btn-sm mr-1 btn-restore" data-id="{{$row->id}}"><i class="fa fa-undo"></i> Restore</a>
+                                                        @endif
+                                                    @endif
+                                                @endif
                                             </div>
                                         </td>
                                     </tr>
@@ -73,7 +84,7 @@
 
 @include("dashboard.pages.users.modal.index")
 
-{{-- <form id="frmDelete" method="POST">
+<form id="frmDelete" method="POST">
     @csrf
     @method('DELETE')
     <input type="hidden" name="id"/>
@@ -83,7 +94,7 @@
     @csrf
     @method('PATCH')
     <input type="hidden" name="id"/>
-</form> --}}
+</form>
 @endsection
 
 @section("script")
@@ -95,6 +106,23 @@
             $("#modalFilter").modal("show");
         });
 
+        $(document).on("click",".btn-delete",function(){
+            let id = $(this).data("id");
+            if(confirm("Apakah anda yakin ingin menghapus data ini ?")){
+                $("#frmDelete").attr("action", "{{ route('dashboard.users.destroy', '_id_') }}".replace("_id_", id));
+                $("#frmDelete").find('input[name="id"]').val(id);
+                $("#frmDelete").submit();
+            }
+        })
+
+        $(document).on("click",".btn-restore",function(){
+            let id = $(this).data("id");
+            if(confirm("Apakah anda yakin ingin mengembalikan data ini ?")){
+                $("#frmRestore").attr("action", "{{ route('dashboard.users.restore', '_id_') }}".replace("_id_", id));
+                $("#frmRestore").find('input[name="id"]').val(id);
+                $("#frmRestore").submit();
+            }
+        })
         
     })
 </script>

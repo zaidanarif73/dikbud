@@ -24,7 +24,13 @@
                         Deskripsi
                     </div>
                     <div class="col-md-8">
-                        : {{$result->description}}
+                        <style>
+                            img {
+                                max-width: 100%;
+                                height: auto;
+                            }
+                        </style>
+                        <p>{!! $result->renderTrix("content") !!}</p>
                     </div>
                 </div>
 

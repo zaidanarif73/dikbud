@@ -96,12 +96,12 @@ class BeritaController extends Controller
        
         try {
             $title = $request->title;
-            $description = $request->description;
+            // $description = $request->description;
             $image = $request->file("image");
             
 
             if($image){
-                $upload = UploadHelper::upload_file($image,'image',['jpeg','jpg','png','gif']);
+                $upload = UploadHelper::upload_file($image,'images',['jpeg','jpg','png','gif']);
 
                 if($upload["IsError"] == TRUE){
                     throw new Error($upload["Message"]);
@@ -110,10 +110,9 @@ class BeritaController extends Controller
                 $image = $upload["Path"];
                 $create = $this->berita->create([
                     'title' => $title,
-                    'description'=> $description,
+                    'berita-trixFields' => $request->input('berita-trixFields'),
                     'image' => $image,
                 ]);
-         
             }
             alert()->html('Berhasil','Data berhasil ditambahkan','success'); 
             return redirect()->route($this->route."index");
