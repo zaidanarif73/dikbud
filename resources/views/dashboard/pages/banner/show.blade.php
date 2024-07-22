@@ -1,8 +1,7 @@
 @extends('dashboard.layouts.master')
 @section("title","Banner")
-@section('breadcumb')
-  
-@endsection
+@section("breadcumb","Banner")
+@section("breadcumb_child","Show")
 @section("content")
 <div class="container">
 <div class="row">
@@ -10,7 +9,7 @@
         <div class="card m-b-30">
             <div class="card-body">
                 <h5 class="card-title mb-3">Informasi Banner</h5>
-
+                
                 <div class="row mb-2">
                     <div class="col-md-3">
                         Judul

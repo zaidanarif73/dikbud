@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.master')
 @section("title","Banner")
-@section('breadcumb')
-@endsection
+@section("breadcumb","Banner")
+@section("breadcumb_child","Edit")
 @section("content")
 <div class="container">
     <div class="row">

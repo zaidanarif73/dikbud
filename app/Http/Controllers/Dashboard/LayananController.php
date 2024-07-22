@@ -160,9 +160,10 @@ class LayananController extends Controller
 
             $result->update([
                 'title' => $title,
-               'layanan-trixFields' => $request->input('layanan-trixFields'),
+                'layanan-trixFields' => $request->input('layanan-trixFields'),
                 'image' => $image,
             ]);
+
 
             alert()->html('Berhasil','Data berhasil diubah','success'); 
             return redirect()->route($this->route."index");

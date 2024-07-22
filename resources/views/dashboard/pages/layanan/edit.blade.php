@@ -1,8 +1,7 @@
 @extends('dashboard.layouts.master')
 @section("title","Layanan")
-@section('breadcumb')
-   Layanan
-@endsection
+@section("breadcumb","Layanan")
+@section("breadcumb_child","Edit")
 @section("content")
 <div class="container">
     <div class="row">
@@ -23,7 +22,8 @@
                                 <div class="form-group row mb-5" >
                                     <label class="col-md-2 col-form-label" for="description">Deskripsi <span class="text-danger">*</span></label>
                                     <div class="col-md-10"   >  
-                                        @trix(\App\Models\Layanan::class, 'content', ['value' => $result->content])     
+                                        @trix($result, 'content')
+                                        {{-- @trix(\App\Models\Layanan::class, 'content', ['value' => $result->content])      --}}
                                         {{-- @trix(\App\Models\Layanan::class, $result->renderTrix("content")) --}}
                                         {{-- <input id="layanan-trixFields" type="hidden" name="layanan-trixFields" value="{!! $result->renderTrix("content") !!}" > --}}
                                       

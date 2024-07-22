@@ -1,8 +1,7 @@
 @extends('dashboard.layouts.master')
 @section("title","Berita")
-@section('breadcumb')
-   Berita
-@endsection
+@section("breadcumb","Berita")
+@section("breadcumb_child","Edit")
 @section("content")
 <div class="container">
     <div class="row">
@@ -25,7 +24,7 @@
                                     <div class="col-md-10"   >       
                                         
                                         {{-- <input id="description" type="hidden" name="berita-trixFields" value="{!! $result->renderTrix("content") !!}" > --}}
-                                        @trix(\App\Models\Berita::class, 'content', ['value' => $result->content])
+                                        @trix($result, 'content')
                                     </div>
                                 </div>
                                 <div class="form-group row">
