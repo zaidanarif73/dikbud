@@ -61,39 +61,6 @@ class BeritaController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        // $request->validate([
-        //     'title' => 'required|string|max:255',
-        //     'description' => 'required|string',
-        //     'image' => 'required|image|mimes:jpeg,jpg,png,gif|max:2048',
-        // ]);
-
-        // try {
-        //     $title = $request->input('title');
-        //     $description = $request->input('description');
-        //     $image = $request->file('image');
-
-        //     if ($image) {
-        //         $upload = UploadHelper::upload_file($image, 'image', ['jpeg', 'jpg', 'png', 'gif']);
-
-        //         if ($upload["IsError"] == true) {
-        //             throw new \Exception($upload["Message"]);
-        //         }
-
-        //         $imagePath = $upload["Path"];
-        //         Berita::create([
-        //             'title' => $title,
-        //             'description' => $description,
-        //             'image' => $imagePath,
-        //         ]);
-        //     }
-
-        //     return redirect()->route('beritas.index')->with('success', 'Berita created successfully.');
-        // } catch (\Throwable $e) {
-        //     Log::emergency($e->getMessage());
-
-        //     return redirect()->route('beritas.create')->with('error', $e->getMessage())->withInput();
-        // }
-       
         try {
             $title = $request->title;
             // $description = $request->description;
@@ -175,7 +142,7 @@ class BeritaController extends Controller
             }
 
             $title = $request->title;
-            $description = $request->description;
+            // $description = $request->description;
             $image = $request->file("image");
 
             if($image){
@@ -193,7 +160,7 @@ class BeritaController extends Controller
 
             $result->update([
                 'title' => $title,
-                'description'=> $description,
+               'berita-trixFields' => $request->input('berita-trixFields'),
                 'image' => $image,
             ]);
 

@@ -94,9 +94,15 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
         Route::get("/", "KontakController@index")->name("index");
     });
 
-    Route::group(["as"=>"layanan.", "prefix"=>"layanan"], function(){
-        Route::get("/", "LayananController@index")->name("index");
-    });
+    Route::group(["as" => "layanan.","prefix" => "layanan"], function () {
+		Route::get('/', 'LayananController@index')->name("index");
+		Route::get('/create', 'LayananController@create')->name("create");
+        Route::post('/', 'LayananController@store')->name("store");
+		Route::get('/{id}', 'LayananController@show')->name("show");
+		Route::get('/{id}/edit', 'LayananController@edit')->name("edit");
+		Route::put('/{id}', 'LayananController@update')->name("update");
+		Route::delete('/{id}', 'LayananController@destroy')->name("destroy");
+	});
 
     Route::group(["as"=>"tautan.", "prefix"=>"tautan"], function(){
         Route::get("/", "TautanController@index")->name("index");
