@@ -26,7 +26,7 @@
                     <div class="col-md-8">
                         <style>
                             img {
-                                max-width: 100%;
+                                max-width: 60%;
                                 height: auto;
                             }
                         </style>
