@@ -146,7 +146,6 @@
                 </p>
               </a>
             </li>
-            @endif
             
             <li class="nav-item">
               <a href="{{route('dashboard.pengaturan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.pengaturan')) active @endif">
@@ -173,7 +172,7 @@
                 </p>
               </a>
           </li>
-
+          @endif
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
