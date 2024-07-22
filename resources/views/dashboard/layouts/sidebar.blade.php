@@ -156,6 +156,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="/dashboard/user-activity" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.log')) active @endif">
+                <i class="bx bx-download col-3 bx-tada-hover"></i>
+                <p>
+                  User Activity
+                </p>
+              </a>
+            </li>
 
           <li class="nav-item">
               <a href="{{route('dashboard.log.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.log')) active @endif">

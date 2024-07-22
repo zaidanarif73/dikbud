@@ -10,13 +10,14 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Lab404\Impersonate\Models\Impersonate;
+use Haruncpi\LaravelUserActivity\Traits\Loggable;
 use App\Enums\UserEnum;
 use App\Enums\RoleEnum;
 
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles, SoftDeletes, Impersonate;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, SoftDeletes, Loggable, Impersonate;
 
     /**
      * The attributes that are mass assignable.
