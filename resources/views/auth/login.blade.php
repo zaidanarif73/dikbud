@@ -1,28 +1,24 @@
-
-<!DOCTYPE html>
-<html lang="en">
 @include('home.layouts.head')
 
-<body>
-    @include('sweetalert::alert')
+@include('sweetalert::alert')
     <div class="d-lg-flex half">
-        <div class="bg order-1 order-md-2" style="background-image: url('{{ asset("assets/img/login/bg_1.jpg") }}');"></div>
+        <div class="bg order-1 order-md-2" style="background-image: url('{{ asset("assets/img/login/login.jpg") }}');"></div>
         <div class="contents order-2 order-md-1">
     
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-7">
-                    <h3>Login to <strong>Kemendikbud</strong></h3>
-                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+                    <h3>Login ke</h3>
+                        <strong>DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG</strong>
                             <form action="{{ route('auth.login.index') }}" method="POST" class="user">
                                 @csrf
                                 <div class="form-group first">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" placeholder="your-email@gmail.com" id="email" name="email">
+                                    <label align="left" for="email">Email</label>
+                                    <input type="email" class="form-control" placeholder="Masukan Email" id="email" name="email">
                                 </div>
                                 <div class="form-group last mb-3">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" placeholder="Your Password" id="password" name="password">
+                                    <label align="left" for="password">Password</label>
+                                    <input type="password" class="form-control" placeholder="Masukan Password" id="password" name="password">
                                 </div>
                                 <div class="d-flex mb-5 align-items-center">
                                     <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
@@ -45,6 +41,3 @@
         <script src="assets/js/login/bootstrap.min.js"></script>
         <script src="assets/js/login/main.js"></script>
     @endsection
-</body>
-
-</html>
