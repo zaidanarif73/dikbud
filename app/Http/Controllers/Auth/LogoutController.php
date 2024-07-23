@@ -24,6 +24,7 @@ class LogoutController extends Controller
             }
             
             Auth::logout();
+            alert()->html('Berhasil', 'Berhasil Logout', 'success');
             return redirect()->route("auth.login.index");
         }
     }

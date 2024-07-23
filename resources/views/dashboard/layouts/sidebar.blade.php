@@ -149,7 +149,7 @@
             
             <li class="nav-item">
               <a href="{{route('dashboard.pengaturan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.pengaturan')) active @endif">
-                <i class="bx bx-download col-3 bx-tada-hover"></i>
+                <i class="bx bx-cog col-3 bx-tada-hover"></i>
                 <p>
                   Pengaturan
                 </p>
@@ -157,7 +157,7 @@
             </li>
             <li class="nav-item">
               <a href="/dashboard/user-activity" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.log')) active @endif">
-                <i class="bx bx-download col-3 bx-tada-hover"></i>
+                <i class="bx bx-history col-3 bx-tada-hover"></i>
                 <p>
                   User Activity
                 </p>
@@ -166,7 +166,7 @@
 
           <li class="nav-item">
               <a href="{{route('dashboard.log.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.log')) active @endif">
-                <i class="bx bx-download col-3 bx-tada-hover"></i>
+                <i class="bx bx-child col-3 bx-tada-hover"></i>
                 <p>
                   Log
                 </p>
