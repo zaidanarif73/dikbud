@@ -20,7 +20,7 @@
         <div class="video-section">
             <h2>Video Pembelajaran</h2>
             <div class="video-container">
-                <iframe controls width="600" height="400" src="https://www.youtube.com/embed/fYJMO7Dv8-8?si=QTfATJLn9SZvaytR" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe controls width="600" height="400" src="https://www.youtube.com/embed/fYJMO7Dv8-8?si=QTfATJLn9SZvaytR" frameborder="0" allow="accelerometer; controls; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     <div class="d-flex justify-content-center mt-5" >

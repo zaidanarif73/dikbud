@@ -16,7 +16,7 @@
             </nav>
         </header>
         <div class="row">
-            <section class="highlight col-6">
+            <section class="highlight col-12 col-md-12 col-lg-6">
                 <div class="news-item">
                     <img alt src="assets/img/berita/Berita1.jpg">
                     <p>Jumat, 21 Juni 2024 09:25 WIB</p>
@@ -49,7 +49,7 @@
                     <button>Baca Selengkapnya</button>
                 </div>
             </section>
-            <aside class="other-news col-6">
+            <aside class="other-news col-12 col-md-12 col-lg-6">
                 <h2>Berita Lainnya</h2>
                 <div class="news-item">
                     <img src="assets/img/berita/Berita4.jpg" alt="">

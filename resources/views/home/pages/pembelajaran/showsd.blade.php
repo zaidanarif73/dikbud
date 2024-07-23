@@ -1,6 +1,7 @@
 @extends('home.layouts.master')
     @section("css")
         <link  href="{{URL::to('/')}}/assets/css/pembelajaran/stylesd.css" rel="stylesheet">
+        
     @endsection
 @section("content")
 <div class="container mt-5">
@@ -16,14 +17,14 @@
                 <li><a class="dropdown-item" href="#">Kelas 3</a></li>
                 <li><a class="dropdown-item" href="#">Kelas 4</a></li>
                 <li><a class="dropdown-item" href="#">Kelas 5</a></li>
-                <li><a class="dropdown-item" href="#">Kelas 6</a></li>
+                <li><a class="dropdown-item" href="#">Kelas 6</a></li
             </ul>
         </div>
     <div class="row mt-5">
         <div class="video-section">
             <h2>Video Pembelajaran</h2>
             <div class="video-container">
-                <iframe width="600" height="400" src="https://www.youtube.com/embed/KZgClsXtCyo?autoplay=1&controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="600" height="400" src="https://www.youtube.com/embed/KZgClsXtCyo?autoplay=1&controls=1" frameborder="0" allow="accelerometer; controls; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     <div class="d-flex justify-content-center mt-5" >
