@@ -28,7 +28,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title.required' => 'Judul harus diisi',
-            'description.required' => 'Deksripsi harus diisi',
+            'slug.required' => 'Deksripsi harus diisi',
             'image.image' => 'Foto harus berupa gambar',
             'image.mimes' => 'Foto harus berupa jpeg, bmp, png, gif, svg , jpg',
             'image.max' => 'Foto tidak boleh lebih dari 2MB',

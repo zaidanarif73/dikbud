@@ -37,6 +37,10 @@
 
           <li class="nav-header">MENU ADMIN</li>
 
+            @if(Auth::user()->hasRole([
+                  \App\Enums\RoleEnum::SuperAdmin,
+                  \App\Enums\RoleEnum::Admin,
+            ]))
             <li class="nav-item">
               <a href="{{route('dashboard.menu.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.menu')) active @endif">
                 <i class="bx bx-menu col-3 bx-tada-hover"></i>
@@ -56,18 +60,8 @@
                 </col>
               </a>
             </li>
-
-            <li class="nav-item">
-              <a href="{{route('dashboard.page.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.page')) active @endif">
-                <col class="row">
-                <i class="bx bx-dock-right col-3 bx-tada-hover"></i>
-                <p>
-                  Page
-                </p>
-                </col>
-              </a>
-            </li>
-
+            @endif
+            
             <li class="nav-item">
               <a href="{{route('dashboard.berita.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.berita')) active @endif">
                 <col class="row">
@@ -78,7 +72,12 @@
                 </col>
               </a>
             </li>
+            
 
+            @if(Auth::user()->hasRole([
+                \App\Enums\RoleEnum::SuperAdmin,
+                \App\Enums\RoleEnum::Admin,
+            ]))
             <li class="nav-item">
               <a href="{{route('dashboard.galeri.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.galeri')) active @endif">
                 <col class="row">
@@ -134,6 +133,7 @@
                 </p>
               </a>
             </li>
+            @endif
 
             @if(Auth::user()->hasRole([
                 \App\Enums\RoleEnum::SuperAdmin,

@@ -13,8 +13,9 @@ class Berita extends Model
     
     protected $fillable = [
         'title',
-        'description',
+        'slug',
         'image',
+        'date',
         'berita-trixFields',
     ];
 }

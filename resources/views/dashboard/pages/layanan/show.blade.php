@@ -8,7 +8,7 @@
     <div class="col-xl-12">
         <div class="card m-b-30">
             <div class="card-body">
-                <h5 class="card-title mb-3">Layanan</h5>
+             
 
                 <div class="row mb-2">
                     <div class="col-md-3">

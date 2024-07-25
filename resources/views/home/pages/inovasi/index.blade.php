@@ -97,7 +97,7 @@
             $('#tahunList li a').on('click', function () {
                 var year= ($(this).text());
                 //alert("Your Favourite Sports is "+txt);
-                $("#frmTahun").attr("action", "{{ route('home.inovasi.index') }}");
+                $("#frmTahun").attr("action", "{{ route('home.informasi.index') }}");
                 $("#frmTahun").find('input[name="year"]').val(year);
                 $("#frmTahun").submit();
                 //$("#tahun").val() = txt;

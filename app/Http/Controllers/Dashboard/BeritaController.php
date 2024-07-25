@@ -63,8 +63,8 @@ class BeritaController extends Controller
     {
         try {
             $title = $request->title;
-            // $description = $request->description;
             $image = $request->file("image");
+            $date = $request->date;
             
 
             if($image){
@@ -79,6 +79,7 @@ class BeritaController extends Controller
                     'title' => $title,
                     'berita-trixFields' => $request->input('berita-trixFields'),
                     'image' => $image,
+                    'date'=> $date
                 ]);
             }
             alert()->html('Berhasil','Data berhasil ditambahkan','success'); 
@@ -98,6 +99,7 @@ class BeritaController extends Controller
         $result = $this->berita;
         $result = $result->where('id',$id);
         $result = $result->first();
+
 
         if(!$result){
             alert()->error('Gagal',"Data tidak ditemukan");
@@ -142,8 +144,8 @@ class BeritaController extends Controller
             }
 
             $title = $request->title;
-            // $description = $request->description;
             $image = $request->file("image");
+            $date = $request->date;
 
             if($image){
                 $upload = UploadHelper::upload_file($image,'berita',['jpeg','jpg','png','gif']);
@@ -160,8 +162,9 @@ class BeritaController extends Controller
 
             $result->update([
                 'title' => $title,
-               'berita-trixFields' => $request->input('berita-trixFields'),
+                'berita-trixFields' => $request->input('berita-trixFields'),
                 'image' => $image,
+                'date'=> $date
             ]);
 
             alert()->html('Berhasil','Data berhasil diubah','success'); 
