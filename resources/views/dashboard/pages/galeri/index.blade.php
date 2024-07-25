@@ -35,7 +35,7 @@
                                             <td>{{ $table->firstItem() + $index }}</td>
                                             <td>{{ $row->title }}</td>
                                             <td>{{ $row->description }}</td>
-                                            <td>{{date('D, d-m-Y',strtotime($row->date))}}</td>
+                                            <td>{{ Carbon\Carbon::parse($row->date)->translatedFormat('l,d F Y') }}</td>
                                             <td class="d-flex justify-content-center">
                                                 <img  src="{{ asset('storage/'.$row->image) }}" alt="" style="width: 100px;height:1auto;">
                                             </td>

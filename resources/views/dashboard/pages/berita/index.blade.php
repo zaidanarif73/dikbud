@@ -24,8 +24,8 @@
                                     <th>No</th>
                                     <th>Judul</th>
                                     <th>Deskripsi</th>
+                                    <th>Tanggal</th>
                                     <th>Image</th>
-                                    <th>Dibuat Pada</th>
                                     <th>Aksi</th>
                                 </thead>
                                 <tbody>
@@ -33,12 +33,11 @@
                                     <tr>
                                         <td>{{$table->firstItem() + $index}}</td>
                                         <td>{{$row->title}}</td>
-                                        {{-- <td>{{ Str::limit($row->slug, 40) }}</td> --}}
-                                        <td>{!! Str::limit($row->renderTrix("content"),40) !!}</td>
+                                        <td>{{$row->description}}</td>
+                                        <td>{{ Carbon\Carbon::parse($row->date)->translatedFormat('l,d F Y') }}</td>
                                         <td>
                                             <img src="{{ asset('storage/'.$row->image) }}" alt="" style="width: 80px;height:80px;">
                                         </td>
-                                        <td>{{ Carbon\Carbon::parse($row->created_at)->translatedFormat('l,d F Y') }}</td>
                                         <td>
                                             <div class="d-flex mb-1">
                                                 <a href="{{route('dashboard.berita.show',$row->id)}}" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>

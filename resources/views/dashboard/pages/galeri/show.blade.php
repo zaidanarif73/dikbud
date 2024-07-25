@@ -8,7 +8,7 @@
     <div class="col-xl-12">
         <div class="card m-b-30">
             <div class="card-body">
-                <h5 class="card-title mb-3">Informasi Galeri</h5>
+                
 
                 <div class="row mb-2">
                     <div class="col-md-3">
@@ -32,7 +32,7 @@
                         Tanggal
                     </div>
                     <div class="col-md-8">
-                        : {{ date('D, d-m-Y',strtotime($result->date)) }}
+                        : {{ Carbon\Carbon::parse($result->date)->translatedFormat('l,d F Y') }}
                     </div>
                 </div>
 
