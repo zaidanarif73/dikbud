@@ -35,7 +35,6 @@
                 <li><a class="dropdown-item" href="#">2028</a></li>
                 <li><a class="dropdown-item" href="#">2029</a></li>
                 <li><a class="dropdown-item" href="#">2030</a></li>
-                <li><a class="dropdown-item" href="#">2031</a></li>
             </ul>
         </div>
         <div class="box col-10 d-flex justify-content-end">
