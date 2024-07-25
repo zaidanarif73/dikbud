@@ -63,7 +63,6 @@ class BeritaController extends Controller
     {
         try {
             $title = $request->title;
-            // $description = $request->description;
             $image = $request->file("image");
             
 
@@ -142,7 +141,6 @@ class BeritaController extends Controller
             }
 
             $title = $request->title;
-            // $description = $request->description;
             $image = $request->file("image");
 
             if($image){
@@ -160,7 +158,7 @@ class BeritaController extends Controller
 
             $result->update([
                 'title' => $title,
-               'berita-trixFields' => $request->input('berita-trixFields'),
+                'berita-trixFields' => $request->input('berita-trixFields'),
                 'image' => $image,
             ]);
 

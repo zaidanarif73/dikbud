@@ -40,8 +40,9 @@ class LoginController extends Controller
             if(Auth::attempt($field,$rememberme)){
                 if(!Auth::user()->hasRole([
                         RoleEnum::SuperAdmin,
+                        RoleEnum::Admin,
                         RoleEnum::Moderator,
-                        RoleEnum::Guest,
+                        
                 ])){
                     Auth::logout();
                     throw new Error("Anda tidak diperbolehkan mengakses menu ini");
@@ -49,6 +50,7 @@ class LoginController extends Controller
             
                 if(Auth::user()->hasRole([
                     RoleEnum::SuperAdmin,
+                    RoleEnum::Admin,
                     RoleEnum::Moderator,
                 ])){
                     alert()->html('Berhasil','Login berhasil','success'); 

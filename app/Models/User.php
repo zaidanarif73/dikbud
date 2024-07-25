@@ -80,12 +80,12 @@ class User extends Authenticatable
     {
         return $this->hasRole(RoleEnum::SuperAdmin);
     }
+    public function isAdmin(): bool
+    {
+        return $this->hasRole(RoleEnum::Admin);
+    }
     public function isModerator(): bool
     {
         return $this->hasRole(RoleEnum::Moderator);
-    }
-    public function isGuest(): bool
-    {
-        return $this->hasRole(RoleEnum::Guest);
     }
 }   
