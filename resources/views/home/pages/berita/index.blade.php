@@ -1,4 +1,5 @@
 @extends('home.layouts.master')
+
 @section('css')
     <link href="assets/css/berita/style.css" rel="stylesheet">
     <link href="assets/css/berita/card.css" rel="stylesheet">
@@ -10,7 +11,6 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-          
             <div class="container">
               @forelse ($table as $index => $row)
                   <div class="card">

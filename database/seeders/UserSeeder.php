@@ -33,6 +33,16 @@ class UserSeeder extends Seeder
             'password' => bcrypt('admin123'),
             'email_verified_at' => date('Y-m-d H:i:s'),
             ]);
+        $userAdministrator->assignRole(RoleEnum::Admin);
+
+        $userAdministrator = User::firstOrCreate([
+            'email' => 'moderator@gmail.com'
+            ],[
+            'name' => 'Moderator',
+            'email' => 'moderator@gmail.com',
+            'password' => bcrypt('moderator123'),
+            'email_verified_at' => date('Y-m-d H:i:s'),
+            ]);
         $userAdministrator->assignRole(RoleEnum::Moderator);
     }
 }
