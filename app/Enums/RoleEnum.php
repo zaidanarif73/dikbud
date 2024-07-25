@@ -13,15 +13,15 @@ use Auth;
 final class RoleEnum extends Enum
 {
     const SuperAdmin = "SuperAdmin";
+    const Admin = "Admin";
     const Moderator = "Moderator";
-    const Guest = "Guest";
 
     public static function roles()
     {
         $roles = [
             'SuperAdmin',
+            'Admin',
             'Moderator',
-            'Guest',
         ];
 
         if(Auth::user()->isModerator()){

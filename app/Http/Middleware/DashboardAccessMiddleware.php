@@ -17,7 +17,7 @@ class DashboardAccessMiddleware
     public function handle(Request $request, Closure $next)
     {
         $user = Auth::user(); 
-        if (empty($user) || !$user->hasRole([RoleEnum::SuperAdmin, RoleEnum::Moderator])) {
+        if (empty($user) || !$user->hasRole([RoleEnum::SuperAdmin, RoleEnum::Admin, RoleEnum::Moderator])) {
             alert()->html('Gagal',"Anda tidak diperbolehkan mengakses halaman ini",'error');
             
             if($user){

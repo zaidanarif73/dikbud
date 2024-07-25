@@ -61,7 +61,7 @@
             p {
                 font-size: 1.3em;
             }
-
+          }
 
         </style>
     @endsection
