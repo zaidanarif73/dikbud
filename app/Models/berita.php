@@ -15,6 +15,7 @@ class Berita extends Model
         'title',
         'slug',
         'image',
+        'date',
         'berita-trixFields',
     ];
 }
