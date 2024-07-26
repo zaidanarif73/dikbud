@@ -22,23 +22,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-2 col-form-label">Deskripsi <span class="text-danger">*</span></label>
-                                
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="description" placeholder="Deskripsi"  value="{{old('description',$result->description)}}" required>
-                                    {{-- <textarea class="form-control" aria-label="With textarea" name="description" value="{{old('description',$result->description)}}"></textarea> --}}
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label class="col-md-2 col-form-label">Tanggal Mulai <span class="text-danger">*</span></label>
                                 <div class="col-md-10">
-                                    <input type="date" class="form-control"name="date_mulai" value="{{old('date_mulai',$result->date_mulai)}}" required>
+                                    <input type="date" class="form-control"name="start" value="{{old('start',$result->start)}}" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-2 col-form-label">Tanggal Selesai <span class="text-danger">*</span></label>
                                 <div class="col-md-10">
-                                    <input type="date" class="form-control"name="date_selesai" value="{{old('date_selesai',$result->date_selesai)}}" required>
+                                    <input type="date" class="form-control"name="end" value="{{old('end',$result->end)}}" required>
                                 </div>
                             </div>
                         </div>

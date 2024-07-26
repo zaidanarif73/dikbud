@@ -19,22 +19,13 @@
                         : {{$result->title}}
                     </div>
                 </div>
-                <div class="row mb-2">
-                    <div class="col-md-3">
-                        Deskripsi
-                    </div>
-                    <div class="col-md-8">
-                        : {{$result->description}}
-                    </div>
-                </div>
-
             
                 <div class="row mb-2">
                     <div class="col-md-3">
                         Tanggal Mulai
                     </div>
                     <div class="col-md-8">
-                        : {{ date('d-m-Y',strtotime($result->date_mulai)) }}
+                        : {{ date('d-m-Y',strtotime($result->start)) }}
                     </div>
                 </div>
 
@@ -43,7 +34,7 @@
                         Tanggal Selesai
                     </div>
                     <div class="col-md-8">
-                        : {{ date('d-m-Y',strtotime($result->date_selesai)) }}
+                        : {{ date('d-m-Y',strtotime($result->end)) }}
                     </div>
                 </div>
 

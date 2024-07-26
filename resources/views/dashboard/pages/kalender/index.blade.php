@@ -24,7 +24,6 @@
                                     <thead>
                                         <th style="width:5%">No</th>
                                         <th style="width:15%">Judul</th>
-                                        <th style="width:20%">Deskripsi</th>
                                         <th style="width:20%">Tanggal Mulai</th>
                                         <th style="width:20%">Tanggal Selesai</th>
                                         <th style="width:20%">Aksi</th>
@@ -34,9 +33,8 @@
                                         <tr>
                                             <td>{{ $table->firstItem() + $index }}</td>
                                             <td>{{ $row->title }}</td>
-                                            <td>{{ $row->description }}</td>
-                                            <td>{{date('d-m-Y',strtotime($row->date_mulai))}}</td>
-                                            <td>{{date('d-m-Y',strtotime($row->date_selesai))}}</td>
+                                            <td>{{date('d-m-Y',strtotime($row->start))}}</td>
+                                            <td>{{date('d-m-Y',strtotime($row->end))}}</td>
                                             <td>
                                                 <div class="d-flex mb-1">
                                                     <a href="{{route('dashboard.kalender.show',$row->id)}}" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
