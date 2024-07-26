@@ -54,18 +54,16 @@ class KalenderController extends Controller
         public function store(StoreRequest $request){
             try {
                 $title = $request->title;
-                $description = $request->description;
-                $date_mulai = $request->date_mulai;
-                $date_selesai = $request->date_selesai;
+                $start = $request->start;
+                $end = $request->end;
                 
                 
               
                 //store on db
                 $create = $this->kalender->create([
                     'title' => $title,
-                    'description' => $description,
-                    'date_mulai'=> $date_mulai,
-                    'date_selesai'=> $date_selesai
+                    'start'=> $start,
+                    'end'=> $end
                 ]);
                 
                 alert()->html('Berhasil','Data berhasil ditambahkan','success'); 
@@ -126,17 +124,15 @@ class KalenderController extends Controller
                 }
     
                 $title = $request->title;
-                $description = $request->description;
-                $date_mulai = $request->date_mulai;
-                $date_selesai = $request->date_selesai;
+                $start = $request->start;
+                $end = $request->end;
                
     
     
                 $result->update([
                     'title' => $title,
-                    'description' => $description,
-                    'date_mulai'=> $date_mulai,
-                    'date_selesai'=> $date_selesai
+                    'start'=> $start,
+                    'end'=> $end
                 ]);
     
                 alert()->html('Berhasil','Data berhasil diubah','success'); 

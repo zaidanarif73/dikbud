@@ -21,23 +21,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-2 col-form-label">Deskripsi <span class="text-danger">*</span></label>
-                                
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="description" placeholder="Deskripsi"  value="" required>
-                                    {{-- <textarea class="form-control" aria-label="With textarea" name="description"></textarea> --}}
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label class="col-md-2 col-form-label">Tanggal Mulai <span class="text-danger">*</span></label>
                                 <div class="col-md-10">
-                                    <input type="date" class="form-control"name="date_mulai" value="{{old('date_mulai',date('Y-m-d'))}}" required>
+                                    <input type="date" class="form-control"name="start" value="{{old('start',date('Y-m-d'))}}" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-2 col-form-label">Tanggal Selesai <span class="text-danger">*</span></label>
                                 <div class="col-md-10">
-                                    <input type="date" class="form-control"name="date_selesai" value="{{old('date_selesai',date('Y-m-d'))}}" required>
+                                    <input type="date" class="form-control"name="end" value="{{old('end',date('Y-m-d'))}}" required>
                                 </div>
                             </div>
                         </div>

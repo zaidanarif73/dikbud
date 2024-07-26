@@ -14,14 +14,11 @@ class StoreRequest extends FormRequest
             'title' => [
                 'required',
             ],
-            'description'=> [
-                'required',
-                ],
-            'date_mulai' => [
+            'start' => [
                 'required',
                 'date_format:Y-m-d',
             ],
-            'date_selesai' => [
+            'end' => [
                 'required',
                 'date_format:Y-m-d',
             ],

@@ -8,3 +8,6 @@
     <p>Ini Laman Kontak</p>
 </div>
 @endsection
+@section('script')
+
+@endsection

@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Haruncpi\LaravelUserActivity\Traits\Loggable;
 
 class Kalender extends Model
 {
-    use HasFactory;
+    use HasFactory, Loggable;
     protected $fillable = [
         'title',
-        'description',
-        'date_mulai',
-        'date_selesai',
+        'start',
+        'end',
     ];
 }
