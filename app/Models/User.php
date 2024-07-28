@@ -13,6 +13,7 @@ use Lab404\Impersonate\Models\Impersonate;
 use Haruncpi\LaravelUserActivity\Traits\Loggable;
 use App\Enums\UserEnum;
 use App\Enums\RoleEnum;
+use Illuminate\Contracts\Auth\CanResetPassword;
 
 
 class User extends Authenticatable
@@ -32,6 +33,7 @@ class User extends Authenticatable
         'avatar',
         'status',
         'email_verified_at',
+        'remember_token',
     ];
 
     /**
@@ -41,7 +43,6 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
     /**
