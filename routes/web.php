@@ -137,6 +137,16 @@ Route::group(["namespace"=>"App\Http\Controllers\Auth", "as"=>"auth.", "prefix"=
     });
 
     Route::get("/logout","LogoutController@logout")->name('logout');
+
+    Route::group(["as"=>"forgot_pw.", "prefix"=>"forgot_pw"], function(){
+        Route::get("/", "ForgotPasswordController@index")->name("index");
+        Route::post("/", "ForgotPasswordController@store")->name("store");
+    });
+
+    Route::group(["as" => "reset_pw.","prefix" => "reset_pw"], function () {
+        Route::get('/{token}', 'ResetPasswordController@index')->name('index');
+        Route::post('/', 'ResetPasswordController@post')->name('post');
+    });
 });
 
 
