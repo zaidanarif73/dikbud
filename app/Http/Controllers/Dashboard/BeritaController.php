@@ -9,6 +9,7 @@ use App\Http\Requests\Berita\UpdateRequest;
 use App\Helpers\UploadHelper;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use Auth;
 
 class BeritaController extends Controller
 {
@@ -79,7 +80,8 @@ class BeritaController extends Controller
                     'title' => $title,
                     'berita-trixFields' => $request->input('berita-trixFields'),
                     'image' => $image,
-                    'date'=> $date
+                    'date'=> $date,
+                    'creator' => Auth::user()->name,
                 ]);
             }
             alert()->html('Berhasil','Data berhasil ditambahkan','success'); 

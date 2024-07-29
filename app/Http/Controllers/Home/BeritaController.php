@@ -43,6 +43,11 @@ class BeritaController extends Controller
         $result = $result->where('id',$id);
         $result = $result->first();
 
+        $except_result = $this->berita;
+        $except_result = $except_result->where('id','!=',$id);
+        $except_result = $except_result->orderBy("date","DESC");      //sort descending by time created data
+        $except_result = $except_result->paginate(3);   //limit paginate only 10 data appears per load
+
         if(!$result){
             alert()->error('Gagal',"Data tidak ditemukan");
             return redirect()->route($this->route."index");
@@ -50,6 +55,7 @@ class BeritaController extends Controller
 
         $data = [
             'result' => $result,
+            'except_result' => $except_result,
         ];
 
         return view($this->view."show",$data);
