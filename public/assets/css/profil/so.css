@@ -45,7 +45,8 @@
 }
 .profile-card {
     text-align: center;
-    border: 1px solid #ccc;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
     background-color: #fff;
     justify-content: center;
     align-items: center;
@@ -71,6 +72,51 @@
     margin-top: 40px;
 }
 .organization-structure img {
-    width: 100%;
+    width: 85%;
     height: auto;
+}
+
+
+/* TEAM */
+.team .team-item {
+    position: relative;
+    padding: 0 25px 25px 25px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.team .team-item .team-img img {
+    width: 60%;
+    height: 60%;
+    border-radius: 100%;
+    transition: 0.5s;
+}
+
+.team .team-item .team-title h4,
+.team .team-item .team-title p {
+    transition: 0.5s;
+}
+
+.team .team-item:hover .team-title h4,
+.team .team-item:hover .team-title p {
+    color: var(--bs-black);
+}
+
+.team .team-item .team-icon {
+    display: flex;
+    justify-content: center;
+}
+
+.team .team-item .team-icon a {
+    transition: 0.5s;
+}
+
+.team .team-item:hover .team-icon a {
+    color: var(--bs-dark);
+    background: var(--bs-white);
+}
+
+.team .team-item:hover .team-icon a:hover {
+    color: var(--bs-primary);
+    background: var(--bs-dark);
 }
