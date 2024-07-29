@@ -12,11 +12,13 @@ class Berita extends Model
 {
     use HasFactory, HasTrixRichText, TrixRender, Loggable;
     
+    
     protected $fillable = [
         'title',
         'slug',
         'image',
         'date',
         'berita-trixFields',
+        'creator',
     ];
 }

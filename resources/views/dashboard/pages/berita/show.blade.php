@@ -20,11 +20,11 @@
                             <div class="col-md-2">
                                 Deskripsi
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-8 text-justify">
                                 
                                 <style>
                                     img {
-                                        max-width: 60%;
+                                        max-width: 100%;
                                         height: auto;
                                     }
                                 </style>
