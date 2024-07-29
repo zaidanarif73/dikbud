@@ -78,7 +78,94 @@
 
 
 /* TEAM */
-.team .team-item {
+.testimonials .testimonial-item {
+    background-color: var(--surface-color);
+    box-shadow: 0px 0 20px rgba(0, 0, 0, 0.1);
+    box-sizing: content-box;
+    padding: 30px;
+    margin: 40px 30px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: 0.3s;
+  }
+  
+  .testimonials .testimonial-item .stars {
+    margin-bottom: 15px;
+  }
+  
+  .testimonials .testimonial-item .testimonial-img {
+    width: 160px;
+    border-radius: 20%;
+    border: 4px solid var(--background-color);
+    margin: 0 auto;
+  }
+  
+  .testimonials .testimonial-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+  }
+  
+  .testimonials .testimonial-item h4 {
+    font-size: 14px;
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
+    margin: 0;
+  }
+  
+  .testimonials .testimonial-item p {
+    font-style: italic;
+    margin: 0 15px;
+  }
+  
+  .testimonials .swiper-wrapper {
+    height: auto;
+  }
+  
+  .testimonials .swiper-pagination {
+    margin-top: 2px;
+    position: relative;
+  }
+  
+  .testimonials .swiper-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+    opacity: 1;
+  }
+  
+  .testimonials .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: var(--accent-color);
+  }
+  
+  .testimonials .swiper-slide {
+    opacity: 0.3;
+  }
+  
+  @media (max-width: 1199px) {
+    .testimonials .swiper-slide-active {
+      opacity: 1;
+    }
+  
+    .testimonials .swiper-pagination {
+      margin-top: 0;
+    }
+  
+    .testimonials .testimonial-item {
+      margin: 40px 20px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .testimonials .swiper-slide-next {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+  }
+
+
+/* .team .team-item {
     position: relative;
     padding: 0 25px 25px 25px;
     border-radius: 5px;
@@ -119,4 +206,4 @@
 .team .team-item:hover .team-icon a:hover {
     color: var(--bs-primary);
     background: var(--bs-dark);
-}
+} */
