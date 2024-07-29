@@ -1,9 +1,9 @@
 @extends('dashboard.layouts.master')
-@section("title","Menu")
+@section("title","Inovasi")
 @section('css')
 
 @endsection
-@section("breadcumb","Menu")
+@section("breadcumb","Inovasi")
 @section("content")
 <div class="row">
     <div class="col-xl-12">
@@ -11,9 +11,9 @@
             <div class="card-body">
                 <div class="row mb-3">
                     <div class="col-lg-12">
-                        <a href="{{route('dashboard.menu.create')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+                        <a href="{{route('dashboard.inovasi.create')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
                         <a href="#" class="btn btn-success btn-filter"><i class="fa fa-filter"></i> Fiter</a>
-                        <a href="{{route('dashboard.menu.index')}}" class="btn btn-warning"><i class="fa fa-refresh"></i> Refresh</a>
+                        <a href="{{route('dashboard.inovasi.index')}}" class="btn btn-warning"><i class="fa fa-refresh"></i> Refresh</a>
                     </div>
                 </div>
                 <div class="row">
@@ -24,8 +24,8 @@
                                     <th>No</th>
                                     <th>Judul</th>
                                     <th>Deskripsi</th>
+                                    <th>Tanggal</th>
                                     <th>Image</th>
-                                    <th>Dibuat Pada</th>
                                     <th>Aksi</th>
                                 </thead>
                                 <tbody>
@@ -34,14 +34,14 @@
                                         <td>{{$table->firstItem() + $index}}</td>
                                         <td>{{$row->title}}</td>
                                         <td>{{$row->description}}</td>
+                                        <td>{{ Carbon\Carbon::parse($row->date)->translatedFormat('l,d F Y') }}</td>
                                         <td>
                                             <img src="{{ asset('storage/'.$row->image) }}" alt="" style="width: 80px;height:80px;">
                                         </td>
-                                        <td>{{date('d-m-Y H:i:s',strtotime($row->created_at))}}</td>
                                         <td>
                                             <div class="d-flex mb-1">
-                                                <a href="{{route('dashboard.menu.show',$row->id)}}" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
-                                                <a href="{{route('dashboard.menu.edit',$row->id)}}" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i> Edit</a>
+                                                <a href="{{route('dashboard.inovasi.show',$row->id)}}" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>
+                                                <a href="{{route('dashboard.inovasi.edit',$row->id)}}" class="btn btn-primary btn-sm mr-1"><i class="fa fa-edit"></i> Edit</a>
                                                 <a href="#" class="btn btn-danger btn-sm mr-1 btn-delete" data-id="{{$row->id}}"><i class="fa fa-trash"></i> Hapus</a>
                                             </div>
                                         </td>
@@ -62,7 +62,7 @@
     </div>
 </div>
 
-@include("dashboard.pages.menu.modal.index")
+@include("dashboard.pages.inovasi.modal.index")
 
 <form id="frmDelete" method="POST">
     @csrf
@@ -84,7 +84,7 @@
         $(document).on("click",".btn-delete",function(){
             let id = $(this).data("id");
             if(confirm("Apakah anda yakin ingin menghapus data ini ?")){
-                $("#frmDelete").attr("action", "{{ route('dashboard.menu.destroy', '_id_') }}".replace("_id_", id));
+                $("#frmDelete").attr("action", "{{ route('dashboard.inovasi.destroy', '_id_') }}".replace("_id_", id));
                 $("#frmDelete").find('input[name="id"]').val(id);
                 $("#frmDelete").submit();
             }
