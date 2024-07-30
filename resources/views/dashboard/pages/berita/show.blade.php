@@ -28,7 +28,9 @@
                                         height: auto;
                                     }
                                 </style>
-                                : {!! $result->renderTrix('content') !!}
+                                {{-- : {!! $result->renderTrix('content') !!} --}}
+                                {!! $result->trixRichText->first()->content !!}
+                          
                             </div>
                         </div>
                         <div class="row mb-2">

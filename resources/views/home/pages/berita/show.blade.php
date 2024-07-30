@@ -11,7 +11,7 @@
             <img src="{{ asset('storage/' . $result->image) }}" class="card-img-top mb-3" alt="">
             <h1 class=""><b>{{ $result->title }}</b></h1>
             <div class="">
-                <p>{{ Carbon\Carbon::parse($result->created_at)->translatedFormat('l,d F Y') }} by {{ $result->creator }}</p>
+                <p>{{ Carbon\Carbon::parse($result->date)->translatedFormat('l,d F Y') }} by {{ $result->creator }}</p>
                 <p></p>
             </div>
             <style>
