@@ -42,6 +42,7 @@ class ForgotPasswordController extends Controller
                 'subject'   =>'Jangan Bagikan Pesan Ini Kepada Siapapun!!',
                 'body'      =>'Konfirmasi Lupa Password',
                 'token'     =>$token,
+                
                 // 'resetLink' => url("/auth//reset_pw/{$token}?email=" . urlencode($request->email)),
                 // 'resetLink' => url("/auth/reset_pw/{$token}/{$request->email}"),
             ];
