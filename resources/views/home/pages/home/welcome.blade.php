@@ -16,9 +16,10 @@
   #calendars{
     height:auto;
     width: auto;
+    margin-top: 15%
   }
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 600px){
       #calendars{
       height:500px;
       width: 500px;
@@ -214,41 +215,55 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mt-5">
-              <div class="card">
-                <div class="card-body">
-                  <img src="{{URL::to('/')}}/assets/img/berita/Berita2.jpg" class="img-fluid mt-3" alt="">
-                  <p class="card-text mt-3">Kamis, 20 Juni 2024 22:36 WIB</p>
-                  <h5 class="card-title">Mas Kadin : Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara dengan Lulusan Formal</h5>
-                  <p class="card-text mt-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan sekaligus Plh. Kepala Bidang Pembinaan PAUD P...</p>
+      {{-- berita --}}
+      <div class="container-fluid berita py-5">
+        <div class="container py-5">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="berita-item rounded">
+                       <div class="berita-img rounded-top">
+                            <img src="assets/img/cobabud.jpg" class="img-fluid rounded-top w-100" alt="">
+                       </div>
+                        <div class="berita-content rounded-bottom bg-light p-4">
+                            <div class="berita-content-inner">
+                              <p class="card-text">Kamis, 20 Juni 2024 22:36 WIB</p>
+                                <h5 class="mb-4">Mas Kadin: Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara Dengan Lulusan Formal</h5>
+                                <p class="mb-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan Sekaligus Plh. Kepala bidang PAUD P...</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-          </div>
-          <div class="col-lg-4 mt-5">
-              <div class="card">
-                <div class="card-body">
-                  <img src="{{URL::to('/')}}/assets/img/berita/Berita5.jpg" class="img-fluid mt-3" alt="">
-                  <p class="card-text mt-3">Senin, 17 Juni 2024 18:35 WIB</p>
-                  <h5 class="card-title">Keluarga Besar Disdikbud Laksanakan Sholat Idhul Adha 1445 H di Masjid Tarbiyatul Hidayah</h5>
-                  <p class="card-text mt-3">Malang - Senin, 17 Juni 2024 atau bertepatan dengan 10 Dzulhijjah 1445 H, Keluarga Besar Dinas...</p>
+                <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="berita-item rounded">
+                       <div class="berita-img rounded-top">
+                            <img src="assets/img/cobabud.jpg" class="img-fluid rounded-top w-100" alt="">
+                       </div>
+                        <div class="berita-content rounded-bottom bg-light p-4">
+                            <div class="berita-content-inner">
+                              <p class="card-text">Kamis, 20 Juni 2024 22:36 WIB</p>
+                              <h5 class="mb-4">Mas Kadin: Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara Dengan Lulusan Formal</h5>
+                              <p class="mb-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan Sekaligus Plh. Kepala bidang PAUD P...</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-          </div>
-          <div class="col-sm-4 mt-5">
-              <div class="card">
-                <div class="card-body">
-                  <img src="{{URL::to('/')}}/assets/img/berita/Berita4.jpg" class="img-fluid mt-3" alt="">  
-                  <p class="card-text mt-3">Senin, 17 Juni 2024 18:42 WIB</p>
-                  <h5 class="card-title">Pj Walikota Malang Tinjau Penyembelihan Hewan Qurban Disdikbud</h5>
-                  <p class="card-text mt-3">Malang - Pj Walikota Malang Dr. Ir. Wahyu Hidayat, MM didampingi Kepala Dinas Pendidikan dan Kebuday...</p>
+                <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="berita-item rounded">
+                       <div class="berita-img rounded-top">
+                            <img src="assets/img/cobabud.jpg" class="img-fluid rounded-top w-100" alt="">
+                       </div>
+                        <div class="berita-content rounded-bottom bg-light p-4">
+                            <div class="berita-content-inner">
+                              <p class="card-text">Kamis, 20 Juni 2024 22:36 WIB</p>
+                              <h5 class="mb-4">Mas Kadin: Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara Dengan Lulusan Formal</h5>
+                              <p class="mb-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan Sekaligus Plh. Kepala bidang PAUD P...</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-          </div>
-        </div>
-        <a href="#" class="btn btn-primary">Semua Berita</a>
-      </div>
+                <div>
+          <a href="{{route('home.berita.index')}}" class="btn btn-primary mt-5">Semua Berita</a>
+                </div>
     </section><!-- /Features Details Section -->
     
     <!-- Calender -->
