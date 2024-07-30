@@ -29,9 +29,15 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
 		Route::put('/', 'ProfileController@update')->name("update");
 	});
 
-    Route::group(["as"=>"menu.", "prefix"=>"menu"], function(){
-        Route::get("/", "MenuController@index")->name("index")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
-    });
+    Route::group(["as" => "menu.","prefix" => "menu"], function () {
+		Route::get('/', 'MenuController@index')->name("index")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+		Route::get('/create', 'MenuController@create')->name("create")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::post('/', 'MenuController@store')->name("store")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+		Route::get('/{id}', 'MenuController@show')->name("show")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+		Route::get('/{id}/edit', 'MenuController@edit')->name("edit")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+		Route::put('/{id}', 'MenuController@update')->name("update")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+		Route::delete('/{id}', 'MenuController@destroy')->name("destroy")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+	});
 
     Route::group(["as"=>"informasi.", "prefix"=>"informasi"], function(){
         Route::get("/", "InformasiController@index")->name("index")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
@@ -50,6 +56,16 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
 		Route::get('/{id}/edit', 'BeritaController@edit')->name("edit");
 		Route::put('/{id}', 'BeritaController@update')->name("update");
 		Route::delete('/{id}', 'BeritaController@destroy')->name("destroy");
+	});
+
+    Route::group(["as" => "inovasi.","prefix" => "inovasi"], function () {
+		Route::get('/', 'InovasiController@index')->name("index");
+		Route::get('/create', 'InovasiController@create')->name("create");
+        Route::post('/', 'InovasiController@store')->name("store");
+		Route::get('/{id}', 'InovasiController@show')->name("show");
+		Route::get('/{id}/edit', 'InovasiController@edit')->name("edit");
+		Route::put('/{id}', 'InovasiController@update')->name("update");
+		Route::delete('/{id}', 'InovasiController@destroy')->name("destroy");
 	});
 
     Route::group(["as" => "banner.","prefix" => "banner"], function () {
@@ -177,7 +193,7 @@ Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function
 
     Route::group(["as"=>"inovasi.", "prefix"=>"inovasi"], function(){
         Route::get("/", "InovasiController@index")->name("index");
-        Route::get("/show", "ShowController@index")->name("show");
+        Route::get("/{id}", "InovasiController@show")->name("show");
     });
 
     Route::group(["as"=>"galeri.", "prefix"=>"galeri"], function(){

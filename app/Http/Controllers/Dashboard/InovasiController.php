@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
-use App\Models\Menu;
+use App\Models\Inovasi;
 use Illuminate\Support\Facades\Log;
-use App\Http\Requests\Menu\StoreRequest;
-use App\Http\Requests\Menu\UpdateRequest;
+use App\Http\Requests\Inovasi\StoreRequest;
+use App\Http\Requests\Inovasi\UpdateRequest;
 use App\Helpers\UploadHelper;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 
-class MenuController extends Controller
+class InovasiController extends Controller
 {
-    protected $menu;
-    protected $route = 'dashboard.pages.menu.';
+    protected $inovasi;
+    protected $route = 'dashboard.pages.inovasi.';
     /**
      * Display a listing of the resource.
      */
     public function __construct(){
-        $this->route = "dashboard.menu.";
-        $this->view = "dashboard.pages.menu.";
-        $this->menu = new menu();
+        $this->route = "dashboard.inovasi.";
+        $this->view = "dashboard.pages.inovasi.";
+        $this->inovasi = new inovasi();
         Paginator::useBootstrap();
     }
 
@@ -28,7 +28,7 @@ class MenuController extends Controller
     {
         $search = $request->search;
 
-        $table = $this->menu;
+        $table = $this->inovasi;
 
         if(!empty($search)){
             $table = $table->where(function($query2) use($search){
@@ -63,8 +63,8 @@ class MenuController extends Controller
     {
         try {
             $title = $request->title;
-            // $description = $request->description;
             $image = $request->file("image");
+            $date = $request->date;
             
 
             if($image){
@@ -75,10 +75,11 @@ class MenuController extends Controller
                 }
 
                 $image = $upload["Path"];
-                $create = $this->menu->create([
+                $create = $this->inovasi->create([
                     'title' => $title,
-                    'menu-trixFields' => $request->input('menu-trixFields'),
+                    'inovasi-trixFields' => $request->input('inovasi-trixFields'),
                     'image' => $image,
+                    'date'=> $date
                 ]);
             }
             alert()->html('Berhasil','Data berhasil ditambahkan','success'); 
@@ -95,9 +96,10 @@ class MenuController extends Controller
 
     public function show($id)
     {
-        $result = $this->menu;
+        $result = $this->inovasi;
         $result = $result->where('id',$id);
         $result = $result->first();
+
 
         if(!$result){
             alert()->error('Gagal',"Data tidak ditemukan");
@@ -114,7 +116,7 @@ class MenuController extends Controller
     
     public function edit($id)
     {
-        $result = $this->menu;
+        $result = $this->inovasi;
         $result = $result->where('id',$id);
         $result = $result->first();
 
@@ -133,7 +135,7 @@ class MenuController extends Controller
     public function update(UpdateRequest $request, $id)
     {
         try {
-            $result = $this->menu;
+            $result = $this->inovasi;
             $result = $result->where('id',$id);
             $result = $result->first();
 
@@ -142,11 +144,11 @@ class MenuController extends Controller
             }
 
             $title = $request->title;
-            // $description = $request->description;
             $image = $request->file("image");
+            $date = $request->date;
 
             if($image){
-                $upload = UploadHelper::upload_file($image,'menu',['jpeg','jpg','png','gif']);
+                $upload = UploadHelper::upload_file($image,'inovasi',['jpeg','jpg','png','gif']);
 
                 if($upload["IsError"] == TRUE){
                     throw new Error($upload["Message"]);
@@ -160,10 +162,10 @@ class MenuController extends Controller
 
             $result->update([
                 'title' => $title,
-                'menu-trixFields' => $request->input('menu-trixFields'),
+                'inovasi-trixFields' => $request->input('inovasi-trixFields'),
                 'image' => $image,
+                'date'=> $date
             ]);
-
 
             alert()->html('Berhasil','Data berhasil diubah','success'); 
             return redirect()->route($this->route."index");
@@ -185,7 +187,7 @@ class MenuController extends Controller
     public function destroy($id)
     {
         try {
-            $result = $this->menu;
+            $result = $this->inovasi;
             $result = $result->where('id',$id);
             $result = $result->first();
 

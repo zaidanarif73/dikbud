@@ -73,11 +73,6 @@
               </a>
             </li>
             
-
-            @if(Auth::user()->hasRole([
-                \App\Enums\RoleEnum::SuperAdmin,
-                \App\Enums\RoleEnum::Admin,
-            ]))
             <li class="nav-item">
               <a href="{{route('dashboard.galeri.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.galeri')) active @endif">
                 <col class="row">
@@ -98,6 +93,12 @@
               </a>
             </li>
 
+
+            @if(Auth::user()->hasRole([
+                \App\Enums\RoleEnum::SuperAdmin,
+                \App\Enums\RoleEnum::Admin,
+            ]))
+           
             <li class="nav-item">
               <a href="{{route('dashboard.tautan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.tautan')) active @endif">
                 <i class="bx bx-link col-3 bx-tada-hover"></i>
@@ -130,6 +131,15 @@
                 <i class="bx bx-download col-3 bx-tada-hover"></i>
                 <p>
                   Informasi
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{{route('dashboard.inovasi.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.inovasi')) active @endif">
+                <i class="bx bx-download col-3 bx-tada-hover"></i>
+                <p>
+                  Inovasi
                 </p>
               </a>
             </li>
