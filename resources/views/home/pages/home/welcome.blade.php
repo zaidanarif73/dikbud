@@ -1,5 +1,6 @@
 @extends('home.layouts.master')
 @section("css")
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <style>
   /* :root {
   --fc-border-color: black;
@@ -16,9 +17,10 @@
   #calendars{
     height:auto;
     width: auto;
+    margin-top: 15%
   }
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 600px){
       #calendars{
       height:500px;
       width: 500px;
@@ -33,28 +35,75 @@
         background-repeat: no-repeat;
       }
   }
+  
 </style>
+{{-- <link rel="stylesheet" href="/assets/css/home/swiper/bootstrap.css"> --}}
+  {{-- <link rel="stylesheet" href="/assets/css/home/swiper/fonts.css"> --}}
+  <link rel="stylesheet" href="/assets/css/home/swiper/style.css">
 @endsection
 
 
 @section("content")
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-      <div class="hero-bg">
-        <img src="assets/img/cobabud.jpg" alt="">
-      </div>
-      <div class="container text-center">
-        <div class="d-flex flex-column justify-content-center align-items-center">
-          <h1>Selamat Datang</h1>
-          <h1 data-aos="fade-up">Di Dinas Pendidikan dan Kebudayaan</h1>
-          <h1> <span>Kota Malang</span></h1>
-          <!-- <p data-aos="fade-up" data-aos-delay="100">Quickly start your project now and set the stage for success<br></p> -->
-          <!-- <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#about" class="btn-get-started">Get Started</a>
-          </div> -->
-          <img src="assets/img/coba1.png" class="img-fluid hero-img" alt="" data-aos="zoom-out" data-aos-delay="300">
+    <!-- Swiper-->
+    <section class="section swiper-container swiper-slider swiper-slider-2 swiper-slider-3" data-loop="true" data-autoplay="5000" data-simulate-touch="false" data-slide-effect="fade" style="text-align: left">
+      <div class="swiper-wrapper text-sm-left">
+        <div class="swiper-slide context-dark" id="swipper" data-slide-bg="{{URL::to('/')}}/assets/img/cobabud.jpg" alt="">
+          <div class="swiper-slide-caption section-md" >
+            <div class="container" id="swipper_tittle">
+              <div class="row">
+              <div class="col-sm-9 col-md-8 col-lg-7 col-xxl-7 offset-lg-1 offset-xxl-0">
+                <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Dikbud Kota Malang</span></h1>
+                <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">Testing </p>
+              </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="swiper-slide context-dark" data-slide-bg="{{URL::to('/')}}/assets/img/banner-vm.png" alt=""">
+          <div class="swiper-slide-caption section-md">
+          <div class="container">
+          <div class="row">
+          <div class="col-sm-8 col-lg-7 offset-lg-1 offset-xxl-0">
+            <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInDown" data-caption-delay="0">Visi Misi</span></h1>
+            <p class="big swiper-text" data-caption-animate="fadeInRight" data-caption-delay="300">We use only the best ingredients to make one-of-a-kind pizzas for our customers.</p>
+          </div>
+          </div>
+          </div>
+          </div>
+        </div>
+        <div class="swiper-slide context-dark" id="swipper" data-slide-bg="{{URL::to('/')}}/assets/img/banner-so.png" alt=""">
+            <div class="swiper-slide-caption section-md" >
+              <div class="container" id="swipper_tittle">
+                <div class="row">
+                <div class="col-sm-9 col-md-8 col-lg-7 col-xxl-7 offset-lg-1 offset-xxl-0">
+                  <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Struktur Organisasi</span></h1>
+                  <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">Testing </p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
+          <!-- Swiper Pagination-->
+          <div class="swiper-pagination" data-bullet-custom="true"></div>
+          <!-- Swiper Navigation-->
+          <div class="swiper-button-prev">
+          <div class="preview">
+          <div class="preview__img"></div>
+          </div>
+          <div class="swiper-button-arrow">
+            <i class='bx bx-left-arrow-alt'></i>
+          </div>
+          </div>
+          <div class="swiper-button-next">
+          <div class="swiper-button-arrow">
+            <i class='bx bx-right-arrow-alt'></i>
+          </div>
+          <div class="preview">
+          <div class="preview__img"></div>
+          </div>
+          </div>
+      </section>
 
     </section><!-- /Hero Section -->
 
@@ -285,41 +334,55 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mt-5">
-              <div class="card">
-                <div class="card-body">
-                  <img src="{{URL::to('/')}}/assets/img/berita/Berita2.jpg" class="img-fluid mt-3" alt="">
-                  <p class="card-text mt-3">Kamis, 20 Juni 2024 22:36 WIB</p>
-                  <h5 class="card-title">Mas Kadin : Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara dengan Lulusan Formal</h5>
-                  <p class="card-text mt-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan sekaligus Plh. Kepala Bidang Pembinaan PAUD P...</p>
+      {{-- berita --}}
+      <div class="container-fluid berita py-5">
+        <div class="container py-5">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="berita-item rounded">
+                       <div class="berita-img rounded-top">
+                            <img src="assets/img/cobabud.jpg" class="img-fluid rounded-top w-100" alt="">
+                       </div>
+                        <div class="berita-content rounded-bottom bg-light p-4">
+                            <div class="berita-content-inner">
+                              <p class="card-text">Kamis, 20 Juni 2024 22:36 WIB</p>
+                                <h5 class="mb-4">Mas Kadin: Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara Dengan Lulusan Formal</h5>
+                                <p class="mb-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan Sekaligus Plh. Kepala bidang PAUD P...</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-          </div>
-          <div class="col-lg-4 mt-5">
-              <div class="card">
-                <div class="card-body">
-                  <img src="{{URL::to('/')}}/assets/img/berita/Berita5.jpg" class="img-fluid mt-3" alt="">
-                  <p class="card-text mt-3">Senin, 17 Juni 2024 18:35 WIB</p>
-                  <h5 class="card-title">Keluarga Besar Disdikbud Laksanakan Sholat Idhul Adha 1445 H di Masjid Tarbiyatul Hidayah</h5>
-                  <p class="card-text mt-3">Malang - Senin, 17 Juni 2024 atau bertepatan dengan 10 Dzulhijjah 1445 H, Keluarga Besar Dinas...</p>
+                <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="berita-item rounded">
+                       <div class="berita-img rounded-top">
+                            <img src="assets/img/cobabud.jpg" class="img-fluid rounded-top w-100" alt="">
+                       </div>
+                        <div class="berita-content rounded-bottom bg-light p-4">
+                            <div class="berita-content-inner">
+                              <p class="card-text">Kamis, 20 Juni 2024 22:36 WIB</p>
+                              <h5 class="mb-4">Mas Kadin: Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara Dengan Lulusan Formal</h5>
+                              <p class="mb-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan Sekaligus Plh. Kepala bidang PAUD P...</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-          </div>
-          <div class="col-sm-4 mt-5">
-              <div class="card">
-                <div class="card-body">
-                  <img src="{{URL::to('/')}}/assets/img/berita/Berita4.jpg" class="img-fluid mt-3" alt="">  
-                  <p class="card-text mt-3">Senin, 17 Juni 2024 18:42 WIB</p>
-                  <h5 class="card-title">Pj Walikota Malang Tinjau Penyembelihan Hewan Qurban Disdikbud</h5>
-                  <p class="card-text mt-3">Malang - Pj Walikota Malang Dr. Ir. Wahyu Hidayat, MM didampingi Kepala Dinas Pendidikan dan Kebuday...</p>
+                <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="berita-item rounded">
+                       <div class="berita-img rounded-top">
+                            <img src="assets/img/cobabud.jpg" class="img-fluid rounded-top w-100" alt="">
+                       </div>
+                        <div class="berita-content rounded-bottom bg-light p-4">
+                            <div class="berita-content-inner">
+                              <p class="card-text">Kamis, 20 Juni 2024 22:36 WIB</p>
+                              <h5 class="mb-4">Mas Kadin: Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara Dengan Lulusan Formal</h5>
+                              <p class="mb-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan Sekaligus Plh. Kepala bidang PAUD P...</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-          </div>
-        </div>
-        <a href="#" class="btn btn-primary">Semua Berita</a>
-      </div>
+                <div>
+          <a href="{{route('home.berita.index')}}" class="btn btn-primary mt-5">Semua Berita</a>
+                </div>
     </section><!-- /Features Details Section -->
     
     <!-- Calender -->
@@ -462,6 +525,8 @@
 <!--kalender-->
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
 <script src="{{URL::to('/')}}/assets/js/home/kalender.js"></script>
+<script src="{{URL::to('/')}}/assets/js/home/swiper/core.min.js"></script>
+<script src="{{URL::to('/')}}/assets/js/home/swiper/script.js"></script>
 
 
 @endsection
