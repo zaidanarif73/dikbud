@@ -35,7 +35,9 @@
                         : {{ Carbon\Carbon::parse($result->created_at)->translatedFormat('l,d F Y') }}
                     </div>
                 </div>
-
+                @if($result->image == null)
+                    <div></div>
+                @else
                 <div class="row mb-2">
                     <div class="col-md-3">
                         Image
@@ -44,6 +46,7 @@
                         : <img src="{{ asset('storage/'.$result->image) }}" style="width: 200px;height:200px;">
                     </div>
                 </div>
+                @endif
 
                 
 
