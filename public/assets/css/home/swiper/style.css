@@ -126,6 +126,21 @@ h1, [class^='heading-'] {
 	text-align: left;
 }
 
+@media only screen and (max-width: 600px){
+	h1, [class^='heading-'] {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-weight: bolder;
+		letter-spacing: .1em;
+		text-transform: uppercase;
+		font-family: "Asfalto";
+		color: #151515;
+		font-size: 36px;
+		color:white;
+		text-shadow: 3px 2px 1px black;
+		text-align: center;
+	}
+}
 
 #swipper{
 	filter:blur(0.5px);

@@ -31,7 +31,7 @@
                                         <td>{{$table->firstItem() + $index}}</td>
                                         <td>{{$row->name}}</td>
                                         <td>{{$row->email}}</td>
-                                        <td>{{$row->subject}}</td>
+                                        <td>{{$row->subject}} ~ <p class="text-success">{{ Carbon\Carbon::parse($row->created_at)->diffForHumans(null, true).' yang lalu';}}<p></td>
                                         <td>
                                             <div class="d-flex mb-1">
                                                 <a href="{{route('dashboard.kontak.show',$row->id)}}" class="btn btn-success btn-sm mr-1"><i class="fa fa-address-card"></i> Detail</a>

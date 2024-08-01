@@ -2,44 +2,12 @@
 @section("css")
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <style>
-  /* :root {
-  --fc-border-color: black;
-  --fc-daygrid-event-dot-width: 5px;
-  } */
-  .fc-button-group button {
-      font-size: 1.5em;
-      vertical-align: middle;
-      background-color: #495057 !important;
-  }
-  .fc-today-button{
-      background-color: #495057 !important;
-  }
-  #calendars{
-    height:auto;
-    width: auto;
-    margin-top: 15%
-  }
-
-  @media only screen and (min-width: 600px){
-      #calendars{
-      height:500px;
-      width: 500px;
-      }
-      .kalender{
-        display: flex;
-        justify-content: center;
-      }
-      #my_kalender{
-        background-image: url("assets/img/bgcale.png");
-        background-size:cover;
-        background-repeat: no-repeat;
-      }
-  }
-  
 </style>
 {{-- <link rel="stylesheet" href="/assets/css/home/swiper/bootstrap.css"> --}}
   {{-- <link rel="stylesheet" href="/assets/css/home/swiper/fonts.css"> --}}
+
   <link rel="stylesheet" href="/assets/css/home/swiper/style.css">
+  <link rel="stylesheet" href="/assets/css/home/kalender.css">
 @endsection
 
 
@@ -107,200 +75,68 @@
 
     </section><!-- /Hero Section -->
 
-    <!-- Featured Services Section -->
+    <!-- Layanan Section -->
     <section id="featured-services" class="featured-services section light-background">
       <div class="container section-title" data-aos="fade-up">
         <h2>Layanan</h2>
       </div>
-      <div class="container">
 
-          <!-- <div class="row gy-3">
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-              <div class="service-item d-flex justify-content-center align-items-center">
-                <img src="assets/img/icon/legalisir.png" alt="">
-              </div>
-                <p>
-                  <h6 class="text-center"><a href="{{ route('home.legalisir.index') }}" class="stretched-link">Legalisir</a></h6>
-                </p>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/mutasi.png" alt="">
-            </div>
-            <p>
-              <h6 class="text-center"><a href="{{ route('home.mutasi.index') }}" class="stretched-link">Mutasi Siswa</a></h6>
-            </p>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/suratijazah.png" alt="">
-            </div>
-            <p>
-              <h6 class="text-center"><a href="{{ route('home.ijazah_rusak.index') }}" class="stretched-link">Surat Keterangan Ijazah Rusak atau Kesalahan Penulisan Ijazah</a></h6>
-            </p>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/pengganti ijazah.png" alt="">
-            </div>
-            <p>
-              <h6 class="text-center"><a href="{{ route('home.pengganti_ijazah.index') }}" class="stretched-link">Pelayanan Surat Pengganti Ijazah SD atau SMP</a></h6>
-            </p>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/rekom.png" alt="">
-            </div>
-            <p>
-              <h6 class="text-center"><a href="{{ route('home.rekomendasi_penelitian.index') }}" class="stretched-link">Surat Rekomendasi penelitian & magang</a></h6  >
-            </p>   
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/maklumat.png" alt="">
-            </div>
-            <p>
-              <h6 class="text-center"><a href="{{ route('home.maklumat.index') }}" class="stretched-link">Maklumat Layanan</a></h6>
-            </p>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/standar.png" alt="">
-            </div>
-            <p>
-              <h6 class="text-center"><a href="{{ route('home.SKSP.index') }}" class="stretched-link">Struktur Organisasi Pelayanan Dan SK Standar Pelayanan</a></h6>
-            </p>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/pengaduan.png" alt="">
-            </div>
-            <p>
-              <h6 class="text-center"><a href="{{ route('home.pengaduan.index') }}" class="stretched-link">Layanan Pengaduan</a></h6>
-            </p>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="00">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/ppdb.png" alt="">
-            </div>
-            <p>
-              <h6 class="text-center"><a href="{{ route('home.PPDB.index') }}" class="stretched-link">PPDB</a></h6>
-            </p>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/solikin.jpeg" alt="">
-            </div>
-            <p>
-              <h6 class="text-center"><a href="{{ route('home.solikin.index') }}" class="stretched-link">SOLIKIN | Sistem Online Kartu Induk Kesenian</a></h6>
-            </p>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/ombudd.jpeg" alt="">
-            </div>
-            <p>
-              <h6 class="text-center"><a href="{{ route('home.ombudsman.index') }}" class="stretched-link">Info Ombudsman</a></h6>
-            </p>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/mpp1.jpg" alt="">
-            </div>
-            <p>
-              <h6 class="text-center"><a href="{{ route('home.mpp.index') }}" class="stretched-link">Layanan di MPP Merdeka Kota Malang</a></h6>
-            </p>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/form_PIP.png" alt="">
-            </div>
-            <p>
-              <h6 class="text-center"><a href="{{ route('home.formpip.index') }}" class="stretched-link">Form Permohonan Informasi Publik</a></h6>
-            </p>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item d-flex justify-content-center align-items-center">
-              <img src="assets/img/icon/pembelajaran.png" alt="">
-            </div>
-            <p>
-              <h6 class="text-center"><a href="{{ route('home.pembelajaran.index') }}" class="stretched-link">Pembelajaran</a></h6>
-            </p>
-          </div>
-
-        </div> -->
-
-      </div>
-
-      <<div class="card-container container">
+      <div class="card-container container">
         <div class="card-layanan">
             <img src="assets/img/icon/legalisir.png" alt="Legalisir">
-            <p><a href="{{ route('home.legalisir.index') }}" class="stretched-link">Legalisir</a></p>
+            <p><a href="{{ route('home.legalisir.index') }}" class="">Legalisir</a></p>
         </div>
         <div class="card-layanan">
             <img src="assets/img/icon/mutasi.png" alt="Mutasi Siswa">
-            <p><a href="{{ route('home.mutasi.index') }}" class="stretched-link">Mutasi Siswa</a></p>
+            <p><a href="{{ route('home.mutasi.index') }}" class="">Mutasi Siswa</a></p>
         </div>
         <div class="card-layanan">
             <img src="assets/img/icon/suratijazah.png" alt="Ijazah Rusak">
-            <p><a href="{{ route('home.ijazah_rusak.index') }}" class="stretched-link">Surat Keterangan Ijazah Rusak atau Kesalahan Penulisan Ijazah</a></p>
+            <p><a href="{{ route('home.ijazah_rusak.index') }}" class="">Surat Keterangan Ijazah Rusak atau Kesalahan Penulisan Ijazah</a></p>
         </div>
         <div class="card-layanan">
             <img src="assets/img/icon/pengganti ijazah.png" alt="Ijazah Rusak">
-            <p><a href="{{ route('home.pengganti_ijazah.index') }}" class="stretched-link">Pelayanan Surat Pengganti Ijazah SD atau SMP</a></p>
+            <p><a href="{{ route('home.pengganti_ijazah.index') }}" class="">Pelayanan Surat Pengganti Ijazah SD atau SMP</a></p>
         </div>
         <div class="card-layanan">
             <img src="assets/img/icon/rekom.png" alt="Surat Rekomendasi">
-            <p><a href="{{ route('home.rekomendasi_penelitian.index') }}" class="stretched-link">Surat Rekomendasi penelitian & magang</a></p>
+            <p><a href="{{ route('home.rekomendasi_penelitian.index') }}" class="">Surat Rekomendasi penelitian & magang</a></p>
         </div>
         <div class="card-layanan">
             <img src="assets/img/icon/maklumat.png" alt="Maklumat Layanan">
-            <p><a href="{{ route('home.maklumat.index') }}" class="stretched-link">Maklumat Layanan</a></p>
+            <p><a href="{{ route('home.maklumat.index') }}" class="">Maklumat Layanan</a></p>
         </div>
         <div class="card-layanan">
             <img src="assets/img/icon/standar.png" alt="Struktur Organisasi">
-            <p><a href="{{ route('home.SKSP.index') }}" class="stretched-link">Struktur Organisasi Pelayanan Dan SK Standar Pelayanan</a></p>
+            <p><a href="{{ route('home.SKSP.index') }}" class="">Struktur Organisasi Pelayanan Dan SK Standar Pelayanan</a></p>
         </div>
         <div class="card-layanan">
             <img src="assets/img/icon/ppdb.png" alt="PPDB">
-            <p><a href="{{ route('home.PPDB.index') }}" class="stretched-link">PPDB</a></p>
+            <p><a href="{{ route('home.PPDB.index') }}" class="">PPDB</a></p>
         </div>
         <div class="card-layanan">
             <img src="assets/img/icon/pengaduan.png" alt="Layanan Pengaduan">
-            <p><a href="{{ route('home.pengaduan.index') }}" class="stretched-link">Layanan Pengaduan</a></p>
+            <p><a href="{{ route('home.pengaduan.index') }}" class="">Layanan Pengaduan</a></p>
         </div>
         <div class="card-layanan">
             <img src="assets/img/icon/solikin.jpeg" alt="Solikin">
-            <p><a href="{{ route('home.solikin.index') }}" class="stretched-link">SOLIKIN | Sistem Online Kartu Induk Kesenian</a></p>
+            <p><a href="{{ route('home.solikin.index') }}" class="">SOLIKIN | Sistem Online Kartu Induk Kesenian</a></p>
         </div>
         <div class="card-layanan">
             <img src="assets/img/icon/ombudd.jpeg" alt="Ombudsman">
-            <p><a href="{{ route('home.ombudsman.index') }}" class="stretched-link">Ombudsman</a></p>
+            <p><a href="{{ route('home.ombudsman.index') }}" class="">Ombudsman</a></p>
         </div>
         <div class="card-layanan">
             <img src="assets/img/icon/mpp1.jpg" alt="MPP">
-            <p><a href="{{ route('home.mpp.index') }}" class="stretched-link">Layanan di MPP Merdeka Kota Malang</a></p>
+            <p><a href="{{ route('home.mpp.index') }}" class="">Layanan di MPP Merdeka Kota Malang</a></p>
         </div>
         <div class="card-layanan">
             <img src="assets/img/icon/form_PIP.png" alt="Form PIP">
-            <p><a href="{{ route('home.formpip.index') }}" class="stretched-link">Form Permohonan Informasi Publik</a></p>
+            <p><a href="{{ route('home.formpip.index') }}" class="">Form Permohonan Informasi Publik</a></p>
         </div>
         <div class="card-layanan">
             <img src="assets/img/icon/pembelajaran.png" alt="Pembelajaran">
-            <p><a href="{{ route('home.pembelajaran.index') }}" class="stretched-link">Pembelajaran</a></p>
+            <p><a href="{{ route('home.pembelajaran.index') }}" class="">Pembelajaran</a></p>
         </div>
     </div>
 
@@ -482,36 +318,39 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d688.1506512226823!2d112.61389434101307!3d-7.956754435114845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78827beffc2665%3A0x9dd38763e9a56b77!2sDinas%20Pendidikan%20dan%20Kebudayaan%20Kota%20Malang!5e0!3m2!1sen!2sid!4v1720151847698!5m2!1sen!2sid" frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div><!-- End Google Maps -->
 
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="400">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="No HP" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Pesan Anda" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="custom-content card">
+              <form action="{{ route('home.kontak.store') }}" method="post" autocomplete="off" onsubmit="confirm('Apakah anda yakin ingin mengirim pesan ini?')" enctype="multipart/form-data">
+                @csrf
+                  <div class="row p-3">
+                      <div class="form-group col-md-6">
+                          <label for="username">Nama</label>
+                          <input type="text" class="form-control border border-dark" id="username" placeholder="Masukan Nama Anda" name="name"/>
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label for="email2">Email</label>
+                          <input type="email" class="form-control border border-dark" id="email" placeholder="Masukan Email Anda" name="email"/>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="username">Gambar</label>
+                        <input type="file" class="form-control border border-dark" accept="image/*" id="image" name="image"/>
+                      </div>
+                      <div class="form-group col-md-12">
+                          <label for="username">Subject</label>
+                          <input type="text" class="form-control border border-dark" id="subject" placeholder="Masukan Judul" name="subject"/>
+                      </div>
+                      <div class="form-group col-md-12">
+                          <label for="comment">Pesan Anda</label>
+                          <textarea class="form-control border border-dark" id="comment" rows="5" name="message">
+                          </textarea>
+                      </div>
+                      <div class="card-action">
+                          <button class="btn" type="submit" style="background: #2a2f5b; color:white">Submit</button>
+                      </div>
+                  </div>
+              </form>
+              
+          </div>
           </div><!-- End Contact Form -->
 
         </div>
