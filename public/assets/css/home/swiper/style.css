@@ -1,0 +1,136 @@
+@charset "UTF-8";
+/*
+*
+* Contexts
+*/
+a:focus,
+button:focus {
+	outline: none !important;
+}
+
+button::-moz-focus-inner {
+	border: 0;
+}
+
+*:focus {
+	outline: none;
+}
+
+blockquote {
+	padding: 0;
+	margin: 0;
+}
+
+input,
+button,
+select,
+textarea {
+	outline: none;
+}
+
+label {
+	margin-bottom: 0;
+}
+
+p {
+	margin: 0;
+}
+
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul li,
+ol li {
+	display: block;
+}
+
+dl {
+	margin: 0;
+}
+
+dt,
+dd {
+	line-height: inherit;
+}
+
+dt {
+	font-weight: inherit;
+}
+
+dd {
+	margin-bottom: 0;
+}
+
+cite {
+	font-style: normal;
+}
+
+form {
+	margin-bottom: 0;
+}
+
+blockquote {
+	padding-left: 0;
+	border-left: 0;
+}
+
+address {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+figure {
+	margin-bottom: 0;
+}
+
+html p a:hover {
+	text-decoration: none;
+}
+
+/*
+*
+* Typography
+*/
+body {
+	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+	font-size: 15px;
+	line-height: 1.6;
+	font-weight: 400;
+	letter-spacing: .075em;
+	color: #777777;
+	background-color: #ffffff;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+.section-style-2 {
+	color: #151515;
+	letter-spacing: .05em;
+}
+
+h1, [class^='heading-'] {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: bolder;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	font-family: "Asfalto";
+	color: #151515;
+	font-size: 80px;
+	color:white;
+	text-shadow: 3px 2px 1px black;
+	text-align: left;
+}
+
+
+#swipper{
+	filter:blur(0.5px);
+}
+
+#swipper_title{
+	filter: blur(none);
+}
