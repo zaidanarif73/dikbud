@@ -245,7 +245,7 @@
 
       </div>
 
-      <<div class="card-container">
+      <<div class="card-container container">
         <div class="card-layanan">
             <img src="assets/img/icon/legalisir.png" alt="Legalisir">
             <p><a href="{{ route('home.legalisir.index') }}" class="stretched-link">Legalisir</a></p>
