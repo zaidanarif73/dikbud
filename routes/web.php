@@ -100,6 +100,9 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
 
     Route::group(["as"=>"kontak.", "prefix"=>"kontak"], function(){
         Route::get("/", "KontakController@index")->name("index")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::get('/{id}', 'KontakController@show')->name("show")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::delete('/{id}', 'KontakController@destroy')->name("destroy")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+
     });
 
     Route::group(["as" => "layanan.","prefix" => "layanan"], function () {
