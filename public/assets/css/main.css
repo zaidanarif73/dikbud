@@ -550,7 +550,7 @@ h6 {
     font-size: 16px;
     color: color-mix(in srgb, var(--default-color), transparent 30%);
     margin-right: 10px;
-    transition: 0.3s;   
+    transition: 0.3s;
 }
 
 .footer .social-links a:hover {
@@ -1026,6 +1026,55 @@ section,
     .clients .client-logo img {
         padding: 20px;
     }
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-layanan {
+    width: 260px;
+    text-align: center;
+    border: 1px solid #ddd;
+    /* border-radius: 0; */
+    padding: 10px;
+    background-color: #ffffff;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    margin-bottom: 5px;
+}
+
+.card-layanan:hover,
+.card-layanan:focus,
+.card-layanan:active {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    background-color: #b8b8b8;
+}
+
+.card-layanan img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+.card-layanan p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.card-layanan a {
+    text-decoration: none;
+    color: #333;
+}
+
+.card-layanan a:hover {
+    color: #007bff;
 }
 
 /*--------------------------------------------------------------
@@ -1518,7 +1567,6 @@ section,
     color: var(--accent-color);
 }
 
-
 .cal {
     width: 100%;
     min-height: 70vh;
@@ -1545,7 +1593,6 @@ section,
     inset: 0;
     z-index: 2;
 }
-
 
 /*--------------------------------------------------------------
 # Starter Section Section

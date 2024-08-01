@@ -65,7 +65,7 @@
       </div>
       <div class="container">
 
-          <div class="row gy-3">
+          <!-- <div class="row gy-3">
           <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <div class="service-item d-flex justify-content-center align-items-center">
                 <img src="assets/img/icon/legalisir.png" alt="">
@@ -183,9 +183,80 @@
             </p>
           </div>
 
-        </div>
+          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex justify-content-center align-items-center">
+              <img src="assets/img/icon/pembelajaran.png" alt="">
+            </div>
+            <p>
+              <h6 class="text-center"><a href="{{ route('home.pembelajaran.index') }}" class="stretched-link">Pembelajaran</a></h6>
+            </p>
+          </div>
+
+        </div> -->
 
       </div>
+
+      <<div class="card-container">
+        <div class="card-layanan">
+            <img src="assets/img/icon/legalisir.png" alt="Legalisir">
+            <p><a href="{{ route('home.legalisir.index') }}" class="stretched-link">Legalisir</a></p>
+        </div>
+        <div class="card-layanan">
+            <img src="assets/img/icon/mutasi.png" alt="Mutasi Siswa">
+            <p><a href="{{ route('home.mutasi.index') }}" class="stretched-link">Mutasi Siswa</a></p>
+        </div>
+        <div class="card-layanan">
+            <img src="assets/img/icon/suratijazah.png" alt="Ijazah Rusak">
+            <p><a href="{{ route('home.ijazah_rusak.index') }}" class="stretched-link">Surat Keterangan Ijazah Rusak atau Kesalahan Penulisan Ijazah</a></p>
+        </div>
+        <div class="card-layanan">
+            <img src="assets/img/icon/pengganti ijazah.png" alt="Ijazah Rusak">
+            <p><a href="{{ route('home.pengganti_ijazah.index') }}" class="stretched-link">Pelayanan Surat Pengganti Ijazah SD atau SMP</a></p>
+        </div>
+        <div class="card-layanan">
+            <img src="assets/img/icon/rekom.png" alt="Surat Rekomendasi">
+            <p><a href="{{ route('home.rekomendasi_penelitian.index') }}" class="stretched-link">Surat Rekomendasi penelitian & magang</a></p>
+        </div>
+        <div class="card-layanan">
+            <img src="assets/img/icon/maklumat.png" alt="Maklumat Layanan">
+            <p><a href="{{ route('home.maklumat.index') }}" class="stretched-link">Maklumat Layanan</a></p>
+        </div>
+        <div class="card-layanan">
+            <img src="assets/img/icon/standar.png" alt="Struktur Organisasi">
+            <p><a href="{{ route('home.SKSP.index') }}" class="stretched-link">Struktur Organisasi Pelayanan Dan SK Standar Pelayanan</a></p>
+        </div>
+        <div class="card-layanan">
+            <img src="assets/img/icon/ppdb.png" alt="PPDB">
+            <p><a href="{{ route('home.PPDB.index') }}" class="stretched-link">PPDB</a></p>
+        </div>
+        <div class="card-layanan">
+            <img src="assets/img/icon/pengaduan.png" alt="Layanan Pengaduan">
+            <p><a href="{{ route('home.pengaduan.index') }}" class="stretched-link">Layanan Pengaduan</a></p>
+        </div>
+        <div class="card-layanan">
+            <img src="assets/img/icon/solikin.jpeg" alt="Solikin">
+            <p><a href="{{ route('home.solikin.index') }}" class="stretched-link">SOLIKIN | Sistem Online Kartu Induk Kesenian</a></p>
+        </div>
+        <div class="card-layanan">
+            <img src="assets/img/icon/ombudd.jpeg" alt="Ombudsman">
+            <p><a href="{{ route('home.ombudsman.index') }}" class="stretched-link">Ombudsman</a></p>
+        </div>
+        <div class="card-layanan">
+            <img src="assets/img/icon/mpp1.jpg" alt="MPP">
+            <p><a href="{{ route('home.mpp.index') }}" class="stretched-link">Layanan di MPP Merdeka Kota Malang</a></p>
+        </div>
+        <div class="card-layanan">
+            <img src="assets/img/icon/form_PIP.png" alt="Form PIP">
+            <p><a href="{{ route('home.formpip.index') }}" class="stretched-link">Form Permohonan Informasi Publik</a></p>
+        </div>
+        <div class="card-layanan">
+            <img src="assets/img/icon/pembelajaran.png" alt="Pembelajaran">
+            <p><a href="{{ route('home.pembelajaran.index') }}" class="stretched-link">Pembelajaran</a></p>
+        </div>
+    </div>
+
+
+
 
     <!-- Features Details Section -->
    <section id="features-details" class="features-details section">
