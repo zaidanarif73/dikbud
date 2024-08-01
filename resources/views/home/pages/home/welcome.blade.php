@@ -1,5 +1,6 @@
 @extends('home.layouts.master')
 @section("css")
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <style>
   /* :root {
   --fc-border-color: black;
@@ -33,28 +34,75 @@
         background-repeat: no-repeat;
       }
   }
+  
 </style>
+{{-- <link rel="stylesheet" href="/assets/css/home/swiper/bootstrap.css"> --}}
+  {{-- <link rel="stylesheet" href="/assets/css/home/swiper/fonts.css"> --}}
+  <link rel="stylesheet" href="/assets/css/home/swiper/style.css">
 @endsection
 
 
 @section("content")
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-      <div class="hero-bg">
-        <img src="assets/img/cobabud.jpg" alt="">
-      </div>
-      <div class="container text-center">
-        <div class="d-flex flex-column justify-content-center align-items-center">
-          <h1>Selamat Datang</h1>
-          <h1 data-aos="fade-up">Di Dinas Pendidikan dan Kebudayaan</h1>
-          <h1> <span>Kota Malang</span></h1>
-          <!-- <p data-aos="fade-up" data-aos-delay="100">Quickly start your project now and set the stage for success<br></p> -->
-          <!-- <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#about" class="btn-get-started">Get Started</a>
-          </div> -->
-          <img src="assets/img/coba1.png" class="img-fluid hero-img" alt="" data-aos="zoom-out" data-aos-delay="300">
+    <!-- Swiper-->
+    <section class="section swiper-container swiper-slider swiper-slider-2 swiper-slider-3" data-loop="true" data-autoplay="5000" data-simulate-touch="false" data-slide-effect="fade" style="text-align: left">
+      <div class="swiper-wrapper text-sm-left">
+        <div class="swiper-slide context-dark" id="swipper" data-slide-bg="{{URL::to('/')}}/assets/img/cobabud.jpg" alt="">
+          <div class="swiper-slide-caption section-md" >
+            <div class="container" id="swipper_tittle">
+              <div class="row">
+              <div class="col-sm-9 col-md-8 col-lg-7 col-xxl-7 offset-lg-1 offset-xxl-0">
+                <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Dikbud Kota Malang</span></h1>
+                <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">Testing </p>
+              </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="swiper-slide context-dark" data-slide-bg="{{URL::to('/')}}/assets/img/banner-vm.png" alt=""">
+          <div class="swiper-slide-caption section-md">
+          <div class="container">
+          <div class="row">
+          <div class="col-sm-8 col-lg-7 offset-lg-1 offset-xxl-0">
+            <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInDown" data-caption-delay="0">Visi Misi</span></h1>
+            <p class="big swiper-text" data-caption-animate="fadeInRight" data-caption-delay="300">We use only the best ingredients to make one-of-a-kind pizzas for our customers.</p>
+          </div>
+          </div>
+          </div>
+          </div>
+        </div>
+        <div class="swiper-slide context-dark" id="swipper" data-slide-bg="{{URL::to('/')}}/assets/img/banner-so.png" alt=""">
+            <div class="swiper-slide-caption section-md" >
+              <div class="container" id="swipper_tittle">
+                <div class="row">
+                <div class="col-sm-9 col-md-8 col-lg-7 col-xxl-7 offset-lg-1 offset-xxl-0">
+                  <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Struktur Organisasi</span></h1>
+                  <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">Testing </p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
+          <!-- Swiper Pagination-->
+          <div class="swiper-pagination" data-bullet-custom="true"></div>
+          <!-- Swiper Navigation-->
+          <div class="swiper-button-prev">
+          <div class="preview">
+          <div class="preview__img"></div>
+          </div>
+          <div class="swiper-button-arrow">
+            <i class='bx bx-left-arrow-alt'></i>
+          </div>
+          </div>
+          <div class="swiper-button-next">
+          <div class="swiper-button-arrow">
+            <i class='bx bx-right-arrow-alt'></i>
+          </div>
+          <div class="preview">
+          <div class="preview__img"></div>
+          </div>
+          </div>
+      </section>
 
     </section><!-- /Hero Section -->
 
@@ -391,6 +439,8 @@
 <!--kalender-->
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
 <script src="{{URL::to('/')}}/assets/js/home/kalender.js"></script>
+<script src="{{URL::to('/')}}/assets/js/home/swiper/core.min.js"></script>
+<script src="{{URL::to('/')}}/assets/js/home/swiper/script.js"></script>
 
 
 @endsection
