@@ -9,4 +9,12 @@ use Haruncpi\LaravelUserActivity\Traits\Loggable;
 class kontak extends Model
 {
     use HasFactory, Loggable;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'subject',
+        'message',
+        'image',
+    ];
 }
