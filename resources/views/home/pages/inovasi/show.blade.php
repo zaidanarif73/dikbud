@@ -43,12 +43,7 @@
         <div class="col-12 col-lg-3">
             <h2><b>Inovasi Lainnya</b></h2>
             @forelse($except_result as $index => $row)
-            {{-- <div class="card">
-                <div class="card-body">
-                    <a href="" class=""><h5><b>{{ $row->title }}</b></h5></a href="">
-                    <span class="text-muted">{{ Carbon\Carbon::parse($row->date)->diffForHumans(Carbon\Carbon::now());}}</span>
-                </div>
-            </div> --}}
+            
             <div class="card-body">
                 <div class="">
                     <div class="">

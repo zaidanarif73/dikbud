@@ -20,7 +20,7 @@
                     </span>
                     <div class="card-body text-justify">
                         <a href="{{route('home.berita.show', $row->id)}}"><h5 class="card-title">{{ $row->title }}</h5></a> 
-                        <p> {!! Str::limit(strip_tags($row->renderTrix('content')), 100) !!}</p>
+                        <p> {!! Str::limit(strip_tags($row->renderTrix('content')), 60) !!}</p>
                     </div>
                 </div>
                 @empty

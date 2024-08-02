@@ -18,5 +18,6 @@ class Inovasi extends Model
         'image',
         'date',
         'inovasi-trixFields',
+        'creator',
     ];
 }

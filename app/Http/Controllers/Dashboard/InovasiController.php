@@ -9,6 +9,7 @@ use App\Http\Requests\Inovasi\UpdateRequest;
 use App\Helpers\UploadHelper;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use Auth;
 
 class InovasiController extends Controller
 {
@@ -79,7 +80,8 @@ class InovasiController extends Controller
                     'title' => $title,
                     'inovasi-trixFields' => $request->input('inovasi-trixFields'),
                     'image' => $image,
-                    'date'=> $date
+                    'date'=> $date,
+                    'creator' => Auth::user()->name,
                 ]);
             }
             alert()->html('Berhasil','Data berhasil ditambahkan','success'); 

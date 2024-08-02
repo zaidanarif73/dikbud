@@ -12,12 +12,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('inovasis', function (Blueprint $table) {
-            $table->id();
+            $table->id()->unique();
             $table->string("title");
-            $table->text("slug")->nullable();
             $table->string("image");
             $table->date("date");
             $table->timestamps();
+            $table->string('creator');
         });
     }
 
