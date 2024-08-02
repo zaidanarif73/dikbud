@@ -1,11 +1,9 @@
 <div class="modal fade" id="userShowModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalToggleLabel">Detail</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+                
             <div class="modal-body">
+                <button type="button" class="btn-close d-flex" data-bs-dismiss="modal" aria-label="Close"></button>
                 <h1 id="title"></h1>
                 <img alt="" src="" id="image"></img>
                 <p id="date" value=''></p>
