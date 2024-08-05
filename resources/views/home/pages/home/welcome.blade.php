@@ -1,4 +1,5 @@
 @extends('home.layouts.master')
+
 @section('css')
     <style>
         /* :root {
@@ -91,7 +92,6 @@
                             Siswa</a></h6>
                     </p>
                 </div>
-
                 <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-item d-flex justify-content-center align-items-center">
                         <img src="assets/img/icon/suratijazah.png" alt="">
@@ -312,8 +312,6 @@
             <h2>Link</h2>
         </div>
 
-
-
         <div class="container">
             <div class="row ">
 
@@ -464,4 +462,6 @@
     <!--kalender-->
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
     <script src="{{ URL::to('/') }}/assets/js/home/kalender.js"></script>
+    <script src="{{URL::to('/')}}/assets/js/home/swiper/core.min.js"></script>
+    <script src="{{URL::to('/')}}/assets/js/home/swiper/script.js"></script>
 @endsection

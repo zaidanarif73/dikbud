@@ -9,8 +9,6 @@ body {
 .container {
     width: 80%;
     margin: 0 auto;
-    /* object-fit: contain; */
-    position: center;
 }
 
 header {
@@ -25,8 +23,9 @@ header h1 {
 
 .pembelajaran {
     display: flex;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    flex-wrap: wrap;
     gap: 20px;
+    justify-content: center; /* Center items on smaller screens */
     padding: 20px 0;
 }
 
@@ -37,12 +36,15 @@ header h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s;
+    flex-basis: calc(
+        33.333% - 40px
+    ); /* Adjust to 3 items per row minus the gap */
+    max-width: calc(33.333% - 40px);
 }
 
 .pembelajaran-item img {
     max-width: 100%;
     height: auto;
-    aspect-ratio: 3/2;
     object-fit: contain;
 }
 
@@ -55,4 +57,18 @@ header h1 {
 
 .pembelajaran-item:hover {
     transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+    .pembelajaran-item {
+        flex-basis: calc(50% - 40px); /* 2 items per row on tablets */
+        max-width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .pembelajaran-item {
+        flex-basis: calc(100% - 40px); /* 1 item per row on mobile */
+        max-width: calc(100% - 40px);
+    }
 }

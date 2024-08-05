@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('kontaks', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('subject');
+            $table->text('message');
+            $table->string("image")->nullable();
             $table->timestamps();
         });
     }

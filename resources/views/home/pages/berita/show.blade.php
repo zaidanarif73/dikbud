@@ -6,7 +6,7 @@
 <br>
 <br>
 <div class="container text-justify" >
-    <div class="row">
+    <div class="row mx-1">
         <div class="col-12 col-lg-9">
             <img src="{{ asset('storage/' . $result->image) }}" class="card-img-top mb-3" alt="">
             <h1 class=""><b>{{ $result->title }}</b></h1>
@@ -58,7 +58,7 @@
                         <a href="{{ route('home.berita.show', $row->id) }}"><h6 class="text-uppercase fw-bold mb-1">{{ $row->title }}</h6></a>
                     </div>
                     <div class="float-end pt-1">
-                        <small class="text-muted">{{ Carbon\Carbon::parse($row->date)->diffForHumans(Carbon\Carbon::now());}}</small>
+                        <small class="text-muted">{{ Carbon\Carbon::parse($row->date)->diffForHumans(null, true).' yang lalu';}}</small>
                     </div>
                 </div>
             </div>

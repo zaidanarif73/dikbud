@@ -4,7 +4,7 @@
 @section('breadcumb_child', 'Show')
 @section('content')
     <div class="container">
-        <div class="row">
+        <div class="row mx-1">
             <div class="col-xl-12">
                 <div class="card m-b-30">
                     <div class="card-body">

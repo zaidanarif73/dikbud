@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Kontak;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Log;
 
 class KontakController extends Controller
 {
@@ -12,59 +14,68 @@ class KontakController extends Controller
      */
     public function __construct(){
         $this->view = "dashboard.pages.kontak.";
+        $this->route = "dashboard.kontak.";
+        $this->kontak = new kontak();
+        Paginator::useBootstrap();
     }
 
-     public function index()
+    public function index(Request $request)
     {
-        return view($this->view."index");
+        $search = $request->search;
+
+        $table = $this->kontak;
+
+        if(!empty($search)){
+            $table = $table->where(function($query2) use($search){
+                $query2->where("name","like","%".$search."%");
+            });
+        }
+        $table = $table->orderBy("created_at","DESC");
+        $table = $table->paginate(10)->withQueryString();
+
+        $data = [
+            'table' => $table,
+        ];
+
+        return view($this->view."index",$data);
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function show($id)
     {
-        //
+        $result = $this->kontak;
+        $result = $result->where('id',$id);
+        $result = $result->first();
+
+
+        if(!$result){
+            alert()->error('Gagal',"Data tidak ditemukan");
+            return redirect()->route($this->route."index");
+        }
+
+        $data = [
+            'result' => $result,
+        ];
+
+        return view($this->view."show",$data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function destroy($id)
     {
-        //
-    }
+        try {
+            $result = $this->kontak;
+            $result = $result->where('id',$id);
+            $result = $result->first();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Kontak $kontak)
-    {
-        //
-    }
+            $result->delete();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Kontak $kontak)
-    {
-        //
-    }
+            alert()->html('Berhasil','Data berhasil dihapus','success'); 
+            return redirect()->route($this->route."index");
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Kontak $kontak)
-    {
-        //
-    }
+        } catch (\Throwable $e) {
+            Log::emergency($e->getMessage());
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Kontak $kontak)
-    {
-        //
+            alert()->error('Gagal',$e->getMessage());
+            return redirect()->route($this->route."index");
+        }
     }
 }
