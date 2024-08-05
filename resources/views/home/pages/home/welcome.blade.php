@@ -237,30 +237,30 @@
                 {{-- berita --}}
                
                 <div class="container-fluid berita py-5">
-                    <div class="container py-5">
-                        <div class="row g-4 justify-content-center">
-                           
-                            <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
-                               
-                                <div class="berita-item rounded">
-                                    @forelse ($table->slice(0, 3) as $index => $row)
-                                    <div class="berita-img rounded-top">
-                                        <a href="{{route('home.berita.show', $row->id)}}"><img src="{{ asset('storage/' . $row->image) }}" class="img-fluid rounded-top w-100"
-                                            alt=""></a>
-                                    </div>
-                                    <div class="berita-content rounded-bottom bg-light p-4">
-                                        <div class="berita-content-inner">
-                                            <p class="card-text"> {{ Carbon\Carbon::parse($row->date)->translatedFormat('l,d F Y') }}</p>
-                                            <h5 class="mb-4">{{ $row->title }}</h5>
-                                            <p class="mb-3">{!! Str::limit(strip_tags($row->renderTrix('content')), 40) !!}</p>
-                                        </div>
-                                    </div>
-                                    @empty
-                                    <p>tidak ada data</p>
-                                @endforelse
-                                </div>
-                               
-                            </div>
+                  <div class="container py-5">
+                      <div class="row g-4 justify-content-center">
+                          @forelse ($table->slice(0, 3) as $index => $row)
+                          <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+                              <div class="berita-item rounded">
+                                  <div class="berita-img rounded-top">
+                                      <a href="{{route('home.berita.show', $row->id)}}"><img src="{{ asset('storage/' . $row->image) }}" class="img-fluid rounded-top w-100" alt=""></a>
+                                  </div>
+                                  <div class="berita-content rounded-bottom bg-light p-4">
+                                      <div class="berita-content-inner">
+                                          <p class="card-text"> {{ Carbon\Carbon::parse($row->date)->translatedFormat('l,d F Y') }}</p>
+                                          <h5 class="mb-4">{{ $row->title }}</h5>
+                                          <p class="mb-3">{!! Str::limit(strip_tags($row->renderTrix('content')), 40) !!}</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          @empty
+                          <p>tidak ada data</p>
+                          @endforelse
+                      </div>
+                  </div>
+              </div>
+              
                             {{-- <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
                                 <div class="berita-item rounded">
                                     <div class="berita-img rounded-top">
