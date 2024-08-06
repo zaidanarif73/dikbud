@@ -77,8 +77,8 @@
 
     <!-- Layanan Section -->
     <section id="featured-services" class="featured-services section light-background">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Layanan</h2>
+      <div class="container section-title " data-aos="fade-up ">
+        <h2 class=" p-5">Layanan</h2>
       </div>
 
       <div class="card-container container">
@@ -174,51 +174,30 @@
       <div class="container-fluid berita py-5">
         <div class="container py-5">
             <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="berita-item rounded">
-                       <div class="berita-img rounded-top">
-                            <img src="assets/img/cobabud.jpg" class="img-fluid rounded-top w-100" alt="">
-                       </div>
-                        <div class="berita-content rounded-bottom bg-light p-4">
-                            <div class="berita-content-inner">
-                              <p class="card-text">Kamis, 20 Juni 2024 22:36 WIB</p>
-                                <h5 class="mb-4">Mas Kadin: Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara Dengan Lulusan Formal</h5>
-                                <p class="mb-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan Sekaligus Plh. Kepala bidang PAUD P...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @forelse ($table->slice(0, 3) as $index => $row)
                 <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="berita-item rounded">
-                       <div class="berita-img rounded-top">
-                            <img src="assets/img/cobabud.jpg" class="img-fluid rounded-top w-100" alt="">
-                       </div>
+                        <div class="berita-img rounded-top">
+                            <a href="{{route('home.berita.show', $row->id)}}"><img src="{{ asset('storage/' . $row->image) }}" class="img-fluid rounded-top w-100" alt=""></a>
+                        </div>
                         <div class="berita-content rounded-bottom bg-light p-4">
                             <div class="berita-content-inner">
-                              <p class="card-text">Kamis, 20 Juni 2024 22:36 WIB</p>
-                              <h5 class="mb-4">Mas Kadin: Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara Dengan Lulusan Formal</h5>
-                              <p class="mb-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan Sekaligus Plh. Kepala bidang PAUD P...</p>
+                                <p class="card-text"> {{ Carbon\Carbon::parse($row->date)->translatedFormat('l,d F Y') }}</p>
+                                <h5 class="mb-4">{{ $row->title }}</h5>
+                                <p class="mb-3">{!! Str::limit(strip_tags($row->renderTrix('content')), 40) !!}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="berita-item rounded">
-                       <div class="berita-img rounded-top">
-                            <img src="assets/img/cobabud.jpg" class="img-fluid rounded-top w-100" alt="">
-                       </div>
-                        <div class="berita-content rounded-bottom bg-light p-4">
-                            <div class="berita-content-inner">
-                              <p class="card-text">Kamis, 20 Juni 2024 22:36 WIB</p>
-                              <h5 class="mb-4">Mas Kadin: Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara Dengan Lulusan Formal</h5>
-                              <p class="mb-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan Sekaligus Plh. Kepala bidang PAUD P...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-          <a href="{{route('home.berita.index')}}" class="btn btn-primary mt-5">Semua Berita</a>
-                </div>
+                @empty
+                <p>tidak ada data</p>
+                @endforelse
+            </div>
+        </div>
+    </div>
+<div>
+    <a href="{{ route('home.berita.index') }}" class="btn mt-2 mb-5">Semua Berita</a>
+</div>
     </section><!-- /Features Details Section -->
     
     <!-- Calender -->
@@ -230,49 +209,35 @@
 
   
     <div class="container section-title" data-aos="fade-up">
-      <h2>Link</h2>
+      <h2 class="p-5">Link</h2>
     </div>
 
     <div class="container">
-      <div class="row">
-        <div class="d-flex justify-content-center col-4 mt-5">
-          <div class="card" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-            </ul>
-          </div>
+        <div class="row ">
+
+            <div class="d-flex justify-content-center col-4 mt-5">
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        @forelse ($table as $index => $row)
+                        {{-- @forelse ($table->slice(0, 5) as $index => $row) --}}
+                            {{-- <li class="list-group-item"><a
+                                    href="{{ URL::to($row->url) }}"class="card-link">{{ $row->title }}</a></li>
+                           --}}
+                            @if ($index < 5)
+                                <li class="list-group-item"><a href="{{ URL::to($row->url) }}"
+                                        class="card-link">{{ $row->title }}</a></li>
+                            @else
+                            @break
+                        @endif
+                    @empty
+                        <p>tidak ada data</p>
+                    @endforelse
+
+                </ul>
+            </div>
         </div>
-        <div class="d-flex justify-content-center col-4 mt-5">
-          <div class="card" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="d-flex justify-content-center col-4 mt-5">
-          <div class="card" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
+</div>
   
     <!-- Contact Section -->
     <section id="contact" class="contact section">

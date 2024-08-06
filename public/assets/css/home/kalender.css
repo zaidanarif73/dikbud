@@ -9,13 +9,13 @@
 #calendars{
   height:auto;
   width: auto;
-  margin-top: 15%
+  margin-top: 0%
 }
 
 @media only screen and (min-width: 600px){
     #calendars{
     height:500px;
-    width: 500px;
+    width: 600px;
     }
     .kalender{
       display: flex;
