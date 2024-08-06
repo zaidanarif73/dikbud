@@ -3,9 +3,10 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <style>
 </style>
-{{-- <link rel="stylesheet" href="/assets/css/home/swiper/bootstrap.css"> --}}
-  {{-- <link rel="stylesheet" href="/assets/css/home/swiper/fonts.css"> --}}
-
+  <!-- font css-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/home/swiper/style.css">
   <link rel="stylesheet" href="/assets/css/home/kalender.css">
 @endsection
@@ -20,7 +21,7 @@
             <div class="container" id="swipper_tittle">
               <div class="row">
               <div class="col-sm-9 col-md-8 col-lg-7 col-xxl-7 offset-lg-1 offset-xxl-0">
-                <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Dikbud Kota Malang</span></h1>
+                <h1 class="oh swiper-title kanit-black "><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Dikbud Kota Malang</span></h1>
                 <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">Testing </p>
               </div>
               </div>
@@ -32,7 +33,7 @@
           <div class="container">
           <div class="row">
           <div class="col-sm-8 col-lg-7 offset-lg-1 offset-xxl-0">
-            <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInDown" data-caption-delay="0">Visi Misi</span></h1>
+            <h1 class="oh swiper-title kanit-black"><span class="d-inline-block" data-caption-animate="slideInDown" data-caption-delay="0">Visi Misi</span></h1>
             <p class="big swiper-text" data-caption-animate="fadeInRight" data-caption-delay="300">We use only the best ingredients to make one-of-a-kind pizzas for our customers.</p>
           </div>
           </div>
@@ -44,7 +45,7 @@
               <div class="container" id="swipper_tittle">
                 <div class="row">
                 <div class="col-sm-9 col-md-8 col-lg-7 col-xxl-7 offset-lg-1 offset-xxl-0">
-                  <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Struktur Organisasi</span></h1>
+                  <h1 class="oh swiper-title kanit-black"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Struktur Organisasi</span></h1>
                   <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">Testing </p>
                 </div>
                 </div>
