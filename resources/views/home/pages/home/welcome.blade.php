@@ -3,9 +3,10 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <style>
 </style>
-{{-- <link rel="stylesheet" href="/assets/css/home/swiper/bootstrap.css"> --}}
-  {{-- <link rel="stylesheet" href="/assets/css/home/swiper/fonts.css"> --}}
-
+  <!-- font css-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/home/swiper/style.css">
   <link rel="stylesheet" href="/assets/css/home/kalender.css">
 @endsection
@@ -20,7 +21,7 @@
             <div class="container" id="swipper_tittle">
               <div class="row">
               <div class="col-sm-9 col-md-8 col-lg-7 col-xxl-7 offset-lg-1 offset-xxl-0">
-                <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Dikbud Kota Malang</span></h1>
+                <h1 class="oh swiper-title kanit-black "><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Dikbud Kota Malang</span></h1>
                 <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">Testing </p>
               </div>
               </div>
@@ -32,7 +33,7 @@
           <div class="container">
           <div class="row">
           <div class="col-sm-8 col-lg-7 offset-lg-1 offset-xxl-0">
-            <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInDown" data-caption-delay="0">Visi Misi</span></h1>
+            <h1 class="oh swiper-title kanit-black"><span class="d-inline-block" data-caption-animate="slideInDown" data-caption-delay="0">Visi Misi</span></h1>
             <p class="big swiper-text" data-caption-animate="fadeInRight" data-caption-delay="300">We use only the best ingredients to make one-of-a-kind pizzas for our customers.</p>
           </div>
           </div>
@@ -44,7 +45,7 @@
               <div class="container" id="swipper_tittle">
                 <div class="row">
                 <div class="col-sm-9 col-md-8 col-lg-7 col-xxl-7 offset-lg-1 offset-xxl-0">
-                  <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Struktur Organisasi</span></h1>
+                  <h1 class="oh swiper-title kanit-black"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Struktur Organisasi</span></h1>
                   <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">Testing </p>
                 </div>
                 </div>
@@ -77,8 +78,8 @@
 
     <!-- Layanan Section -->
     <section id="featured-services" class="featured-services section light-background">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Layanan</h2>
+      <div class="container section-title " data-aos="fade-up ">
+        <h2 class=" p-5">Layanan</h2>
       </div>
 
       <div class="card-container container">
@@ -174,51 +175,30 @@
       <div class="container-fluid berita py-5">
         <div class="container py-5">
             <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="berita-item rounded">
-                       <div class="berita-img rounded-top">
-                            <img src="assets/img/cobabud.jpg" class="img-fluid rounded-top w-100" alt="">
-                       </div>
-                        <div class="berita-content rounded-bottom bg-light p-4">
-                            <div class="berita-content-inner">
-                              <p class="card-text">Kamis, 20 Juni 2024 22:36 WIB</p>
-                                <h5 class="mb-4">Mas Kadin: Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara Dengan Lulusan Formal</h5>
-                                <p class="mb-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan Sekaligus Plh. Kepala bidang PAUD P...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @forelse ($table->slice(0, 3) as $index => $row)
                 <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="berita-item rounded">
-                       <div class="berita-img rounded-top">
-                            <img src="assets/img/cobabud.jpg" class="img-fluid rounded-top w-100" alt="">
-                       </div>
+                        <div class="berita-img rounded-top">
+                            <a href="{{route('home.berita.show', $row->id)}}"><img src="{{ asset('storage/' . $row->image) }}" class="img-fluid rounded-top w-100" alt=""></a>
+                        </div>
                         <div class="berita-content rounded-bottom bg-light p-4">
                             <div class="berita-content-inner">
-                              <p class="card-text">Kamis, 20 Juni 2024 22:36 WIB</p>
-                              <h5 class="mb-4">Mas Kadin: Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara Dengan Lulusan Formal</h5>
-                              <p class="mb-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan Sekaligus Plh. Kepala bidang PAUD P...</p>
+                                <p class="card-text"> {{ Carbon\Carbon::parse($row->date)->translatedFormat('l,d F Y') }}</p>
+                                <h5 class="mb-4">{{ $row->title }}</h5>
+                                <p class="mb-3">{!! Str::limit(strip_tags($row->renderTrix('content')), 40) !!}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="berita-item rounded">
-                       <div class="berita-img rounded-top">
-                            <img src="assets/img/cobabud.jpg" class="img-fluid rounded-top w-100" alt="">
-                       </div>
-                        <div class="berita-content rounded-bottom bg-light p-4">
-                            <div class="berita-content-inner">
-                              <p class="card-text">Kamis, 20 Juni 2024 22:36 WIB</p>
-                              <h5 class="mb-4">Mas Kadin: Lulusan SKB itu Mbois, Jangan Minder. Kalian Setara Dengan Lulusan Formal</h5>
-                              <p class="mb-3">Malang - Didampingi Kepala Bidang Pembinaan Ketenagaan Sekaligus Plh. Kepala bidang PAUD P...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-          <a href="{{route('home.berita.index')}}" class="btn btn-primary mt-5">Semua Berita</a>
-                </div>
+                @empty
+                <p>tidak ada data</p>
+                @endforelse
+            </div>
+        </div>
+    </div>
+<div>
+    <a href="{{ route('home.berita.index') }}" class="btn mt-2 mb-5">Semua Berita</a>
+</div>
     </section><!-- /Features Details Section -->
     
     <!-- Calender -->
@@ -230,49 +210,35 @@
 
   
     <div class="container section-title" data-aos="fade-up">
-      <h2>Link</h2>
+      <h2 class="p-5">Link</h2>
     </div>
 
     <div class="container">
-      <div class="row">
-        <div class="d-flex justify-content-center col-4 mt-5">
-          <div class="card" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-            </ul>
-          </div>
+        <div class="row ">
+
+            <div class="d-flex justify-content-center col-4 mt-5">
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        @forelse ($table as $index => $row)
+                        {{-- @forelse ($table->slice(0, 5) as $index => $row) --}}
+                            {{-- <li class="list-group-item"><a
+                                    href="{{ URL::to($row->url) }}"class="card-link">{{ $row->title }}</a></li>
+                           --}}
+                            @if ($index < 5)
+                                <li class="list-group-item"><a href="{{ URL::to($row->url) }}"
+                                        class="card-link">{{ $row->title }}</a></li>
+                            @else
+                            @break
+                        @endif
+                    @empty
+                        <p>tidak ada data</p>
+                    @endforelse
+
+                </ul>
+            </div>
         </div>
-        <div class="d-flex justify-content-center col-4 mt-5">
-          <div class="card" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="d-flex justify-content-center col-4 mt-5">
-          <div class="card" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-              <li class="list-group-item"><a href="#" class="card-link">Card link</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
+</div>
   
     <!-- Contact Section -->
     <section id="contact" class="contact section">
