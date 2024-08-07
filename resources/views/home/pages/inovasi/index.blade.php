@@ -1,12 +1,12 @@
 @extends('home.layouts.master')
 @section("css")
-        <link  href="assets/css/inovasi/style.css" rel="stylesheet">
-    @endsection
+<link  href="assets/css/inovasi/style.css" rel="stylesheet">
+@endsection
 @section("content")
-    <div class="inov-bg">
-      <img src="{{URL::to('/')}}/assets/img/banner-inov.png" alt="">
-    </div>
-<div class="container mt-5">
+<div class="inov-bg">
+    <img src="{{URL::to('/')}}/assets/img/bg-inov1.png" alt="">
+</div>
+<div class="container" style="margin-top: 80px">
     <div class="row">
         <div class="btn-group col-2">
             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tahun</button>
@@ -45,24 +45,21 @@
     </div>
     <main>
         <div class="gallery">
-           
             <div class="gallery-item">
                 <img src="assets/img/inov.png" alt="">
-                {{-- <a href="{{ route('home.inovasi.show') }}" class="stretched-link"><h3>FINALIS TOP 10 TINGKAT KOTA</h3></a> --}}
             </div>
             @forelse ($table as $index => $row)
             <div class="gallery-item">
                 <a href="{{route('home.inovasi.show', $row->id)}}"> <img src="{{ asset('storage/' . $row->image) }}"></a>
-                          <span class="tanggal">
-                              {{ Carbon\Carbon::parse($row->created_at)->translatedFormat('l,d F Y') }}
-                          </span>
-                             <a href="{{route('home.inovasi.show', $row->id)}}"><h5 >{{ $row->title }}</h5></a> 
-                             <p> {!! Str::limit(strip_tags($row->renderTrix('content')), 5) !!}</p>
-        
+                <span class="tanggal">
+                    {{ Carbon\Carbon::parse($row->created_at)->translatedFormat('l,d F Y') }}
+                </span>
+                <a href="{{route('home.inovasi.show', $row->id)}}"><h5 >{{ $row->title }}</h5></a> 
+                <p> {!! Str::limit(strip_tags($row->renderTrix('content')), 5) !!}</p>
             </div>
             @empty
             <p>tidak ada data</p>
-        @endforelse
+            @endforelse
             <div class="gallery-item">
                 <img src="assets/img/galeri/galeri3.jpg" alt="">
                 <h3>UPACARA PEMBUKAAN LOMBA FLS2N DAN O2SN TINGKAT KEC. KEDUNGKANDANG</h3>
@@ -86,6 +83,7 @@
             <div class="gallery-item">
                 <img src="assets/img/galeri/galeri8.jpg" alt="">
                 <h3>Pentingnya Platform Merdeka Mengajar Guna Optimalisasi Kinerja Guru Dalam Mengajar</h3>
+            </div>
         </div>
     </main>
     <div class="pagination">
@@ -102,17 +100,16 @@
 </form>
 @endsection
 @section("script")
-    <script>
-        $(document).ready(function () {
-            $('#tahunList li a').on('click', function () {
-                var year= ($(this).text());
-                //alert("Your Favourite Sports is "+txt);
-                $("#frmTahun").attr("action", "{{ route('home.informasi.index') }}");
-                $("#frmTahun").find('input[name="year"]').val(year);
-                $("#frmTahun").submit();
-                //$("#tahun").val() = txt;
-            });
+<script>
+$(document).ready(function () {
+    $('#tahunList li a').on('click', function () {
+        var year= ($(this).text());
+        //alert("Your Favourite Sports is "+txt);
+        $("#frmTahun").attr("action", "{{ route('home.informasi.index') }}");
+        $("#frmTahun").find('input[name="year"]').val(year);
+        $("#frmTahun").submit();
+        //$("#tahun").val() = txt;
         });
+    });
     </script>
-
-@endsection
+    @endsection
