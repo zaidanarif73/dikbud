@@ -1,4 +1,5 @@
 @extends('home.layouts.master')
+@section("title","Inovasi | DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
 @section("css")
 <link  href="assets/css/inovasi/style.css" rel="stylesheet">
 @endsection

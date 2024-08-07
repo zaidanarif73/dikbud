@@ -1,5 +1,6 @@
 
 @extends('home.layouts.master')
+@section("title","Galeri | DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
 @section('css')
     <link href="{{ URL::to('/') }}/assets/css/galery/style.css" rel="stylesheet">
     <style>

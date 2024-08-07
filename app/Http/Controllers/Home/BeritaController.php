@@ -42,6 +42,8 @@ class BeritaController extends Controller
         return view($this->view."index",$data);
     }
     public function show($id){
+        $table_pengaturan = Pengaturan::first();
+
         $result = $this->berita;
         $result = $result->where('id',$id);
         $result = $result->first();
@@ -59,6 +61,7 @@ class BeritaController extends Controller
         $data = [
             'result' => $result,
             'except_result' => $except_result,
+            'table_pengaturan' => $table_pengaturan,
         ];
 
         return view($this->view."show",$data);
