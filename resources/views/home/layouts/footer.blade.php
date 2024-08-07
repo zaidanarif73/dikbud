@@ -3,7 +3,7 @@
   <div class="container footer-top">
     <div class="row gy-4">
       <div class="col-lg-4 col-md-6 footer-about">
-        <a href="index.html" class="logo d-flex justify-content-center">
+        <a href="{{ route('home.home.index') }}" class="logo d-flex justify-content-center">
           @if($table_pengaturan->website_logo == null)
             <img src="{{URL::to('/')}}/assets/img/favicon.png" alt="">
           @else

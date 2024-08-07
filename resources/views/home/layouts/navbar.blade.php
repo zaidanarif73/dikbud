@@ -1,7 +1,7 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container container-xl position-relative d-flex align-items-center">
 
-    <a href="index.html" class="logo d-flex align-items-center me-auto">
+    <a href="{{ route('home.home.index') }}" class="logo d-flex align-items-center me-auto">
       @if($table_pengaturan->website_logo == null)
         <img src="{{URL::to('/')}}/assets/img/favicon.png" alt="">
       <!-- <h1 class="sitename">Dinas Pendidikan dan Kebudayaan Kota Malang</h1> -->
@@ -13,7 +13,7 @@
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="{{ route('home.home.index') }}">Beranda</a></li>
-        <li><a href="{{ route('home.home.index') }}#featured-services">Layanan</a></li>
+        <li><a href="{{ route('home.home.index') }}#layanan">Layanan</a></li>
         <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="{{ route('home.SO.index') }}">Struktur Organisasi</a></li>
@@ -25,7 +25,7 @@
         <li><a href="{{ route('home.galeri.index') }}">Galeri</a></li>
         <li><a href="{{ route('home.pembelajaran.index') }}">Pembelajaran</a></li>
         <li><a href="{{ route('home.informasi.index') }}">Informasi Publik</a></li>
-        <li><a href="#contact">Kontak</a></li>
+        <li><a href="{{ route('home.home.index') }}#kontak">Kontak</a></li>
         <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="#">Dropdown 1</a></li>

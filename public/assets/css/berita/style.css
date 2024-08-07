@@ -5,10 +5,9 @@
     object-fit: cover;
 }
 
-/* .container {
-    width: 100%;
-    margin: 0 auto;
-} */
+.container-fluid{
+    margin-top: 100px;
+}
 
 header {
     display: flex;

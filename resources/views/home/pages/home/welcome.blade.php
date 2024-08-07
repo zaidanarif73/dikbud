@@ -1,4 +1,5 @@
 @extends('home.layouts.master')
+@section("title","Home | DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
 @section('css')
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
@@ -102,7 +103,7 @@
     </section><!-- /Hero Section -->
 
     <!-- Layanan Section -->
-    <section id="featured-services" class="featured-services section light-background">
+    <section id="layanan" class="featured-services section light-background">
         <div class="container section-title " data-aos="fade-up ">
             <h2 class=" p-5">Layanan</h2>
         </div>
@@ -219,7 +220,7 @@
                                             <div class="berita-content-inner">
                                                 <p class="card-text">
                                                     {{ Carbon\Carbon::parse($row->date)->translatedFormat('l,d F Y') }}</p>
-                                                <h5 class="mb-4">{{ $row->title }}</h5>
+                                                <a href="{{ route('home.berita.show', $row->id) }}"><h5 class="mb-4">{{ $row->title }}</h5></a>
                                                 <p class="mb-3">{!! Str::limit(strip_tags($row->renderTrix('content')), 40) !!}</p>
                                             </div>
                                         </div>
@@ -269,7 +270,7 @@
       
 
         <!-- Contact Section -->
-        <section id="contact" class="contact section">
+        <section id="kontak" class="contact section">
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
