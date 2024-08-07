@@ -28,6 +28,7 @@
                                     <label class="col-md-2 col-form-label">Maps Website <span class="text-danger">*</span></label>
                                     <div class="col-md-10">
                                         <input type="text" class="form-control" name="website_maps" placeholder="Kata Kunci Website" value="{{old('website_maps',$result->website_maps)}}" required>
+                                        <p class="text-info" style="margin-top: 0px;margin-bottom: 0px;padding-top: 0px;padding-bottom: 0px;"><small><i>Copy-an iframe html dari gmaps</i></small></p>
                                     </div>
                                 </div>
                             </div>

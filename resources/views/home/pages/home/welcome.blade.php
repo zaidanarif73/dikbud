@@ -59,7 +59,22 @@
                     </div>
                 </div>
             @empty
-                <p>tidak ada data</p>
+            <div class="swiper-slide context-dark" id="swipper" data-slide-bg="https://dikbud.malangkota.go.id/uploads/images/news_1722931804.jpg"
+                alt="">
+                <div class="swiper-slide-caption section-md">
+                    <div class="container" id="swipper_tittle">
+                        <div class="row">
+                            <div class="col-sm-9 col-md-8 col-lg-7 col-xxl-7 offset-lg-1 offset-xxl-0">
+                                <h1 class="oh swiper-title kanit-black">
+                                    <span class="d-inline-block" data-caption-animate="slideInUp"
+                                        data-caption-delay="0">hehe</span>
+                                </h1>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             @endforelse
         </div>
 
@@ -271,7 +286,7 @@
                             data-aos="fade-up" data-aos-delay="200">
                             <i class="bi bi-geo-alt"></i>
                             <h3>Address</h3>
-                            <p>Jl. Veteran No. 19, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145</p>
+                            <p>{{ $table_pengaturan->website_address }}</p>
                         </div>
                     </div><!-- End Info Item -->
 
@@ -280,7 +295,7 @@
                             data-aos="fade-up" data-aos-delay="300">
                             <i class="bi bi-telephone"></i>
                             <h3>Call Us</h3>
-                            <p>(0341)-551333</p>
+                            <p>{{ $table_pengaturan->website_phone }}</p>
                         </div>
                     </div><!-- End Info Item -->
 
@@ -289,7 +304,7 @@
                             data-aos="fade-up" data-aos-delay="400">
                             <i class="bi bi-envelope"></i>
                             <h3>Email Us</h3>
-                            <p>dikbud@malangkota.go.id</p>
+                            <p>{{ $table_pengaturan->website_email }}</p>
                         </div>
                     </div><!-- End Info Item -->
 
@@ -297,10 +312,11 @@
 
                 <div class="row gy-4 mt-1">
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                        <iframe
+                        {{-- <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d688.1506512226823!2d112.61389434101307!3d-7.956754435114845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78827beffc2665%3A0x9dd38763e9a56b77!2sDinas%20Pendidikan%20dan%20Kebudayaan%20Kota%20Malang!5e0!3m2!1sen!2sid!4v1720151847698!5m2!1sen!2sid"
                             frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen=""
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
+                            <iframe id="maps_big" src="" frameborder="0"></iframe>
                     </div><!-- End Google Maps -->
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
@@ -332,8 +348,7 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="comment">Pesan Anda</label>
-                                        <textarea class="form-control border border-dark" id="comment" rows="5" name="message">
-                          </textarea>
+                                        <textarea class="form-control border border-dark" id="comment" rows="5" name="message"></textarea>
                                     </div>
                                     <div class="card-action">
                                         <button class="btn" type="submit"
@@ -358,4 +373,5 @@
         <script src="{{ URL::to('/') }}/assets/js/home/kalender.js"></script>
         <script src="{{ URL::to('/') }}/assets/js/home/swiper/core.min.js"></script>
         <script src="{{ URL::to('/') }}/assets/js/home/swiper/script.js"></script>
+
     @endsection

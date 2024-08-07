@@ -22,11 +22,11 @@ class UpdateRequest extends FormRequest
             ],
             'website_maps' => [
                 'required',
-                'max:255',
+                'max:3000',
             ],
             'website_motto' => [
                 'required',
-                'max:255',
+                'max:1000',
             ],
             'website_phone' => [
                 'required',
@@ -53,9 +53,9 @@ class UpdateRequest extends FormRequest
             'website_name.required' => 'Nama website harus diisi.',
             'website_name.max' => 'Nama website maksimal 255 karakter.',
             'website_maps.required' => 'maps website harus diisi.',
-            'website_maps.max' => 'maps website maksimal 255 karakter.',
+            'website_maps.max' => 'maps website maksimal 3000 karakter.',
             'website_motto.required' => 'Deskripsi website harus diisi.',
-            'website_motto.max' => 'Deskripsi website maksimal 255 karakter.',
+            'website_motto.max' => 'Deskripsi website maksimal 1000 karakter.',
             'website_phone.required' => 'Nomor telepon website harus diisi.',
             'website_phone.max' => 'Nomor telepon website maksimal 255 karakter.',
             'website_address.required' => 'Alamat website harus diisi.',

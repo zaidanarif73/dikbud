@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string("website_name");
             $table->string("website_logo");
-            $table->string("website_maps");
-            $table->string("website_motto");
+            $table->text("website_maps");
+            $table->text("website_motto");
             $table->string("website_phone");
             $table->string("website_email");
-            $table->string("website_address");
+            $table->text("website_address");
             $table->timestamps();
         });
     }
