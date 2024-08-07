@@ -2,8 +2,12 @@
   <div class="container container-xl position-relative d-flex align-items-center">
 
     <a href="index.html" class="logo d-flex align-items-center me-auto">
-      <img src="{{URL::to('/')}}/assets/img/favicon.png" alt="">
+      @if($table_pengaturan->website_logo == null)
+        <img src="{{URL::to('/')}}/assets/img/favicon.png" alt="">
       <!-- <h1 class="sitename">Dinas Pendidikan dan Kebudayaan Kota Malang</h1> -->
+      @else
+        <img src="{{asset('storage/'.$table_pengaturan->website_logo)}}" alt="">
+      @endif
     </a>
 
     <nav id="navmenu" class="navmenu">

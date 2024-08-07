@@ -128,6 +128,8 @@ Route::group(["middleware"=>["dashboard.access"], "namespace"=>"App\Http\Control
 
     Route::group(["as"=>"pengaturan.", "prefix"=>"pengaturan"], function(){
         Route::get("/", "PengaturanController@index")->name("index")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin]));
+        Route::put('/', 'PengaturanController@update')->name("update")->middleware('role:'. implode('|', [RoleEnum::SuperAdmin]));
+
     });
 
     Route::group(["as"=>"log.", "prefix"=>"log"], function(){

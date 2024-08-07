@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Informasi;
+use App\Models\Pengaturan;
 
 class InformasiController extends Controller
 {
@@ -15,6 +16,7 @@ class InformasiController extends Controller
     }
 
     public function index(Request $request){
+        $table_pengaturan = Pengaturan::first(); //for footer handler
 
         $table = $this->informasi;
 
@@ -35,7 +37,8 @@ class InformasiController extends Controller
         $table = $table->orderBy("created_at","DESC");      //sort descending by time created data
         $table = $table->paginate();   //limit paginate only 10 data appears per load
         $data = [
-            'table' => $table,                              
+            'table' => $table,  
+            'table_pengaturan' => $table_pengaturan,                             
         ];
         return view($this->view."index",$data);
     }

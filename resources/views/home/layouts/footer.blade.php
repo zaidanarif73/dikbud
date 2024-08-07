@@ -3,19 +3,24 @@
   <div class="container footer-top">
     <div class="row gy-4">
       <div class="col-lg-4 col-md-6 footer-about">
-        <a href="index.html" class="logo d-flex align-items-center">
-          <img src="{{URL::to('/')}}/assets/img/favicon.png" alt="">
+        <a href="index.html" class="logo d-flex justify-content-center">
+          @if($table_pengaturan->website_logo == null)
+            <img src="{{URL::to('/')}}/assets/img/favicon.png" alt="">
+          @else
+            <img src="{{asset('storage/'.$table_pengaturan->website_logo)}}" alt="">
+          @endif
         </a>
         <div class="footer-contact pt-3">
-          <p>Bekerja Bersama, Bersama Bekerja Untuk Mewujudkan Merdeka Belajar Mudah, Efektif, Ramah, Disiplin, Efisien, Kolaboratif, dan Akuntabel Dalam Melayani </p>
+          <p>{{ $table_pengaturan->website_motto }}</p>
         </div>
       </div>
 
       <div class="col-lg-2 col-md-3 footer-links">
         <h4>Alamat Kantor</h4>
-        <p>Jl. Veteran No.19, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145</p>
+        <p>{{ $table_pengaturan->website_address }}</p>
         <div class="col d-flex justify-content-cgitenter " data-aos="fade-up" data-aos-delay="600" >
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d688.1506512226823!2d112.61389434101307!3d-7.956754435114845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78827beffc2665%3A0x9dd38763e9a56b77!2sDinas%20Pendidikan%20dan%20Kebudayaan%20Kota%20Malang!5e0!3m2!1sen!2sid!4v1720151847698!5m2!1sen!2sid" frameborder="0" style="border:0; width: 100%; height: 90px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63221.48905698436!2d112.6138562!3d-7.9634534!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78827f2d620975%3A0xf19b7459bbee5ed5!2sUniversitas%20Brawijaya!5e0!3m2!1sid!2sid!4v1723016126347!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 90px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
+          <iframe id="maps_mini" src="" frameborder="0"></iframe>
         </div>
       </div>
 
@@ -26,8 +31,8 @@
 
       <div class="col-lg-4 col-md-12 footer-newsletter">
         <h4>Kontak</h4>
-        <p class="mt-3"><strong>Phone:</strong> <span>(0341)-551333</span></p>
-          <p><strong>Email:</strong> <span>dikbud@malangkota.go.id</span></p>
+        <p class="mt-3"><strong>Phone:</strong> <span>{{ $table_pengaturan->website_phone }}</span></p>
+          <p><strong>Email:</strong> <span>{{ $table_pengaturan->website_email }}</span></p>
 
         <div class="social-links d-flex justify-content-center  mt-4">
           <a href="https://www.facebook.com/dikbudmalangkota/?locale=ms_MY"><i class="bi bi-facebook"></i></a>
@@ -48,3 +53,4 @@
   </div>
 
 </footer>
+

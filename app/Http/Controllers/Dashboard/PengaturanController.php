@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 use App\Models\Pengaturan;
 use Illuminate\Http\Request;
+use App\Http\Requests\Pengaturan\UpdateRequest;
+use App\Helpers\UploadHelper;
+use Error;
 
 class PengaturanController extends Controller
 {
@@ -11,59 +15,67 @@ class PengaturanController extends Controller
      * Display a listing of the resource.
      */
     public function __construct(){
+        $this->route = "dashboard.pengaturan.";
         $this->view = "dashboard.pages.pengaturan.";
+        $this->pengaturan = new Pengaturan();
     }
 
-     public function index()
+    public function index()
     {
-        return view($this->view."index");
+        $result = $this->pengaturan; 
+        $result = $result->first();
+        $data = [
+            'result' => $result,
+        ];
+        // return dd($data);
+        return view($this->view.'index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function update(UpdateRequest $request)
     {
-        //
-    }
+        try {
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+            $update  = $this->pengaturan;
+            $update = $update->first();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Pengaturan $pengaturan)
-    {
-        //
-    }
+            $website_name = $request->website_name;
+            $website_maps = $request->website_maps;
+            $website_motto = $request->website_motto;
+            $website_phone = $request->website_phone;
+            $website_address = $request->website_address;
+            $website_email = $request->website_email;
+            $website_logo = $request->file("website_logo");
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Pengaturan $pengaturan)
-    {
-        //
-    }
+            if($website_logo){
+                $upload = UploadHelper::upload_file($website_logo,'settings',['jpeg','jpg','png','gif']);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Pengaturan $pengaturan)
-    {
-        //
-    }
+                if($upload["IsError"] == TRUE){
+                    throw new Error($upload["Message"]);
+                }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Pengaturan $pengaturan)
-    {
-        //
+                $website_logo = $upload["Path"];
+            }else{
+                $website_logo = $update->website_logo;
+            }
+
+            $update->update([
+                'website_name' => $website_name,
+                'website_maps' => $website_maps,
+                'website_motto' => $website_motto,
+                'website_phone' => $website_phone,
+                'website_address' => $website_address,
+                'website_email' => $website_email,
+                'website_logo' => $website_logo,
+            ]);
+            
+            alert()->html('Berhasil','Pengaturan website berhasil diperbarui','success'); 
+
+            return redirect()->route($this->route.'index');
+        } catch (\Throwable $e) {
+            Log::emergency($e->getMessage());
+
+            alert()->error('Gagal',$e->getMessage());
+            return redirect()->route($this->route."index")->withInput();
+        }
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Berita;
+use App\Models\Pengaturan;
 use Illuminate\Pagination\Paginator;
 
 class BeritaController extends Controller
@@ -19,7 +20,8 @@ class BeritaController extends Controller
     }
    
     public function index(Request $request)
-    {
+    {   
+        $table_pengaturan = Pengaturan::first();
         $search = $request->search;
 
         $table = $this->berita;
@@ -34,6 +36,7 @@ class BeritaController extends Controller
 
         $data = [
             'table' => $table,
+            'table_pengaturan' => $table_pengaturan,
         ];
 
         return view($this->view."index",$data);
