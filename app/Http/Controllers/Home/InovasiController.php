@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Inovasi;
+use App\Models\Pengaturan;
 use Illuminate\Pagination\Paginator;
 
 class InovasiController extends Controller
@@ -20,6 +21,8 @@ class InovasiController extends Controller
    
     public function index(Request $request)
     {
+        $table_pengaturan = Pengaturan::first();
+
         $search = $request->search;
 
         $table = $this->inovasi;
@@ -34,6 +37,7 @@ class InovasiController extends Controller
 
         $data = [
             'table' => $table,
+            'table_pengaturan' => $table_pengaturan,
         ];
 
         return view($this->view."index",$data);

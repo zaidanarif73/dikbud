@@ -31,6 +31,9 @@
     <!-- Kaiadmin DEMO methods, don't include it in your project! -->
     <script src="{{URL::to('/')}}/assets/js/home/setting-demo.js"></script>
     <script src="{{URL::to('/')}}/assets/js/home/demo.js"></script>
+
+    <!--maps handler script-->
+    @include('home.component.maps_script')
     
 {{-- END KAIADMIN JS --}}
 

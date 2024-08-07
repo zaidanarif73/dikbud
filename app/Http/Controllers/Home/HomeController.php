@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Kalender;
 use App\Models\Tautan;
 use App\Models\Berita;
+use App\Models\Banner;
+use App\Models\Pengaturan;
 
 class HomeController extends Controller
 {
@@ -19,15 +21,21 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        $table = Tautan::all();
-        $table = Berita::all();
+        $table_tautan = Tautan::all();
+        $table_berita = Berita::all();
+        $table_banner = Banner::all();
+        $table_pengaturan = Pengaturan::first();
         // $table = $table->orderBy("created_at","DESC");      //sort descending by time created data
         // // // $table = $table->paginate(10);   //limit paginate only 10 data appears per load
         $data = [
-            'table' => $table,
+            'table_tautan' => $table_tautan,
+            'table_berita' => $table_berita,
+            'table_banner' => $table_banner,
+            'table_pengaturan' => $table_pengaturan,
         ];
 
         return view($this->view."welcome",$data);
+        // return dd($data );
 
     }
    
