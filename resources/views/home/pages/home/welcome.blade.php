@@ -176,34 +176,36 @@
 
 
         <!-- Features Details Section -->
-        <section id="features-details" class="features-details section">
+        <section id="features-details" class="features-details section text-center">
             <div class="container section-title" data-aos="fade-up">
-                <h2>Berita Utama</h2>
+                <h2>Berita Terpopuler</h2>
             </div>
             <div class="container">
                 <!-- <h3 class="d-flex justify-content-start">Berita Utama</h3> -->
-
+                @if($table_view != null)
                 <div class="row gy-4 justify-content-between features-item">
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <img src="{{ URL::to('/') }}/assets/img/News.jpg" class="img-fluid" alt="">
+                        <img src="{{ asset('storage/' . $table_view->image) }}" class="img-fluid" alt="">
                     </div>
 
                     <div class="col-lg-5 d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
                         <div class="content">
                             <p>
-                                Jumat, 21 Juni 2024 09:25 WIB
+                                {{ Carbon\Carbon::parse($table_view->date)->translatedFormat('l,d F Y') }}
                             </p>
-                            <h4>Jadi Narsum Worhshop, Mas Kadin Ucapkan Terima Kasih pada PTK SMPN 12 Malang</h4>
+                            <small><i class='bx bx-show'></i> Dilihat {{ $count_view->total }} kali</small>
+                            <h4>{{ $table_view->title }}</h4>
                             <p>
-                                Malang - Jajaran SMP Negeri 12 Malang yang kini dikepalai oleh M. Shodiq., M.Pd
-                                selenggarakan Workshop (WS) bertajuk Peningkatan Kompetensi Guru Berbasis Literasi dan
-                                Numerasi. Kegiatan yang diselengg...
+                                {!! Str::limit(strip_tags($table_view->renderTrix('content')), 120) !!}
                             </p>
-                            <a href="#" class="btn more-btn">Baca Selengkapnya</a>
+                            <a href="{{ route('home.berita.show', $table_view->id) }}" class="btn more-btn">Baca Selengkapnya</a>
                         </div>
                     </div>
                 </div>
+                @else
+                    <p>No Data</p>
+                @endif
                 {{-- berita --}}
                 <div class="container-fluid berita py-5">
                     <div class="container py-5">
