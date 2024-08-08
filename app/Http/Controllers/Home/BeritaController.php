@@ -63,6 +63,8 @@ class BeritaController extends Controller
             'except_result' => $except_result,
             'table_pengaturan' => $table_pengaturan,
         ];
+        //view count in show berita
+        views($result)->cooldown($minutes = 3)->record();
 
         return view($this->view."show",$data);
     }
