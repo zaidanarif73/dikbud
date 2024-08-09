@@ -1,62 +1,67 @@
-/* 
-            .card {
-            width: 100%;
-            height: auto;
-            column-gap: 10px;
-            object-fit: contain;
-            border-radius: 10px;
-            overflow: hidden;
-            padding: 10px;
 
-            }
+body {
+    margin-top: 75px;
+}
 
-            .news-item img{
+.title-berita h3 {
+    text-align: center;
+    font-family: "inter";
+    font-size: 34px;
+}
+.card {
+    width: 100%;
+    height: auto;
+    column-gap: 10px;
+    object-fit: contain;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+}
 
-                width: 100%;
-                margin-bottom: 15px;
-                border-radius: 10px;
-                
-            }
+.news-item img {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
 
-            .card span{
-                margin-top: 20px;
-            }
+.card span {
+    margin-top: 20px;
+}
 
-            @media (min-width: 600px) {
-            .container {
-                width: 100%;
-                columns: 1;
-                column-gap: 10px;
-                padding: 10px;
-                border-radius: 10px;
-            }
-            .card {
-                max-width: 500px;
-            }
-            h2 {
-                font-size: 1.75em;
-            }
-            p {
-                font-size: 1.2em;
-            }
-        }
-        @media (min-width: 900px) {
-            .container {
-                width: 100%;
-                columns: 3;
-                column-gap: 10px;
-                padding: 10px;
-                border-radius: 10px;
-            }
-            .card {
-                max-width: 700px;
-            }
-            h2 {
-                font-size: 2em;
-            }
-            p {
-                font-size: 1.3em;
-            }
-          }
+@media (min-width: 600px) {
+    .container {
+        width: 100%;
+        columns: 1;
+        column-gap: 10px;
+        /* padding: 10px; */
+        border-radius: 10px;
+    }
+    .card {
+        max-width: 500px;
+    }
+    h2 {
+        font-size: 1.75em;
+    }
+    p {
+        font-size: 1.2em;
+    }
+}
+@media (min-width: 900px) {
+    .container {
+        width: 100%;
+        columns: 3;
+        column-gap: 10px;
+        /* padding: 10px; */
+        border-radius: 10px;
+    }
+    .card {
+        max-width: 700px;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1.3em;
+    }
+}
 
-        */

@@ -226,6 +226,17 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
+.navmenu a {
+    padding: 18px 15px; /* Pastikan padding konsisten untuk semua item */
+    font-size: 16px; /* Pastikan ukuran font sama untuk semua item */
+    font-family: var(--nav-font); /* Font yang sama untuk semua item */
+}
+
+.navmenu .active {
+    padding: 18px 15px; /* Pastikan padding tidak berubah ketika item aktif */
+    font-size: 16px; /* Hindari perubahan ukuran font saat aktif */
+}
+
 @media (min-width: 1200px) {
     .navmenu {
         padding: 0;

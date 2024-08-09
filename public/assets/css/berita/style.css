@@ -1,11 +1,11 @@
-.banner-bg img {
+/* .banner-bg img {
     inset: left;
     width: 100%;
     height: auto;
     object-fit: cover;
 }
 
-.container-fluid{
+.container-fluid {
     margin-top: 100px;
 }
 
@@ -33,7 +33,7 @@ nav input[type="text"] {
 nav button {
     padding: 5px 10px;
     margin-left: 5px;
-}
+} */
 
 .highlight,
 .other-news {
@@ -56,7 +56,7 @@ nav button {
     background: #007bff;
     color: white;
     border: none;
-    padding: 10px;
+    /* padding: 10px; */
     cursor: pointer;
 }
 .highlight .news-item img {
@@ -73,7 +73,7 @@ nav button {
     background: #007bff;
     color: white;
     border: none;
-    padding: 10px;
+    /* padding: 10px; */
     cursor: pointer;
 }
 
@@ -81,7 +81,7 @@ nav button {
     background: #007bff;
     color: white;
     border: none;
-    padding: 10px;
+    /* padding: 10px; */
     cursor: pointer;
 }
 .other-news .news-item img {
