@@ -411,7 +411,7 @@ h6 {
         padding: 10px 0;
         margin: 0;
         border-radius: 6px;
-        background-color: var(--nav-mobile-background-color);
+        background-color:#388da8;
         overflow-y: auto;
         transition: 0.3s;
         z-index: 9998;
@@ -420,7 +420,7 @@ h6 {
 
     .navmenu a,
     .navmenu a:focus {
-        color: var(--nav-dropdown-color);
+        color: white;
         padding: 10px 20px;
         font-family: var(--nav-font);
         font-size: 17px;
@@ -1397,6 +1397,7 @@ section,
     padding: 0;
     margin-bottom: 0;
     font-size: 14px;
+    text-align: center;
 }
 
 .footer .logo img {
