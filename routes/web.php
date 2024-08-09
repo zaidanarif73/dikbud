@@ -181,6 +181,7 @@ Route::group(["namespace"=>"App\Http\Controllers\Auth", "as"=>"auth.", "prefix"=
 Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function(){
     Route::get("/", "HomeController@index")->name('home.index');
     Route::get("/events", "HomeController@events")->name("events");
+    
 
     Route::group(["as"=>"kontak.", "prefix"=>"kontak"], function(){
         Route::post("/", "KontakController@store")->name("store");
@@ -188,7 +189,7 @@ Route::group(["namespace"=>"App\Http\Controllers\Home", "as"=>"home."], function
 
 
     Route::group(["as"=>"layanan.", "prefix"=>"layanan"], function(){
-        Route::get("/", "LayananController@index")->name("index");
+        Route::get("/{id}", "LayananController@show")->name("show");
     });
 
     Route::group(["as"=>"profil.", "prefix"=>"profil"], function(){

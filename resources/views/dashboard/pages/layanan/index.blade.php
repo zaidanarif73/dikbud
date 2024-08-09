@@ -24,7 +24,7 @@
                                     <th>No</th>
                                     <th>Judul</th>
                                     <th>Deskripsi</th>
-                                    <th>Image</th>
+                                    <th>Icon</th>
                                     <th>Dibuat Pada</th>
                                     <th>Aksi</th>
                                 </thead>
