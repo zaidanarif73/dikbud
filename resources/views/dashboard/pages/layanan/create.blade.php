@@ -34,7 +34,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row mt-5">
-                                    <label class="col-md-2 col-form-label">Image <span class="text-danger">*</span></label>
+                                    <label class="col-md-2 col-form-label">Icon <span class="text-danger">*</span></label>
                                     <div class="col-md-10">
                                         <input class="form-control" type="file" name="image" accept="image/*" required>
                                     </div>
