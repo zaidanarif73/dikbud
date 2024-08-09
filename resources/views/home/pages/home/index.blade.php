@@ -20,27 +20,6 @@
 
     <section class="section swiper-container swiper-slider swiper-slider-2 swiper-slider-3" data-loop="true"
         data-autoplay="5000" data-simulate-touch="false" data-slide-effect="fade" style="text-align: left">
-        {{-- <div class="swiper-wrapper text-sm-left">
-          @forelse ($table_banner as $index => $row)
-            <div class="swiper-slide context-dark" id="swipper"
-                data-slide-bg="{{ asset('storage/' . $row->image) }}" alt="">
-                <div class="swiper-slide-caption section-md">
-                    <div class="container" id="swipper_tittle">
-                        <div class="row">
-                            <div class="col-sm-9 col-md-8 col-lg-7 col-xxl-7 offset-lg-1 offset-xxl-0">
-                                <h1 class="oh swiper-title kanit-black "><span class="d-inline-block"
-                                        data-caption-animate="slideInUp" data-caption-delay="0">{{$row->title}}</span>
-                                </h1>
-                                <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">
-                                    Testing </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @empty
-                <p>tidak ada data</p>
-        @endforelse
-            </div> --}}
         <div class="swiper-wrapper text-sm-left">
             @forelse ($table_banner as $index => $row)
                 <div class="swiper-slide context-dark" id="swipper" data-slide-bg="{{ asset('storage/' . $row->image) }}"
