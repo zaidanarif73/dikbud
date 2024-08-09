@@ -68,7 +68,7 @@
                             <div class="col-sm-9 col-md-8 col-lg-7 col-xxl-7 offset-lg-1 offset-xxl-0">
                                 <h1 class="oh swiper-title kanit-black">
                                     <span class="d-inline-block" data-caption-animate="slideInUp"
-                                        data-caption-delay="0">hehe</span>
+                                        data-caption-delay="0">Dikbud</span>
                                 </h1>
 
                             </div>
@@ -109,11 +109,15 @@
         </div>
 
         <div class="card-container container">
+            @forelse ($table_layanan as $index => $row)
             <div class="card-layanan">
-                <img src="assets/img/icon/legalisir.png" alt="Legalisir">
-                <p><a href="{{ route('home.legalisir.index') }}" class="">Legalisir</a></p>
+                <a href="{{ route('home.layanan.show', $row->id) }}"> <img src="{{ asset('storage/' . $row->image) }}" alt="Legalisir"></a>
+                <p><a href="{{ route('home.layanan.show', $row->id) }}" class="">{{$row ->title}}</a></p>
             </div>
-            <div class="card-layanan">
+            @empty
+            <p>kosong</p>
+            @endforelse
+            {{-- <div class="card-layanan">
                 <img src="assets/img/icon/mutasi.png" alt="Mutasi Siswa">
                 <p><a href="{{ route('home.mutasi.index') }}" class="">Mutasi Siswa</a></p>
             </div>
@@ -170,7 +174,7 @@
                 <img src="assets/img/icon/pembelajaran.png" alt="Pembelajaran">
                 <p><a href="{{ route('home.pembelajaran.index') }}" class="">Pembelajaran</a></p>
             </div>
-        </div>
+        </div> --}}
 
 
 
