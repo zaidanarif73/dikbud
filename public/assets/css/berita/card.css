@@ -8,6 +8,11 @@ body {
     font-family: "inter";
     font-size: 34px;
 }
+
+.card-title{
+    font-size: 18px;
+    font-weight: 600;
+}
 .card {
     width: 100%;
     height: auto;
@@ -39,12 +44,6 @@ body {
     .card {
         max-width: 500px;
     }
-    h2 {
-        font-size: 1.75em;
-    }
-    p {
-        font-size: 1.2em;
-    }
 }
 @media (min-width: 900px) {
     .container {
@@ -56,12 +55,6 @@ body {
     }
     .card {
         max-width: 700px;
-    }
-    h2 {
-        font-size: 2em;
-    }
-    p {
-        font-size: 1.3em;
     }
 }
 

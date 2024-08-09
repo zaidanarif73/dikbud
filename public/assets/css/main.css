@@ -4,7 +4,8 @@
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
     --heading-font: "", sans-serif;
-    --nav-font: "Inter", sans-serif;
+    --nav-font: "Mulish", sans-serif;
+
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -54,7 +55,12 @@ body {
     background-color: var(--background-color);
     font-family: var(--default-font);
 }
-
+/*container custom added--------------------------*/
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+/* ------------------------------------------*/
 a {
     color: var(--accent-color);
     text-decoration: none;
@@ -554,7 +560,6 @@ h6 {
 
 .footer .footer-about p {
     font-size: 14px;
-    font-family: var(--heading-font);
 }
 
 .footer .social-links a {
