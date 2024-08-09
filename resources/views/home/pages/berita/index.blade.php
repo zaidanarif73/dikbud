@@ -1,12 +1,15 @@
 @extends('home.layouts.master')
 @section("title","Berita | DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
 @section('css')
-    <link href="assets/css/berita/style.css" rel="stylesheet">
+    <!-- <link href="assets/css/berita/style.css" rel="stylesheet"> -->
     <link href="assets/css/berita/card.css" rel="stylesheet">
 @endsection
 @section('content')
-<div class="banner-bg ">
+<!-- <div class="banner-bg ">
     <img  src="{{ URL::to('/') }}/assets/img/bgcob1.png" alt="">
+</div> -->
+<div class="title-berita">
+    <h3>Berita</h3>
 </div>
 <div class="container-fluid">
     <div class="row">

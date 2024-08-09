@@ -16,7 +16,7 @@ use App\Enums\RoleEnum;
 */
 //PAGE NOT FOUND
 Route::fallback(function () {
-    return 'Halaman Tidak Ditemukan';
+    return view("home.pages.error.index");
 });
 
 //MIDDLEWARE
