@@ -8,7 +8,7 @@
 <!-- <div class="banner-bg ">
     <img  src="{{ URL::to('/') }}/assets/img/bgcob1.png" alt="">
 </div> -->
-<div class="title-berita">
+<div class="title-berita" style="padding-top :60px">
     <h3>Berita</h3>
 </div>
 <div class="container-fluid">

@@ -8,7 +8,7 @@
   </section>
   
   <section>
-  <div class="vision-structure">
+  <div class="vision-structure" style="padding-top :60px">
     <img src="{{URL::to('/')}}/assets/img/News.jpg" alt="vision Structure">
   </div>
   </div>

@@ -1,4 +1,4 @@
-<header id="header" class="header d-flex align-items-center fixed-top">
+<header id="header" data-aos="fade-down" class="header d-flex align-items-center fixed-top">
   <div class="container container-xl position-relative d-flex align-items-center">
 
     <a href="{{ route('home.home.index') }}" class="logo d-flex align-items-center me-auto">

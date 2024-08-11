@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pengaturan;
 
 class   ShowsdController extends Controller
 {
@@ -12,6 +13,10 @@ class   ShowsdController extends Controller
     }
 
     public function index(){
-        return view($this->view."showsd");
+        $table_pengaturan = Pengaturan::first();
+        $data = [
+            'table_pengaturan' => $table_pengaturan,
+        ];
+        return view($this->view."showsd", $data);
     }
 }

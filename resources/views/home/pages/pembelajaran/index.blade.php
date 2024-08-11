@@ -5,7 +5,7 @@
 @endsection
 
 @section("content")
-    <div class="container">
+    <div class="container" style="padding-top :60px">
         <header>
             <br>
             <h1>LAMAN PEMBELAJARAN</h1>

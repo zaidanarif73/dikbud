@@ -50,6 +50,21 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+
+/*scrollbar custom*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    background: #388da8;
+}
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 10px;
+}
+/*--------------------------------------------------*/
 body {
     color: var(--default-color);
     background-color: var(--background-color);
@@ -530,7 +545,7 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
     color: var(--default-color);
-    background-color: var(--background-color);
+    background-color: #070F2B !important;
     font-size: 14px;
     padding-bottom: 20px;
     position: relative;
