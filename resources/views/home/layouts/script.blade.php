@@ -32,6 +32,9 @@
     <script src="{{URL::to('/')}}/assets/js/home/setting-demo.js"></script>
     <script src="{{URL::to('/')}}/assets/js/home/demo.js"></script>
 
+    <!--navbar animated-->
+    {{-- <script src="{{URL::to('/')}}/assets/js/home/navbar.js"></script> --}}
+
     <!--maps handler script-->
     @include('home.component.maps_script')
     

@@ -12,6 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/home/swiper/style.css">
     <link rel="stylesheet" href="/assets/css/home/kalender.css">
+    <link rel="stylesheet" href="/assets/css/home/navbar.css">
 @endsection
 
 
@@ -134,8 +135,8 @@
                     <p>No Data</p>
                 @endif
                 {{-- berita --}}
-                <div class="container-fluid berita py-5">
-                    <div class="container py-5">
+                <div class="berita py-5">
+                    <div class="py-5">
                         <div class="row g-4 justify-content-center">
                             @forelse ($table_berita->slice(0, 3) as $index => $row)
                                 <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
@@ -159,10 +160,10 @@
                                 <p>tidak ada data</p>
                             @endforelse
                         </div>
+                        <div>
+                            <a href="{{ route('home.berita.index') }}" class="btn mt-2 mb-5">Semua Berita</a>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <a href="{{ route('home.berita.index') }}" class="btn mt-2 mb-5">Semua Berita</a>
                 </div>
         </section><!-- /Features Details Section -->
 
@@ -303,5 +304,6 @@
         <script src="{{ URL::to('/') }}/assets/js/home/kalender.js"></script>
         <script src="{{ URL::to('/') }}/assets/js/home/swiper/core.min.js"></script>
         <script src="{{ URL::to('/') }}/assets/js/home/swiper/script.js"></script>
+        <script src="{{URL::to('/')}}/assets/js/home/navbar.js"></script>
 
     @endsection

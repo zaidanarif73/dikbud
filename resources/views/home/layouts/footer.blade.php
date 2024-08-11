@@ -1,4 +1,4 @@
-<footer id="footer" class="footer position-relative light-background">
+<footer id="footer" class="footer position-relative">
   <div class="container footer-top">
     <div class="row gy-4">
       <div class="col-lg-4 col-md-6 footer-about">
@@ -16,7 +16,7 @@
       <div class="col-lg-2 col-md-3 footer-links">
         <h4>Alamat Kantor</h4>
         <p>{{ $table_pengaturan->website_address }}</p>
-        <div class="col d-flex justify-content-cgitenter " data-aos="fade-up" data-aos-delay="600" >
+        <div class="col d-flex justify-content-cgitenter " >
           <iframe id="maps_mini" src="" frameborder="0"></iframe>
         </div>
       </div>

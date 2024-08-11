@@ -4,18 +4,6 @@
 * Contexts
 */
 
-/* body {
-	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-	font-size: 15px;
-	line-height: 1.6;
-	font-weight: 400;
-	letter-spacing: .075em;
-	color: #777777;
-	background-color: #ffffff;
-	-webkit-text-size-adjust: none;
-	-webkit-font-smoothing: subpixel-antialiased;
-} */
-
 .section-style-2 {
 	color: #151515;
 	letter-spacing: .05em;
@@ -51,10 +39,27 @@ h1, [class^='heading-'] {
 	}
 }
 
-#swipper{
-	filter:blur(0.5px);
+#swipper {
+	position: relative;
+	background-image: url('{{ asset('storage/' . $row->image) }}');
+	background-size: cover;
+	background-position: center;
 }
 
-#swipper_title{
-	filter: blur(none);
+#swipper::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity for the desired overlay effect */
+	filter: brightness(50%); /* Adjust brightness, where 100% is normal, <100% darkens, and >100% brightens */
+	z-index: 1;
 }
+
+.swiper-slide-caption {
+	position: relative;
+	z-index: 2; /* This ensures the caption is above the overlay */
+}
+

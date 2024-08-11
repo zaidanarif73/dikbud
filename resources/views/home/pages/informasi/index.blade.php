@@ -4,7 +4,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
 @endsection
 @section("content")
-<div class="container mt-5">
+<div class="container mt-5" style="padding-top :60px">
     <div class="d-flex flex-column justify-content-center align-items-center">
         <h1 data-aos="fade-up">Informasi Publik</h1>
     </div>
@@ -72,39 +72,11 @@
                                 <td>
                                     <div class="form-button-action d-flex justify-content-center">
                                         @if ($row->file_path != null)
-                                            <a href="{{ asset('storage/'.$row->file_path) }}" target="_blank">  
-                                                <button class="btn btn-primary">
-                                                    <span class="btn-label">
-                                                        <i class='bx bx-sm bxs-show'></i>
-                                                    </span>
-                                                    Lihat
-                                                </button>
-                                            </a>
-                                            <a href="{{ asset('storage/'.$row->file_path) }}" class="mx-5" download>
-                                                <button class="btn btn-danger">
-                                                    <span class="btn-label">
-                                                        <i class='bx bx-sm bxs-download'></i>
-                                                    </span>
-                                                    Download
-                                                </button>
-                                            </a>
+                                            <a href="{{ asset('storage/'.$row->file_path) }}" target="_blank" class="btn btn-success mx-1"><i class="fa fa-plus"></i> Lihat</a>
+                                            <a href="{{ asset('storage/'.$row->file_path) }}" class="btn btn-primary mx-1" download><i class="fa fa-plus"></i>Download</a>
                                         @elseif($row->file_link != null)
-                                            <a href="{{ URL::to($row->file_link) }}" target="_blank">  
-                                                <button class="btn btn-primary">
-                                                    <span class="btn-label">
-                                                        <i class='bx bx-sm bxs-show'></i>
-                                                    </span>
-                                                    Lihat
-                                                </button>
-                                            </a>
-                                            <a href="{{ URL::to($row->file_link) }}" class="mx-5" download>
-                                                <button class="btn btn-danger">
-                                                    <span class="btn-label">
-                                                        <i class='bx bx-sm bxs-download'></i>
-                                                    </span>
-                                                    Download
-                                                </button>
-                                            </a>
+                                            <a href="{{ URL::to($row->file_link) }}" target="_blank" class="btn btn-success mx-1"><i class="fa fa-plus"></i> Lihat</a>
+                                            <a href="{{ URL::to($row->file_link) }}" class="btn btn-primary mx-1" download><i class="fa fa-plus"></i>Download</a>
                                         @endif                      
                                     </div>
                                 </td>
