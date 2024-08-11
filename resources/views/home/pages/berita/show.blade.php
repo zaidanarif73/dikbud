@@ -1,4 +1,5 @@
 @extends('home.layouts.master')
+@section("title","". $result->title ." | DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
 @section('css')
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 @endsection

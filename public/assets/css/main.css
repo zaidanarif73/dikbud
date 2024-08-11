@@ -3084,7 +3084,7 @@ button {
     justify-content: center;
     flex-shrink: 0;
     width: 100%;
-    height: 100%;
+    height: 80vh;
     white-space: nowrap;
 }
 

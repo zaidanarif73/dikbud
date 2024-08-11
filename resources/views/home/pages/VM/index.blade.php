@@ -1,5 +1,5 @@
 @extends('home.layouts.master')
-
+@section("title","Visi Misi | DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
 @section("content")
 <section id="vm" class="vm section">
     <div class="vm-bg">
