@@ -1,8 +1,9 @@
 @extends('home.layouts.master')
-    @section("css")
+@section("title","Pembelajaran SD | DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
+@section("css")
         <link  href="{{URL::to('/')}}/assets/css/pembelajaran/stylesd.css" rel="stylesheet">
         
-    @endsection
+@endsection
 @section("content")
 <div class="container mt-5">
     <div class="d-flex flex-column justify-content-center align-items-center">

@@ -1,4 +1,5 @@
 @extends('home.layouts.master')
+@section("title","". $result->title ." | DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
 @section('css')
     
 @endsection
