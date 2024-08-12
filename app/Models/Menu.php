@@ -14,8 +14,6 @@ class Menu extends Model
     
     protected $fillable = [
         'title',
-        'description',
-        'image',
         'menu-trixFields',
     ];
 }

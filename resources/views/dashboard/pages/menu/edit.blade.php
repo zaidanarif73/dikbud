@@ -29,14 +29,6 @@
                                       
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label">Image <span class="text-danger">*</span></label>
-                                   
-                                    <div class="col-md-10">
-                                        <input class="form-control" type="file" name="image" accept="image/*">
-                                        <p class="text-info" style="margin-top: 0px;margin-bottom: 0px;padding-top: 0px;padding-bottom: 0px;"><small><i>Kosongkan jika tidak diubah</i></small></p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="row">

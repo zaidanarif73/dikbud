@@ -1,7 +1,16 @@
 @extends('dashboard.layouts.master')
 @section("title","Menu")
 @section('css')
-
+    <style>
+        .form-select {
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-radius: 0;
+            padding-left: 0;
+            background: 0 0 !important;
+        }
+    </style>
 @endsection
 @section("breadcumb","Menu")
 @section("breadcumb_child","Create")
@@ -22,7 +31,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row mb-5" >
-                                    <label class="col-md-2 col-form-label" for="description">Deskripsi <span class="text-danger">*</span></label>
+                                    <label class="col-md-2 col-form-label" for="description">Konten <span class="text-danger">*</span></label>
                                     <div class="col-md-10"   >       
 
 
@@ -31,12 +40,6 @@
                                         </div> --}}
                                         @trix(\App\Models\Menu::class, 'content')
                                         
-                                    </div>
-                                </div>
-                                <div class="form-group row mt-5">
-                                    <label class="col-md-2 col-form-label">Image <span class="text-danger">*</span></label>
-                                    <div class="col-md-10">
-                                        <input class="form-control" type="file" name="image" accept="image/*" required>
                                     </div>
                                 </div>
                             </div>
@@ -54,31 +57,6 @@
     </div>
 </div>
 @endsection
-{{-- @section ('script')
-<script>
-    const toolbarOptions = [ 
-        [{ 'font': [] }],
-        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-        ['bold', 'italic'], 
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-        [{ 'indent': '-1'}, { 'indent': '+1' }],
-        ['link', 'image'],
-        ['blockquote', 'code-block']
-    ];
+@section('script')
 
-    const quill = new Quill('#description-editor', {
-        modules: {
-            toolbar: {
-                container: toolbarOptions
-            }
-        },
-        theme: 'snow' // You can also choose 'bubble'
-    });
-    // Handle form submission
-    var form = document.querySelector('form');
-    form.onsubmit = function() {
-        var description = document.querySelector('input[name=description]');
-        description.value = quill.root.innerHTML;
-    };
-</script>
-@endsection --}}
+@endsection

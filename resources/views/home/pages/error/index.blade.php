@@ -62,7 +62,7 @@
 			display: inline-block;
 			width: 120px;
 			height: 120px;
-			background-image: url('assets/img/emoji.png');
+			background-image: url('../assets/img/emoji.png');
 			background-size: cover;
 			-webkit-transform: scale(1.4);
 					-ms-transform: scale(1.4);

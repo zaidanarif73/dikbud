@@ -11,6 +11,7 @@ use App\Models\Berita;
 use App\Models\Banner;
 use App\Models\Pengaturan;
 use App\Models\Layanan;
+use App\Models\Menu;
 class HomeController extends Controller
 {
     // protected $tautan;
@@ -28,6 +29,7 @@ class HomeController extends Controller
         $table_banner = Banner::all();
         $table_layanan = Layanan::all();
         $table_pengaturan = Pengaturan::first();
+        $table_menu = Menu::all();
        
 
 
@@ -46,6 +48,7 @@ class HomeController extends Controller
                 'table_pengaturan' => $table_pengaturan,
                 'table_layanan' => $table_layanan,
                 'table_view' => null,
+                'table_menu' => $table_menu,
             ];
     
             return view($this->view."index",$data);
@@ -64,6 +67,7 @@ class HomeController extends Controller
                 'table_pengaturan' => $table_pengaturan,
                 'table_view' => $table_view,
                 'count_view' => $count_view,
+                'table_menu' => $table_menu,
             ];
 
             return view($this->view."index",$data);

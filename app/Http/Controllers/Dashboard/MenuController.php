@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\Menu\StoreRequest;
 use App\Http\Requests\Menu\UpdateRequest;
 use App\Helpers\UploadHelper;
@@ -50,7 +51,14 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view($this->view."create");
+        //query for grouping the parent_main
+        $table = $this->menu;
+        
+        $data = [
+            'table' => $table,
+        ];
+        return view($this->view."create",$data);
+        
     }
 
     /**
@@ -63,24 +71,12 @@ class MenuController extends Controller
     {
         try {
             $title = $request->title;
-            // $description = $request->description;
-            $image = $request->file("image");
             
-
-            if($image){
-                $upload = UploadHelper::upload_file($image,'images',['jpeg','jpg','png','gif']);
-
-                if($upload["IsError"] == TRUE){
-                    throw new Error($upload["Message"]);
-                }
-
-                $image = $upload["Path"];
-                $create = $this->menu->create([
-                    'title' => $title,
-                    'menu-trixFields' => $request->input('menu-trixFields'),
-                    'image' => $image,
-                ]);
-            }
+            $create = $this->menu->create([
+                'title' => $title,
+                'menu-trixFields' => $request->input('menu-trixFields'),
+            ]);
+    
             alert()->html('Berhasil','Data berhasil ditambahkan','success'); 
             return redirect()->route($this->route."index");
 
@@ -101,7 +97,7 @@ class MenuController extends Controller
 
         if(!$result){
             alert()->error('Gagal',"Data tidak ditemukan");
-            return redirect()->route($this->route."index");
+            return redirect()->route($this->route);
         }
 
         $data = [
@@ -142,26 +138,11 @@ class MenuController extends Controller
             }
 
             $title = $request->title;
-            // $description = $request->description;
-            $image = $request->file("image");
-
-            if($image){
-                $upload = UploadHelper::upload_file($image,'menu',['jpeg','jpg','png','gif']);
-
-                if($upload["IsError"] == TRUE){
-                    throw new Error($upload["Message"]);
-                }
-
-                $image = $upload["Path"];
-            }
-            else{
-                $image = $result->image;
-            }
+            $parent = $request->parent;
 
             $result->update([
                 'title' => $title,
                 'menu-trixFields' => $request->input('menu-trixFields'),
-                'image' => $image,
             ]);
 
 
