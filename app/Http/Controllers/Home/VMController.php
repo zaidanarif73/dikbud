@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pengaturan;
+use App\Models\Menu;
 
 class VMController extends Controller
 {
@@ -14,8 +15,11 @@ class VMController extends Controller
     
         public function index(){
             $table_pengaturan = Pengaturan::first();
+            $table_menu = Menu::all();
+
             $data = [
                 'table_pengaturan' => $table_pengaturan,
+                'table_menu' => $table_menu,
             ];
             return view($this->view . "index", $data);
         }

@@ -22,9 +22,7 @@
                             <table class="table table-striped table-bordered">
                                 <thead>
                                     <th>No</th>
-                                    <th>Judul</th>
-                                    <th>Deskripsi</th>
-                                    <th>Image</th>
+                                    <th>Menu</th>
                                     <th>Dibuat Pada</th>
                                     <th>Aksi</th>
                                 </thead>
@@ -33,10 +31,6 @@
                                     <tr>
                                         <td>{{$table->firstItem() + $index}}</td>
                                         <td>{{$row->title}}</td>
-                                        <td>{{$row->description}}</td>
-                                        <td>
-                                            <img src="{{ asset('storage/'.$row->image) }}" alt="" style="width: 80px;height:80px;">
-                                        </td>
                                         <td>{{date('d-m-Y H:i:s',strtotime($row->created_at))}}</td>
                                         <td>
                                             <div class="d-flex mb-1">

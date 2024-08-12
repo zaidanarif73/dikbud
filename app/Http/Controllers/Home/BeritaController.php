@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Berita;
 use App\Models\Pengaturan;
+use App\Models\Menu;
 use Illuminate\Pagination\Paginator;
 
 class BeritaController extends Controller
@@ -22,6 +23,7 @@ class BeritaController extends Controller
     public function index(Request $request)
     {   
         $table_pengaturan = Pengaturan::first();
+        $table_menu = Menu::all();
         $search = $request->search;
 
         $table = $this->berita;
@@ -37,12 +39,14 @@ class BeritaController extends Controller
         $data = [
             'table' => $table,
             'table_pengaturan' => $table_pengaturan,
+            'table_menu' => $table_menu,
         ];
 
         return view($this->view."index",$data);
     }
     public function show($id){
         $table_pengaturan = Pengaturan::first();
+        $table_menu = Menu::all();
 
         $result = $this->berita;
         $result = $result->where('id',$id);
@@ -62,6 +66,7 @@ class BeritaController extends Controller
             'result' => $result,
             'except_result' => $except_result,
             'table_pengaturan' => $table_pengaturan,
+            'table_menu' => $table_menu,
         ];
         //view count in show berita
         views($result)->cooldown($minutes = 3)->record();
