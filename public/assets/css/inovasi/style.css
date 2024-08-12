@@ -31,7 +31,7 @@ header h1 {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px 0;
 }
@@ -51,34 +51,18 @@ header h1 {
     object-fit: contain;
 }
 
-.gallery-item h3 {
-    font-size: 15px;
+.gallery-item h5 {
+    font-size: 20px;
     margin: 10px 0 5px;
     color: #000000;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .gallery-item p {
-    font-size: 10px;
+    font-size: 15px;
     color: #666;
     text-align: left;
     position: relative;
-}
-
-.pagination {
-    text-align: center;
-    padding: 20px 0;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.pagination button {
-    background: #ebebeb;
-    color: rgb(94, 94, 94);
-    border: none;
-    padding: 5px 10px;
-    margin: 0 5px;
-    cursor: pointer;
 }
 
 .inovasi-structure {
