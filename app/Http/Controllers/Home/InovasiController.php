@@ -47,6 +47,7 @@ class InovasiController extends Controller
     }
     public function show($id){
         $table_pengaturan = Pengaturan::first();
+        $table_menu = Menu::all();
 
         $result = $this->inovasi;
         $result = $result->where('id',$id);
@@ -66,6 +67,7 @@ class InovasiController extends Controller
             'result' => $result,
             'except_result' => $except_result,
             'table_pengaturan' => $table_pengaturan,
+            'table_menu' => $table_menu,
         ];
 
         return view($this->view."show",$data);
