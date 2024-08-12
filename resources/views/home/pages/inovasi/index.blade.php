@@ -46,54 +46,19 @@
     </div>
     <main>
         <div class="gallery">
-            <div class="gallery-item">
-                <img src="assets/img/inov.png" alt="">
-            </div>
             @forelse ($table as $index => $row)
             <div class="gallery-item">
                 <a href="{{route('home.inovasi.show', $row->id)}}"> <img src="{{ asset('storage/' . $row->image) }}"></a>
                 <span class="tanggal">
-                    {{ Carbon\Carbon::parse($row->created_at)->translatedFormat('l,d F Y') }}
+                    {{ Carbon\Carbon::parse($row->date)->translatedFormat('l,d F Y') }}
                 </span>
                 <a href="{{route('home.inovasi.show', $row->id)}}"><h5 >{{ $row->title }}</h5></a> 
-                <p> {!! Str::limit(strip_tags($row->renderTrix('content')), 5) !!}</p>
+                <p> {!! Str::limit(strip_tags($row->renderTrix('content')), 100) !!}</p>
             </div>
             @empty
             <p>tidak ada data</p>
             @endforelse
-            <div class="gallery-item">
-                <img src="assets/img/galeri/galeri3.jpg" alt="">
-                <h3>UPACARA PEMBUKAAN LOMBA FLS2N DAN O2SN TINGKAT KEC. KEDUNGKANDANG</h3>
-            </div>
-            <div class="gallery-item">                    
-                <img src="assets/img/galeri/galeri4.jpg" alt="">
-                <h3>Bimbingan Teknis PMM Guru PAUD</>
-            </div>
-            <div class="gallery-item">                    
-                <img src="assets/img/galeri/galeri5.jpg" alt="">                    
-                <h3>Mas Kadin Hadiri Khotmul Qur'an dan Imtihan SDIT Ahmad Yani</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/galeri/galeri6.jpg" alt="">
-                <h3>Sosialisasi dan Edukasi Keselamatan Pelaksanaan Study Tour Bagi Sekolah</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/galeri/galeri7.jpg" alt="">                    
-                <h3>Mas Kadin Amanatkan Warga Disdikbud Wajib Tahu dan Paham Aturan PPDB</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="assets/img/galeri/galeri8.jpg" alt="">
-                <h3>Pentingnya Platform Merdeka Mengajar Guna Optimalisasi Kinerja Guru Dalam Mengajar</h3>
-            </div>
-        </div>
     </main>
-    <div class="pagination">
-        <button>&laquo;</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>&raquo;</button>
-    </div>
 </div>
 <form id="frmTahun" method="get">
     @csrf
