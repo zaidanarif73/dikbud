@@ -153,6 +153,15 @@
             </li>
 
             <li class="nav-item">
+              <a href="{{route('dashboard.vm.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.vm')) active @endif">
+                <i class="bx bxs-vector col-3 bx-tada-hover"></i> 
+                <p>
+                  Visi Misi
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
               <a href="{{route('dashboard.pejabat.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.pejabat')) active @endif">
                 <i class="bx bxs-vector col-3 bx-tada-hover"></i> 
                 <p>
