@@ -137,9 +137,26 @@
 
             <li class="nav-item">
               <a href="{{route('dashboard.inovasi.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.inovasi')) active @endif">
-                <i class="bx bx-download col-3 bx-tada-hover"></i>
-                <p>
+                <i class="bx bxs-been-here col-3 bx-tada-hover"></i> 
                   Inovasi
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{{route('dashboard.so.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.so')) active @endif">
+                <i class="bx bxs-vector col-3 bx-tada-hover"></i> 
+                <p>
+                  Struktur Organisasi
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{{route('dashboard.pejabat.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.pejabat')) active @endif">
+                <i class="bx bxs-vector col-3 bx-tada-hover"></i> 
+                <p>
+                  Pejabat
                 </p>
               </a>
             </li>

@@ -112,3 +112,17 @@
     width: 85%;
     height: auto;
 }
+.team .row {
+  flex-wrap: nowrap; /* Memastikan gambar tidak membungkus ke baris baru */
+  overflow-x: auto;  /* Mengaktifkan scroll horizontal jika gambar terlalu banyak */
+}
+
+.team .member {
+  flex: 0 0 auto; /* Memastikan kolom memiliki lebar tetap dan tidak mengisi seluruh baris */
+  margin-right: 15px; /* Menambahkan jarak antar gambar */
+}
+
+.team img {
+  max-width: 150px; /* Ukuran lebar maksimum gambar */
+  height: auto; /* Tinggi otomatis */
+}
