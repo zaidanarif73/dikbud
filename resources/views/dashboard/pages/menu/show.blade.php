@@ -20,7 +20,7 @@
                 </div>
                 <div class="row mb-2">
                     <div class="col-md-3">
-                        Deskripsi
+                        Konten
                     </div>
                     <div class="col-md-8">
                         <style>
@@ -30,15 +30,6 @@
                             }
                         </style>
                         <p>{!! $result->renderTrix("content") !!}</p>
-                    </div>
-                </div>
-
-                <div class="row mb-2">
-                    <div class="col-md-3">
-                        Image
-                    </div>
-                    <div class="col-md-8">
-                        : <img src="{{ asset('storage/'.$result->image) }}" style="width: 200px;height:200px;">
                     </div>
                 </div>
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Informasi;
 use App\Models\Pengaturan;
+use App\Models\Menu;
 
 class InformasiController extends Controller
 {
@@ -17,6 +18,7 @@ class InformasiController extends Controller
 
     public function index(Request $request){
         $table_pengaturan = Pengaturan::first(); //for footer handler
+        $table_menu = Menu::all();
 
         $table = $this->informasi;
 
@@ -38,7 +40,8 @@ class InformasiController extends Controller
         $table = $table->paginate();   //limit paginate only 10 data appears per load
         $data = [
             'table' => $table,  
-            'table_pengaturan' => $table_pengaturan,                             
+            'table_pengaturan' => $table_pengaturan,  
+            'table_menu' => $table_menu,                            
         ];
         return view($this->view."index",$data);
     }

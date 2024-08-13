@@ -12,43 +12,49 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="{{ route('home.home.index') }}">Beranda</a></li>
-        <li><a href="{{ route('home.home.index') }}#layanan">Layanan</a></li>
-        <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="{{ route('home.SO.index') }}">Struktur Organisasi</a></li>
-            <li><a href="{{ route('home.VM.index') }}">Visi & Misi</a></li>
-          </ul>
-        </li>
-        <li><a href="{{ route('home.berita.index') }}">Berita</a></li>
-        <li><a href="{{ route('home.inovasi.index') }}">Inovasi</a></li>
-        <li><a href="{{ route('home.galeri.index') }}">Galeri</a></li>
-        <li><a href="{{ route('home.pembelajaran.index') }}">Pembelajaran</a></li>
-        <li><a href="{{ route('home.informasi.index') }}">Informasi Publik</a></li>
-        <li><a href="{{ route('home.home.index') }}#kontak">Kontak</a></li>
-        <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Dropdown 1</a></li>
-            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Deep Dropdown 1</a></li>
-                <li><a href="#">Deep Dropdown 2</a></li>
-                <li><a href="#">Deep Dropdown 3</a></li>
-                <li><a href="#">Deep Dropdown 4</a></li>
-                <li><a href="#">Deep Dropdown 5</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Dropdown 2</a></li>
-            <li><a href="#">Dropdown 3</a></li>
-            <li><a href="#">Dropdown 4</a></li>
-          </ul>
-        </li> -->
-        <!-- <li><a href="index.html#contact">Contact</a></li> -->
+        @foreach ($table_menu as $index => $row)
+              {{-- <li>
+                  <a href=" 
+                    @if ($row->title == 'Layanan'){{ route('home.home.index') }}#layanan 
+                    @elseif($row->title == 'Kontak') {{ route('home.home.index') }}#kontak
+                    @elseif($row->title == 'Informasi Publik') {{ route('home.informasi.index') }}
+                    @elseif($row->title == 'Home'){{ route('home.home.index') }}
+                    @elseif($row->title == 'Berita'){{ route('home.berita.index') }}
+                    @elseif($row->title == 'Inovasi'){{ route('home.inovasi.index') }}
+                    @elseif($row->title == 'Galeri'){{ route('home.galeri.index') }}
+                    @else {{ '/'.strtolower($row->title).'/show' }} 
+                    @endif">
+                    {{ $row->title }}
+                  </a>
+              </li> --}}
+              @if ($row->title == 'Layanan')
+                <li><a href="{{ route('home.home.index') }}#layanan ">{{ $row->title }}</a></li>
+              @elseif($row->title == 'Kontak')
+                <li><a href="{{ route('home.home.index') }}#kontak">{{ $row->title }}</a></li>
+              @elseif($row->title == 'Informasi Publik')
+                <li><a href="{{ route('home.informasi.index') }}">{{ $row->title }}</a></li>
+              @elseif($row->title == 'Home')
+                <li><a href="{{ route('home.home.index') }}">{{ $row->title }}</a></li>
+              @elseif($row->title == 'Berita')
+                <li><a href="{{ route('home.berita.index') }}">{{ $row->title }}</a></li>
+              @elseif($row->title == 'Inovasi')
+                <li><a href="{{ route('home.inovasi.index') }}">{{ $row->title }}</a></li>
+              @elseif($row->title == 'Galeri')
+                <li><a href="{{ route('home.galeri.index') }}">{{ $row->title }}</a></li>
+              @elseif($row->title == 'Profil')
+                <li class="dropdown"><a href="#"><span>{{ $row->title }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="{{ route('home.SO.index') }}">Struktur Organisasi</a></li>
+                    <li><a href="{{ route('home.VM.index') }}">Visi & Misi</a></li>
+                  </ul>
+                </li>
+              @else
+                <li><a href="{{ '/'.strtolower($row->title).'/show' }}">{{ $row->title }}</a></li>
+              @endif
+        @endforeach
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
-
-    <!-- <a class="btn-getstarted" href="index.html#about">Get Started</a> -->
 
   </div>
 </header>

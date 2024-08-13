@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\SO;
 use App\Models\Pengaturan;
 use Illuminate\Pagination\Paginator;
+use App\Models\Menu;
 
 class SOController extends Controller
 {
@@ -44,6 +45,7 @@ class SOController extends Controller
     }
     public function show($id){
         $table_pengaturan = Pengaturan::first();
+        $table_menu = Menu::all();
 
         $result = $this->so;
         $result = $result->where('id',$id);
@@ -63,6 +65,7 @@ class SOController extends Controller
             'result' => $result,
             'except_result' => $except_result,
             'table_pengaturan' => $table_pengaturan,
+            'table_menu' => $table_menu, 
         ];
         //view count in show so
         views($result)->cooldown($minutes = 3)->record();
