@@ -139,6 +139,18 @@ Route::group(["middleware" => ["dashboard.access"], "namespace" => "App\Http\Con
         // Route::put('/{so_id}/comment/{id}', 'SOController@updateComment')->name("updateComment")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
         // Route::delete('/{so_id}/comment/{id}', 'SOController@destroyComment')->name("destroyComment")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
     });
+    Route::group(["as" => "vm.", "prefix" => "vm"], function () {
+        Route::get('/', 'VMController@index')->name("index")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::get('/create', 'VMController@create')->name("create")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::post('/', 'VMController@store')->name("store")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::get('/{id}', 'VMController@show')->name("show")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::get('/{id}/edit', 'VMController@edit')->name("edit")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::put('/{id}', 'VMController@update')->name("update")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::delete('/{id}', 'VMController@destroy')->name("destroy")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+
+
+       
+    });
     Route::group(["as" => "pengaturan.", "prefix" => "pengaturan"], function () {
         Route::get("/", "PengaturanController@index")->name("index")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin]));
         Route::put('/', 'PengaturanController@update')->name("update")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin]));

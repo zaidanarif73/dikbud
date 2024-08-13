@@ -151,6 +151,15 @@
                 </p>
               </a>
             </li>
+
+            <li class="nav-item">
+              <a href="{{route('dashboard.vm.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.vm')) active @endif">
+                <i class="bx bxl-venmo col-3 bx-tada-hover"></i> 
+                <p>
+                  Visi Misi
+                </p>
+              </a>
+            </li>
             @endif
 
             @if(Auth::user()->hasRole([
