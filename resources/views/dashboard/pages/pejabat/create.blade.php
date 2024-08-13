@@ -1,9 +1,9 @@
 @extends('dashboard.layouts.master')
-@section("title","SO")
+@section("title","Pejabat")
 @section('css')
 
 @endsection
-@section("breadcumb","SO")
+@section("breadcumb","Pejabat")
 @section("breadcumb_child","Create")
 @section("content")
 <div class="container">
@@ -11,7 +11,7 @@
         <div class="col-xl-12">
             <div class="card m-b-30">
                 <div class="card-body">
-                    <form action="{{route('dashboard.so.store')}}" method="POST" autocomplete="off" onsubmit="confirm('Apakah anda yakin ingin mengirim data ini?')" enctype="multipart/form-data">
+                    <form action="{{route('dashboard.pejabat.store')}}" method="POST" autocomplete="off" onsubmit="confirm('Apakah anda yakin ingin mengirim data ini?')" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <div class="col-lg-12">
@@ -27,13 +27,6 @@
                                         <input type="text" class="form-control" name="jabatan" placeholder="Jabatan"  value="{{old('title')}}" required>
                                     </div>
                                 </div>
-                                <div class="form-group row mb-5" >
-                                    <label class="col-md-2 col-form-label" for="description">Deskripsi <span class="text-danger">*</span></label>
-                                    <div class="col-md-10"   >       
-                                        @trix(\App\Models\SO::class, 'content')
-                                        
-                                    </div>
-                                </div>
                                 <div class="form-group row mt-5">
                                     <label class="col-md-2 col-form-label">Image <span class="text-danger">*</span></label>
                                     <div class="col-md-10">
@@ -44,7 +37,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <a href="{{route('dashboard.so.index')}}" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Kembali</a>
+                                <a href="{{route('dashboard.pejabat.index')}}" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Kembali</a>
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
                             </div>
                         </div>
@@ -73,7 +66,7 @@
                 container: toolbarOptions
             }
         },
-        theme: 'snow' // You can also choose 'bubble'
+        theme: 'snow' // You can alpejabat choose 'bubble'
     });
     // Handle form submission
     var form = document.querySelector('form');

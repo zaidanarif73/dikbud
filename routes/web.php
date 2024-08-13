@@ -126,19 +126,19 @@ Route::group(["middleware" => ["dashboard.access"], "namespace" => "App\Http\Con
 
     Route::group(["as" => "so.", "prefix" => "so"], function () {
         Route::get('/', 'SOController@index')->name("index")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
-        Route::get('/create', 'SOController@create')->name("create")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
-        Route::post('/', 'SOController@store')->name("store")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
-        Route::get('/{id}', 'SOController@show')->name("show")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
-        Route::get('/{id}/edit', 'SOController@edit')->name("edit")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
-        Route::put('/{id}', 'SOController@update')->name("update")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
-        Route::delete('/{id}', 'SOController@destroy')->name("destroy")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
-
-
-        // Route::post('/{id}/comment', 'SOController@storeComment')->name("storeComment")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
-        // Route::get('/{so_id}/comment/{id}/edit', 'SOController@editComment')->name("editComment")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
-        // Route::put('/{so_id}/comment/{id}', 'SOController@updateComment')->name("updateComment")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
-        // Route::delete('/{so_id}/comment/{id}', 'SOController@destroyComment')->name("destroyComment")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::put('/', 'SOController@update')->name("update")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
     });
+
+    Route::group(["as" => "pejabat.", "prefix" => "pejabat"], function () {
+        Route::get('/', 'PejabatController@index')->name("index")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::get('/create', 'PejabatController@create')->name("create")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::post('/', 'PejabatController@store')->name("store")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::get('/{id}', 'PejabatController@show')->name("show")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::get('/{id}/edit', 'PejabatController@edit')->name("edit")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::put('/{id}', 'PejabatController@update')->name("update")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::delete('/{id}', 'PejabatController@destroy')->name("destroy")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+    });
+
     Route::group(["as" => "pengaturan.", "prefix" => "pengaturan"], function () {
         Route::get("/", "PengaturanController@index")->name("index")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin]));
         Route::put('/', 'PengaturanController@update')->name("update")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin]));
@@ -241,6 +241,11 @@ Route::group(["namespace" => "App\Http\Controllers\Home", "as" => "home."], func
     Route::group(["as" => "SO.", "prefix" => "SO"], function () {
         Route::get("/", "SOController@index")->name("index");
         Route::get("/{id}", "SOController@show")->name("show");
+    });
+
+    Route::group(["as" => "pejabat.", "prefix" => "pejabat"], function () {
+        Route::get("/", "PejabatController@index")->name("index");
+        Route::get("/{id}", "PejabatController@show")->name("show");
     });
 
     Route::group(["as" => "VM.", "prefix" => "VM"], function () {

@@ -8,11 +8,14 @@ use Te7aHoudini\LaravelTrix\Traits\HasTrixRichText;
 use App\Traits\TrixRender;
 use Haruncpi\LaravelUserActivity\Traits\Loggable;
 
-class SO extends Model
+class Pejabat extends Model
 {
     use HasFactory, HasTrixRichText, TrixRender, Loggable;
     
     protected $fillable = [
+        'nama',
+        'jabatan',
         'image',
+        'pejabat-trixFields',
     ];
 }

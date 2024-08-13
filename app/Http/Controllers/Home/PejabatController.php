@@ -4,19 +4,19 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Layanan;
+use App\Models\Pejabat;
 use App\Models\Pengaturan;
-use App\Models\Menu;
 use Illuminate\Pagination\Paginator;
+use App\Models\Menu;
 
-class LayananController extends Controller
+class PejabatController extends Controller
 {
-    protected $layanan;
-    protected $route = 'home.pages.layanan.';
+    protected $pejabat;
+    protected $route = 'home.pages.pejabat.';
     public function __construct(){
-        $this->route = "home.layanan.";
-        $this->view = "home.pages.layanan.";
-        $this->layanan = new Layanan();
+        $this->route = "home.pejabat.";
+        $this->view = "home.pages.pejabat.";
+        $this->pejabat = new Pejabat();
         Paginator::useBootstrap();
     }
    
@@ -26,7 +26,7 @@ class LayananController extends Controller
         $table_menu = Menu::all();
         $search = $request->search;
 
-        $table = $this->layanan;
+        $table = $this->pejabat;
 
         if(!empty($search)){
             $table = $table->where(function($query2) use($search){
@@ -39,7 +39,7 @@ class LayananController extends Controller
         $data = [
             'table' => $table,
             'table_pengaturan' => $table_pengaturan,
-            'table_menu' => $table_menu, 
+            'table_menu' => $table_menu,
         ];
 
         return view($this->view."index",$data);
@@ -48,13 +48,14 @@ class LayananController extends Controller
         $table_pengaturan = Pengaturan::first();
         $table_menu = Menu::all();
 
-        $result = $this->layanan;
+        $result = $this->pejabat;
         $result = $result->where('id',$id);
         $result = $result->first();
 
-        $except_result = $this->layanan;
+        $except_result = $this->pejabat;
         $except_result = $except_result->where('id','!=',$id);
-       
+        $except_result = $except_result->orderBy("date","DESC");      //sort descending by time created data
+        $except_result = $except_result->paginate(3);   //limit paginate only 10 data appears per load
 
         if(!$result){
             alert()->error('Gagal',"Data tidak ditemukan");
@@ -65,10 +66,10 @@ class LayananController extends Controller
             'result' => $result,
             'except_result' => $except_result,
             'table_pengaturan' => $table_pengaturan,
-            'table_menu' => $table_menu,
+            'table_menu' => $table_menu, 
         ];
-
-
+        //view count in show pejabat
+        views($result)->cooldown($minutes = 3)->record();
 
         return view($this->view."show",$data);
     }

@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.master')
-@section("title","SO")
-@section("breadcumb","SO")
+@section("title","Pejabat")
+@section("breadcumb","Pejabat")
 @section("breadcumb_child","Show")
 @section("content")
 <div class="container">
@@ -69,8 +69,8 @@
                 </div>
 
                 <div class="mt-5">
-                    <a href="{{route('dashboard.so.index')}}" class="btn btn-warning btn-sm"><i class="fa fa-arrow-left"></i> Kembali</a>
-                    <a href="{{route('dashboard.so.edit',$result->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
+                    <a href="{{route('dashboard.pejabat.index')}}" class="btn btn-warning btn-sm"><i class="fa fa-arrow-left"></i> Kembali</a>
+                    <a href="{{route('dashboard.pejabat.edit',$result->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
                     <a href="#" class="btn btn-danger btn-sm btn-delete"><i class="fa fa-trash"></i> Hapus</a>
                 </div>
 
@@ -91,7 +91,7 @@
 
         $(document).on("click",".btn-delete",function(){
             if(confirm("Apakah anda yakin ingin menghapus data ini ?")){
-                $("#frmDelete").attr("action", "{{ route('dashboard.so.destroy', '_id_') }}".replace("_id_", '{{$result->id}}'));
+                $("#frmDelete").attr("action", "{{ route('dashboard.pejabat.destroy', '_id_') }}".replace("_id_", '{{$result->id}}'));
                 $("#frmDelete").submit();
             }
         })
