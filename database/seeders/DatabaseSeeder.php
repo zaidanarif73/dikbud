@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             PengaturanSeeder::class,
             MenuSeeder::class,
+            SOSeeder::class,
+            VMSeeder::class,
             ]);
     }
 }

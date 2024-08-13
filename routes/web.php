@@ -129,6 +129,11 @@ Route::group(["middleware" => ["dashboard.access"], "namespace" => "App\Http\Con
         Route::put('/', 'SOController@update')->name("update")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
     });
 
+    Route::group(["as" => "vm.", "prefix" => "vm"], function () {
+        Route::get('/', 'VMController@index')->name("index")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+        Route::put('/', 'VMController@update')->name("update")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
+    });
+
     Route::group(["as" => "pejabat.", "prefix" => "pejabat"], function () {
         Route::get('/', 'PejabatController@index')->name("index")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));
         Route::get('/create', 'PejabatController@create')->name("create")->middleware('role:' . implode('|', [RoleEnum::SuperAdmin, RoleEnum::Admin]));

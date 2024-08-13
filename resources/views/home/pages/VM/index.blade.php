@@ -1,16 +1,18 @@
 @extends('home.layouts.master')
-@section("title","Visi Misi | DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
+@section("title","Struktur Organisasi | DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
 @section("content")
-<section id="vm" class="vm section">
-    <div class="vm-bg">
-      <img src="{{URL::to('/')}}/assets/img/banner-vm.png" alt="">
-    </div>
-  </section>
-  
-  <section>
-  <div class="vision-structure" style="padding-top :60px">
-    <img src="{{URL::to('/')}}/assets/img/News.jpg" alt="vision Structure">
+<section id="so" class="so section">
+  <div class="so-bg">
+    <img src="{{URL::to('/')}}/assets/img/banner-so.png" alt="">
   </div>
-  </div>
-  </section>
+</section>
+
+{{-- team --}}
+<section id="team" class="mt-5">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up" style="padding-top: 60px;">
+    <h2>Visi Misi</h2>
+    <img src="{{ asset('storage/'.$result->image) }}" style="width:100%;height:auto;">
+  </div><!-- End Section Title -->
+</section>
 @endsection
