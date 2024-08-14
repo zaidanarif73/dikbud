@@ -23,6 +23,10 @@
         </ul>
         @include('home.pages.galeri.modal.index')
     </div>
+    <div class="container d-flex justify-content-center">
+        {!!$table->links()!!}
+    </div>
+    
 @endsection
 @section('script')
     <script>

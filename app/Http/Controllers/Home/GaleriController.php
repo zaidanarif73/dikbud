@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Galeri;
 use App\Models\Menu;
 use App\Models\Pengaturan;
+use Illuminate\Pagination\Paginator;
 
 
 class GaleriController extends Controller
@@ -15,6 +16,7 @@ class GaleriController extends Controller
         $this->route = "home.galeri.";
         $this->view = "home.pages.galeri.";
         $this->galeri = new Galeri();
+        Paginator::useBootstrap();
     }
 
     public function index(){
@@ -24,7 +26,7 @@ class GaleriController extends Controller
         $table = $this->galeri;  //declaration of model databases
         
         $table = $table->orderBy("created_at","DESC");      //sort descending by time created data
-        $table = $table->paginate();   //limit paginate only 10 data appears per load
+        $table = $table->paginate(12);   //limit paginate only 10 data appears per load
         $data = [
             'table' => $table, 
             'table_pengaturan' => $table_pengaturan,  
