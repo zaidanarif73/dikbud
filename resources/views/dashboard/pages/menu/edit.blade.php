@@ -16,9 +16,22 @@
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Judul <span class="text-danger">*</span></label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" name="title" placeholder="Judul"  value="{{old('title',$result->title)}}" required>
+                                        <input type="text" class="form-control" name="title" placeholder="Judul" value="{{ old('title', $result->title) }}" required>
                                     </div>
                                 </div>
+                                
+                                <div class="form-group row">
+                                    <label class="col-md-2 col-form-label" for="parent">Parent</label>
+                                    <div class="col-md-10">
+                                        <select name="parent" id="parent" class="form-control">
+                                            <option value="">Pilih Parent</option>
+                                            @foreach ($menu as $item)
+                                                <option value="{{ $item->id }}" {{ $item->id == $result->parent ? 'selected' : '' }}>{{ $item->title }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                
                                 <div class="form-group row mb-5" >
                                     <label class="col-md-2 col-form-label" for="description">Deskripsi <span class="text-danger">*</span></label>
                                     <div class="col-md-10"   >  
