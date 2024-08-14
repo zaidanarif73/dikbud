@@ -55,6 +55,7 @@
                                             <input type="text" id="description"  name="description" >
                                         </div> --}}
                                             @trix(\App\Models\Menu::class, 'content')
+                                            
 
                                         </div>
                                     </div>
