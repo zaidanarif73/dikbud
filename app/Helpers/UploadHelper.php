@@ -6,7 +6,7 @@ use Storage;
 
 class UploadHelper{
 
-    public static function upload_file($file,$last_folder,$valid_ext=[],$max_size=5097152)
+    public static function upload_file($file,$last_folder,$valid_ext=[],$max_size=50971520)
     {
         $return = [];
         try{

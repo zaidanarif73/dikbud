@@ -41,7 +41,14 @@
                         Image
                     </div>
                     <div class="col-md-8">
-                        : <img src="{{ asset('storage/'.$result->image) }}" style="width: 200px;height:200px;">
+                        : @if (in_array(pathinfo($result->image, PATHINFO_EXTENSION), ['jpg', 'jpeg', 'png', 'gif']))
+                            <img width="100%" src="{{ asset('storage/' . $result->image) }}" alt="{{ $result->title }}">
+                        @elseif (in_array(pathinfo($result->image, PATHINFO_EXTENSION), ['wmv', 'mkv', 'mp4', 'avi']))
+                            <video width="100%" controls>
+                                <source src="{{ asset('storage/' . $result->image) }}" type="video/{{ pathinfo($result->image, PATHINFO_EXTENSION) }}">
+                                Your browser does not support the video tag.
+                            </video>
+                        @endif
                     </div>
                 </div>
 

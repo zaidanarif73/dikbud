@@ -37,7 +37,14 @@
                                             <td>{{ $row->description }}</td>
                                             <td>{{ Carbon\Carbon::parse($row->date)->translatedFormat('l,d F Y') }}</td>
                                             <td class="d-flex justify-content-center">
-                                                <img  src="{{ asset('storage/'.$row->image) }}" alt="" style="width: 100px;height:1auto;">
+                                                @if (in_array(pathinfo($row->image, PATHINFO_EXTENSION), ['jpg', 'jpeg', 'png', 'gif']))
+                                                    <img width="100px" src="{{ asset('storage/' . $row->image) }}" alt="{{ $row->title }}">
+                                                @elseif (in_array(pathinfo($row->image, PATHINFO_EXTENSION), ['wmv', 'mkv', 'mp4', 'avi']))
+                                                    <video width="100px" height="100%" controls>
+                                                        <source src="{{ asset('storage/' . $row->image) }}" type="video/{{ pathinfo($row->image, PATHINFO_EXTENSION) }}">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                @endif
                                             </td>
                                             <td>
                                                 <div class="d-flex mb-1">
