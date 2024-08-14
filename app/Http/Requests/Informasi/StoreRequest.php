@@ -14,6 +14,9 @@ class StoreRequest extends FormRequest
             'title' => [
                 'required',
             ],
+            'file_path' => [
+                'max:100000',
+            ],
             // 'file_path' => [
             //     'required',
             // ],
@@ -27,6 +30,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'title.required' => 'Judul harus diisi',
+            'file_path.max' => 'File tidak boleh lebih dari 100MB',
             // 'file_path.required' => 'File harus diisi',
             // 'file_link.required' => 'Link harus diisi',
         ];

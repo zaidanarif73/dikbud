@@ -16,9 +16,9 @@ class StoreRequest extends FormRequest
             ],
             'image' => [
                 'required',
-                'image',
-                'max:2048',
-                'mimes:jpeg,bmp,png,gif,svg,jpg',
+                // 'image',
+                'max:1000000',
+                'mimes:jpeg,bmp,png,gif,svg,jpg,mp4,mkv,wmv,avi',
             ],
         ];
     }

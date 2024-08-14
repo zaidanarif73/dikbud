@@ -88,6 +88,14 @@ figure img {
     transition: transform 1000ms;
 }
 
+figure video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 1000ms;
+}
+
 #galeri_pict ul {
     list-style: none;
     margin: 0;
