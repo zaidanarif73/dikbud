@@ -27,17 +27,14 @@
             <p >{!! $result->renderTrix("content") !!}</p>
             <p class="demo">
                 <p>Bagikan Juga</p>
-                <button type="button" class="btn btn-icon btn-round btn-primary">
+                <button type="button" class="btn btn-icon btn-round btn-primary" id="share-facebook">
                     <i class='bx bxl-facebook'></i>
                 </button>
-                <button type="button" class="btn btn-icon btn-round btn-success">
-                    <i class='bx bxl-whatsapp' ></i>
+                <button type="button" class="btn btn-icon btn-round btn-success" id="share-whatsapp">
+                    <i class='bx bxl-whatsapp'></i>
                 </button>
-                <button type="button" class="btn btn-icon btn-round btn-info">
+                <button type="button" class="btn btn-icon btn-round btn-info" id="share-twitter">
                     <i class='bx bxl-twitter'></i>
-                </button>
-                <button type="button" class="btn btn-icon btn-round btn-secondary">
-                    <i class='bx bxl-instagram' ></i>
                 </button>
             </p>
         </div>
@@ -73,5 +70,28 @@
 </div>
 @endsection
 @section('script')
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script>
+    // Facebook Share
+    document.getElementById('share-facebook').onclick = function() {
+        let url = encodeURIComponent(window.location.href);
+        let facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        window.open(facebookShareUrl, '_blank');
+    };
+
+    // WhatsApp Share
+    document.getElementById('share-whatsapp').onclick = function() {
+        let text = encodeURIComponent(document.title + " " + window.location.href);
+        let whatsappShareUrl = `https://api.whatsapp.com/send?text=${text}`;
+        window.open(whatsappShareUrl, '_blank');
+    };
+
+    // Twitter Share
+    document.getElementById('share-twitter').onclick = function() {
+        let text = encodeURIComponent(document.title);
+        let url = encodeURIComponent(window.location.href);
+        let twitterShareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+        window.open(twitterShareUrl, '_blank');
+    };
+</script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 @endsection
