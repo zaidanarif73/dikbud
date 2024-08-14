@@ -12,14 +12,15 @@ use App\Models\Banner;
 use App\Models\Pengaturan;
 use App\Models\Layanan;
 use App\Models\Menu;
+
 class HomeController extends Controller
 {
     // protected $tautan;
-    
-    public function __construct(){
+
+    public function __construct()
+    {
         $this->view = "home.pages.home.";
         $this->tautan = new Tautan();
-   
     }
 
     public function index(Request $request)
@@ -30,17 +31,18 @@ class HomeController extends Controller
         $table_layanan = Layanan::all();
         $table_pengaturan = Pengaturan::first();
         $table_menu = Menu::all();
-       
+
 
 
         // Fetch the most viewed berita id
         $count_view = DB::table('views')
-        ->select('viewable_id', DB::raw('COUNT(*) as total'))
-        ->groupBy('viewable_id')
-        ->orderBy('total', 'DESC')
-        ->first();
+            ->select('viewable_id', DB::raw('COUNT(*) as total'))
+            ->groupBy('viewable_id')
+            ->orderBy('total', 'DESC')
+            ->first();
 
-        if($count_view == null){
+
+        if ($count_view == null) {
             $data = [
                 'table_tautan' => $table_tautan,
                 'table_berita' => $table_berita,
@@ -50,9 +52,9 @@ class HomeController extends Controller
                 'table_view' => null,
                 'table_menu' => $table_menu,
             ];
-    
-            return view($this->view."index",$data);
-        }else{
+
+            return view($this->view . "index", $data);
+        } else {
             // Get the id of the most viewed berita
             $id_count = $count_view->viewable_id;
             // Fetch the berita record with the most views
@@ -69,18 +71,18 @@ class HomeController extends Controller
                 'count_view' => $count_view,
                 'table_menu' => $table_menu,
             ];
+            // dd($data);
 
-            return view($this->view."index",$data);
+            return view($this->view . "index", $data);
         }
         // return dd($data );
 
     }
-   
+
     //function for calendar handler in json
-    public function events(){
+    public function events()
+    {
         $events = Kalender::all();
         return response()->json($events);
-    }  
-    
-    
+    }
 }
