@@ -12,12 +12,13 @@
         <div class="btn-group col-2">
             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Produk Hukum</button>
             <ul id="produkHukumList" class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Laporan Kinerja Instansi Pemerinta (LKJIP)</a></li>
+                <li><a class="dropdown-item" href="#">Laporan Kinerja Instansi Pemerintah (LKjIP)</a></li>
                 <li><a class="dropdown-item" href="#">Indikator Kinerja Individu (IKI)</a></li>
                 <li><a class="dropdown-item" href="#">Perjanjian Kinerja (PK)</a></li>
                 <li><a class="dropdown-item" href="#">Rencana Aksi</a></li>
                 <li><a class="dropdown-item" href="#">Kompilasi Jumlah Siswa</a></li>
-                <li><a class="dropdown-item" href="#">Lain-lainnya</a></li>
+                <li><a class="dropdown-item" href="#">Renja</a></li>
+                <li><a class="dropdown-item" href="#">Renstra</a></li>
             </ul>
         </div>
         <div class="btn-group col-2">
@@ -75,8 +76,8 @@
                                             <a href="{{ asset('storage/'.$row->file_path) }}" target="_blank" class="btn btn-success mx-1"><i class="fa fa-plus"></i> Lihat</a>
                                             <a href="{{ asset('storage/'.$row->file_path) }}" class="btn btn-primary mx-1" download><i class="fa fa-plus"></i>Download</a>
                                         @elseif($row->file_link != null)
-                                            <a href="{{ URL::to($row->file_link) }}" target="_blank" class="btn btn-success mx-1"><i class="fa fa-plus"></i> Lihat</a>
-                                            <a href="{{ URL::to($row->file_link) }}" class="btn btn-primary mx-1" download><i class="fa fa-plus"></i>Download</a>
+                                            <a href="{{ asset('storage/'.$row->file_link) }}" target="_blank" class="btn btn-success mx-1"><i class="fa fa-plus"></i> Lihat</a>
+                                            <a href="{{ asset('storage/'.$row->file_link) }}" class="btn btn-primary mx-1" download><i class="fa fa-plus"></i>Download</a>
                                         @endif                      
                                     </div>
                                 </td>
