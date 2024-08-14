@@ -11,9 +11,10 @@ use Haruncpi\LaravelUserActivity\Traits\Loggable;
 class Menu extends Model
 {
     use HasFactory, HasTrixRichText, TrixRender, Loggable;
-    
+
     protected $fillable = [
         'title',
+        'parent',
         'menu-trixFields',
     ];
 }
