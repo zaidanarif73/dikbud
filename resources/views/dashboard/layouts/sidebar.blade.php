@@ -72,6 +72,11 @@
                 </col>
               </a>
             </li>
+
+            @if(Auth::user()->hasRole([
+                \App\Enums\RoleEnum::SuperAdmin,
+                \App\Enums\RoleEnum::Admin,
+            ]))
             
             <li class="nav-item">
               <a href="{{route('dashboard.galeri.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.galeri')) active @endif">
@@ -92,12 +97,6 @@
                 </p>
               </a>
             </li>
-
-
-            @if(Auth::user()->hasRole([
-                \App\Enums\RoleEnum::SuperAdmin,
-                \App\Enums\RoleEnum::Admin,
-            ]))
            
             <li class="nav-item">
               <a href="{{route('dashboard.tautan.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.tautan')) active @endif">
@@ -154,7 +153,7 @@
 
             <li class="nav-item">
               <a href="{{route('dashboard.vm.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.vm')) active @endif">
-                <i class="bx bxs-vector col-3 bx-tada-hover"></i> 
+                <i class='bx bx-poll col-3 bx-tada-hover'></i>
                 <p>
                   Visi Misi
                 </p>
@@ -163,7 +162,7 @@
 
             <li class="nav-item">
               <a href="{{route('dashboard.pejabat.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.pejabat')) active @endif">
-                <i class="bx bxs-vector col-3 bx-tada-hover"></i> 
+                <i class='bx bx-group col-3 bx-tada-hover'></i>
                 <p>
                   Pejabat
                 </p>
@@ -195,19 +194,10 @@
               <a href="/dashboard/user-activity" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.log')) active @endif">
                 <i class="bx bx-history col-3 bx-tada-hover"></i>
                 <p>
-                  User Activity
-                </p>
-              </a>
-            </li>
-
-          <li class="nav-item">
-              <a href="{{route('dashboard.log.index')}}" class="nav-link @if(Str::startsWith(request()->route()->getName(), 'dashboard.log')) active @endif">
-                <i class="bx bx-child col-3 bx-tada-hover"></i>
-                <p>
                   Log
                 </p>
               </a>
-          </li>
+            </li>
           @endif
         </ul>
       </nav>
