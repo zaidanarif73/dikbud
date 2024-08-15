@@ -2,25 +2,32 @@
 @section("title","Informasi | DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
 @section("css")
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    <style>
+        #filtering .btn{
+            background-color: #388da8 !important;
+            border: none;
+        }
+    </style>
 @endsection
 @section("content")
 <div class="container mt-5" style="padding-top :60px">
     <div class="d-flex flex-column justify-content-center align-items-center">
         <h1 data-aos="fade-up">Informasi Publik</h1>
     </div>
-    <div class="row mt-5">
-        <div class="btn-group col-2">
+    <div class="row mt-5 g-3" id="filtering">
+        <div class="btn-group col-lg-2">
             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Produk Hukum</button>
             <ul id="produkHukumList" class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Laporan Kinerja Instansi Pemerinta (LKJIP)</a></li>
+                <li><a class="dropdown-item" href="#">Laporan Kinerja Instansi Pemerintah (LKjIP)</a></li>
                 <li><a class="dropdown-item" href="#">Indikator Kinerja Individu (IKI)</a></li>
                 <li><a class="dropdown-item" href="#">Perjanjian Kinerja (PK)</a></li>
                 <li><a class="dropdown-item" href="#">Rencana Aksi</a></li>
                 <li><a class="dropdown-item" href="#">Kompilasi Jumlah Siswa</a></li>
-                <li><a class="dropdown-item" href="#">Lain-lainnya</a></li>
+                <li><a class="dropdown-item" href="#">Renja</a></li>
+                <li><a class="dropdown-item" href="#">Renstra</a></li>
             </ul>
         </div>
-        <div class="btn-group col-2">
+        <div class="btn-group col-lg-2">
             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tahun</button>
             <ul id="tahunList" class="dropdown-menu" style="max-height: 200px; overflow-y: scroll;">
                 <li><a class="dropdown-item" href="#">2019</a></li>
@@ -48,6 +55,14 @@
                 <li><a class="dropdown-item" href="#">2029</a></li>
                 <li><a class="dropdown-item" href="#">2030</a></li>
             </ul>
+        </div>
+        <div class="col-lg-8">
+            <form method="GET" action="{{ route('home.informasi.index') }}">
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="Search..." value="{{ request()->get('search') }}">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
         </div>
     </div>
     <div class="row">
@@ -88,6 +103,9 @@
                             @endforelse
                         </tbody>
                     </table>
+                    <div class="d-flex justify-content-center">
+                        {{ $table->links() }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,10 +146,9 @@
     </script>
     
     <script>
-        $(document).ready(function () {
-            $("#basic-datatables").DataTable({
-                pageLength: 10,
-            });
-        });
+        // $(document).ready(function () {
+        //     $("#basic-datatables").DataTable({
+        //     });
+        // });
     </script>
 @endsection

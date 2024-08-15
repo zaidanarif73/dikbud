@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Informasi;
 use App\Models\Pengaturan;
 use App\Models\Menu;
+use Illuminate\Pagination\Paginator;
 
 class InformasiController extends Controller
 {
@@ -14,35 +15,42 @@ class InformasiController extends Controller
         $this->view = "home.pages.informasi.";
         $this->route = "home.informasi.";
         $this->informasi = new Informasi();
+        Paginator::useBootstrap();
     }
 
-    public function index(Request $request){
-        $table_pengaturan = Pengaturan::first(); //for footer handler
+    public function index(Request $request) {
+        $table_pengaturan = Pengaturan::first(); // for footer handler
         $table_menu = Menu::all();
-
+    
         $table = $this->informasi;
-
-        $year = $request->year; //for year filter in modal
+    
+        $year = $request->year; // for year filter in modal
         $produkHukum = $request->produkHukum;
-        if(!empty($year)){
-            $table = $table->where(function($query2) use($year){
-                $query2->where("title","like","%".$year."%");
-            });
-            
+        $search = $request->search; // get the search query
+    
+        if (!empty($year)) {
+            $table = $table->where("title", "like", "%" . $year . "%");
         }
-        if(!empty($produkHukum)){
-            $table = $table->where(function($query2) use($produkHukum){
-                $query2->where("title","like","%".$produkHukum."%");
-            });
-            
+    
+        if (!empty($produkHukum)) {
+            $table = $table->where("title", "like", "%" . $produkHukum . "%");
         }
-        $table = $table->orderBy("created_at","DESC");      //sort descending by time created data
-        $table = $table->paginate();   //limit paginate only 10 data appears per load
+    
+        if (!empty($search)) {
+            $table = $table->where("title", "like", "%" . $search . "%");
+                        //    ->orWhere("created_at", "like", "%" . $search . "%"); // Adjust fields as needed
+        }
+    
+        $table = $table->orderBy("created_at", "DESC");
+        $table = $table->paginate(10); // limit paginate only 10 data appears per load
+    
         $data = [
-            'table' => $table,  
-            'table_pengaturan' => $table_pengaturan,  
-            'table_menu' => $table_menu,                            
+            'table' => $table,
+            'table_pengaturan' => $table_pengaturan,
+            'table_menu' => $table_menu,
         ];
-        return view($this->view."index",$data);
+    
+        return view($this->view . "index", $data);
     }
+    
 }

@@ -64,6 +64,11 @@
     background: white; 
     border-radius: 10px;
 }
+
+.page-item.active .page-link {
+    background: #388da8 !important;
+    border: none;
+}
 /*--------------------------------------------------*/
 body {
     color: var(--default-color);
