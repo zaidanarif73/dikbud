@@ -31,6 +31,9 @@
         </div>
     </div>
 </div>
+<div class="container d-flex justify-content-center mt-5">
+    {!!$table->links()!!}
+</div>
     
 
 @endsection

@@ -34,7 +34,7 @@ class BeritaController extends Controller
             });
         }
         $table = $table->orderBy("created_at","DESC");
-        $table = $table->paginate(10)->withQueryString();
+        $table = $table->paginate(9)->withQueryString();
 
         $data = [
             'table' => $table,
