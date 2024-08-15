@@ -25,14 +25,6 @@
                                         <input type="text" class="form-control" name="jabatan" placeholder="Jabatan"  value="{{old('jabatan',$result->jabatan)}}" required>
                                     </div>
                                 </div>
-                                <div class="form-group row mb-5" >
-                                    <label class="col-md-2 col-form-label" for="description">Deskripsi <span class="text-danger">*</span></label>
-                                    <div class="col-md-10"   >  
-                                        @trix($result, 'content')
-                                       
-                                      
-                                    </div>
-                                </div>
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label">Image <span class="text-danger">*</span></label>
                                    

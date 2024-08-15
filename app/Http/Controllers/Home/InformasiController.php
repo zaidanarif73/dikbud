@@ -42,7 +42,7 @@ class InformasiController extends Controller
         }
     
         $table = $table->orderBy("created_at", "DESC");
-        $table = $table->paginate(10); // limit paginate only 10 data appears per load
+        $table = $table->paginate(20); // limit paginate only 10 data appears per load
     
         $data = [
             'table' => $table,
