@@ -10,9 +10,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/home/swiper/style.css">
-    <link rel="stylesheet" href="/assets/css/home/kalender.css">
-    <link rel="stylesheet" href="/assets/css/home/navbar.css">
+    <link rel="stylesheet" href="{{URL::to('/')}}/assets/css/home/swiper/style.css">
+    <link rel="stylesheet" href="{{URL::to('/')}}/assets/css/home/kalender.css">
+    <link rel="stylesheet" href="{{URL::to('/')}}/assets/css/home/navbar.css">
+    <link rel="stylesheet" href="{{URL::to('/')}}/assets/css/home/tautan.css">
 @endsection
 
 
@@ -138,7 +139,7 @@
                 <div class="berita py-5">
                     <div class="py-5">
                         <div class="row g-4 justify-content-center">
-                            @forelse ($table_berita->slice(0, 3) as $index => $row)
+                            @forelse ($table_berita->sortByDesc('date')->slice(0, 3) as $index => $row)
                                 <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
                                     <div class="berita-item rounded">
                                         <div class="berita-img rounded-top">
@@ -151,7 +152,7 @@
                                                 <p class="card-text">
                                                     {{ Carbon\Carbon::parse($row->date)->translatedFormat('l,d F Y') }}</p>
                                                 <a href="{{ route('home.berita.show', $row->id) }}"><h5 class="mb-4">{{ $row->title }}</h5></a>
-                                                <p class="mb-3">{!! Str::limit(strip_tags($row->renderTrix('content')), 40) !!}</p>
+                                                <p class="mb-3">{!! Str::limit(strip_tags($row->renderTrix('content')), 100) !!}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -182,13 +183,18 @@
           <div class="row mt-2 justify-content-center">
               @forelse ($table_tautan->chunk(5) as $chunk)
                   <div class="col-md-4 d-flex justify-content-center mt-5">
-                      <div class="card" style="width: 18rem;">
-                          <ul class="list-group list-group-flush">
+                      <div class="card list" style="width: 18rem;">
+                          {{-- <ul class="list-group list-group-flush">
                               @foreach ($chunk as $row)
                                   <li class="list-group-item">
                                       <a href="{{ URL::to($row->url) }}" class="card-link">{{ $row->title }}</a>
                                   </li>
                               @endforeach
+                          </ul> --}}
+                          <ul>
+                            @foreach ($chunk as $row)
+                                <li><a href="{{ URL::to($row->url) }}" class="card-link">{{ $row->title }}</a></li>
+                            @endforeach
                           </ul>
                       </div>
                   </div>
