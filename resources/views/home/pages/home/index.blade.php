@@ -184,7 +184,7 @@
           <div class="row mt-2 justify-content-center">
               @forelse ($table_tautan->chunk(5) as $chunk)
                   <div class="col-md-4 d-flex justify-content-center mt-5">
-                      <div class="card list" data-aos="fade-up" style="width: 18rem;">
+                      <div class="card list" data-aos="fade-up" style="width: 18rem; -webkit-box-shadow: none !important; -moz-box-shadow: none !important; box-shadow: none !important">
                           <ul>
                             @foreach ($chunk as $row)
                                 <li><a href="{{ URL::to($row->url) }}" class="card-link" target="_blank">{{ $row->title }}</a></li>

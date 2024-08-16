@@ -3,7 +3,7 @@
 @section("content")
 <section id="so" class="so section">
   <div class="so-bg">
-    <img src="{{URL::to('/')}}/assets/img/banner-so.png" alt="">
+    <img src="{{URL::to('/')}}/assets/img/banner-vm.png" alt="">
   </div>
 </section>
 
