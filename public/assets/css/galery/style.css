@@ -3,6 +3,10 @@
     width: 80%;
     margin: 0 auto;
 }
+.title-galeri h3 {
+    text-align: center;
+    font-size: 34px;
+}
 
 .gallery {
     display: grid;

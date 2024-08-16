@@ -589,9 +589,9 @@ h6 {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+    border: 2px solid color-mix(in srgb, #b3b3b3, transparent 0%);
     font-size: 16px;
-    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    color: color-mix(in srgb, #b3b3b3, transparent 0%);
     margin-right: 10px;
     transition: 0.3s;
 }

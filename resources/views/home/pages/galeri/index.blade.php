@@ -6,6 +6,9 @@
 @section('content')
 
     <div class="container p-5" id="galeri_pict" style="padding-top: 150px !important">
+        <div class="title-galeri" style="">
+            <h3>Galeri</h3>
+        </div>
         <ul>
             @forelse($table as $index => $row)
             <li>

@@ -28,9 +28,9 @@
         <h4>Kontak</h4>
         <p class="mt-3"><strong>Phone:</strong> <span>{{ $table_pengaturan->website_phone }}</span></p>
         <p><strong>Email:</strong> <span>{{ $table_pengaturan->website_email }}</span></p>
-        <div class="social-links d-flex justify-content-center  mt-4">
-          <a href="https://www.facebook.com/dikbudmalangkota/?locale=ms_MY"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/dikbudmalangkota?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="bi bi-instagram"></i></a>
+        <div class="social-links d-flex justify-content-center mt-4">
+          <a href="https://www.facebook.com/dikbudmalangkota/?locale=ms_MY" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/dikbudmalangkota?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="bi bi-instagram"></i></a>
         </div>
       </div>
     </div>
