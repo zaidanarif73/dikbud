@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #09121D;">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link d-flex align-items-center justify-content-center">
+    <a href="#" class="brand-link d-flex align-items-center justify-content-center">
       <img src="{{URL::to('/')}}/assets/img/favicon.png" alt="AdminLTE Logo" class="brand-image">
     </a>
 
