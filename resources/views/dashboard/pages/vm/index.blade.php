@@ -1,5 +1,6 @@
 @extends('dashboard.layouts.master')
-@section("title","Visi Misi")
+@section("title","Visi Misi ~ DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
+@section("title_breadcumb","Visi Misi")
 @section("breadcumb","Visi Misi")
 @section("content")
 <div class="container">

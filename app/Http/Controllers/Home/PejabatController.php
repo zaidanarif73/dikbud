@@ -33,8 +33,8 @@ class PejabatController extends Controller
                 $query2->where("title","like","%".$search."%");
             });
         }
-        $table = $table->orderBy("created_at","DESC");
-        $table = $table->paginate(10)->withQueryString();
+        $table = $table->orderBy("created_at","ASC");
+        $table = $table->paginate(100)->withQueryString();
 
         $data = [
             'table' => $table,

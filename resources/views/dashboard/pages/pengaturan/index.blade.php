@@ -1,5 +1,6 @@
 @extends('dashboard.layouts.master')
-@section("title","Dashboard")
+@section("title","Pengaturan ~ DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
+@section("title_breadcumb","Pengaturan")
 @section('breadcumb')
     Pengaturan
 @endsection

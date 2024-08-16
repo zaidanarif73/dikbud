@@ -74,7 +74,7 @@
                                 <div class="form-group last mb-3">
                                     <input type="hidden" name="token" value="{{$target->token}}">
                                 </div>
-                                <input type="submit" value="Reset" class="btn btn-block btn-primary">
+                                <input type="submit" value="Reset" class="btn btn-block btn-primary" style="background-color: #388da8 !important; border:none !important;">
                             </form>
                         </div>
                 </div>
