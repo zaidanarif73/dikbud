@@ -8,13 +8,13 @@
 </section>
 
 {{-- team --}}
-<section id="team" class="team section mt-5">
+<section>
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up" style="padding-top: 60px;">
     <h2>KEPALA DINAS DAN PEJABAT</h2>
   </div><!-- End Section Title -->
   
-  <div class="container">
+  {{-- <div class="container">
     <div class="row gy-4 d-flex flex-nowrap overflow-auto justify-content-start">
       @forelse ($table as $index => $row)
         <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -28,6 +28,28 @@
         <p>Tidak ada data</p>
       @endforelse
     </div>
+  </div> --}}
+  <div class="container">
+    <ul class="cards">
+      @forelse ($table as $index => $row)
+      <li>
+        <div class="card">
+          <img src="{{ asset('storage/' . $row->image) }}" class="card__image" alt="" />
+          <div class="card__overlay">
+            <div class="card__header">
+              <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+              <div class="card__header-text">
+                <h3 class="card__title"><b>{{ $row->nama }}</b></h3>            
+                <span class="card__status text-black-50">{{ $row->jabatan }}</span>
+              </div>
+            </div>
+          </div>
+        </div>      
+      </li>   
+      @empty
+          <p>Tidak ada data</p>
+      @endforelse
+    </ul>
   </div>
 </section>
   

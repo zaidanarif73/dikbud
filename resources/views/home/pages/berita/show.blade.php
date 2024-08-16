@@ -11,7 +11,7 @@
         <div class="col-12 col-lg-9">
             <img src="{{ asset('storage/' . $result->image) }}" class="card-img-top mb-3" alt="">
             <h1 class=""><b>{{ $result->title }}</b></h1>
-            <div class="">
+            <div class="text-black-50">
                 <p>{{ Carbon\Carbon::parse($result->date)->translatedFormat('l,d F Y') }} by {{ $result->creator }}</p>
                 {{-- <small><i class='bx bx-show'></i> Dilihat {{ $count_view->total }} kali</small> --}}
             </div>

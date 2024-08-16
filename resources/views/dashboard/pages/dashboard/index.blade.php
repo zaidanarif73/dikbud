@@ -1,5 +1,6 @@
 @extends('dashboard.layouts.master')
-@section("title","Dashboard")
+@section("title","Dashboard ~ DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
+@section("title_breadcumb","Dashboard")
 @section('css')
     <link rel="stylesheet" href="{{URL::to('/')}}/assets/css/clock.css">
 @endsection
@@ -74,18 +75,73 @@
     <!-- ./col -->
     <div class="col-lg-3 col-6">
     <!-- small box -->
-    <div class="small-box bg-danger">
-        <div class="inner">
-        <h3>{{ $count_galeri }}</h3>
-        <p>Galeri</p>
+        <div class="small-box bg-danger">
+            <div class="inner">
+            <h3>{{ $count_galeri }}</h3>
+            <p>Galeri</p>
+            </div>
+            <div class="icon">
+                <i class='bx bx-image-alt'></i>
+            </div>
+            <a href="{{ route('dashboard.galeri.index') }}" class="small-box-footer">Detail<i class="fas fa-arrow-circle-right"></i></a>
         </div>
-        <div class="icon">
-            <i class='bx bx-image-alt'></i>
-        </div>
-        <a href="{{ route('dashboard.galeri.index') }}" class="small-box-footer">Detail<i class="fas fa-arrow-circle-right"></i></a>
-    </div>
     </div>
     <!-- ./col -->
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-secondary">
+            <div class="inner">
+                <h3>{{ $count_layanan }}</h3>
+                <p>Layanan</p>
+            </div>
+            <div class="icon">
+                <i class='bx bx-message-check'></i>
+            </div>
+            <a href="{{ route('dashboard.layanan.index') }}" class="small-box-footer">Detail<i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-primary">
+            <div class="inner">
+                <h3>{{ $count_tautan }}</h3>
+                <p>Tautan</p>
+            </div>
+            <div class="icon">
+                <i class='bx bx-link-alt'></i>
+            </div>
+            <a href="{{ route('dashboard.tautan.index') }}" class="small-box-footer">Detail<i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-info">
+            <div class="inner">
+                <h3>{{ $count_inovasi }}</h3>
+                <p>Inovasi</p>
+            </div>
+            <div class="icon">
+                <i class='bx bx-bulb'></i>
+            </div>
+            <a href="{{ route('dashboard.inovasi.index') }}" class="small-box-footer">Detail<i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3>{{ $count_informasi }}</h3>
+                <p>Informasi Publik</p>
+            </div>
+            <div class="icon">
+                <i class='bx bx-info-circle'></i>
+            </div>
+            <a href="{{ route('dashboard.informasi.index') }}" class="small-box-footer">Detail<i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
     @endif
 
 </div>

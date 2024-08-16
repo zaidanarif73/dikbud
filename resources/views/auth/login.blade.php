@@ -74,7 +74,7 @@
                                     </label>
                                     <span class="ml-auto"><a href="{{ route('auth.forgot_pw.index') }}" class="forgot-pass">Forgot Password</a></span> 
                                 </div>
-                                <input type="submit" value="Log In" class="btn btn-block btn-primary">
+                                <input type="submit" value="Log In" class="btn btn-block btn-primary" style="background-color: #388da8 !important; border:none !important;">
                             </form>
                         </div>
                 </div>

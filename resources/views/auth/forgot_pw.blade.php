@@ -66,7 +66,7 @@
                                 <div class="d-flex mb-5 align-items-center">
                                     <span class="ml-auto"><a href="{{ route('auth.login.index') }}" class="forgot-pass">Sudah Punyak Akun? Login Disini</a></span> 
                                 </div>
-                                <input type="submit" value="Kirim" class="btn btn-block btn-primary">
+                                <input type="submit" value="Kirim" class="btn btn-block btn-primary" style="background-color: #388da8 !important; border:none !important;">
                             </form>
                         </div>
                 </div>

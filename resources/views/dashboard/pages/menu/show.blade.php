@@ -1,5 +1,6 @@
 @extends('dashboard.layouts.master')
-@section("title","Menu")
+@section("title","Menu ~ DINAS PENDIDIKAN DAN KEBUDAYAAN KOTA MALANG")
+@section("title_breadcumb","Menu")
 @section("breadcumb","Menu")
 @section("breadcumb_child","Show")
 @section("content")
