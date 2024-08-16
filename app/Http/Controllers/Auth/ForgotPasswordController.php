@@ -39,7 +39,7 @@ class ForgotPasswordController extends Controller
                 'recipient' =>$request->email,
                 'fromEmail' =>'dikbud@malangkota.go.id',
                 'fromName'  =>'DIKBUD',
-                'subject'   =>'Jangan Bagikan Pesan Ini Kepada Siapapun!!',
+                'subject'   =>'Konfirmasi Lupa Password Akun Website DIKBUD Kota Malang',
                 'body'      =>'Konfirmasi Lupa Password',
                 'token'     =>$token,
                 // 'resetLink' => url("/auth//reset_pw/{$token}?email=" . urlencode($request->email)),

@@ -91,13 +91,13 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://i.pinimg.com/originals/03/46/31/034631bbc43d2a965bb02266ca56de2b.png" alt="" height="80" width="80">
+            <a href="{{ route('home.home.index') }}"><img src="https://i.pinimg.com/originals/03/46/31/034631bbc43d2a965bb02266ca56de2b.png" alt="" height="80" width="80"></a>
             <h1>Konfirmasi Reset Password</h1>
         </div>
         <hr>
         <div class="content">
-            <p>Hai, {{ $recipient }}</p>
-            <p>Kami menerima permintaan untuk reset password dari akun website Dinas Pendidikan dan Kebudayaan Kota Malang. Klik link dibawah untuk melanjutkan proses reset password lama anda: </p>
+            <p>Yang terhormat, {{ $recipient }}</p>
+            <p>Kami telah menerima permintaan untuk reset password dari akun website Dinas Pendidikan dan Kebudayaan Kota Malang. Klik link dibawah untuk melanjutkan proses reset password lama anda: </p>
             <a href="{{ route('auth.reset_pw.index',$token) }}" class="btn">Reset Password</a>
             <p>Jika kamu tidak menerima permintaan reset password, Harap abaikan pesan email ini!.</p>
             <p>Terima Kasih,<br>Dinas Pendidikan dan Kebudayaan Kota Malang</p>
