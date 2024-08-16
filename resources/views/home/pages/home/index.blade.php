@@ -140,7 +140,7 @@
                     <div class="py-5">
                         <div class="row g-4 justify-content-center">
                             @forelse ($table_berita->sortByDesc('date')->slice(0, 3) as $index => $row)
-                                <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-aos="zoom-in" data-wow-delay="0.3s">
                                     <div class="berita-item rounded">
                                         <div class="berita-img rounded-top">
                                             <a href="{{ route('home.berita.show', $row->id) }}"><img
@@ -162,7 +162,7 @@
                             @endforelse
                         </div>
                         <div>
-                            <a href="{{ route('home.berita.index') }}" class="btn mt-2 mb-5">Semua Berita</a>
+                            <a href="{{ route('home.berita.index') }}" class="btn mt-3 mb-5">Semua Berita</a>
                         </div>
                     </div>
                 </div>
@@ -183,17 +183,10 @@
           <div class="row mt-2 justify-content-center">
               @forelse ($table_tautan->chunk(5) as $chunk)
                   <div class="col-md-4 d-flex justify-content-center mt-5">
-                      <div class="card list" style="width: 18rem;">
-                          {{-- <ul class="list-group list-group-flush">
-                              @foreach ($chunk as $row)
-                                  <li class="list-group-item">
-                                      <a href="{{ URL::to($row->url) }}" class="card-link">{{ $row->title }}</a>
-                                  </li>
-                              @endforeach
-                          </ul> --}}
+                      <div class="card list" data-aos="fade-up" style="width: 18rem;">
                           <ul>
                             @foreach ($chunk as $row)
-                                <li><a href="{{ URL::to($row->url) }}" class="card-link">{{ $row->title }}</a></li>
+                                <li><a href="{{ URL::to($row->url) }}" class="card-link" target="_blank">{{ $row->title }}</a></li>
                             @endforeach
                           </ul>
                       </div>
