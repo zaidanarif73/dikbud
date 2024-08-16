@@ -100,6 +100,7 @@
             @endforelse
             
         </div>
+    </section>
 
 
 
@@ -162,7 +163,7 @@
                             @endforelse
                         </div>
                         <div>
-                            <a href="{{ route('home.berita.index') }}" class="btn mt-3 mb-5">Semua Berita</a>
+                            <a href="{{ route('home.berita.index') }}" class="btn mt-5 mb-2">Semua Berita</a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +203,7 @@
         <section id="kontak" class="contact section">
 
             <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
+            <div class="container section-title mt-5" data-aos="fade-up">
                 <h2>Kontak</h2>
 
             </div><!-- End Section Title -->
@@ -249,8 +250,8 @@
                             <iframe id="maps_big" src="" frameborder="0"></iframe>
                     </div><!-- End Google Maps -->
 
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="custom-content card">
+                    <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="300">
+                        <div class="custom-content card ">
                             <form action="{{ route('home.kontak.store') }}" method="post" autocomplete="off"
                                 onsubmit="confirm('Apakah anda yakin ingin mengirim pesan ini?')"
                                 enctype="multipart/form-data">
@@ -286,14 +287,12 @@
                                     </div>
                                 </div>
                             </form>
-
                         </div>
                     </div><!-- End Contact Form -->
 
                 </div>
 
             </div>
-
         </section><!-- /Contact Section -->
     @endsection
 
