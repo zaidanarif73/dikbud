@@ -5,10 +5,7 @@
     <link href="assets/css/berita/card.css" rel="stylesheet">
 @endsection
 @section('content')
-<!-- <div class="banner-bg ">
-    <img  src="{{ URL::to('/') }}/assets/img/bgcob1.png" alt="">
-</div> -->
-<div class="title-berita" style="padding-top :60px">
+<div class="title-berita" style="padding-top :40px">
     <h3>Berita</h3>
 </div>
 <div class="container-fluid">

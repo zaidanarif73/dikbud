@@ -49,31 +49,3 @@
     </div>
 </div>
 @endsection
-{{-- @section ('script')
-<script>
-    const toolbarOptions = [ 
-        [{ 'font': [] }],
-        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-        ['bold', 'italic'], 
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-        [{ 'indent': '-1'}, { 'indent': '+1' }],
-        ['link', 'image'],
-        ['blockquote', 'code-block']
-    ];
-
-    const quill = new Quill('#description-editor', {
-        modules: {
-            toolbar: {
-                container: toolbarOptions
-            }
-        },
-        theme: 'snow' // You can alpejabat choose 'bubble'
-    });
-    // Handle form submission
-    var form = document.querySelector('form');
-    form.onsubmit = function() {
-        var description = document.querySelector('input[name=description]');
-        description.value = quill.root.innerHTML;
-    };
-</script>
-@endsection --}}

@@ -5,47 +5,9 @@
 @endsection
 @section("content")
 <div class="inov-bg">
-    <img src="{{URL::to('/')}}/assets/img/bg-inov1.png" alt="">
+    <img src="{{URL::to('/')}}/assets/img/c.png" alt="">
 </div>
-<div class="container" style="margin-top: 80px">
-    
-    {{-- <div class="row">
-        <div class="btn-group col-2">
-            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tahun</button>
-            <ul id="tahunList" class="dropdown-menu" style="max-height: 200px; overflow-y: scroll;">
-                <li><a class="dropdown-item" href="#">2019</a></li>
-                <li><a class="dropdown-item" href="#">2020</a></li>
-                <li><a class="dropdown-item" href="#">2021</a></li>
-                <li><a class="dropdown-item" href="#">2022</a></li>
-                <li><a class="dropdown-item" href="#">2023</a></li>
-                <li><a class="dropdown-item" href="#">2024</a></li>
-                <li><a class="dropdown-item" href="#">2025</a></li>
-                <li><a class="dropdown-item" href="#">2026</a></li>
-                <li><a class="dropdown-item" href="#">2027</a></li>
-                <li><a class="dropdown-item" href="#">2028</a></li>
-                <li><a class="dropdown-item" href="#">2029</a></li>
-                <li><a class="dropdown-item" href="#">2030</a></li>
-                <li><a class="dropdown-item" href="#">2019</a></li>
-                <li><a class="dropdown-item" href="#">2020</a></li>
-                <li><a class="dropdown-item" href="#">2021</a></li>
-                <li><a class="dropdown-item" href="#">2022</a></li>
-                <li><a class="dropdown-item" href="#">2023</a></li>
-                <li><a class="dropdown-item" href="#">2024</a></li>
-                <li><a class="dropdown-item" href="#">2025</a></li>
-                <li><a class="dropdown-item" href="#">2026</a></li>
-                <li><a class="dropdown-item" href="#">2027</a></li>
-                <li><a class="dropdown-item" href="#">2028</a></li>
-                <li><a class="dropdown-item" href="#">2029</a></li>
-                <li><a class="dropdown-item" href="#">2030</a></li>
-            </ul>
-        </div>
-        <div class="box col-10 d-flex justify-content-end">
-            <input type="text" placeholder="search...">
-            <a href="#"></a>
-            <i class="fas fa-search"></i>
-        </div>
-    </div> --}}
-    <main>
+<div class="container mt-4" style="margin-top: 80px">
         <h1 class="text-center">Inovasi</h1>
         <div class="gallery">
             @forelse ($table as $index => $row)

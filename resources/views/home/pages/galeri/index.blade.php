@@ -5,8 +5,8 @@
 @endsection
 @section('content')
 
-    <div class="container p-5" id="galeri_pict" style="padding-top: 150px !important">
-        <div class="title-galeri" style="">
+    <div class="container p-5" id="galeri_pict" style="padding-top: 100px !important">
+        <div class="title-galeri">
             <h3>Galeri</h3>
         </div>
         <ul>
