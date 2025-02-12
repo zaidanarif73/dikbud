@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "anhskohbo/no-captcha": "^3.6",
         "bensampo/laravel-enum": "^6.11",
         "cyrildewit/eloquent-viewable": "^7.0",
         "guzzlehttp/guzzle": "^7.2",

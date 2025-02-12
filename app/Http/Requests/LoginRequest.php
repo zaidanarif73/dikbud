@@ -32,6 +32,10 @@ class LoginRequest extends FormRequest
             'required',
             'min:8',
             ],
+            'g-recaptcha-response' => [
+            'required',
+            'captcha',
+            ]
         ]; 
     }
 
@@ -42,6 +46,7 @@ class LoginRequest extends FormRequest
             'email.email' => 'Field harus berupa email',
             'password.required' => 'Password harus diisi',
             'password.min' => 'Password minimal 8 karakter',
+            'g-recaptcha-response' => 'Captcha harus diisi'
         ];
     }
 
