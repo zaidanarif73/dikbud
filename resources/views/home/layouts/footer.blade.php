@@ -23,6 +23,7 @@
       <div class="col-lg-2 col-md-3 footer-links">
         <h4>Pengunjung</h4>
         <p> jumlah pengunjung website</p>
+        <a href="" title="free counter"><img src="https://counter6.optistats.ovh/private/freecounterstat.php?c=pf1ygxlf38lfg3aaezbhnzumdy4a9pzf" border="0" title="free counter" alt="free counter"></a>
       </div>
       <div class="col-lg-4 col-md-12 footer-newsletter">
         <h4>Kontak</h4>

@@ -53,7 +53,7 @@
                         <img src="{{ asset('storage/' . $row->image) }}" class="card-img-top" alt="">
                     </div>
                     <div class="flex-1 ms-3 pt-1">
-                        <a href="{{ route('home.berita.show', $row->id) }}"><h6 class="text-uppercase fw-bold mb-1">{{ $row->title }}</h6></a>
+                        <a href="{{ route('home.berita.show', ['id' => $row->id, 'title' => Str::slug($row->title)]) }}"><h6 class="text-uppercase fw-bold mb-1">{{ $row->title }}</h6></a>
                     </div>
                     <div class="float-end pt-1">
                         <small class="text-muted">{{ Carbon\Carbon::parse($row->date)->diffForHumans(null, true).' yang lalu';}}</small>

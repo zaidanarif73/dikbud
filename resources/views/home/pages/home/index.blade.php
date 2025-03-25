@@ -129,7 +129,7 @@
                             <p>
                                 {!! Str::limit(strip_tags($table_view->renderTrix('content')), 120) !!}
                             </p>
-                            <a href="{{ route('home.berita.show', $table_view->id) }}" class="btn more-btn">Baca Selengkapnya</a>
+                            <a href="{{ route('home.berita.show', ['id' => $row->id, 'title' => Str::slug($row->title)]) }}" class="btn more-btn">Baca Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
                                 <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-aos="zoom-in" data-wow-delay="0.3s">
                                     <div class="berita-item rounded">
                                         <div class="berita-img rounded-top">
-                                            <a href="{{ route('home.berita.show', $row->id) }}"><img
+                                            <a href="{{ route('home.berita.show', ['id' => $row->id, 'title' => Str::slug($row->title)]) }}"><img
                                                     src="{{ asset('storage/' . $row->image) }}"
                                                     class="img-fluid rounded-top w-100" alt=""></a>
                                         </div>
@@ -152,7 +152,7 @@
                                             <div class="berita-content-inner">
                                                 <p class="card-text">
                                                     {{ Carbon\Carbon::parse($row->date)->translatedFormat('l,d F Y') }}</p>
-                                                <a href="{{ route('home.berita.show', $row->id) }}"><h5 class="mb-4">{{ $row->title }}</h5></a>
+                                                <a href="{{ route('home.berita.show', ['id' => $row->id, 'title' => Str::slug($row->title)]) }}"><h5 class="mb-4">{{ $row->title }}</h5></a>
                                                 <p class="mb-3">{!! Str::limit(strip_tags($row->renderTrix('content')), 100) !!}</p>
                                             </div>
                                         </div>
