@@ -129,7 +129,7 @@
                             <p>
                                 {!! Str::limit(strip_tags($table_view->renderTrix('content')), 120) !!}
                             </p>
-                            <a href="{{ route('home.berita.show', ['id' => $row->id, 'title' => Str::slug($row->title)]) }}" class="btn more-btn">Baca Selengkapnya</a>
+                            <a href="{{ route('home.berita.show', ['id' => $table_view->id, 'title' => Str::slug($table_view->title)]) }}" class="btn more-btn">Baca Selengkapnya</a>
                         </div>
                     </div>
                 </div>
